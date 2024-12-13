@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/header";
-import Footer from "./components/Footer";
-import Welcome from "./components/Welcome";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Welcome from "./components/Welcome/Welcome";
 
 function App() {
   return (
