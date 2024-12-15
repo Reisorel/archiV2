@@ -1,14 +1,12 @@
 
 .footer-container {
-  background-color: #000000;
+  background-color: #ffffff;
   height: auto;
   width: 100%;
   text-align: center;
   padding: 10px;
   font-size: 18px;
-  z-index: 1000;
   margin-bottom: auto;
-  position: fixed; /* Le fixe au bas de la fenêtre */
   bottom: 0; /* Place-le en bas */
   left: 0; /* Assure qu'il couvre toute la largeur */
   }
@@ -16,7 +14,7 @@
   .footer-container p {
     margin: 5px 0 0;
     font-size: 14px;
-    color: antiquewhite;
+    color: rgb(0, 0, 0);
     bottom: 0;
     text-align: center;
   }

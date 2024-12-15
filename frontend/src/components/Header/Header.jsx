@@ -6,14 +6,15 @@ export default function Header() {
 
   return (
     <header className="header-container">
-      <h2 className="logo">
-        <span onClick={() => navigate("/")}>CASSANDRE MARION ARCHITECTE</span>
-      </h2>{" "}
+      <div className="logo">
+        <h1 onClick={() => navigate("/")}>CASSANDRE MARION</h1>
+        <h2>ARCHITECTE DE-HMONP</h2>
+      </div>{" "}
       <div className="header-content">
-        <h1>A Propos</h1>
-        <h1>Projets</h1>
-        <h1>Parcours</h1>
-        <h1>Contact</h1>
+        <h1>A PROPOS</h1>
+        <h1>PROJETS</h1>
+        <h1>MISSIONS</h1>
+        <h1>CONTACT</h1>
       </div>
     </header>
   );

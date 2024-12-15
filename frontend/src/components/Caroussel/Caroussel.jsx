@@ -1,30 +1,35 @@
 import { useState, useEffect } from "react";
 import leftChevron from "../../assets/icons/left-arrow.svg";
 import rightChevron from "../../assets/icons/right-arrow.svg";
-import "./Welcome.css";
+import "./Caroussel.css";
 
-export default function Welcome() {
+export default function Caroussel() {
   // État pour l'index du slider, initialisé à 1
   const sliderData = [
     {
       id: 1,
-      description: "Living room",
+      name: "APPARTEMENT PARISIEN",
+      description: "Paris 7, Ile-De-France",
     },
     {
       id: 2,
-      description: "Kitchen",
+      name: "MAISON INDIVIDUELLE",
+      description: "SAINT-AUBIN, NORMANDIE",
     },
     {
       id: 3,
-      description: "Bedroom",
+      name: "GARAGE INDIVIDUEL",
+      description: "RENNES, BRETAGNE",
     },
     {
       id: 4,
-      description: "Bathroom",
+      name: "FERME DOUBLE NIVEAU",
+      description: "BREVILLE, NORMANDIE",
     },
     {
       id: 5,
-      description: "Balcony",
+      name: "RENOVATION",
+      description: "Nantes, PAYS-DE-LA-LOIRE",
     },
   ];
   const [sliderIndex, setSliderIndex] = useState(1);
@@ -41,7 +46,7 @@ export default function Welcome() {
   }
 
   useEffect(() => {
-    const intervalID = setInterval(() => toggleImage(1), 2000);
+    const intervalID = setInterval(() => toggleImage(1), 4000);
 
     return () => clearInterval(intervalID);
   }, []);
@@ -50,11 +55,16 @@ export default function Welcome() {
     <>
       <div className="slider">
         <p className="image-info">
-          {sliderData.find((obj) => obj.id === sliderIndex).description}
+          <span className="image-name">
+            {sliderData.find((obj) => obj.id === sliderIndex).name}
+          </span>
+          <span className="image-description">
+            {sliderData.find((obj) => obj.id === sliderIndex).description}
+          </span>
         </p>
         <img
-          src={`/images/img-${sliderIndex}.jpg`}
-          alt="estate's rooms"
+          src={`/images/caroussel/img-${sliderIndex}.jpg`}
+          alt="caroussel picutres"
           className="slider-img"
         />
         <button
@@ -69,6 +79,18 @@ export default function Welcome() {
         >
           <img src={rightChevron} alt="next-image" />
         </button>
+
+        <div className="dots-container">
+          {sliderData.map((slide) => (
+            <div
+              key={slide.id}
+              className={`dot ${
+                sliderIndex === slide.id ? "active" : "passive"
+              }`} // "active" uniquement pour la boule active
+              onClick={() => setSliderIndex(slide.id)} // Permet de naviguer au clic
+            ></div>
+          ))}
+        </div>
       </div>
     </>
   );

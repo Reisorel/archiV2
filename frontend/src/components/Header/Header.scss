@@ -1,8 +1,8 @@
 .header-container {
-  background-color: #000000;
+  background-color: #ffffff;
   font-size: 18px;
   display: flex; /* Utilisation de Flexbox */
-  flex-direction: column;
+  flex-direction: row;
   align-items: center; /* Centre verticalement les enfants */
   justify-content: space-between; /* Espace entre le logo et le menu */
   align-items: center;
@@ -14,32 +14,42 @@
   }
 
   .logo {
-    font-size: 20px; /* Taille du logo */
-    color: rgb(255, 255, 255);
-    position: absolute; /* Positionne le logo indépendamment */
-    left: 20px; /* Le colle à gauche avec un espace */
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
+    align-items: right;
+  }
+
+  .logo h1{
+    font-family: 'DIN Pro Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin-bottom: 0;
+  }
+
+  .logo h2{
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 0;
   }
 
   .header-content {
     display: flex;
-    right: 20px;
-    flex: 1;
     flex-direction: row;
     align-items: center;
     text-align: center;
-    margin-left: auto; /* Pousse le conteneur vers la droite */
   }
 
-  .header-container h1 {
-    color: rgb(255, 255, 255);
+  .header-content h1 {
+    color: rgb(0, 0, 0);
     margin: 10px 25px;
     padding: 5px;
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 500;
   }
 
-  .header-container h1:hover {
+  .header-content h1:hover {
     text-decoration: underline;
     cursor: pointer;
   }
