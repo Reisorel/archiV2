@@ -2,9 +2,14 @@
 .title {
   border-top: 2px solid black; /* Épaisseur et couleur du trait */
   font-size: 32px;
-  margin-left: 2rem;
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+
+.news-container {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  box-sizing: border-box;
 }
 
 .main {
@@ -15,9 +20,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
   gap: 1.5rem;
-  margin: 2rem;
   width: 100%;
   justify-content: center;
+  box-sizing: border-box;
 }
 .secContent .singleNew {
   position: relative;

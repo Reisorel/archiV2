@@ -48,7 +48,7 @@ export default function About() {
     : "de ";
 
   return (
-    <div id="welcome" className="welcome-container">
+    <div id="about" className="about-container">
       <div className="secTitle">
         <h3 className="title">A PROPOS</h3>
       </div>

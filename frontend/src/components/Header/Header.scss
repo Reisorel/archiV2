@@ -7,8 +7,9 @@
   justify-content: space-between; /* Espace entre le logo et le menu */
   align-items: center;
   height: auto;
+  margin-left: 2rem;
   width: 100%;
-  padding: 10px 20px; /* Ajoute un peu de marge interne */
+  padding: 10px 0px; /* Ajoute un peu de marge interne */
   z-index: 100;
   box-sizing: border-box; /* Inclut le padding dans la largeur */
   }
@@ -38,6 +39,8 @@
     flex-direction: row;
     align-items: center;
     text-align: center;
+    margin-right: 2.5rem;
+
   }
 
   .header-content h1 {

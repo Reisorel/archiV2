@@ -5,7 +5,6 @@
   flex-direction: row; /* Les éléments sont alignés horizontalement */
   align-items: center; /* Centre verticalement les enfants */
   justify-content: space-between; /* Garde les enfants aux extrémités */
-  padding: 10px; /* Espace interne */
   font-size: 18px;
   margin-top: 0px;
   width: 100%;
@@ -27,7 +26,7 @@
 .ordre {
   display: flex; /* Garde le contenu aligné verticalement */
   align-items: center;
-  margin-left: 15px; /* Décalage à gauche */
+  margin-left: 2rem; /* Décalage à gauche */
   margin-bottom: 15px;
   margin-top: 15px;
 }

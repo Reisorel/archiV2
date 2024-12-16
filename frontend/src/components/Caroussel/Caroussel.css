@@ -4,6 +4,10 @@
   height: 600px;
   margin: 0 auto;
   position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .image-info {
@@ -11,10 +15,9 @@
   display: block;
   flex-direction: column;
   z-index: 1;
-  left: 20px;
-  bottom: 15px;
+  left: 2rem;
+  bottom: 0.75rem;
   color: white;
-  padding: 8px 12px;
   font-weight: 300;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Ombre légère pour le texte */
 }
@@ -37,6 +40,7 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  justify-content: center;
 }
 
 .navigation-button {

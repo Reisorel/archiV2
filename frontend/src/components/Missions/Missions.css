@@ -3,6 +3,11 @@
   font-size: 32px;
 }
 
+.missions-container {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
 .secContent {
   display: grid; /* Active le mode Grid */
   grid-template-columns: repeat(3, 1fr); /* 4 colonnes égales */
