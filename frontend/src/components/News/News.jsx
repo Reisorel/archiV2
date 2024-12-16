@@ -115,10 +115,7 @@ export default function News() {
   return (
     <div id="news" className="news-container">
       <div className="secTitle">
-        {/* Titre à animer */}
-        <h3 ref={titleRef} className="title">
-          ACTUALITE
-        </h3>
+        <h3 ref={titleRef} className="title">ACTUALITE</h3>
       </div>
 
       <div ref={gridRef} className="secContent grid">

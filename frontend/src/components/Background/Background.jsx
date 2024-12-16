@@ -1,5 +1,6 @@
+import "./Background.css";
 export default function Background({children}) {
-  
+
   return (
     <div className="background">
     {/* Contenu dynamique inséré ici */}

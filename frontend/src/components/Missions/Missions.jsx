@@ -66,7 +66,7 @@ export default function Missions() {
       }, []);
 
   return (
-    <div className="missions-container">
+    <div id="missions" className="missions-container">
       <div className="secTitle">
         <h3 ref={titleRef} className="title">MISSIONS</h3>
       </div>
