@@ -1,9 +1,25 @@
 import { useState, useEffect } from "react";
+import { gsap } from "gsap"; // Importer GSAP
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+
 import leftChevron from "../../assets/icons/left-arrow.svg";
 import rightChevron from "../../assets/icons/right-arrow.svg";
+import downChevron from "../../assets/icons/down-arrow.svg";
 import "./Caroussel.css";
 
+gsap.registerPlugin(ScrollToPlugin);
+
 export default function Caroussel() {
+
+  const scrollToNextSection = () => {
+    gsap.to(window, {
+      duration: 0.3, // Durée du scroll (en secondes)
+      scrollTo: "#news", // Cible l'ID de la section News
+      ease: "power2.inOut", // Effet d'animation fluide
+    });
+  };
+
   // État pour l'index du slider, initialisé à 1
   const sliderData = [
     {
@@ -58,6 +74,7 @@ export default function Caroussel() {
           <span className="image-name">
             {sliderData.find((obj) => obj.id === sliderIndex).name}
           </span>
+          <br/>
           <span className="image-description">
             {sliderData.find((obj) => obj.id === sliderIndex).description}
           </span>
@@ -91,6 +108,9 @@ export default function Caroussel() {
             ></div>
           ))}
         </div>
+        <button className="down-button" onClick={scrollToNextSection}>
+          <img src={downChevron} alt="next-image" />
+        </button>
       </div>
     </>
   );

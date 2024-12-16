@@ -1,0 +1,23 @@
+.title {
+  font-size: 32px;
+}
+
+.secContent {
+  display: grid; /* Active le mode Grid */
+  grid-template-columns: repeat(3, 1fr); /* 4 colonnes égales */
+  gap: 1.5rem; /* Espacement entre les colonnes */
+  padding: 1rem; /* Espacement interne autour de la grille */
+  width: 100%; /* Largeur complète */
+  margin: 0 auto; /* Centre la grille horizontalement */
+  text-align: center; /* Centre le texte dans chaque colonne */
+}
+
+.col {
+  background-color: #f5f5f5; /* Couleur de fond légère */
+  padding: 1rem; /* Espacement autour du texte */
+  border-radius: 5px; /* Coins arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre */
+  font-size: 1rem; /* Taille de police */
+  font-weight: 500; /* Épaisseur de la police */
+  color: #333; /* Couleur du texte */
+}

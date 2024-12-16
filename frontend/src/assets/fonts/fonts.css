@@ -1,102 +1,102 @@
 @font-face {
   font-family: "DIN Pro";
-  src: url("./assets/fonts/dinpro.otf") format("opentype");
+  src: url("./assets/fonts/dinpro.otf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "DIN Pro";
-  src: url("./assets/fonts/dinpro_black.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_black.otf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: "DIN Pro";
-  src: url("./assets/fonts/dinpro_blackitalic.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_blackitalic.otf") format("truetype");
   font-weight: 900;
   font-style: italic;
 }
 @font-face {
   font-family: "DIN Pro";
-  src: url("./assets/fonts/dinpro_bold.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_bold.otf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "DIN Pro";
-  src: url("./assets/fonts/dinpro_bolditalic.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_bolditalic.otf") format("truetype");
   font-weight: 700;
   font-style: italic;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url("./assets/fonts/dinpro_condensedblack.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_condensedblack.otf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url("./assets/fonts/dinpro_condensedblackitalic.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_condensedblackitalic.otf") format("truetype");
   font-weight: 900;
   font-style: italic;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url("./assets/fonts/dinpro_condensedbold.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_condensedbold.otf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url("./assets/fonts/dinpro_condensedbolditalic.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_condensedbolditalic.otf") format("truetype");
   font-weight: 700;
   font-style: italic;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url("./assets/fonts/dinpro_condenseditalic.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_condenseditalic.otf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url("./assets/fonts/dinpro_condensedlight.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_condensedlight.otf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: "DIN Pro Condensed";
-  src: url("./assets/fonts/dinpro_condensedlightitalic.otf") format("opentype");
+  font-family: "DIN Pro";
+  src: url("./assets/fonts/dinpro_condensedlightitalic.otf") format("truetype");
   font-weight: 300;
   font-style: italic;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url("./assets/fonts/dinpro_condensedmedium.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_condensedmedium.otf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "DIN Pro Condensed";
-  src: url("./assets/fonts/dinpro_condensedmediumitalic.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_condensedmediumitalic.otf") format("truetype");
   font-weight: 500;
   font-style: italic;
 }
 @font-face {
-  font-family: "DIN Pro Condensed";
-  src: url("./assets/fonts/dinpro_condensedregular.otf") format("opentype");
+  font-family: "DIN Pro";
+  src: url("./assets/fonts/dinpro_condensedregular.otf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "DIN Pro";
-  src: url("./assets/fonts/dinpro_italic.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_italic.otf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: "DIN Pro";
-  src: url("./assets/fonts/dinpro_light.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_light.otf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
@@ -108,13 +108,13 @@
 }
 @font-face {
   font-family: "DIN Pro";
-  src: url("./assets/fonts/dinpro_medium.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_medium.otf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "DIN Pro";
-  src: url("./assets/fonts/dinpro_mediumitalic.otf") format("opentype");
+  src: url("./assets/fonts/dinpro_mediumitalic.otf") format("truetype");
   font-weight: 500;
   font-style: italic;
 }/*# sourceMappingURL=fonts.css.map */

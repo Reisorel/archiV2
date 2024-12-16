@@ -1,0 +1,47 @@
+.title {
+  font-size: 32px;
+}
+
+.main-infos {
+  font-family: "DIN Pro", sans-serif;
+  display: flex;
+  margin-left: 2rem;
+  flex-direction: row;
+  align-items: center;
+}
+
+.picture img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  align-items: center;
+  border: 1px solid;
+  margin: 20px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-infos h1 {
+  font-size: 26px;
+  font-family: "DIN Pro", sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.main-infos .line1 {
+  font-size: 22px;
+  font-family: "DIN Pro", sans-serif;
+  font-weight: 500;
+}
+
+.main-infos .line2 {
+  font-size: 22px;
+  font-family: "DIN Pro", sans-serif;
+  font-weight: 300;
+}/*# sourceMappingURL=About.css.map */

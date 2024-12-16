@@ -1,20 +1,37 @@
-
 .footer-container {
-  background-color: #ffffff;
-  height: auto;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
+  background-color: #f3f3f3;
+  display: flex;
+  flex-direction: row; /* Les éléments sont alignés horizontalement */
+  align-items: center; /* Centre verticalement les enfants */
+  justify-content: space-between; /* Garde les enfants aux extrémités */
+  padding: 10px; /* Espace interne */
   font-size: 18px;
-  margin-bottom: auto;
-  bottom: 0; /* Place-le en bas */
-  left: 0; /* Assure qu'il couvre toute la largeur */
-  }
+  margin-top: 0px;
+  width: 100%;
+  position: relative; /* Nécessaire pour le centrage absolu */
+  margin-top: 15px;
+}
 
-  .footer-container p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    color: rgb(0, 0, 0);
-    bottom: 0;
-    text-align: center;
-  }
+.footer-container p {
+  position: absolute; /* Permet un positionnement précis */
+  left: 50%; /* Centre horizontalement */
+  transform: translateX(-50%); /* Ajuste parfaitement pour le centrage */
+  bottom: 15px; /* Place le texte à 15px du bas */
+  margin: 0; /* Supprime les marges par défaut */
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  text-align: center; /* Centre le texte dans son conteneur */
+}
+
+.ordre {
+  display: flex; /* Garde le contenu aligné verticalement */
+  align-items: center;
+  margin-left: 15px; /* Décalage à gauche */
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.ordre img {
+  width: 175px;
+  height: auto;
+}

@@ -1,0 +1,98 @@
+.title {
+  border-top: 2px solid black; /* Épaisseur et couleur du trait */
+  font-size: 32px;
+  margin-left: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.main {
+  width: 100%;
+}
+
+.secContent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+  gap: 1.5rem;
+  margin: 2rem;
+  width: 100%;
+  justify-content: center;
+
+  .singleNew {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(237, 237, 237, 0.4);
+    overflow: hidden;
+
+    &:nth-child(4) {
+      grid-column: span 2; /* S'étend sur 2 colonnes */
+      grid-row: span 2;
+    }
+
+    &:nth-child(5) {
+      grid-row: span 2;
+    }
+
+    .imageDiv {
+      position: relative; /* Pour positionner le voile et le texte */
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+
+      /* Voile gris */
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(200, 200, 200, 0.3);
+        opacity: 0; /* Invisible par défaut */
+        transition: opacity 0.3s ease;
+        z-index: 1; /* Au-dessus de l'image */
+      }
+
+      /* Contenu texte */
+      .hoverContent {
+        position: absolute;
+        bottom: 15px; /* Calé en bas */
+        left: 15px; /* Calé à gauche */
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: left;
+        opacity: 0; /* Invisible par défaut */
+        transition: opacity 0.3s ease;
+        z-index: 2; /* Au-dessus du voile */
+        width: calc(100% - 20px); /* Pour éviter de déborder à droite */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Ombre légère pour le texte */
+
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease; /* Effet de zoom */
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1); /* Zoom sur l'image */
+        }
+
+        &::before {
+          opacity: 1; /* Affiche le voile gris */
+        }
+
+        .hoverContent {
+          opacity: 1; /* Affiche le texte */
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,9 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Caroussel from "./components/Caroussel/Caroussel";
 import Background from "./components/Background/Background";
-import WelcomePage from "./components/WelcomePage/WelcomePage";
+import News from "./components/News/News";
+import Missions from "./components/Missions/Missions";
+import About from "./components/About/About";
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
             <Route path="/" element={
               <Background>
                 <Caroussel />
-                <WelcomePage/>
+                <News/>
+                <Missions/>
+                <About/>
                 <Footer />
               </Background>
               }

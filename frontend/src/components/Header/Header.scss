@@ -21,7 +21,6 @@
   }
 
   .logo h1{
-    font-family: 'DIN Pro Condensed', sans-serif;
     font-weight: 700;
     letter-spacing: 2px;
     font-size: 22px;
@@ -42,14 +41,46 @@
   }
 
   .header-content h1 {
+    position: relative; /* Nécessaire pour le positionnement absolu de ::before */
     color: rgb(0, 0, 0);
     margin: 10px 25px;
     padding: 5px;
     font-size: 18px;
     font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+
   }
 
-  .header-content h1:hover {
-    text-decoration: underline;
+  .header-content h1::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: #000000b9; /* Couleur de la ligne */
+    transition: width 0.4s ease, left 0.4s ease;
     cursor: pointer;
+  }
+
+  .header-content h1:hover::before {
+    width: 100%; /* Étendre la ligne de gauche à droite */
+    transition: width 0.4s ease; /* Garde la transition fluide */
+  }
+
+  .header-content h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0; /* Commence à droite */
+    width: 0; /* Ligne invisible à l'état initial */
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: #000000b9; /* Couleur de la ligne */
+    transition: width 0.4s ease; /* Animation uniquement sur la largeur */
+  }
+
+  .header-content h1:hover::after {
+    width: 100%; /* Étendre la ligne de droite à gauche */
+    left: 0;
+    transition: width 0.4s ease; /* Garde la transition fluide */
   }
