@@ -8,6 +8,8 @@ import Background from "./components/Background/Background";
 import News from "./components/News/News";
 import Missions from "./components/Missions/Missions";
 import About from "./components/About/About";
+import Projects from "./components/Projects/Projects";
+import Test from "./components/Test/Test";
 
 function App() {
   return (
@@ -15,19 +17,25 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Header />
-          <Routes>
-            {/* Page d'accueil : tout est inclus dans Background */}
-            <Route path="/" element={
-              <Background>
-                <Caroussel />
-                <News/>
-                <Missions/>
-                <About/>
-                <Footer />
-              </Background>
-              }
-            />
-          </Routes>
+          <Background>
+            <Routes>
+              {/* Page d'accueil : tout est inclus dans Background */}
+              {/* <Route path="/test" element={<Test/>}/> */}
+              <Route path="/projects" element={<Projects />} />
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Caroussel />
+                    <News />
+                    <Missions />
+                    <About />
+                    <Footer />
+                  </>
+                }
+              />
+            </Routes>
+          </Background>
         </BrowserRouter>
       </div>
     </>

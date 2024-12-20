@@ -44,37 +44,48 @@
   flex-direction: row;
   align-items: center;
   text-align: center;
-  margin-right: 2.5rem;
+  margin-right: 2rem;
 }
 
-.header-content h1 {
-  position: relative; /* Nécessaire pour le positionnement absolu de ::before */
+.nav-list {
+  list-style: none; /* Supprime les puces */
+  display: flex; /* Organise en ligne */
+  gap: 1.5rem; /* Espacement entre les éléments */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  position: relative; /* Nécessaire pour le positionnement absolu des ::before et ::after */
+}
+
+.nav-list span {
   color: rgb(0, 0, 0);
-  margin: 10px 25px;
+  text-decoration: none;
   padding: 5px;
   font-size: 18px;
   font-weight: 500;
-  text-decoration: none;
   cursor: pointer;
+  position: relative; /* Nécessaire pour les effets */
+  display: inline-block; /* Permet à ::before et ::after de fonctionner correctement */
 }
 
-.header-content h1::before {
+.nav-list span::before {
   content: "";
   position: absolute;
   bottom: 0;
-  width: 0;
+  left: 0; /* Commence à gauche */
+  width: 0; /* Ligne invisible à l'état initial */
   height: 2px; /* Épaisseur de la ligne */
   background-color: rgba(0, 0, 0, 0.7254901961); /* Couleur de la ligne */
-  transition: width 0.4s ease, left 0.4s ease;
-  cursor: pointer;
+  transition: width 0.4s ease; /* Animation fluide sur la largeur */
 }
 
-.header-content h1:hover::before {
+.nav-list span:hover::before {
   width: 100%; /* Étendre la ligne de gauche à droite */
-  transition: width 0.4s ease; /* Garde la transition fluide */
 }
 
-.header-content h1::after {
+.nav-list span::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -82,13 +93,12 @@
   width: 0; /* Ligne invisible à l'état initial */
   height: 2px; /* Épaisseur de la ligne */
   background-color: rgba(0, 0, 0, 0.7254901961); /* Couleur de la ligne */
-  transition: width 0.4s ease; /* Animation uniquement sur la largeur */
+  transition: width 0.4s ease; /* Animation fluide sur la largeur */
 }
 
-.header-content h1:hover::after {
+.nav-list span:hover::after {
   width: 100%; /* Étendre la ligne de droite à gauche */
   left: 0;
-  transition: width 0.4s ease; /* Garde la transition fluide */
 }
 
 .header-container.show {
@@ -98,4 +108,39 @@
 /* Disparition */
 .header-container.hide {
   transform: translateY(-100%); /* Header caché vers le haut */
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 770px) {
+  .header-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: 150px;
+    padding: 1rem;
+  }
+  .header-content.mobile-open {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    margin-right: 0;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1); /* Ombre uniquement vers le bas */
+  }
+  .header-content.mobile-open .nav-list {
+    list-style: none; /* Supprime les puces */
+    display: flex;
+    flex-direction: column;
+  }
+  .hamburger-menu {
+    display: block;
+    color: rgb(0, 0, 0);
+    margin-right: 2rem;
+  }
 }/*# sourceMappingURL=Header.css.map */

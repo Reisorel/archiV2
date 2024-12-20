@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap"; // Importer GSAP
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import leftChevron from "../../assets/icons/left-arrow.svg";
 import rightChevron from "../../assets/icons/right-arrow.svg";
@@ -9,9 +9,38 @@ import downChevron from "../../assets/icons/down-arrow.svg";
 import "./Caroussel.css";
 
 gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
+
+// État pour l'index du slider, initialisé à 1
+const sliderData = [
+  {
+    id: 1,
+    name: "APPARTEMENT PARISIEN",
+    description: "Paris 7, Ile-De-France",
+  },
+  {
+    id: 2,
+    name: "MAISON INDIVIDUELLE",
+    description: "SAINT-AUBIN, NORMANDIE",
+  },
+  {
+    id: 3,
+    name: "GARAGE INDIVIDUEL",
+    description: "RENNES, BRETAGNE",
+  },
+  {
+    id: 4,
+    name: "FERME DOUBLE NIVEAU",
+    description: "BREVILLE, NORMANDIE",
+  },
+  {
+    id: 5,
+    name: "RENOVATION",
+    description: "Nantes, PAYS-DE-LA-LOIRE",
+  },
+];
 
 export default function Caroussel() {
-
   const scrollToNextSection = () => {
     gsap.to(window, {
       duration: 0.3, // Durée du scroll (en secondes)
@@ -20,35 +49,9 @@ export default function Caroussel() {
     });
   };
 
-  // État pour l'index du slider, initialisé à 1
-  const sliderData = [
-    {
-      id: 1,
-      name: "APPARTEMENT PARISIEN",
-      description: "Paris 7, Ile-De-France",
-    },
-    {
-      id: 2,
-      name: "MAISON INDIVIDUELLE",
-      description: "SAINT-AUBIN, NORMANDIE",
-    },
-    {
-      id: 3,
-      name: "GARAGE INDIVIDUEL",
-      description: "RENNES, BRETAGNE",
-    },
-    {
-      id: 4,
-      name: "FERME DOUBLE NIVEAU",
-      description: "BREVILLE, NORMANDIE",
-    },
-    {
-      id: 5,
-      name: "RENOVATION",
-      description: "Nantes, PAYS-DE-LA-LOIRE",
-    },
-  ];
   const [sliderIndex, setSliderIndex] = useState(1);
+  const sliderImagesRef = useRef(null); // Référence pour l'image
+
   function toggleImage(indexPayload) {
     setSliderIndex((state) => {
       if (indexPayload + state > sliderData.length) {
@@ -61,6 +64,7 @@ export default function Caroussel() {
     });
   }
 
+
   useEffect(() => {
     const intervalID = setInterval(() => toggleImage(1), 4000);
 
@@ -69,21 +73,28 @@ export default function Caroussel() {
 
   return (
     <>
+    <div className="slider-container">
       <div className="slider">
+
+        <div ref={sliderImagesRef} className="slider-images">
+          <img
+            src={`/images/caroussel/img-${sliderIndex}.jpg`}
+            alt="caroussel pictures"
+            className="slider-img"
+          />
+        </div>
+        <div className="slider-content">
+
         <p className="image-info">
           <span className="image-name">
             {sliderData.find((obj) => obj.id === sliderIndex).name}
           </span>
-          <br/>
+          <br />
           <span className="image-description">
             {sliderData.find((obj) => obj.id === sliderIndex).description}
           </span>
         </p>
-        <img
-          src={`/images/caroussel/img-${sliderIndex}.jpg`}
-          alt="caroussel picutres"
-          className="slider-img"
-        />
+
         <button
           onClick={() => toggleImage(-1)}
           className="navigation-button prev-button"
@@ -109,8 +120,10 @@ export default function Caroussel() {
           ))}
         </div>
         <button className="down-button" onClick={scrollToNextSection}>
-          <img src={downChevron} alt="next-image" />
+          <img src={downChevron} alt="down-chevron" />
         </button>
+        </div>
+      </div>
       </div>
     </>
   );
