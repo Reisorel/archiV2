@@ -19,7 +19,7 @@
 
   }
 
-  .logo {
+  .header-logo {
     margin-left: 2rem;
     display: flex;
     flex-direction: column;
@@ -27,14 +27,14 @@
     align-items: right;
   }
 
-  .logo h1{
+  .header-logo h1{
     font-weight: 700;
     letter-spacing: 2px;
     font-size: 22px;
     margin-bottom: 0;
   }
 
-  .logo h2{
+  .header-logo h2{
     font-weight: 500;
     font-size: 16px;
     margin-top: 0;
@@ -48,7 +48,7 @@
     margin-right: 2rem;
   }
 
-  .nav-list {
+  .header-nav-list {
     list-style: none; /* Supprime les puces */
     display: flex; /* Organise en ligne */
     gap: 1.5rem; /* Espacement entre les éléments */
@@ -56,11 +56,11 @@
     margin: 0;
   }
 
-  .nav-list li {
+  .header-nav-list li {
     position: relative; /* Nécessaire pour le positionnement absolu des ::before et ::after */
   }
 
-  .nav-list span {
+  .header-nav-list span {
     color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 5px;
@@ -71,7 +71,7 @@
     display: inline-block; /* Permet à ::before et ::after de fonctionner correctement */
   }
 
-  .nav-list span::before {
+  .header-nav-list span::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -82,11 +82,11 @@
     transition: width 0.4s ease; /* Animation fluide sur la largeur */
   }
 
-  .nav-list span:hover::before {
+  .header-nav-list span:hover::before {
     width: 100%; /* Étendre la ligne de gauche à droite */
   }
 
-  .nav-list span::after {
+  .header-nav-list span::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -97,21 +97,21 @@
     transition: width 0.4s ease; /* Animation fluide sur la largeur */
   }
 
-  .nav-list span:hover::after {
+  .header-nav-list span:hover::after {
     width: 100%; /* Étendre la ligne de droite à gauche */
     left: 0;
   }
 
-  .header-container.show {
+  .header-header-container.show {
     transform: translateY(0); /* Header visible */
   }
 
   /* Disparition */
-  .header-container.hide {
+  .header-header-container.hide {
     transform: translateY(-100%); /* Header caché vers le haut */
   }
 
-.hamburger-menu {
+.header-hamburger-menu {
   display: none;
   cursor: pointer;
   }
@@ -137,16 +137,14 @@
     margin-right: 0;
     box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1); /* Ombre uniquement vers le bas */
 
-    .nav-list {
+    .header-nav-list {
       list-style: none; /* Supprime les puces */
       display: flex;
       flex-direction: column;
-
-
     }
   }
 
-  .hamburger-menu {
+  .header-hamburger-menu {
     display: block;
     color: rgb(0, 0, 0);
     margin-right: 2rem;

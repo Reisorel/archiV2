@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.title {
+.news-title {
   border-top: 2px solid black; /* Épaisseur et couleur du trait */
   font-size: 32px;
   margin-top: 5rem;
@@ -16,7 +16,7 @@
   width: 100%;
 }
 
-.secContent {
+.news-secContent {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
   gap: 1.5rem;
@@ -24,7 +24,7 @@
   justify-content: center;
   box-sizing: border-box;
 }
-.secContent .singleNew {
+.news-secContent .news-singleNew {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -33,14 +33,14 @@
   box-shadow: 0 2px 4px rgba(237, 237, 237, 0.4);
   overflow: hidden;
 }
-.secContent .singleNew:nth-child(4) {
+.news-secContent .news-singleNew:nth-child(4) {
   grid-column: span 2; /* S'étend sur 2 colonnes */
   grid-row: span 2;
 }
-.secContent .singleNew:nth-child(5) {
+.news-secContent .news-singleNew:nth-child(5) {
   grid-row: span 2;
 }
-.secContent .singleNew .imageDiv {
+.news-secContent .news-singleNew .news-imageDiv {
   position: relative; /* Pour positionner le voile et le texte */
   height: 100%;
   width: 100%;
@@ -48,7 +48,7 @@
   /* Voile gris */
   /* Contenu texte */
 }
-.secContent .singleNew .imageDiv::before {
+.news-secContent .news-singleNew .news-imageDiv::before {
   content: "";
   position: absolute;
   top: 0;
@@ -60,7 +60,7 @@
   transition: opacity 0.3s ease;
   z-index: 1; /* Au-dessus de l'image */
 }
-.secContent .singleNew .imageDiv .hoverContent {
+.news-secContent .news-singleNew .news-imageDiv .news-hoverContent {
   position: absolute;
   bottom: 15px; /* Calé en bas */
   left: 15px; /* Calé à gauche */
@@ -74,19 +74,19 @@
   width: calc(100% - 20px); /* Pour éviter de déborder à droite */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Ombre légère pour le texte */
 }
-.secContent .singleNew .imageDiv img {
+.news-secContent .news-singleNew .news-imageDiv img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: transform 0.3s ease; /* Effet de zoom */
 }
-.secContent .singleNew .imageDiv:hover img {
+.news-secContent .news-singleNew .news-imageDiv:hover img {
   transform: scale(1.1); /* Zoom sur l'image */
 }
-.secContent .singleNew .imageDiv:hover::before {
+.news-secContent .news-singleNew .news-imageDiv:hover::before {
   opacity: 1; /* Affiche le voile gris */
 }
-.secContent .singleNew .imageDiv:hover .hoverContent {
+.news-secContent .news-singleNew .news-imageDiv:hover .news-hoverContent {
   opacity: 1; /* Affiche le texte */
 }/*# sourceMappingURL=News.css.map */

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.title {
+.missions-title {
   font-size: 32px;
 }
 
@@ -8,17 +8,23 @@
   margin-right: 2rem;
 }
 
-.secContent {
+.missions-intro {
+  text-align: center;
+  font-size: 32px;
+}
+
+.missions-secContent {
   display: grid; /* Active le mode Grid */
-  grid-template-columns: repeat(3, 1fr); /* 4 colonnes égales */
-  gap: 1.5rem; /* Espacement entre les colonnes */
+  grid-template-rows: repeat(3, 1fr); /* 3 lignes égales */
+  grid-template-rows: 1fr; /* 1 colonne */
+  gap: 1.5rem; /* Espacement entre les éléments */
   padding: 1rem; /* Espacement interne autour de la grille */
   width: 100%; /* Largeur complète */
   margin: 0 auto; /* Centre la grille horizontalement */
-  text-align: center; /* Centre le texte dans chaque colonne */
+  text-align: center; /* Centre le texte dans chaque cellule */
 }
 
-.col {
+.missions-row {
   background-color: #f5f5f5; /* Couleur de fond légère */
   padding: 1rem; /* Espacement autour du texte */
   border-radius: 5px; /* Coins arrondis */

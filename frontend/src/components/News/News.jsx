@@ -86,7 +86,7 @@ export default function News() {
 
         // Animation pour les items de la grille
         if (gridRef.current) {
-          const items = gridRef.current.querySelectorAll(".singleNew");
+          const items = gridRef.current.querySelectorAll(".news-singleNew");
 
           items.forEach((item, index) => {
             gsap.fromTo(
@@ -114,17 +114,17 @@ export default function News() {
 
   return (
     <div id="news" className="news-container">
-      <div className="secTitle">
-        <h3 ref={titleRef} className="title">ACTUALITE</h3>
+      <div className="news-secTitle">
+        <h3 ref={titleRef} className="news-title">ACTUALITE</h3>
       </div>
 
-      <div ref={gridRef} className="secContent grid">
+      <div ref={gridRef} className="news-secContent grid">
         {Data.map(({ id, imgSrc, title }) => {
           return (
-            <div key={id} className="singleNew">
-              <div className="imageDiv">
+            <div key={id} className="news-singleNew">
+              <div className="news-imageDiv">
                 <img src={imgSrc} alt={title} />
-                <div className="hoverContent">{title}</div>
+                <div className="news-hoverContent">{title}</div>
 
               </div>
             </div>

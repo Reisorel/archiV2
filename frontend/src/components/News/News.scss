@@ -1,4 +1,4 @@
-.title {
+.news-title {
   border-top: 2px solid black; /* Épaisseur et couleur du trait */
   font-size: 32px;
   margin-top: 5rem;
@@ -15,7 +15,7 @@
   width: 100%;
 }
 
-.secContent {
+.news-secContent {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
   gap: 1.5rem;
@@ -24,7 +24,7 @@
   box-sizing: border-box;
 
 
-  .singleNew {
+  .news-singleNew {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -42,7 +42,7 @@
       grid-row: span 2;
     }
 
-    .imageDiv {
+    .news-imageDiv {
       position: relative; /* Pour positionner le voile et le texte */
       height: 100%;
       width: 100%;
@@ -63,7 +63,7 @@
       }
 
       /* Contenu texte */
-      .hoverContent {
+      .news-hoverContent {
         position: absolute;
         bottom: 15px; /* Calé en bas */
         left: 15px; /* Calé à gauche */
@@ -95,7 +95,7 @@
           opacity: 1; /* Affiche le voile gris */
         }
 
-        .hoverContent {
+        .news-hoverContent {
           opacity: 1; /* Affiche le texte */
         }
       }

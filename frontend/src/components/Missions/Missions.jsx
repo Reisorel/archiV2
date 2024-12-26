@@ -38,7 +38,7 @@ export default function Missions() {
 
     // Animation pour les items de la grille
     if (gridRef.current) {
-      const items = gridRef.current.querySelectorAll(".col");
+      const items = gridRef.current.querySelectorAll(".row");
 
       items.forEach((item, index) => {
         gsap.fromTo(
@@ -65,30 +65,31 @@ export default function Missions() {
 
   return (
     <div id="missions" className="missions-container">
-      <div className="secTitle">
-        <h3 ref={titleRef} className="title">
+      <div className="missions-secTitle">
+        <h3 ref={titleRef} className="missions-title">
           MISSIONS
         </h3>
       </div>
-      <div className="intro">
+      <div className="missions-intro">
         <p>
-          chaque projet est une rencontre unique entre vos aspirations, les
-          exigences du lieu, et notre vision créative. Nous vous accompagnons à
-          chaque étape, de l’esquisse initiale à la réalisation finale, avec une
-          attention particulière portée aux détails et à l’harmonie de chaque
-          espace.
+          Chaque projet est une rencontre unique entre vos aspirations, les
+          exigences du lieu, et notre vision créative.
+          <p></p> Nous vous accompagnons à chaque étape, de l’esquisse initiale
+          à la réalisation finale, avec une attention particulière portée aux
+          détails et à l’harmonie de chaque espace.
         </p>
       </div>
 
-      <div className="secContent grid" ref={gridRef}>
-        <div className="col">
-          <h3>
-        1. Réflexion & Analyse
-          </h3>
-          <p>La phase de réflexion et d’analyse</p>
-          </div>
-        <div className="col">Texte colonne 2</div>
-        <div className="col">Texte colonne 3</div>
+      <div className="missions-secContent grid" ref={gridRef}>
+        <div className="missions-row">
+          <h3>I. Réflexion & Analyse</h3>
+        </div>
+        <div className="missions-row">
+          <h3>II. Réflexion & Analyse</h3>
+        </div>
+        <div className="missions-row">
+          <h3>III. Réflexion & Analyse</h3>
+        </div>
       </div>
     </div>
   );

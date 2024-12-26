@@ -59,7 +59,7 @@ export default function Header() {
 
   return (
     <header className={`header-container ${showHeader ? "show" : "hide"}`}>
-      <div className="logo">
+      <div className="header-logo">
         <h1
           onClick={() => {
             navigate("/"); // Navigation si nécessaire
@@ -71,12 +71,12 @@ export default function Header() {
         <h2>ARCHITECTE DE-HMONP</h2>
       </div>
 
-      <div className="hamburger-menu" onClick={toggleMobileMenu}>
+      <div className="header-hamburger-menu" onClick={toggleMobileMenu}>
         {isMobileOn ? "X" : "☰"}
       </div>
 
       <div className={`header-content ${isMobileOn ? "mobile-open" : ""}`}>
-        <ul className="nav-list">
+        <ul className="header-nav-list">
           <li onClick={() => handleNavigation("news")}>
             <span>ACTUALITÉS</span>
           </li>
