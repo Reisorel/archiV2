@@ -32,4 +32,56 @@
   font-size: 1rem; /* Taille de police */
   font-weight: 500; /* Épaisseur de la police */
   color: #333; /* Couleur du texte */
+  text-align: left;
+}
+
+.missions-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Aligne le haut du texte et de l'image */
+}
+
+.accordion-content-text {
+  flex: 3; /* Le texte occupe 3 parts */
+  background-color: transparent;
+}
+
+.accordion-content.visible {
+  display: flex;
+  max-height: 1000px; /* Ajuste selon le contenu */
+}
+
+.chevron-icon {
+  transition: transform 0.3s ease;
+  width: 40px; /* Ajuste la taille selon tes besoins */
+  height: auto;
+  margin-right: 2rem;
+}
+
+.chevron-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.accordion-content-image {
+  flex: 1; /* L'image occupe 1 part */
+  background-color: transparent;
+  margin-right: 0;
+}
+
+.accordion-content-image img {
+  max-width: 80%; /* Pour s'assurer que l'image s'adapte */
+  height: auto;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  margin-left: 4rem;
 }/*# sourceMappingURL=Missions.css.map */
