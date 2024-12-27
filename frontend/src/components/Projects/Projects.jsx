@@ -1,11 +1,14 @@
+import "./Projects.css";
+
+
 export default function Projects() {
 
   return (
-    <div id="missions" className="missions-container">
-      <div className="secTitle">
+    <div id="projects" className="projects-container">
+      <div className="projects-secTitle">
+        <h3 className="projects-title">PROJETS</h3>
       </div>
-        <h3 className="title">PROJETS</h3>
-      <div className="secContent grid">
+      <div className="projects-secContent grid">
 
       </div>
     </div>

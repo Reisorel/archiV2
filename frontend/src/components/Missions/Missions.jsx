@@ -5,6 +5,8 @@ import downChevron from "../../assets/icons/down-arrow-black.svg";
 import "./Missions.css";
 
 const img1 = "images/missions/reflexion-1.jpg";
+const img2 = "images/missions/plan-2.jpg";
+const img3 = "images/missions/urbain-2.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,7 +42,7 @@ export default function Missions() {
         scrollTrigger: {
           trigger: titleRef.current,
           start: "top 90%",
-          toggleActions: "play none none none"
+          toggleActions: "play none none none",
         },
       }
     );
@@ -64,7 +66,7 @@ export default function Missions() {
             scrollTrigger: {
               trigger: item,
               start: "top 90%", // Début de l'animation
-              toggleActions: "play none none none"
+              toggleActions: "play none none none",
             },
           }
         );
@@ -102,7 +104,7 @@ export default function Missions() {
             />
           </div>
           <div
-            className={`accordion-content ${
+            className={`accordion-content grid ${
               isAccordionOpen ? "visible" : "hidden"
             } `}
           >
@@ -153,17 +155,17 @@ export default function Missions() {
                   </p>
                   <ul>
                     <li>
-                      J’explore les interactions entre l’architecture, le
+                      Exploration des interactions entre l’architecture, le
                       paysage, la lumière et les usages afin de garantir une
                       intégration harmonieuse.
                     </li>
                     <li>
-                      Je réalise des relevés précis sur site pour mieux
+                      Réalisation des relevés précis sur site pour mieux
                       comprendre les potentialités et les contraintes
                       spécifiques du lieu.
                     </li>
                     <li>
-                      Je prends en compte l’histoire et l’identité du site pour
+                      Prise en compte l’histoire et l’identité du site pour
                       concevoir un projet respectueux de son environnement et
                       des attentes des parties prenantes.
                     </li>
@@ -197,19 +199,19 @@ export default function Missions() {
             </div>
 
             <div className="accordion-content-image">
-              <img src={img1} alt="" />
-              <img src={img1} alt="" />
-              <img src={img1} alt="" />
+              <div className="image-large">
+                <img src={img1} alt="" />
+              </div>
+              <div className="image-small-container">
+                <div className="image-small">
+                  <img src={img2} alt="" />
+                </div>
+                <div className="image-small">
+                  <img src={img3} alt="" />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className="missions-row">
-          <h2>II. CONCEPTION ET DESIGN</h2>
-        </div>
-
-        <div className="missions-row">
-          <h2>III. REALISATION ET SUIVI</h2>
         </div>
       </div>
     </div>
