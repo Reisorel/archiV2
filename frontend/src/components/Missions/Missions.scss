@@ -6,7 +6,7 @@
 
 .missions-title {
   border-top: 2px solid black; /* Épaisseur et couleur du trait */
-  font-size: 32px;
+  font-size: 2rem;
   margin-top: 5rem;
   margin-bottom: 5rem;
 }
@@ -46,6 +46,7 @@
 
 .missions-accordion-header h2{
 margin-left: 1rem;
+font-size: 1.8rem;
 }
 
 .accordion-content {
@@ -58,12 +59,58 @@ margin-left: 1rem;
 
 .accordion-content-text {
   flex: 2; /* Le texte occupe 3 parts */
+  color: #333;
+  line-height: 1.6; /* Espacement entre les lignes */
+  padding: 1rem; /* Espacement interne */
+
+}
+
+.accordion-content-text h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0; /* Ligne décorative */
+  padding-bottom: 0.5rem;
+}
+
+.accordion-content-text h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .accordion-content.visible {
   display: flex;
-  max-height: 1000px; /* Ajuste selon le contenu */
+  max-height: 1500px; /* Ajuste selon le contenu */
 }
+
+.paragraph-group {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.paragraph-group p {
+  margin: 0; /* Supprime les marges de toutes les balises <p> dans .paragraph-group */
+}
+
+.accordion-content-text ul {
+  margin-left: 1.5rem; /* Décalage pour les listes */
+  padding-left: 1rem;
+  list-style: none; /* Supprime les puces */
+}
+
+.accordion-content-text h4{
+  list-style-type: none;
+}
+
+.accordion-content-text li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  font-weight: 300;
+  list-style-type: square;
+}
+
 
 .chevron-icon {
   transition: transform 0.3s ease;
@@ -80,6 +127,7 @@ margin-left: 1rem;
   flex: 1; /* Les images occupent 1 part */
   display: grid;
   gap: 1rem; /* Espacement entre les images */
+  padding-top: 5rem;
 }
 
 .image-large {

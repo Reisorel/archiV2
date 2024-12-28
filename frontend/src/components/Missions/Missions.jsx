@@ -8,6 +8,16 @@ const img1 = "images/missions/reflexion-1.jpg";
 const img2 = "images/missions/plan-2.jpg";
 const img3 = "images/missions/urbain-2.jpg";
 
+const img4 = "images/missions/4planscrayons.jpg";
+const img5 = "images/missions/5ordi.jpg";
+const img6 = "images/missions/6verticalhouse.jpg";
+
+const img7 = "images/missions/7construction.jpg";
+const img8 = "images/missions/8escalier.jpg";
+const img9 = "images/missions/9maison.jpg";
+
+// icons
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Missions() {
@@ -15,10 +25,10 @@ export default function Missions() {
   const gridRef = useRef(null);
 
   // initialisation état menu accordéon
-  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
+  const [isAccordionOpen, setIsAccordionOpen] = useState(null);
 
-  const toggleAccordion = () => {
-    setIsAccordionOpen(!isAccordionOpen);
+  const toggleAccordion = (index) => {
+    setIsAccordionOpen(isAccordionOpen === index ? null : index);
   };
 
   useEffect(() => {
@@ -95,64 +105,75 @@ export default function Missions() {
 
       <div className="missions-secContent grid" ref={gridRef}>
         <div className="missions-row">
-          <div className="missions-accordion-header" onClick={toggleAccordion}>
+          <div
+            className="missions-accordion-header"
+            onClick={() => toggleAccordion(1)}
+          >
             <h2>I. REFLEXION ET ANALYSE</h2>
             <img
               src={downChevron}
               alt="Chevron icon"
-              className={`chevron-icon ${isAccordionOpen ? "rotate" : ""}`}
+              className={`chevron-icon ${
+                isAccordionOpen === 1 ? "rotate" : ""
+              }`}
             />
           </div>
           <div
             className={`accordion-content grid ${
-              isAccordionOpen ? "visible" : "hidden"
+              isAccordionOpen === 1 ? "visible" : "hidden"
             } `}
           >
             <div className="accordion-content-text">
               <h3>OBJECTIF :</h3>
-              <p>
-                La phase de réflexion et d’analyse est le socle de tout projet
-                architectural réussi. Forte de 10 ans d’expérience en agence, je
-                mets à profit une expertise approfondie pour poser des bases
-                solides à chaque projet.
-              </p>
-              <p>
-                Cette étape permet d’anticiper les contraintes, d’explorer les
-                possibilités et de définir une direction claire et sur mesure,
-                toujours en dialogue avec mes clients.
-              </p>
+              <div className="paragraph-group">
+                <p>
+                  La phase de conception est essentielle dans le processus
+                  architectural : c’est à cette étape que la réflexion se
+                  concrétise. Mon objectif est de traduire vos besoins et
+                  aspirations en un projet clair, fonctionnel et esthétique
+                </p>
+                <br></br>
+                <p>
+                  Chaque espace est conçu et pensé sur mesure pour répondre à
+                  vos usages spécifiques, tout en dialoguant harmonieusement
+                  avec son environnement.
+                </p>
+              </div>
+
               <h3>ETAPES :</h3>
               <ul>
                 <li>
                   <h4>Études de faisabilité</h4>
-                  <p>
-                    Avant de dessiner la première esquisse, j’analyse en
-                    profondeur la faisabilité du projet. Cette étape consiste à
-                    :
-                  </p>
+                  <div className="paragraph-group">
+                    <p>
+                      Avant de dessiner la première esquisse, j’analyse en
+                      profondeur la faisabilité du projet.
+                    </p>
+                  </div>
                   <ul>
                     <li>
-                      Identifier les contraintes techniques (structure, accès,
-                      orientation, réseaux).
+                      Identification des contraintes techniques (structure,
+                      accès, orientation, réseaux).
                     </li>
                     <li>
-                      Respecter les réglementations en vigueur (urbanisme,
-                      normes de sécurité, performance énergétique)
+                      Respect des réglementations en vigueur (urbanisme, normes
+                      de sécurité, performance énergétique)
                     </li>
                     <li>
-                      Évaluer les aspects financiers pour garantir que le projet
-                      s’inscrit dans votre budget, tout en optimisant les choix
-                      techniques et esthétiques.
+                      Évaluation des aspects financiers pour garantir que le
+                      projet s’inscrit dans votre budget, tout en optimisant les
+                      choix techniques et esthétiques.
                     </li>
                   </ul>
                 </li>
                 <li>
                   <h4>Diagnostics du lieu</h4>
-                  <p>
-                    Chaque projet s’inscrit dans un contexte unique, qu’il
-                    s’agisse d’une construction neuve, d’une rénovation ou d’une
-                    réhabilitation. Lors de cette phase :
-                  </p>
+                  <div className="paragraph-group">
+                    <p>
+                      Etude contextualisée du site, ses spécificités et son
+                      environnement.
+                    </p>
+                  </div>
                   <ul>
                     <li>
                       Exploration des interactions entre l’architecture, le
@@ -173,11 +194,16 @@ export default function Missions() {
                 </li>
                 <li>
                   <h4>Conseils personnalisés</h4>
-                  <p>
-                    En tant qu’indépendante, je privilégie une approche humaine
-                    et personnalisée. Chaque client et chaque projet étant
-                    unique, je m’attache à :
-                  </p>
+                  <div className="paragraph-group">
+                    <p>
+                      En tant qu’indépendante, je privilégie une approche
+                      humaine et personnalisée.
+                    </p>
+                    <p>
+                      Chaque client et chaque projet étant unique, je m’attache
+                      à :
+                    </p>
+                  </div>
                   <ul>
                     <li>
                       Vous écouter pour comprendre vos besoins, vos envies et
@@ -208,6 +234,273 @@ export default function Missions() {
                 </div>
                 <div className="image-small">
                   <img src={img3} alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="missions-row">
+          <div
+            className="missions-accordion-header"
+            onClick={() => toggleAccordion(2)}
+          >
+            <h2>II. DESIGN ET CONCEPTION</h2>
+            <img
+              src={downChevron}
+              alt="Chevron icon"
+              className={`chevron-icon ${
+                isAccordionOpen === 2 ? "rotate" : ""
+              }`}
+            />
+          </div>
+          <div
+            className={`accordion-content grid ${
+              isAccordionOpen === 2 ? "visible" : "hidden"
+            } `}
+          >
+            <div className="accordion-content-text">
+              <h3>OBJECTIF :</h3>
+              <div className="paragraph-group">
+                <p>
+                  La phase de conception constitue le socle du projet
+                  d'architecte : c’est à cette étape que la réflexion se
+                  concrétise. Mon objectif est de traduire vos besoins et
+                  aspirations en un projet clair, fonctionnel et esthétique.
+                </p>
+                <br></br>
+                <p>
+                  Chaque espace est pensé, conçu et formalisé sur mesure pour
+                  répondre à vos usages spécifiques, tout en dialoguant
+                  harmonieusement avec son environnement.
+                </p>
+              </div>
+
+              <h3>ETAPES :</h3>
+              <ul>
+                <li>
+                  <h4>Conception architecturale</h4>
+                  <div className="paragraph-group">
+                    <p>
+                      Imaginer et concevoir des espaces uniques, durables et
+                      adaptés à vos usages :
+                    </p>
+                  </div>
+                  <ul>
+                    <li>
+                      Je traduis vos besoins en solutions architecturales
+                      personnalisées, alliant créativité et rigueur technique.
+                    </li>
+                    <li>
+                      Chaque projet est conçu pour optimiser les espaces, la
+                      lumière et les circulations, en garantissant un confort
+                      optimal.
+                    </li>
+                    <li>
+                      Intégration systématique d'une réflexion sur la durabilité
+                      et l’impact environnemental, avec des choix responsables
+                      en termes de matériaux et d’implantation.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <h4>Aménagement intérieur</h4>
+                  <div className="paragraph-group">
+                    <p>
+                      L’intérieur d’un espace est aussi important que sa
+                      structure. Chaque détail est étudié pour créer un
+                      environnement harmonieux et accueillant :
+                    </p>
+                  </div>
+                  <ul>
+                    <li>
+                      Travail sur les volumes et les proportions pour maximiser
+                      l’usage et le confort.
+                    </li>
+                    <li>
+                      Sélection soignée des matériaux, textures et couleurs pour
+                      refléter vos goûts et vos besoins, toujours en respect du
+                      budget définit.
+                    </li>
+                    <li>
+                      Mise en valeur des ouvertures et de la lumière naturelle
+                      pour créer des espaces lumineux et agréables à vivre.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <h4>Esquisses et rendus 3D</h4>
+                  <div className="paragraph-group">
+                    <p>
+                      Formalisation tangible et profesionnelle du projet afin
+                      d'illustrer chaque détail de votre futur espace avant sa
+                      mise en œuvre :
+                    </p>
+                  </div>
+                  <ul>
+                    <li>
+                      Réalisation d'esquisses claires et des rendus 3D détaillés
+                      pour illustrer les propositions.
+                    </li>
+                    <li>
+                      Ces visualisations permettent d’explorer différentes
+                      options et de prendre des décisions en toute sérénité.
+                    </li>
+                    <li>
+                      Les maquettes numériques offrent une vue réaliste du
+                      projet, facilitant les ajustements et l’alignement avec
+                      vos attentes.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div className="accordion-content-image">
+              <div className="image-large">
+                <img src={img4} alt="" />
+              </div>
+              <div className="image-small-container">
+                <div className="image-small">
+                  <img src={img5} alt="" />
+                </div>
+                <div className="image-small">
+                  <img src={img6} alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="missions-row">
+          <div
+            className="missions-accordion-header"
+            onClick={() => toggleAccordion(3)}
+          >
+            <h2>III. REALISATION ET SUIVI</h2>
+            <img
+              src={downChevron}
+              alt="Chevron icon"
+              className={`chevron-icon ${
+                isAccordionOpen === 3 ? "rotate" : ""
+              }`}
+            />
+          </div>
+          <div
+            className={`accordion-content grid ${
+              isAccordionOpen === 3 ? "visible" : "hidden"
+            } `}
+          >
+            <div className="accordion-content-text">
+              <h3>OBJECTIF :</h3>
+              <div className="paragraph-group">
+                <p>
+                  La phase de réalisation marque le passage du projet à sa
+                  concrétisation. Mon rôle est de m’assurer que chaque étape
+                  respecte la vision définie, les contraintes techniques et les
+                  attentes initiales.
+                </p>
+                <br></br>
+                <p>
+                  À travers un suivi rigoureux, je veille à ce que les travaux
+                  soient exécutés dans les règles de l’art, tout en restant
+                  disponible pour ajuster les détails si nécessaire.
+                </p>
+              </div>
+
+              <h3>ETAPES :</h3>
+              <ul>
+                <li>
+                  <h4>Démarches administratives</h4>
+                  <div className="paragraph-group">
+                    <p>
+                      La gestion des autorisations et des obligations légales
+                      est une étape essentielle pour assurer la conformité du
+                      projet :
+                    </p>
+                  </div>
+                  <ul>
+                    <li>
+                      Constitution et dépôt des dossiers administratifs, tels
+                      que les permis de construire et les déclarations
+                      préalables.
+                    </li>
+                    <li>
+                      Veille à la conformité avec les normes locales d'urbanisme
+                      et de sécurité.
+                    </li>
+                    <li>
+                      Coordination avec les parties prenantes institutionnelles
+                      pour garantir l'acceptation des dossiers sans retard.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <h4>Coordination et suivi des travaux</h4>
+                  <div className="paragraph-group">
+                    <p>
+                      Une supervision active et un dialogue constant avec les
+                      entreprises du bâtiment pour s'assurer d'une exécution
+                      fluide et rapide :
+                    </p>
+                  </div>
+                  <ul>
+                    <li>
+                      Sélection d’artisans et prestataires qualifiés, adaptés à
+                      la spécificité du projet.
+                    </li>
+                    <li>
+                      Suivi du calendrier des travaux pour garantir le respect
+                      des délais.
+                    </li>
+                    <li>
+                      Vérification de la conformité avec les plans et le cahier
+                      des charges.
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <h4>Contrôle & Livraison</h4>
+                  <div className="paragraph-group">
+                    <p>
+                      La phase de contrôle et de livraison est l’aboutissement
+                      de votre projet architectural.
+                    </p>
+                    <p>
+                      Mon objectif est de garantir que la réalisation respecte
+                      scrupuleusement la vision définie, en assurant un haut
+                      niveau de qualité pour chaque détail.
+                    </p>
+                  </div>
+                  <ul>
+                    <li>
+                      Inspections régulières pour vérifier la conformité des
+                      travaux avec les plans, résoudre les imprévus et garantir
+                      des finitions impeccables.
+                    </li>
+                    <li>
+                      Validation du bon fonctionnement des installations
+                      techniques (électricité, plomberie, ventilation) et
+                      ajustements finaux.
+                    </li>
+                    <li>
+                      Remise officielle de l’espace, accompagné d’une prise en
+                      main personnalisée et, si nécessaire, d’un suivi
+                      post-livraison.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <div className="accordion-content-image">
+              <div className="image-large">
+                <img src={img7} alt="" />
+              </div>
+              <div className="image-small-container">
+                <div className="image-small">
+                  <img src={img8} alt="" />
+                </div>
+                <div className="image-small">
+                  <img src={img9} alt="" />
                 </div>
               </div>
             </div>
