@@ -13,8 +13,16 @@
 }
 
 .missions-intro {
-  text-align: center;
+  text-align: left;
   font-size: 24px;
+  padding-bottom: 1rem;
+}
+
+.missions-intro p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #555;
 }
 
 .missions-secContent {

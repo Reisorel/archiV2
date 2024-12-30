@@ -3,53 +3,141 @@
   background-color: #f3f3f3;
   display: flex;
   flex-direction: row; /* Les éléments sont alignés horizontalement */
-  align-items: center; /* Centre verticalement les enfants */
-  margin-top: 0px;
+  align-items: center;
+  justify-content: space-between; /* Centre les enfants horizontalement */
   width: 100%;
   position: relative; /* Nécessaire pour le centrage absolu */
-  margin-top: 15px;
+  margin-top: 5rem;
+  padding-top: 1rem;
+  position: relative; /* Nécessaire pour que l'absolu fonctionne */
+  border-top: 0.5px solid #ddd; /* Ligne fine au-dessus du footer */
+}
+
+.left-paragraph {
+  width: 15rem;
+  align-self: flex-start; /* Aligne le paragraphe en haut de sa div parente */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 1rem;
+  margin-left: 2rem;
+  padding: 1rem;
+  border-right: 1px solid #ddd; /* Ligne verticale entre les colonnes */
+}
+
+.left-paragraph p {
+  margin: 0;
+}
+
+.left-paragraph p:nth-child(2) {
+  margin-top: 1rem; /* Ajoute une marge uniquement au deuxième <p> */
 }
 
 .ordre {
   display: flex; /* Garde le contenu aligné verticalement */
-  align-items: center;
-  margin-left: 2rem; /* Décalage à gauche */
-  margin-right: 2rem; /* Décalage à gauche */
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
-.footer-paragraph {
-  margin-top: 0;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20rem;
-  height: auto;
-  text-align: center;
-}
-
-.footer-paragraph {
-  display: flex;
-  align-items: center;
+  margin-top: 1rem;
 }
 
 .ordre img {
-  width: 175px;
+  width: 200px;
   height: auto;
+}
+
+.center-paragraph {
+  align-self: flex-start; /* Aligne le paragraphe en haut de sa div parente */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem;
+  border-left: 1px solid #ddd; /* Ligne verticale entre les colonnes */
+  border-right: 1px solid #ddd; /* Ligne verticale entre les colonnes */
+}
+
+.center-paragraph p {
+  margin: 0;
+}
+
+.center-paragraph p:not(:last-child) {
+  margin-bottom: 1rem; /* Ajoute une marge seulement entre les paragraphes */
 }
 
 .chevron {
   display: flex;
-  align-items: center;
-  position: absolute;
-  right: 2rem;
-  margin-left: 2rem;
   cursor: pointer;
+  align-items: center; /* Centre le contenu dans le chevron */
+  justify-content: center;
+  margin: 1rem;
+  margin-top: 2rem;
+  transition: transform 0.3s ease-in-out; /* Transition fluide pour d'autres changements */
 }
 
+.chevron:hover {
+  animation: shakeY 1s ease-in-out; /* Applique l'animation verticale au survol */
+}
+
+@keyframes shakeY {
+  0%, 100% {
+    transform: translateY(0); /* Position initiale */
+  }
+  25% {
+    transform: translateY(-5px); /* Déplace légèrement vers le haut */
+  }
+  50% {
+    transform: translateY(5px); /* Déplace légèrement vers le bas */
+  }
+  75% {
+    transform: translateY(-5px); /* Retourne légèrement vers le haut */
+  }
+}
 .chevron img {
   height: 40px;
   width: auto;
+}
+
+.right-paragraph {
+  width: 15rem;
+  display: flex;
+  border-left: 1px solid #ddd; /* Ligne verticale entre les colonnes */
+  align-self: flex-start; /* Aligne le paragraphe en haut de sa div parente */
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  margin-right: 2rem;
+  padding: 1rem;
+}
+
+.right-paragraph p {
+  margin: 0;
+}
+
+.right-paragraph p:not(:last-child) {
+  margin-bottom: 1rem; /* Ajoute une marge seulement entre les paragraphes */
+}
+
+.icon-container {
+  display: flex;
+}
+
+.icon {
+  color: rgb(0, 0, 0);
+  width: 30px;
+  height: auto;
+  margin: 1rem;
+  outline: none; /* Supprime le contour bleu au clic/focus */
+}
+
+.icon:hover {
+  color: rgb(163, 4, 248); /* Couleur au survol (violet Instagram) */
+  transform: scale(1.1); /* Légère mise en avant au survol */
+  cursor: pointer;
+}
+
+.icon:nth-last-child(1):hover {
+  color: rgb(5, 53, 142);
+  cursor: pointer;
+  outline: none; /* Supprime le contour bleu au clic/focus */
+  background: transparent;
 }/*# sourceMappingURL=footer.css.map */

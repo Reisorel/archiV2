@@ -1,5 +1,9 @@
+@charset "UTF-8";
 .title {
-  font-size: 32px;
+  border-top: 2px solid black; /* Épaisseur et couleur du trait */
+  font-size: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .about-container {
