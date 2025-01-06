@@ -1,4 +1,5 @@
 .news-title {
+  font-family: "DINPro";
   border-top: 2px solid black; /* Épaisseur et couleur du trait */
   font-size: 32px;
   margin-top: 5rem;
@@ -63,12 +64,13 @@
 
       /* Contenu texte */
       .news-hoverContent {
+        font-family: "DINPro";
+        font-weight: 500;
         position: absolute;
         bottom: 15px; /* Calé en bas */
         left: 15px; /* Calé à gauche */
         color: #fff;
         font-size: 1.2rem;
-        font-weight: bold;
         text-align: left;
         opacity: 0; /* Invisible par défaut */
         transition: opacity 0.3s ease;

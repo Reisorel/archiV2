@@ -21,22 +21,22 @@ const sliderData = [
   {
     id: 2,
     name: "MAISON INDIVIDUELLE",
-    description: "SAINT-AUBIN, NORMANDIE",
+    description: "Saint-Aubin, Normandie",
   },
   {
     id: 3,
     name: "GARAGE INDIVIDUEL",
-    description: "RENNES, BRETAGNE",
+    description: "Rennes, Bretagne",
   },
   {
     id: 4,
     name: "FERME DOUBLE NIVEAU",
-    description: "BREVILLE, NORMANDIE",
+    description: "Breville, Normandie",
   },
   {
     id: 5,
     name: "RENOVATION",
-    description: "Nantes, PAYS-DE-LA-LOIRE",
+    description: "Nantes, Pays-De-La-Loire",
   },
 ];
 

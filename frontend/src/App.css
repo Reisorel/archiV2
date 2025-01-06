@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import './assets/fonts/fonts.css';
+@import "./assets/styles/main.css";
 @import 'aos/dist/aos.css';
 body {
   font-family: "DIN Pro", sans-serif;

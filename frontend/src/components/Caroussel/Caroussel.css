@@ -33,6 +33,7 @@
 }
 
 .image-name {
+  font-family: "DINPro";
   font-size: 18px;
   font-weight: bold;
   text-transform: uppercase; /* Pour imiter le style de l'exemple */
@@ -40,6 +41,7 @@
 }
 
 .image-description {
+  font-family: "DINPro";
   font-size: 14px;
   font-style: italic; /* Pour différencier visuellement */
 }

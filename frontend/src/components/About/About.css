@@ -1,6 +1,7 @@
 @charset "UTF-8";
 .title {
   border-top: 2px solid black; /* Épaisseur et couleur du trait */
+  font-family: "DinPro";
   font-size: 2rem;
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -12,7 +13,7 @@
 }
 
 .main-infos {
-  font-family: "DIN Pro", sans-serif;
+  font-family: "DINPro";
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,25 +32,27 @@
 }
 
 .text {
+  font-family: "DINPro";
   display: flex;
   flex-direction: column;
 }
 
 .main-infos h1 {
-  font-size: 26px;
-  font-family: "DIN Pro", sans-serif;
+  font-family: "DINPro";
   font-weight: 700;
+  font-size: 26px;
+  font-family: "DINPro", sans-serif;
   letter-spacing: 2px;
 }
 
 .main-infos .line1 {
   font-size: 22px;
-  font-family: "DIN Pro", sans-serif;
+  font-family: "DINPro";
   font-weight: 500;
 }
 
 .main-infos .line2 {
   font-size: 22px;
-  font-family: "DIN Pro", sans-serif;
+  font-family: "DINPro";
   font-weight: 300;
 }/*# sourceMappingURL=About.css.map */
