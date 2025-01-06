@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Définit le dossier contenant les fichiers compilés du frontend à servir comme fichiers statiques
-app.use(express.static(path.join(__dirname, "../Frontend/dist")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 // Route principale pour servir l'application frontend
 app.get("*", (req, res) => {
