@@ -15,7 +15,7 @@
 .infos-container {
   display: grid;
   grid-template-columns: 1fr 2fr 1.5fr; /* La 1ère colonne est 2 fois plus petite */
-  gap: 5em;
+  gap: 5rem;
   background-color: transparent;
 }
 
@@ -44,20 +44,50 @@
 
 .presentation-text {
   text-align: justify;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #333; /* Couleur légèrement adoucie */
+  margin: 0 auto; /* Centre la section */
+}
+
+.presentation-text p:first-of-type {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.presentation-text p {
+  margin-bottom: 1.5rem;
 }
 
 .CV {
   display: flex;
   flex-direction: column;
   padding: 1rem 0; /* Ajoute un peu d'espace en haut et en bas */
-  overflow: hidden;
-  gap: 3rem; /* Définit l'espacement vertical entre chaque .date */
+  overflow: visible;
+  gap: 2rem; /* Définit l'espacement vertical entre chaque .date */
+  position: relative;
+}
+
+.CV::before {
+  content: "";
+  position: absolute;
+  left: -2rem; /* Décalage de la barre de 2rem vers la gauche */
+  overflow: visible;
+  width: 2px;
+  top: 5px; /* Légère marge en haut pour équilibrer */
+  height: calc(100% - 10px); /* Ajuste la hauteur pour qu’elle ne dépasse pas en bas */
+  background: #333;
 }
 
 .date {
   display: flex;
-  align-items: center; /* Aligne verticalement si les éléments ont des hauteurs différentes */
-  gap: 0.5rem; /* Espace entre l'année et le texte */
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05); /* Légère transparence */
+  border-radius: 8px;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .year {

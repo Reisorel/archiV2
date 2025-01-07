@@ -86,6 +86,9 @@ export default function Header() {
           <li onClick={() => handleNavigation("projects", true)}>
           <span>PROJETS</span>
           </li>
+          <li onClick={() => handleNavigation("about")}>
+          <span>A PROPOS</span>
+          </li>
           <li onClick={() => handleNavigation("footer")}>
             <span>CONTACT</span>
           </li>
