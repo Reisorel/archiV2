@@ -3,14 +3,6 @@ import ordre from "../../assets/logos/ordre.jpg";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import upChevron from "../../assets/icons/up-arrow.svg";
-import { CiMail } from "react-icons/ci";
-import { IoPhonePortraitOutline } from "react-icons/io5";
-import { CiInstagram } from "react-icons/ci";
-import { FaLinkedin } from "react-icons/fa";
-import { IoLogoLinkedin } from "react-icons/io";
-
-import insta from "../../assets/icons/insta.svg";
-
 
 // Enregistrement du plugin GSAP
 gsap.registerPlugin(ScrollToPlugin);
@@ -55,30 +47,25 @@ function Footer() {
           </p>
           <p>cassandre.architecte@gmail.com</p>
           <div className="icon-container">
-            <CiInstagram
-              className="icon"
-              role="button" /* Indique que c'est cliquable */
-              tabIndex={0} /* Rendre l'icône navigable avec le clavier */
-              onClick={() =>
-                window.open(
-                  "https://www.instagram.com/cassandremrn_architecte?igsh=MWw5Z2pzOGI1NnYwaQ==",
-                  "_blank"
-                )
-              }
-            />
-            <IoLogoLinkedin
-              className="icon"
-              role="button" /* Indique que c'est cliquable */
-              tabIndex={0} /* Rendre l'icône navigable avec le clavier */
-              onClick={() =>
-                window.open(
-                  "https://www.linkedin.com/in/cassandre-marion-0ab776128/",
-                  "_blank"
-                )
-              }
-            />
+            <div className="icon">
+              <a
+                href="https://www.linkedin.com/in/cassandre-marion-0ab776128/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bx bxl-linkedin"></i>
+              </a>
+            </div>
+            <div className="icon">
+              <a
+              href="https://www.instagram.com/cassandremrn_architecte?igsh=MWw5Z2pzOGI1NnYwaQ=="
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+                <i className="bx bxl-instagram"></i>
+              </a>
+            </div>
           </div>
-
         </div>
       </div>
     </footer>
