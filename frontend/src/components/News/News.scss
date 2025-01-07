@@ -84,7 +84,7 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
-        transition: transform 0.3s ease; /* Effet de zoom */
+        transition: transform 3s ease; /* Effet de zoom */
       }
 
       &:hover {
@@ -94,10 +94,12 @@
 
         &::before {
           opacity: 1; /* Affiche le voile gris */
+          transition: opacity 3s ease; /* Transition fluide pour l'apparition */
         }
 
         .news-hoverContent {
           opacity: 1; /* Affiche le texte */
+          transition: opacity 1s ease; /* Transition fluide pour l'affichage du texte */
         }
       }
     }

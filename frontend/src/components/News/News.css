@@ -81,14 +81,16 @@
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: transform 0.3s ease; /* Effet de zoom */
+  transition: transform 3s ease; /* Effet de zoom */
 }
 .news-secContent .news-singleNew .news-imageDiv:hover img {
   transform: scale(1.1); /* Zoom sur l'image */
 }
 .news-secContent .news-singleNew .news-imageDiv:hover::before {
   opacity: 1; /* Affiche le voile gris */
+  transition: opacity 3s ease; /* Transition fluide pour l'apparition */
 }
 .news-secContent .news-singleNew .news-imageDiv:hover .news-hoverContent {
   opacity: 1; /* Affiche le texte */
+  transition: opacity 1s ease; /* Transition fluide pour l'affichage du texte */
 }/*# sourceMappingURL=News.css.map */
