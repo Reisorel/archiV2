@@ -85,7 +85,7 @@ export default function About() {
             </div>
             <div className="presentation-text-low">
               <p>
-                <span className="line2">N'héitez pas à me contacter pour discuter ensemble de  </span>
+                <span className="line2">N'hésitez pas à me contacter pour discuter ensemble de  </span>
                 <span className="line2">
                   votre projet {article}{" "}
                   <span ref={wordRef} className="line3">
@@ -131,22 +131,6 @@ export default function About() {
         </div>
       </div>
 
-      {/*
-
-        <div className="text1">
-          <p>
-
-          </p>
-        </div>
-
-        <div className="text1">
-
-        </div>
-        <div className="CV">
-          <p>2017</p>
-          <p>2018</p>
-
-        </div> */}
     </div>
   );
 }

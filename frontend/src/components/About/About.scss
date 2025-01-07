@@ -70,12 +70,11 @@
 .CV::before {
   content: "";
   position: absolute;
-  left: -2rem; /* Décalage de la barre de 2rem vers la gauche */
-  overflow: visible;
-  width: 2px;
-  top: 5px; /* Légère marge en haut pour équilibrer */
-  height: calc(100% - 10px); /* Ajuste la hauteur pour qu’elle ne dépasse pas en bas */
-  background: #333;
+  left: -2rem; /* Positionne la ligne sur le côté gauche */
+  top: 1rem; /* Démarre la ligne après le padding */
+  bottom: 1rem; /* Termine la ligne avant le padding */
+  width: 2px; /* Épaisseur de la ligne */
+  background-color: black; /* Couleur de la ligne */
 }
 
 
@@ -109,8 +108,3 @@
   font-weight: 300;
 }
 
-.main-infos .line3 {
-  font-size: 5rem;
-  font-family: "DINPro";
-  font-weight: 300;
-}
