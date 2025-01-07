@@ -12,47 +12,100 @@
   margin-right: 2rem;
 }
 
-.main-infos {
-  font-family: "DINPro";
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.infos-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr; /* La 1ère colonne est 2 fois plus petite */
+  gap: 5rem;
+  background-color: transparent;
 }
 
-.picture img {
-  display: block;
-  width: 200px;
-  height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-  align-items: center;
-  border: 1px solid;
-  margin: 20px;
-}
-
-.text {
-  font-family: "DINPro";
+.about-grid-item {
   display: flex;
   flex-direction: column;
 }
 
-.main-infos h1 {
-  font-family: "DINPro";
-  font-weight: 700;
-  font-size: 26px;
-  font-family: "DINPro", sans-serif;
-  letter-spacing: 2px;
+.picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0; /* Padding en haut et en bas */
+  width: 100%;
+  height: calc(100% - 2rem); /* Soustraction du padding */
+  overflow: hidden; /* Empêche le dépassement */
+}
+
+.picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Remplit l'espace sans déformer */
+  border-radius: 2px;
+}
+
+.presentation-text {
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #333; /* Couleur légèrement adoucie */
+  margin: 0 auto; /* Centre la section */
+}
+
+.presentation-text p:first-of-type {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.presentation-text p {
+  margin-bottom: 1.5rem;
+}
+
+.CV {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0; /* Ajoute un peu d'espace en haut et en bas */
+  overflow: visible;
+  gap: 2rem; /* Définit l'espacement vertical entre chaque .date */
+  position: relative;
+}
+
+.CV::before {
+  content: "";
+  position: absolute;
+  left: -2rem; /* Positionne la ligne sur le côté gauche */
+  top: 1rem; /* Démarre la ligne après le padding */
+  bottom: 1rem; /* Termine la ligne avant le padding */
+  width: 2px; /* Épaisseur de la ligne */
+  background-color: black; /* Couleur de la ligne */
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05); /* Légère transparence */
+  border-radius: 8px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.year {
+  font-weight: bold; /* Optionnel : mise en valeur de l'année */
+  font-size: 1.2rem;
+}
+
+.description {
+  font-style: normal; /* Optionnel : style distinct pour la description */
 }
 
 .main-infos .line1 {
-  font-size: 22px;
+  font-size: 1rem;
   font-family: "DINPro";
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .main-infos .line2 {
-  font-size: 22px;
+  font-size: 1rem;
   font-family: "DINPro";
   font-weight: 300;
 }/*# sourceMappingURL=About.css.map */

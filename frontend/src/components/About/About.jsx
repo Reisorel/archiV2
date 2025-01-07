@@ -52,22 +52,85 @@ export default function About() {
       <div className="secTitle">
         <h3 className="title">A PROPOS</h3>
       </div>
-      <div className="main-infos">
-        <div className="picture">
-          <img src={portrait} alt="" />
+      <div className="infos-container">
+        <div className="about-grid-item">
+          <div className="picture">
+            <img src={portrait} alt="" />
+          </div>
         </div>
-        <div className="text">
-          <h1>CASSANDRE MARION</h1>
-          <span className="line1">ARCHITECTE DIPLOMEE D'ETAT.</span>
-          <span className="line2">J'interviens depuis 2016 sur tous</span>
-          <span className="line2">
-            vos projets {article}{" "}
-            <span ref={wordRef} className="line3">
-              {words[index]}
-            </span>{" "}
-          </span>
+
+        <div className="about-grid-item">
+          <div className="presentation-text">
+            <div className="presentation-text-high">
+              <p>
+                Architecte indépendante de 32 ans, je suis diplômée de l’École
+                d’Architecture de Rouen, où j’ai pu approfondir mes
+                connaissances lors d’une année
+                d’étude à Rome.
+              </p>
+              <p>
+                Habilitée à exercer en mon nom propre depuis 2017, je mets à
+                profit dix ans d’expérience en agences parisiennes. J’ai
+                travaillé sur des projets publics et privés, allant de la
+                réhabilitation d’appartements haussmanniens à la conception
+                d’immeubles, en passant par la réalisation de complexes
+                nautiques municipaux. Je mêle ainsi architecture contemporaine
+                et patrimoniale
+              </p>
+              <p>
+                De retour à l'Ouest, je conçois des lieux sur-mesure,
+                fonctionnels et inspirants, en phase avec vos besoins et votre
+                histoire.
+              </p>
+            </div>
+            <div className="presentation-text-low">
+              <p>
+                <span className="line2">N'hésitez pas à me contacter pour discuter ensemble de  </span>
+                <span className="line2">
+                  votre projet {article}{" "}
+                  <span ref={wordRef} className="line3">
+                    {words[index]}
+                  </span>{" "}
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="about-grid-item">
+          <div className="CV">
+            <div className="date">
+              <span className="year">2024 - </span>
+              <span className="description">
+                Création de mon agence (Rennes)
+              </span>
+            </div>
+            <div className="date">
+              <span className="year">2021 - </span>
+              <span className="description">
+                Chatillon Architecture (Paris)
+              </span>
+            </div>
+            <div className="date">
+              <span className="year">2018 - </span>
+              <span className="description">
+                Dubuisson Architecture (Paris)
+              </span>
+            </div>
+            <div className="date">
+              <span className="year">2017 - </span>
+              <span className="description">Architecte HMONP</span>
+            </div>
+            <div className="date">
+              <span className="year">2016 - </span>
+              <span className="description">
+                Diplôme d'Architecte - ENSAM Rouen
+              </span>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   );
 }
