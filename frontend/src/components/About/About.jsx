@@ -65,7 +65,7 @@ export default function About() {
               <p>
                 Architecte indépendante de 32 ans, je suis diplômée de l’École
                 d’Architecture de Rouen, où j’ai pu approfondir mes
-                connaissances sur l’architecture italienne lors d’une année
+                connaissances lors d’une année
                 d’étude à Rome.
               </p>
               <p>
@@ -85,7 +85,7 @@ export default function About() {
             </div>
             <div className="presentation-text-low">
               <p>
-                <span className="line2">N'héitez pas à me contacter pour </span>
+                <span className="line2">N'héitez pas à me contacter pour discuter ensemble de  </span>
                 <span className="line2">
                   votre projet {article}{" "}
                   <span ref={wordRef} className="line3">

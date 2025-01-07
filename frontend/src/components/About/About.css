@@ -15,7 +15,7 @@
 .infos-container {
   display: grid;
   grid-template-columns: 1fr 2fr 1.5fr; /* La 1ère colonne est 2 fois plus petite */
-  gap: 2rem;
+  gap: 5em;
   background-color: transparent;
 }
 
