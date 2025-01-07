@@ -15,7 +15,7 @@
   position: fixed;
   z-index: 100;
   box-sizing: border-box; /* Inclut le padding dans la largeur */
-  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1); /* Ombre uniquement vers le bas */
+  border-bottom: 0.5px solid #ddd; /* Ligne fine au-dessus du footer */
 }
 
 .header-logo {
@@ -88,20 +88,8 @@
   width: 100%; /* Étendre la ligne de gauche à droite */
 }
 
-.header-nav-list span::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0; /* Commence à droite */
-  width: 0; /* Ligne invisible à l'état initial */
-  height: 2px; /* Épaisseur de la ligne */
-  background-color: rgba(0, 0, 0, 0.7254901961); /* Couleur de la ligne */
-  transition: width 0.4s ease; /* Animation fluide sur la largeur */
-}
-
-.header-nav-list span:hover::after {
-  width: 100%; /* Étendre la ligne de droite à gauche */
-  left: 0;
+.header-nav-list span::before {
+  transition: width 0.4s ease-in-out;
 }
 
 .header-container.show {
