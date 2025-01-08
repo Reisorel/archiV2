@@ -1,0 +1,70 @@
+.projects-title {
+  border-top: 2px solid black; /* Épaisseur et couleur du trait */
+  font-family: "DinPro";
+  font-size: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.projects-container {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.secContent-projects-grid {
+  display: grid;
+  grid-template-rows: (1fr); /* 1 lignes égales */
+  gap: 2rem; /* Espacement entre les éléments */
+  text-align: center; /* Centre le texte dans chaque cellule */
+  align-items: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.projects-row {
+  border-radius: 2px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  height: 500px; /* Même hauteur que grid-auto-rows */
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  justify-content: center; /* Assure un positionnement correct des enfants */
+}
+
+.projects-imageDiv {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  position: relative;
+}
+
+.projects-imageDiv img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  cursor: pointer; /* << ICI pour l’effet de pointeur */
+}
+
+img::hover {
+  cursor: pointer;
+}
+
+.project-name {
+  text-align: left;
+}
+
+.project-name h2 {
+  font-family: "DinPro";
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 4rem;
+  display: inline-block;
+  border-bottom: 1px solid #333; 
+}

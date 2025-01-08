@@ -10,50 +10,70 @@ export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [showHeader, setShowHeader] = useState(true); // Contrôle la visibilité
-  const [lastScrollY, setLastScrollY] = useState(0); // Dernière position de scroll
-  // Contrôle du mode mobile
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileOn, setIsMobileOn] = useState(false);
 
-  // Fonctionbasculer état mobile
-  const toggleMobileMenu = () => {
-    setIsMobileOn((prev) => !prev);
-  };
+  // Basculer l'état du menu mobile
+  const toggleMobileMenu = () => setIsMobileOn((prev) => !prev);
 
-  // Fonction pour gérer le header au scroll
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
+  // Ferme le menu mobile après un clic sur un lien
+  const closeMobileMenu = () => setIsMobileOn(false);
 
-    if (currentScrollY > lastScrollY) {
-      setShowHeader(false); // Scroll vers le bas -> on cache le header
-    } else {
-      setShowHeader(true); // Scroll vers le haut -> on montre le header
-    }
-
-    setLastScrollY(currentScrollY);
-  };
-
+  // Gérer l'affichage du header au scroll
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      setShowHeader(window.scrollY < lastScrollY);
+      setLastScrollY(window.scrollY);
+    };
 
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Fonction pour scroller à une section spécifique
-  const handleNavigation = (targetId, isExternalPage = false) => {
-    if (isExternalPage) {
-      // Si c'est une page externe (comme "projets"), navigue directement
-      navigate(`/${targetId}`);
-    } else if (location.pathname === "/") {
-      // Si tu es sur la page d'accueil, scrolle smooth
+  // Gestion du scroll après navigation
+  useEffect(() => {
+    if (location.state?.scrollTo) {
       gsap.to(window, {
         duration: 0.8,
-        scrollTo: `#${targetId}`,
+        scrollTo: `#${location.state.scrollTo}`,
         ease: "power2.inOut",
       });
+    }
+  }, [location]);
+
+  const handleNavigation = (targetId, isExternalPage = false) => {
+    closeMobileMenu(); // Ferme le menu mobile après un clic
+
+    if (isExternalPage) {
+      if (location.pathname === "/projects") {
+        // Si on est déjà sur /projects et qu'on reclique sur "PROJETS", scroll smooth vers le haut
+        gsap.to(window, { duration: 0.8, scrollTo: { y: 0 }, ease: "power2.inOut" });
+      } else {
+        // Sinon, navigation directe vers "/projects" sans animation et reset en haut immédiatement
+        navigate("/projects");
+        window.scrollTo(0, 0);
+      }
+      return;
+    }
+
+    if (targetId === "footer") {
+      // Si on clique sur "CONTACT", scroll smooth vers le footer sans changer de page
+      gsap.to(window, { duration: 0.8, scrollTo: `#footer`, ease: "power2.inOut" });
+      return;
+    }
+
+    if (location.pathname === "/") {
+      // Si on est déjà sur la page principale, scroll smooth vers la section demandée
+      gsap.to(window, { duration: 0.8, scrollTo: `#${targetId}`, ease: "power2.inOut" });
     } else {
-      // Sinon, redirige vers la page d'accueil avec un état pour scroller
-      navigate("/", { state: { scrollTo: targetId } });
+      // Naviguer vers "/" et scroller immédiatement après le changement d'URL
+      navigate("/", { replace: true });
+
+      // Attendre le prochain cycle de rendu avant d'exécuter GSAP
+      requestAnimationFrame(() => {
+        gsap.to(window, { duration: 0.8, scrollTo: `#${targetId}`, ease: "power2.inOut" });
+      });
     }
   };
 
@@ -62,8 +82,8 @@ export default function Header() {
       <div className="header-logo">
         <h1
           onClick={() => {
-            navigate("/"); // Navigation si nécessaire
-            window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll fluide vers le haut
+            navigate("/");
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
           CASSANDRE MARION
@@ -77,21 +97,11 @@ export default function Header() {
 
       <div className={`header-content ${isMobileOn ? "mobile-open" : ""}`}>
         <ul className="header-nav-list">
-          <li onClick={() => handleNavigation("news")}>
-            <span>ACTUALITÉS</span>
-          </li>
-          <li onClick={() => handleNavigation("missions")}>
-            <span>MISSIONS</span>
-          </li>
-          <li onClick={() => handleNavigation("projects", true)}>
-          <span>PROJETS</span>
-          </li>
-          <li onClick={() => handleNavigation("about")}>
-          <span>A PROPOS</span>
-          </li>
-          <li onClick={() => handleNavigation("footer")}>
-            <span>CONTACT</span>
-          </li>
+          <li onClick={() => handleNavigation("news")}><span>ACTUALITÉS</span></li>
+          <li onClick={() => handleNavigation("missions")}><span>MISSIONS</span></li>
+          <li onClick={() => handleNavigation("projects", true)}><span>PROJETS</span></li>
+          <li onClick={() => handleNavigation("about")}><span>A PROPOS</span></li>
+          <li onClick={() => handleNavigation("footer")}><span>CONTACT</span></li>
         </ul>
       </div>
     </header>

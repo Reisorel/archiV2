@@ -38,10 +38,8 @@
 }
 
 .missions-row {
-  // background-color: #f5f5f5;
   padding: 1rem; /* Espacement autour du texte */
-  border-radius: 5px; /* Coins arrondis */
-  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 2px; /* Coins arrondis */
   font-size: 1rem; /* Taille de police */
   font-weight: 500; /* Épaisseur de la police */
   color: #333; /* Couleur du texte */
@@ -58,9 +56,9 @@
 
 .missions-accordion-header h2{
 font-family: "DinPro";
+font-size: 1.5rem;
 margin-left: 1rem;
-font-size: 1.8rem;
-font-weight: 700;
+font-weight: 500;
 }
 
 .accordion-content {
@@ -82,7 +80,7 @@ font-weight: 700;
 .accordion-content-text h3 {
   font-family: "DinPro";
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 1rem;
   border-bottom: 2px solid #e0e0e0; /* Ligne décorative */
   padding-bottom: 0.5rem;

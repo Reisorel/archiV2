@@ -1,0 +1,29 @@
+@charset "UTF-8";
+.projectDetails-container {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.projectDetails-presentation-text {
+  background-color: aquamarine;
+}
+
+.projectDetails-imageDiv {
+  display: flex;
+  width: 100%; /* La div prend toute la largeur dispo */
+  max-width: 600px; /* Optionnel : limite la largeur max si tu veux */
+  height: 400px; /* Hauteur fixe de 200px */
+  margin: 0 auto; /* Centre la div horizontalement (si on a un max-width) */
+  overflow: hidden; /* Cache la partie de l'image qui dépasse */
+  position: left; /* Pour un bon contrôle du positionnement interne */
+}
+
+.projectDetails-imageDiv img {
+  display: block; /* Pour éliminer les éventuels espaces blancs */
+  width: 100%; /* L’image s’ajuste en largeur à la div */
+  height: 100%; /* ...et aussi en hauteur (tout en conservant ratio grâce à object-fit) */
+  -o-object-fit: cover;
+     object-fit: cover; /* Remplit la div sans distorsion, en rognant si besoin */
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%; /* Centre l’image (facultatif, défaut = center) */
+}/*# sourceMappingURL=ProjectsDetails.css.map */
