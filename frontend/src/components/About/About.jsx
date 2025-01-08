@@ -100,29 +100,29 @@ export default function About() {
         <div className="about-grid-item">
           <div className="CV">
             <div className="date">
-              <span className="year">2024 - </span>
+              <span className="year">2024.</span>
               <span className="description">
                 Création de mon agence (Rennes)
               </span>
             </div>
             <div className="date">
-              <span className="year">2021 - </span>
+              <span className="year">2021.</span>
               <span className="description">
                 Chatillon Architecture (Paris)
               </span>
             </div>
             <div className="date">
-              <span className="year">2018 - </span>
+              <span className="year">2018.</span>
               <span className="description">
                 Dubuisson Architecture (Paris)
               </span>
             </div>
             <div className="date">
-              <span className="year">2017 - </span>
+              <span className="year">2017.</span>
               <span className="description">Architecte HMONP</span>
             </div>
             <div className="date">
-              <span className="year">2016 - </span>
+              <span className="year">2016.</span>
               <span className="description">
                 Diplôme d'Architecte - ENSAM Rouen
               </span>

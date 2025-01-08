@@ -40,7 +40,7 @@
 
 .missions-row {
   padding: 1rem; /* Espacement autour du texte */
-  border-radius: 5px; /* Coins arrondis */
+  border-radius: 2px; /* Coins arrondis */
   font-size: 1rem; /* Taille de police */
   font-weight: 500; /* Épaisseur de la police */
   color: #333; /* Couleur du texte */

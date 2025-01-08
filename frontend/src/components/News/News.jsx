@@ -125,12 +125,12 @@ export default function News() {
               <div className="news-imageDiv">
                 <img src={imgSrc} alt={title} />
                 <div className="news-hoverContent">{title}</div>
-
               </div>
             </div>
           );
         })}
       </div>
+      
     </div>
   );
 }
