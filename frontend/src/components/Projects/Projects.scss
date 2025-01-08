@@ -16,7 +16,7 @@
 .secContent-projects-grid {
   display: grid;
   grid-template-rows: (1fr); /* 1 lignes égales */
-  gap: 4rem; /* Espacement entre les éléments */
+  gap: 2rem; /* Espacement entre les éléments */
   text-align: center; /* Centre le texte dans chaque cellule */
   align-items: center;
   margin-left: 2rem;
@@ -40,13 +40,19 @@
   width: 100%;
   overflow: hidden;
   object-fit: cover;
+  position: relative;
 }
 
-img {
+.projects-imageDiv img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   overflow: hidden;
+  cursor: pointer; /* << ICI pour l’effet de pointeur */
+}
+
+img::hover {
+  cursor: pointer;
 }
 
 .project-name {
@@ -58,7 +64,7 @@ img {
   font-size: 1.5rem;
   font-weight: 500;
   margin-top: 0;
-  margin-bottom: 2rem;
-  display: inline-block; /* Permet au border-bottom de ne s'appliquer qu'au texte */
-  border-bottom: 1px solid #333; /* Soulignement uniquement sous le texte */
+  margin-bottom: 4rem;
+  display: inline-block;
+  border-bottom: 1px solid #333; 
 }

@@ -1,71 +1,29 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import "./Projects.css";
-
-const project1 = "images/news/Appartement1.jpg";
-const project2 = "images/news/Ferme1.jpg";
-const project3 = "images/news/Campagne1.jpg";
-const project4 = "images/news/Appartement2.jpg";
-const project5 = "images/news/Chambre1.jpg";
-
-const data = [
-  {
-    id: 1,
-    imgSrc: project1,
-    title: "APPARTEMENT PARISIEN",
-    location: "Paris 7ème",
-    grade: "Rénovation",
-    description: "Une bien belle rénov !",
-  },
-  {
-    id: 2,
-    imgSrc: project2,
-    title: "CORPS DE FERME",
-    location: "Calvados",
-    grade: "Extension",
-    description: "Belle ferme",
-  },
-  {
-    id: 3,
-    imgSrc: project3,
-    title: "MAISON DE BORD DE MER",
-    location: "Calvados",
-    grade: "Agrandissement",
-    description: "Belle maison à Bernières",
-  },
-  {
-    id: 4,
-    imgSrc: project4,
-    title: "APPARTEMENT DE VILLE",
-    location: "Paris 7ème",
-    grade: "Rénovation",
-    description: "Photo cuisine",
-  },
-  {
-    id: 5,
-    imgSrc: project5,
-    title: "CHAMBRE",
-    location: "Loire-Atlantique",
-    grade: "Agrandissement",
-    description: "Dessin chambre",
-  },
-];
+import projectsData from "./ProjectsDetails/ProjectData";
+import { useNavigate } from "react-router-dom";
 
 export default function Projects() {
+  const navigate = useNavigate(); // Hook pour naviguer entre les pages
+
   return (
     <div className="projects-container">
-      <div className="projects-secTitle">
+      <div id="projects" className="projects-secTitle">
         <h3 className="projects-title">PROJETS</h3>
       </div>
 
       <div className="secContent-projects-grid">
-        {data.map(({ id, imgSrc, title }) => (
-          <div key={id} className="projects-row">
+        {projectsData.map((projet) => (
+          <div key={projet.id} className="projects-row">
             <div className="project-name">
-              <h2>{title}</h2>
-              </div>
-            <div className="projects-imageDiv">
-              <img src={imgSrc} alt={title} />
+              <h2>{projet.title}</h2>
+            </div>
+            <div
+              className="projects-imageDiv"
+              onClick={() => navigate(`/projects/${projet.slug}`)}
+            >
+              <img src={projet.imgSrc} alt={projet.title} />
             </div>
           </div>
         ))}

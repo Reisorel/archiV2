@@ -9,6 +9,8 @@ import News from "./components/News/News";
 import Missions from "./components/Missions/Missions";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
+import ProjectsDetails from "./components/Projects/ProjectsDetails/ProjectsDetails";
+
 import Test from "./components/Test/Test";
 
 function App() {
@@ -19,9 +21,8 @@ function App() {
           <Header />
           <Background>
             <Routes>
-              {/* Page d'accueil : tout est inclus dans Background */}
-              {/* <Route path="/test" element={<Test/>}/> */}
               <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:slug" element={<ProjectsDetails />} />
               <Route
                 path="/"
                 element={
@@ -30,12 +31,12 @@ function App() {
                     <News />
                     <Missions />
                     <About />
-                    <Footer />
                   </>
                 }
               />
             </Routes>
           </Background>
+          <Footer />
         </BrowserRouter>
       </div>
     </>

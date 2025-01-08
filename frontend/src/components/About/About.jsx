@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import "./About.css";
-const portrait = "/images/welcome/Cassandre.jpg";
+const portrait = "/images/about/Cassandre.jpg";
 
 export default function About() {
   const words = [
