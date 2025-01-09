@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import "./Projects.css";
-import projectsData from "./ProjectsDetails/ProjectData";
+import { projectsData } from "./ProjectsDetails/ProjectData";
 import { useNavigate } from "react-router-dom";
 
 export default function Projects() {
@@ -16,7 +16,9 @@ export default function Projects() {
       <div className="secContent-projects-grid">
         {projectsData.map((projet) => (
           <div key={projet.id} className="projects-row">
-            <div className="project-name">
+            <div className="project-name"
+            onClick={() => navigate(`/projects/${projet.slug}`)}
+            >
               <h2>{projet.title}</h2>
             </div>
             <div

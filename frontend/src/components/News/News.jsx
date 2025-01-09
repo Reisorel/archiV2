@@ -63,7 +63,6 @@ export default function News() {
       console.error("titleRef.current is null. The reference is not attached.");
       return;
     }
-
         // Animation pour le titre
         gsap.fromTo(
           titleRef.current,
@@ -130,7 +129,7 @@ export default function News() {
           );
         })}
       </div>
-      
+
     </div>
   );
 }

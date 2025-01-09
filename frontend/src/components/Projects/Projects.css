@@ -10,8 +10,8 @@
 }
 
 .projects-container {
-  margin-left: 10rem;
-  margin-right: 10rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
 }
 
 .secContent-projects-grid {
@@ -34,6 +34,10 @@
   overflow: hidden;
   position: relative;
   justify-content: center; /* Assure un positionnement correct des enfants */
+}
+
+.project-name {
+  cursor: pointer;
 }
 
 .projects-imageDiv {
