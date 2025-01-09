@@ -16,7 +16,9 @@ export default function Projects() {
       <div className="secContent-projects-grid">
         {projectsData.map((projet) => (
           <div key={projet.id} className="projects-row">
-            <div className="project-name">
+            <div className="project-name"
+            onClick={() => navigate(`/projects/${projet.slug}`)}
+            >
               <h2>{projet.title}</h2>
             </div>
             <div
