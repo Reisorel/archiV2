@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import "./Projects.css";
-import projectsData from "./ProjectsDetails/ProjectData";
+import { projectsData } from "./ProjectsDetails/ProjectData";
 import { useNavigate } from "react-router-dom";
 
 export default function Projects() {

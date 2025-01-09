@@ -4,7 +4,36 @@ const project3 = "/images/news/Campagne1.jpg";
 const project4 = "/images/news/Appartement2.jpg";
 const project5 = "/images/news/Chambre1.jpg";
 
-const projectsData = [
+const house1 ="/images/projects/house1.jpg"
+const house2 ="/images/projects/house2.jpg"
+const house3 ="/images/projects/house3.jpg"
+const house4 ="/images/projects/house4.jpg"
+const house5 ="/images/projects/house5.jpg"
+const house6 ="/images/projects/house6.jpg"
+const house7 ="/images/projects/house7.jpg"
+const house8 ="/images/projects/house8.jpg"
+const house9 ="/images/projects/house9.jpg"
+const house10 ="/images/projects/house10.jpg"
+
+
+export const galleryProjects = [
+  {
+    gallerySlug: "gallery1",
+    house1: house1,
+    house2: house2,
+    house3: house3,
+    house4: house4,
+    house5: house5,
+    house6: house6,
+    house7: house7,
+    house8: house8,
+    house9: house9,
+    house10: house10
+  }
+];
+
+
+export const projectsData = [
   {
     id: 1,
     slug: "appartement-parisien",
@@ -60,4 +89,4 @@ const projectsData = [
   },
 ];
 
-export default projectsData;
+// export default projectsData;
