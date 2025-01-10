@@ -125,7 +125,7 @@
 .projectDetails-2 {
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(6, 150px); /* Largeur de base 150px */
+  grid-template-columns: repeat(6, 260px); /* Largeur de base 150px */
   grid-template-rows: repeat(10, 100px); /* Hauteur de base 300px */
   gap: 1rem;
   width: max-content; /* Empêche la grille de s'étirer au-delà des éléments */

@@ -53,17 +53,35 @@ export default function Caroussel() {
   const sliderImagesRef = useRef(null); // Référence pour l'image
 
   function toggleImage(indexPayload) {
-    setSliderIndex((state) => {
-      if (indexPayload + state > sliderData.length) {
-        return 1;
-      } else if (indexPayload + state < 1) {
-        return sliderData.length;
-      } else {
-        return state + indexPayload;
-      }
+    if (!sliderImagesRef.current) return; // Vérifie que l'élément existe
+
+    // Animation de sortie de l'image actuelle
+    gsap.to(sliderImagesRef.current, {
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.inOut",
+      onComplete: () => {
+        // Mise à jour de l'index de l'image après l'animation
+        setSliderIndex((prevIndex) => {
+          const newIndex = prevIndex + indexPayload;
+          if (newIndex > sliderData.length) return 1;
+          if (newIndex < 1) return sliderData.length;
+          return newIndex;
+        });
+
+        // Animation d'entrée pour la nouvelle image
+        setTimeout(() => {
+          if (sliderImagesRef.current) {
+            gsap.to(sliderImagesRef.current, {
+              opacity: 1,
+              duration: 0.5,
+              ease: "power2.inOut",
+            });
+          }
+        }, 50); // Petit délai pour s'assurer que l'image est bien changée
+      },
     });
   }
-
 
   useEffect(() => {
     const intervalID = setInterval(() => toggleImage(1), 4000);

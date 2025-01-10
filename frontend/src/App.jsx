@@ -11,6 +11,7 @@ import Missions from "./components/Missions/Missions";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import ProjectsDetails from "./components/Projects/ProjectsDetails/ProjectsDetails";
+import Test from "./components/Test/Test";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Header />
           <Background>
             <Routes>
+              <Route path="/test" element={<Test/>} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/projects/:slug" element={<ProjectsDetails />} />
               <Route
