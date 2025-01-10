@@ -8,9 +8,6 @@ export default function ProjectsDetails() {
   const projet = projectsData.find((proj) => proj.slug === slug);
   const gallery = galleryProjects.find((g) => g.gallerySlug === "gallery1");
 
-  console.log("Gallery trouvé :", gallery);
-  console.log("House1 image path :", gallery?.house1);
-
   if (!projet) {
     return <h2>Projet introuvable</h2>;
   }
@@ -85,10 +82,19 @@ export default function ProjectsDetails() {
         <img src={gallery.house4} alt={"house4"} />
         </div>
         <div className="ProjectDetail-2-col">
-        <img src={gallery.house5} alt={"house6"} />
+        <img src={gallery.house5} alt={"house5"} />
+        </div>
+         <div className="ProjectDetail-2-col">
+        <img src={gallery.house6} alt={"house6"} />
         </div>
         <div className="ProjectDetail-2-col">
         <img src={gallery.house7} alt={"house7"} />
+        </div>
+        <div className="ProjectDetail-2-col">
+        <img src={gallery.house8} alt={"house8"} />
+        </div>
+        <div className="ProjectDetail-2-col">
+        <img src={gallery.house9} alt={"house9"} />
         </div>
       </div>
     </div>

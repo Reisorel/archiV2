@@ -29,6 +29,13 @@ export default function Missions() {
 
   const toggleAccordion = (index) => {
     setIsAccordionOpen(isAccordionOpen === index ? null : index);
+
+    if (isAccordionOpen !== index) {
+      document.getElementById("subtitle")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   useEffect(() => {
@@ -87,9 +94,9 @@ export default function Missions() {
   return (
     <div id="missions" className="missions-container">
       <div className="missions-secTitle">
-        <h3 ref={titleRef} className="missions-title">
+        <h1 ref={titleRef} className="title">
           MISSIONS
-        </h3>
+        </h1>
       </div>
       <div className="missions-intro">
         <p>
@@ -109,7 +116,8 @@ export default function Missions() {
             className="missions-accordion-header"
             onClick={() => toggleAccordion(1)}
           >
-            <h2>I. REFLEXION ET ANALYSE</h2>
+            <h2 id="subtitle" className="subtitle">I. REFLEXION ET ANALYSE</h2>
+
             <img
               src={downChevron}
               alt="Chevron icon"
@@ -143,7 +151,7 @@ export default function Missions() {
               <h3>ETAPES :</h3>
               <ul>
                 <li>
-                  <h4>Études de faisabilité</h4>
+                  <h4>ETUDES DE FAISABILITE</h4>
                   <div className="paragraph-group">
                     <p>
                       Avant de dessiner la première esquisse, j’analyse en
@@ -167,7 +175,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                  <h4>Diagnostics du lieu</h4>
+                  <h4>DIAGNOSTIC DU LIEU</h4>
                   <div className="paragraph-group">
                     <p>
                       Etude contextualisée du site, ses spécificités et son
@@ -193,7 +201,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                  <h4>Conseils personnalisés</h4>
+                  <h4>CONSEILS PERSONNALISES</h4>
                   <div className="paragraph-group">
                     <p>
                       En tant qu’indépendante, je privilégie une approche
@@ -244,7 +252,7 @@ export default function Missions() {
             className="missions-accordion-header"
             onClick={() => toggleAccordion(2)}
           >
-            <h2>II. DESIGN ET CONCEPTION</h2>
+            <h2 id="subtitle" className="subtitle">II. DESIGN ET CONCEPTION</h2>
             <img
               src={downChevron}
               alt="Chevron icon"
@@ -278,7 +286,7 @@ export default function Missions() {
               <h3>ETAPES :</h3>
               <ul>
                 <li>
-                  <h4>Conception architecturale</h4>
+                  <h4>CONCEPTION ARCHITECTURALE</h4>
                   <div className="paragraph-group">
                     <p>
                       Imaginer et concevoir des espaces uniques, durables et
@@ -303,7 +311,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                  <h4>Aménagement intérieur</h4>
+                  <h4>AMENAGEMENT INTERIEUR</h4>
                   <div className="paragraph-group">
                     <p>
                       L’intérieur d’un espace est aussi important que sa
@@ -328,7 +336,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                  <h4>Esquisses et rendus 3D</h4>
+                  <h4>ESQUISSE ET RENDUS 3D</h4>
                   <div className="paragraph-group">
                     <p>
                       Formalisation tangible et profesionnelle du projet afin
@@ -375,7 +383,7 @@ export default function Missions() {
             className="missions-accordion-header"
             onClick={() => toggleAccordion(3)}
           >
-            <h2>III. REALISATION ET SUIVI</h2>
+            <h2 id="subtitle" className="subtitle">III. REALISATION ET SUIVI</h2>
             <img
               src={downChevron}
               alt="Chevron icon"
@@ -409,7 +417,7 @@ export default function Missions() {
               <h3>ETAPES :</h3>
               <ul>
                 <li>
-                  <h4>Démarches administratives</h4>
+                  <h4>DEMARCHES ADMINISTRATIVES</h4>
                   <div className="paragraph-group">
                     <p>
                       La gestion des autorisations et des obligations légales
@@ -434,7 +442,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                  <h4>Coordination et suivi des travaux</h4>
+                  <h4>COORDINATION ET SUIVI DES TRAVAUX</h4>
                   <div className="paragraph-group">
                     <p>
                       Une supervision active et un dialogue constant avec les
@@ -458,7 +466,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                  <h4>Contrôle & Livraison</h4>
+                  <h4>CONTRÔLE DES LIVRAISONS</h4>
                   <div className="paragraph-group">
                     <p>
                       La phase de contrôle et de livraison est l’aboutissement

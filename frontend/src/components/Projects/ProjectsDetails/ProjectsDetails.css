@@ -3,6 +3,9 @@
   margin-top: 8rem;
   margin-left: 8rem;
   margin-right: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ==== MASTER GRID 1 ==== */
@@ -19,6 +22,7 @@
   width: 100%; /* La div prend toute la largeur dispo */
   margin: 0 auto; /* Centre la div horizontalement (si on a un max-width) */
   overflow: hidden; /* Cache la partie de l'image qui dépasse */
+  border-radius: 2px;
 }
 
 .projectDetails-1-imageDiv img {
@@ -127,11 +131,11 @@
 .projectDetails-2 {
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
-  grid-template-rows: repeat(2, 300px); /* 2 lignes de 300px */
-  grid-row: 1fr;
+  grid-template-columns: repeat(6, 150px); /* Largeur de base 150px */
+  grid-template-rows: repeat(10, 100px); /* Hauteur de base 300px */
   gap: 1rem;
-  width: 100%;
+  width: -moz-max-content;
+  width: max-content; /* Empêche la grille de s'étirer au-delà des éléments */
 }
 
 .ProjectDetail-2-col {
@@ -142,23 +146,52 @@
   align-items: top;
   box-shadow: 0 2px 4px rgba(237, 237, 237, 0.4);
   overflow: hidden;
-  height: 300px; /* Taille uniforme pour toutes les colonnes */
   width: 100%;
+  grid-auto-flow: dense;
+}
+
+.ProjectDetail-2-col:nth-child(1) {
+  grid-column: span 2; /* S'étend sur 2 colonnes */
+  grid-row: span 2; /* S'étend sur 2 lignes */
+}
+
+.ProjectDetail-2-col:nth-child(2) {
+  grid-column: span 2; /* S'étend sur 2 colonnes */
+  grid-row: span 2; /* S'étend sur 2 lignes */
+}
+
+.ProjectDetail-2-col:nth-child(3) {
+  grid-column: span 2; /* S'étend sur 2 colonnes */
+  grid-row: span 4; /* S'étend sur 2 lignes */
 }
 
 .ProjectDetail-2-col:nth-child(4) {
-  grid-column: span 2; /* S'étend sur 2 colonnes */
-  grid-row: span 2; /* S'étend sur 2 lignes */
-  height: auto; /* Permet de prendre la hauteur définie par grid-template-rows */
+  grid-column: span 4; /* S'étend sur 2 colonnes */
+  grid-row: span 3; /* S'étend sur 2 lignes */
 }
 
 .ProjectDetail-2-col:nth-child(5) {
-  grid-row: span 2; /* S'étend sur 2 lignes */
-  height: auto; /* Permet de prendre la hauteur définie par grid-template-rows */
+  grid-column: span 2; /* S'étend sur 2 colonnes */
+  grid-row: span 3; /* S'étend sur 2 lignes */
 }
 
 .ProjectDetail-2-col:nth-child(6) {
-  grid-column: span 3; /* S'étend sur 2 colonnes */
+  grid-column: span 2; /* S'étend sur 2 colonnes */
+  grid-row: span 3; /* S'étend sur 2 lignes */
+}
+
+.ProjectDetail-2-col:nth-child(7) {
+  grid-column: span 2; /* S'étend sur 2 colonnes */
+  grid-row: span 2; /* S'étend sur 2 lignes */
+}
+
+.ProjectDetail-2-col:nth-child(8) {
+  grid-column: span 4; /* S'étend sur 2 colonnes */
+  grid-row: span 3; /* S'étend sur 2 lignes */
+}
+
+.ProjectDetail-2-col:nth-child(9) {
+  grid-column: span 2; /* S'étend sur 2 colonnes */
   grid-row: span 2; /* S'étend sur 2 lignes */
 }
 

@@ -50,7 +50,7 @@ export default function About() {
   return (
     <div id="about" className="about-container">
       <div className="secTitle">
-        <h3 className="title">A PROPOS</h3>
+        <h1 className="title">A PROPOS</h1>
       </div>
       <div className="infos-container">
         <div className="about-grid-item">

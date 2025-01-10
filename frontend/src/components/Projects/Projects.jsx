@@ -10,21 +10,23 @@ export default function Projects() {
   return (
     <div className="projects-container">
       <div id="projects" className="projects-secTitle">
-        <h3 className="projects-title">PROJETS</h3>
+        <h3 className="title">PROJETS</h3>
       </div>
 
       <div className="secContent-projects-grid">
         {projectsData.map((projet) => (
-          <div key={projet.id} className="projects-row">
-            <div className="project-name"
-            onClick={() => navigate(`/projects/${projet.slug}`)}
-            >
+          <div
+            key={projet.id}
+            className="projects-row"
+            onClick={() => {
+              navigate(`/projects/${projet.slug}`);
+              window.scrollTo(0, 0);
+            }}
+          >
+            <div className="project-name">
               <h2>{projet.title}</h2>
             </div>
-            <div
-              className="projects-imageDiv"
-              onClick={() => navigate(`/projects/${projet.slug}`)}
-            >
+            <div className="projects-imageDiv">
               <img src={projet.imgSrc} alt={projet.title} />
             </div>
           </div>

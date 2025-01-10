@@ -1,0 +1,41 @@
+@import "./fonts";
+
+body {
+  font-family: 'DIN Pro', sans-serif;
+}
+
+h1 {
+  color: #333;
+}
+
+h2 {
+  color: #333;
+}
+
+h3 {
+  color: #333;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #333; /* Couleur légèrement adoucie */
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  border-top: 2px solid black;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+}

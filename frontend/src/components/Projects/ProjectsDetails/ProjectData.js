@@ -1,9 +1,11 @@
+// images sections projects multiples
 const project1 = "/images/news/Appartement1.jpg";
 const project2 = "/images/news/Ferme1.jpg";
 const project3 = "/images/news/Campagne1.jpg";
 const project4 = "/images/news/Appartement2.jpg";
 const project5 = "/images/news/Chambre1.jpg";
 
+// images section project solo
 const house1 ="/images/projects/house1.jpg"
 const house2 ="/images/projects/house2.jpg"
 const house3 ="/images/projects/house3.jpg"
@@ -32,12 +34,12 @@ export const galleryProjects = [
   }
 ];
 
-
 export const projectsData = [
   {
     id: 1,
     slug: "appartement-parisien",
     imgSrc: project1,
+    illustration : house1,
     title: "APPARTEMENT PARISIEN",
     location: "Paris 7ème",
     grade: "Rénovation",

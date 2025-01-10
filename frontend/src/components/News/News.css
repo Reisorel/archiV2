@@ -1,12 +1,4 @@
 @charset "UTF-8";
-.news-title {
-  font-family: "DINPro";
-  border-top: 2px solid black; /* Épaisseur et couleur du trait */
-  font-size: 32px;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
 .news-container {
   margin-left: 2rem;
   margin-right: 2rem;

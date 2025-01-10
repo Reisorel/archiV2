@@ -114,7 +114,7 @@ export default function News() {
   return (
     <div id="news" className="news-container">
       <div className="news-secTitle">
-        <h3 ref={titleRef} className="news-title">ACTUALITE</h3>
+        <h1 ref={titleRef} className="title">ACTUALITE</h1>
       </div>
 
       <div ref={gridRef} className="news-secContent grid">

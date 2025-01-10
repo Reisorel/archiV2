@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -11,7 +12,6 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import ProjectsDetails from "./components/Projects/ProjectsDetails/ProjectsDetails";
 
-import Test from "./components/Test/Test";
 
 function App() {
   return (

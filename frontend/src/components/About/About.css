@@ -1,12 +1,4 @@
 @charset "UTF-8";
-.title {
-  border-top: 2px solid black; /* Épaisseur et couleur du trait */
-  font-family: "DinPro";
-  font-size: 2rem;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
 .about-container {
   margin-left: 2rem;
   margin-right: 2rem;
@@ -16,7 +8,6 @@
   display: grid;
   grid-template-columns: 1fr 2fr 1.5fr; /* La 1ère colonne est 2 fois plus petite */
   gap: 5rem;
-  background-color: transparent;
 }
 
 .about-grid-item {
@@ -46,13 +37,14 @@
   text-align: justify;
   line-height: 1.5;
   font-size: 1rem;
+  font-weight: 300;
   color: #333; /* Couleur légèrement adoucie */
   margin: 0 auto; /* Centre la section */
 }
 
 .presentation-text p:first-of-type {
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 500;
   color: #111;
 }
 
@@ -86,7 +78,6 @@
   padding: 1rem;
   background: rgba(255, 255, 255, 0.05); /* Légère transparence */
   border-radius: 8px;
-  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .year {
@@ -95,7 +86,8 @@
 }
 
 .description {
-  font-style: normal; /* Optionnel : style distinct pour la description */
+  font-style: normal;
+  font-weight: 300;
 }
 
 .main-infos .line1 {
