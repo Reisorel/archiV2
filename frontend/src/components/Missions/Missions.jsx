@@ -59,7 +59,7 @@ export default function Missions() {
         scrollTrigger: {
           trigger: titleRef.current,
           start: "top 90%",
-          toggleActions: "play none none none",
+          toggleActions: "play reverse play reverse",
         },
       }
     );
@@ -94,11 +94,15 @@ export default function Missions() {
   return (
     <div id="missions" className="missions-container">
       <div className="missions-secTitle">
-        <h1 ref={titleRef} className="title">
+        <h1
+        ref={titleRef}
+        className="title">
           MISSIONS
         </h1>
       </div>
-      <div className="missions-intro">
+      <div
+      ref={gridRef}
+      className="missions-intro">
         <p>
           Chaque projet est une rencontre unique entre vos aspirations, les
           exigences du lieu, et notre vision créative.
@@ -271,8 +275,8 @@ export default function Missions() {
             } `}
           >
             <div className="accordion-content-text">
-            <h2 className="sub-2">OBJECTIF :</h2>
-            <div className="paragraph-group">
+              <h2 className="sub-2">OBJECTIF :</h2>
+              <div className="paragraph-group">
                 <p>
                   La phase de conception constitue le socle du projet
                   d'architecte : c’est à cette étape que la réflexion se
@@ -289,8 +293,8 @@ export default function Missions() {
               <h2 className="sub-2">ETAPES :</h2>
               <ul>
                 <li>
-                <h3 className="sub-3">CONCEPTION ARCHITECTURALE</h3>
-                <div className="paragraph-group">
+                  <h3 className="sub-3">CONCEPTION ARCHITECTURALE</h3>
+                  <div className="paragraph-group">
                     <p>
                       Imaginer et concevoir des espaces uniques, durables et
                       adaptés à vos usages :
@@ -314,7 +318,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                <h3 className="sub-3">AMENAGEMENT INTERIEUR</h3>
+                  <h3 className="sub-3">AMENAGEMENT INTERIEUR</h3>
                   <div className="paragraph-group">
                     <p>
                       L’intérieur d’un espace est aussi important que sa
@@ -339,7 +343,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                <h3 className="sub-3">ESQUISSE ET RENDUS 3D</h3>
+                  <h3 className="sub-3">ESQUISSE ET RENDUS 3D</h3>
                   <div className="paragraph-group">
                     <p>
                       Formalisation tangible et profesionnelle du projet afin
@@ -403,7 +407,7 @@ export default function Missions() {
             } `}
           >
             <div className="accordion-content-text">
-            <h2 className="sub-2">OBJECTIF :</h2>
+              <h2 className="sub-2">OBJECTIF :</h2>
               <div className="paragraph-group">
                 <p>
                   La phase de réalisation marque le passage du projet à sa
@@ -421,7 +425,7 @@ export default function Missions() {
               <h2 className="sub-2">ETAPES :</h2>
               <ul>
                 <li>
-                <h3 className="sub-3">DEMARCHES ADMINISTRATIVES</h3>
+                  <h3 className="sub-3">DEMARCHES ADMINISTRATIVES</h3>
                   <div className="paragraph-group">
                     <p>
                       La gestion des autorisations et des obligations légales
@@ -446,7 +450,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                <h3 className="sub-3">COORDINATION ET SUIVI DES TRAVAUX</h3>
+                  <h3 className="sub-3">COORDINATION ET SUIVI DES TRAVAUX</h3>
                   <div className="paragraph-group">
                     <p>
                       Une supervision active et un dialogue constant avec les
@@ -470,7 +474,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                <h3 className="sub-3">CCONTRÔLE DES LIVRAISONS</h3>
+                  <h3 className="sub-3">CCONTRÔLE DES LIVRAISONS</h3>
                   <div className="paragraph-group">
                     <p>
                       La phase de contrôle et de livraison est l’aboutissement

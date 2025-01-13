@@ -63,58 +63,59 @@ export default function News() {
       console.error("titleRef.current is null. The reference is not attached.");
       return;
     }
-        // Animation pour le titre
+    // Animation pour le titre
+    gsap.fromTo(
+      titleRef.current,
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 90%",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
+
+    // Animation pour les items de la grille
+    if (gridRef.current) {
+      const items = gridRef.current.querySelectorAll(".news-singleNew");
+
+      items.forEach((item, index) => {
         gsap.fromTo(
-          titleRef.current,
+          item,
           {
-            y: 50,
             opacity: 0,
+            y: 50, // Position initiale (en-dessous)
           },
           {
-            y: 0,
             opacity: 1,
-            duration: 1.5,
+            y: 0, // Position finale (alignée normalement)
+            duration: 1,
             ease: "power3.out",
             scrollTrigger: {
-              trigger: titleRef.current,
-              start: "top 90%",
-              toggleActions: "play reverse play reverse",
+              trigger: item,
+              start: "top 90%", // Début de l'animation
+              toggleActions: "play none none none",
             },
           }
         );
-
-        // Animation pour les items de la grille
-        if (gridRef.current) {
-          const items = gridRef.current.querySelectorAll(".news-singleNew");
-
-          items.forEach((item, index) => {
-            gsap.fromTo(
-              item,
-              {
-                opacity: 0,
-                y: 50, // Position initiale (en-dessous)
-              },
-              {
-                opacity: 1,
-                y: 0, // Position finale (alignée normalement)
-                duration: 1,
-                ease: "power3.out",
-                scrollTrigger: {
-                  trigger: item,
-                  start: "top 90%", // Début de l'animation
-                  toggleActions: "play reverse play reverse",
-                },
-              }
-            );
-          });
-        }
-      }, []);
-
+      });
+    }
+  }, []);
 
   return (
     <div id="news" className="news-container">
       <div className="news-secTitle">
-        <h1 ref={titleRef} className="title">ACTUALITE</h1>
+        <h1 ref={titleRef} className="title">
+          ACTUALITE
+        </h1>
       </div>
 
       <div ref={gridRef} className="news-secContent grid">
@@ -129,7 +130,6 @@ export default function News() {
           );
         })}
       </div>
-
     </div>
   );
 }

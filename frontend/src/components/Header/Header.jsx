@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
 import { gsap } from "gsap";
@@ -13,6 +13,16 @@ export default function Header() {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileOn, setIsMobileOn] = useState(false);
+  const logoRef = useRef(null); // Référence pour GSAP
+
+
+  useEffect(() => {
+    gsap.fromTo(
+      logoRef.current,
+      { x: -300, opacity: 0 }, // Départ hors écran à gauche
+      { x: 0, opacity: 1, duration: 1.2, ease: "power3.out" } // Arrivée fluide
+    );
+  }, []);
 
   // Basculer l'état du menu mobile
   const toggleMobileMenu = () => setIsMobileOn((prev) => !prev);
@@ -90,6 +100,7 @@ export default function Header() {
   return (
     <header className={`header-container ${showHeader ? "show" : "hide"}`}>
       <div
+        ref={logoRef}
         className="header-logo"
         onClick={() => {
           navigate("/");
