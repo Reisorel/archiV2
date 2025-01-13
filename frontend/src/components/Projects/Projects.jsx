@@ -24,7 +24,7 @@ export default function Projects() {
             }}
           >
             <div className="project-name">
-              <h2>{projet.title}</h2>
+              <h2 className="sub-2">{projet.title}</h2>
             </div>
             <div className="projects-imageDiv">
               <img src={projet.imgSrc} alt={projet.title} />

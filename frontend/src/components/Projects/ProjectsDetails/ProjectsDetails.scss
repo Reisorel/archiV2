@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden; /* Cache tout ce qui dépasse */
 }
 
 /* ==== MASTER GRID 1 ==== */
@@ -51,8 +52,6 @@
 
 .projecDetails-1-title h2 {
   display: inline-block;
-  font-family: "DinPro";
-  font-weight: 500;
   margin: 0;
   margin-bottom: 1rem;
   border-bottom: 1px solid #333;
@@ -121,7 +120,7 @@
   color: #555;
 }
 
-/* ==== MASTER GRID 1 ==== */
+/* ==== MASTER GRID 2 ==== */
 .projectDetails-2 {
   margin-top: 2rem;
   display: grid;
@@ -141,6 +140,7 @@
   overflow: hidden;
   width: 100%;
   grid-auto-flow: dense;
+  cursor: pointer;
 }
 
 .ProjectDetail-2-col:nth-child(1) {
@@ -194,4 +194,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover; /* Remplit la div sans déformation */
+  transition: transform 3s ease; /* Effet de zoom */
+}
+
+.ProjectDetail-2-col:hover img {
+  transform: scale(1.1); /* Zoom sur l'image */
 }

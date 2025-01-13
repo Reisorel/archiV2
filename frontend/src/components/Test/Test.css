@@ -1,1 +1,18 @@
-/*# sourceMappingURL=Test.css.map */
+@charset "UTF-8";
+.test-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+  background-color: aqua;
+  width: 100vw; /* 100% de la largeur de la fenêtre */
+  height: 100vh; /* 100% de la hauteur de la fenêtre */
+}
+
+.box {
+  display: block;
+  height: 40px;
+  width: 40px;
+  background-color: greenyellow;
+}/*# sourceMappingURL=Test.css.map */

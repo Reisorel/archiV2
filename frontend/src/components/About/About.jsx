@@ -88,7 +88,7 @@ export default function About() {
                 <span className="line2">N'hésitez pas à me contacter pour discuter ensemble de  </span>
                 <span className="line2">
                   votre projet {article}{" "}
-                  <span ref={wordRef} className="line3">
+                  <span ref={wordRef} className="line2">
                     {words[index]}
                   </span>{" "}
                 </span>

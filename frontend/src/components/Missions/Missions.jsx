@@ -116,7 +116,9 @@ export default function Missions() {
             className="missions-accordion-header"
             onClick={() => toggleAccordion(1)}
           >
-            <h2 id="subtitle" className="subtitle">I. REFLEXION ET ANALYSE</h2>
+            <h2 id="subtitle" className="sub-2">
+              I. REFLEXION ET ANALYSE
+            </h2>
 
             <img
               src={downChevron}
@@ -132,7 +134,7 @@ export default function Missions() {
             } `}
           >
             <div className="accordion-content-text">
-              <h3>OBJECTIF :</h3>
+              <h2 className="sub-2">OBJECTIF :</h2>
               <div className="paragraph-group">
                 <p>
                   La phase de conception est essentielle dans le processus
@@ -148,10 +150,10 @@ export default function Missions() {
                 </p>
               </div>
 
-              <h3>ETAPES :</h3>
+              <h2 className="sub-2">ETAPES :</h2>
               <ul>
                 <li>
-                  <h4>ETUDES DE FAISABILITE</h4>
+                  <h3 className="sub-3">ETUDES DE FAISABILITE</h3>
                   <div className="paragraph-group">
                     <p>
                       Avant de dessiner la première esquisse, j’analyse en
@@ -175,7 +177,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                  <h4>DIAGNOSTIC DU LIEU</h4>
+                  <h3 className="sub-3">DIAGNOSTIC DU LIEU</h3>
                   <div className="paragraph-group">
                     <p>
                       Etude contextualisée du site, ses spécificités et son
@@ -201,7 +203,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                  <h4>CONSEILS PERSONNALISES</h4>
+                  <h3 className="sub-3">CONSEILS PERSONNALISES</h3>{" "}
                   <div className="paragraph-group">
                     <p>
                       En tant qu’indépendante, je privilégie une approche
@@ -252,7 +254,9 @@ export default function Missions() {
             className="missions-accordion-header"
             onClick={() => toggleAccordion(2)}
           >
-            <h2 id="subtitle" className="subtitle">II. DESIGN ET CONCEPTION</h2>
+            <h2 id="subtitle" className="sub-2">
+              II. DESIGN ET CONCEPTION
+            </h2>
             <img
               src={downChevron}
               alt="Chevron icon"
@@ -267,15 +271,14 @@ export default function Missions() {
             } `}
           >
             <div className="accordion-content-text">
-              <h3>OBJECTIF :</h3>
-              <div className="paragraph-group">
+            <h2 className="sub-2">OBJECTIF :</h2>
+            <div className="paragraph-group">
                 <p>
                   La phase de conception constitue le socle du projet
                   d'architecte : c’est à cette étape que la réflexion se
                   concrétise. Mon objectif est de traduire vos besoins et
                   aspirations en un projet clair, fonctionnel et esthétique.
                 </p>
-                <br></br>
                 <p>
                   Chaque espace est pensé, conçu et formalisé sur mesure pour
                   répondre à vos usages spécifiques, tout en dialoguant
@@ -283,11 +286,11 @@ export default function Missions() {
                 </p>
               </div>
 
-              <h3>ETAPES :</h3>
+              <h2 className="sub-2">ETAPES :</h2>
               <ul>
                 <li>
-                  <h4>CONCEPTION ARCHITECTURALE</h4>
-                  <div className="paragraph-group">
+                <h3 className="sub-3">CONCEPTION ARCHITECTURALE</h3>
+                <div className="paragraph-group">
                     <p>
                       Imaginer et concevoir des espaces uniques, durables et
                       adaptés à vos usages :
@@ -311,7 +314,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                  <h4>AMENAGEMENT INTERIEUR</h4>
+                <h3 className="sub-3">AMENAGEMENT INTERIEUR</h3>
                   <div className="paragraph-group">
                     <p>
                       L’intérieur d’un espace est aussi important que sa
@@ -336,7 +339,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                  <h4>ESQUISSE ET RENDUS 3D</h4>
+                <h3 className="sub-3">ESQUISSE ET RENDUS 3D</h3>
                   <div className="paragraph-group">
                     <p>
                       Formalisation tangible et profesionnelle du projet afin
@@ -383,7 +386,9 @@ export default function Missions() {
             className="missions-accordion-header"
             onClick={() => toggleAccordion(3)}
           >
-            <h2 id="subtitle" className="subtitle">III. REALISATION ET SUIVI</h2>
+            <h2 id="subtitle" className="sub-2">
+              III. REALISATION ET SUIVI
+            </h2>
             <img
               src={downChevron}
               alt="Chevron icon"
@@ -398,7 +403,7 @@ export default function Missions() {
             } `}
           >
             <div className="accordion-content-text">
-              <h3>OBJECTIF :</h3>
+            <h2 className="sub-2">OBJECTIF :</h2>
               <div className="paragraph-group">
                 <p>
                   La phase de réalisation marque le passage du projet à sa
@@ -406,7 +411,6 @@ export default function Missions() {
                   respecte la vision définie, les contraintes techniques et les
                   attentes initiales.
                 </p>
-                <br></br>
                 <p>
                   À travers un suivi rigoureux, je veille à ce que les travaux
                   soient exécutés dans les règles de l’art, tout en restant
@@ -414,10 +418,10 @@ export default function Missions() {
                 </p>
               </div>
 
-              <h3>ETAPES :</h3>
+              <h2 className="sub-2">ETAPES :</h2>
               <ul>
                 <li>
-                  <h4>DEMARCHES ADMINISTRATIVES</h4>
+                <h3 className="sub-3">DEMARCHES ADMINISTRATIVES</h3>
                   <div className="paragraph-group">
                     <p>
                       La gestion des autorisations et des obligations légales
@@ -442,7 +446,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                  <h4>COORDINATION ET SUIVI DES TRAVAUX</h4>
+                <h3 className="sub-3">COORDINATION ET SUIVI DES TRAVAUX</h3>
                   <div className="paragraph-group">
                     <p>
                       Une supervision active et un dialogue constant avec les
@@ -466,7 +470,7 @@ export default function Missions() {
                   </ul>
                 </li>
                 <li>
-                  <h4>CONTRÔLE DES LIVRAISONS</h4>
+                <h3 className="sub-3">CCONTRÔLE DES LIVRAISONS</h3>
                   <div className="paragraph-group">
                     <p>
                       La phase de contrôle et de livraison est l’aboutissement

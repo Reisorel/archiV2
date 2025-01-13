@@ -76,8 +76,10 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: rgba(255, 255, 255, 0.05); /* Légère transparence */
-  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #333;
 }
 
 .year {
@@ -85,19 +87,7 @@
   font-size: 1.2rem;
 }
 
-.description {
-  font-style: normal;
-  font-weight: 300;
-}
-
-.main-infos .line1 {
-  font-size: 1rem;
-  font-family: "DINPro";
-  font-weight: 300;
-}
-
-.main-infos .line2 {
-  font-size: 1rem;
-  font-family: "DINPro";
-  font-weight: 300;
+.line2 {
+  font-size: 1.2rem;
+  font-weight: 500;
 }/*# sourceMappingURL=About.css.map */

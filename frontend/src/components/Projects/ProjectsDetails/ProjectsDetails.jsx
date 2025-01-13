@@ -1,12 +1,27 @@
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import Modal from "./Modal/Modal";
 import "./ProjectsDetails.css";
 import { projectsData, galleryProjects } from "./ProjectData";
-
-import { useParams } from "react-router-dom";
 
 export default function ProjectsDetails() {
   const { slug } = useParams();
   const projet = projectsData.find((proj) => proj.slug === slug);
   const gallery = galleryProjects.find((g) => g.gallerySlug === "gallery1");
+
+  // États pour la modale
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openModal = (imageSrc) => {
+    setSelectedImage(imageSrc);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+    setIsModalOpen(false);
+  };
 
   if (!projet) {
     return <h2>Projet introuvable</h2>;
@@ -15,13 +30,12 @@ export default function ProjectsDetails() {
   return (
     <div id="projectDetails" className="projectDetails-container">
       <div className="projectDetails-1">
-        {/* Colonne 1 : Image principale */}
         <div className="projectDetails-1-imageDiv">
           <img src={projet.imgSrc} alt={projet.title} />
         </div>
         <div className="projectDetails-1-infos">
           <div className="projecDetails-1-title">
-            <h2>{projet.title}</h2>
+            <h2 className="sub-2">{projet.title}</h2>
             <p>{projet.location}</p>
           </div>
           <div className="projectDetails-1-text">
@@ -68,34 +82,40 @@ export default function ProjectsDetails() {
 
       <div className="projectDetails-2">
         <div className="ProjectDetail-2-col">
-          <div className="ProjectDetail-2-col-imgDiv">
+          <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house1)} >
             <img src={gallery.house1} alt={"house1"} />
           </div>
         </div>
-        <div className="ProjectDetail-2-col">
-        <img src={gallery.house2} alt={"house2"} />
+        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house2)}>
+          <img src={gallery.house2} alt={"house2"} />
         </div>
-        <div className="ProjectDetail-2-col">
-        <img src={gallery.house3} alt={"house3"} />
+        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house3)}>
+          <img src={gallery.house3} alt={"house3"} />
         </div>
-        <div className="ProjectDetail-2-col">
-        <img src={gallery.house4} alt={"house4"} />
+        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house4)}>
+          <img src={gallery.house4} alt={"house4"} />
         </div>
-        <div className="ProjectDetail-2-col">
-        <img src={gallery.house5} alt={"house5"} />
+        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house5)}>
+          <img src={gallery.house5} alt={"house5"} />
         </div>
-         <div className="ProjectDetail-2-col">
-        <img src={gallery.house6} alt={"house6"} />
+        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house6)}>
+          <img src={gallery.house6} alt={"house6"} />
         </div>
-        <div className="ProjectDetail-2-col">
-        <img src={gallery.house7} alt={"house7"} />
+        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house7)}>
+          <img src={gallery.house7} alt={"house7"} />
         </div>
-        <div className="ProjectDetail-2-col">
-        <img src={gallery.house8} alt={"house8"} />
+        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house8)}>
+          <img src={gallery.house8} alt={"house8"} />
         </div>
-        <div className="ProjectDetail-2-col">
-        <img src={gallery.house9} alt={"house9"} />
+        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house9)}>
+          <img src={gallery.house9} alt={"house9"} />
         </div>
+        {/* Composant Modale */}
+        <Modal
+          isOpen={isModalOpen}
+          imageSrc={selectedImage}
+          onClose={closeModal}
+        />
       </div>
     </div>
   );

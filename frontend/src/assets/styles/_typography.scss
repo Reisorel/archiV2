@@ -2,25 +2,29 @@
 
 body {
   font-family: 'DIN Pro', sans-serif;
+  color: #333;
 }
 
 h1 {
-  color: #333;
 }
 
 h2 {
-  color: #333;
 }
 
 h3 {
-  color: #333;
 }
 
 h4 {
-  font-size: 1rem;
 }
 
 p {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #333; /* Couleur légèrement adoucie */
+}
+
+li {
   font-size: 1rem;
   line-height: 1.5;
   font-weight: 300;
@@ -35,7 +39,12 @@ p {
   margin-bottom: 5rem;
 }
 
-.subtitle {
+.sub-2 {
   font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.sub-3 {
+  font-size: 1rem;
   font-weight: 500;
 }

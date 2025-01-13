@@ -12,14 +12,6 @@
   padding-bottom: 1rem;
 }
 
-.missions-intro p {
-  font-family: "DinPro";
-  font-size: 1.2rem;
-  font-weight: 300;
-  line-height: 1.8;
-  color: #555;
-}
-
 .missions-secContent {
   display: grid; /* Active le mode Grid */
   grid-template-rows: repeat(3, 1fr); /* 3 lignes égales */
@@ -62,14 +54,11 @@
   padding: 1rem; /* Espacement interne */
 }
 
-.subtitle {
+.missions-accordion-header .sub-2 {
   margin-left: 1rem;
 }
 
-.accordion-content-text h3 {
-  font-family: "DinPro";
-  font-size: 1.5rem;
-  font-weight: 500;
+.accordion-content-text .sub-2 {
   margin-bottom: 1rem;
   border-bottom: 2px solid #e0e0e0; /* Ligne décorative */
   padding-bottom: 0.5rem;
@@ -90,13 +79,11 @@
 }
 
 .paragraph-group p {
-  font-weight: 300;
-  font-size: 1rem;
   margin: 0;
 }
 
 .accordion-content-text ul {
-  margin-left: 1.2rem; /* Décalage pour les listes */
+  margin-left: 1.2rem;
   padding-left: 1rem;
   list-style: none;
 }
@@ -110,9 +97,7 @@
 .accordion-content-text li {
   margin-bottom: 0.8rem;
   position: relative;
-  font-weight: 300;
   list-style-type: square;
-  color: #333;
 }
 
 .chevron-icon {
