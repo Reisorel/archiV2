@@ -31,7 +31,7 @@ export default function About() {
       scrollTrigger: {
         trigger: titleRef.current, // Déclencheur global
         start: "top 90%",
-        toggleActions: "play none none none",
+        toggleActions: "play none none none"
       },
     });
 
@@ -67,7 +67,7 @@ export default function About() {
         scrollTrigger: {
           trigger: textRef.current,
           start: "top 90%", // L'animation démarre quand 90% de la div est visible
-          toggleActions: "play none none none",
+          toggleActions: "play none none none"
         },
       }
     );

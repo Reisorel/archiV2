@@ -1,6 +1,7 @@
 @charset "UTF-8";
 .test-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0;
@@ -11,8 +12,10 @@
 }
 
 .box {
-  display: block;
+  display: flex;
   height: 40px;
   width: 40px;
   background-color: greenyellow;
+  height: auto; /* Permet d'adapter sa hauteur au contenu */
+  height: auto; /* Permet d'adapter sa hauteur au contenu */
 }/*# sourceMappingURL=Test.css.map */

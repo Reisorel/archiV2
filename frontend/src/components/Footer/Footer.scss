@@ -122,9 +122,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* Fixe le contexte de positionnement */
 }
 
 .icon {
+  position: relative; /* Chaque icône garde sa propre position */
   display: flex;
   color: rgb(0, 0, 0);
   width: 30px;

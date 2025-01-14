@@ -15,7 +15,7 @@ export default function Test() {
 
   return (
     <div className="test-container">
-      <div ref={boxRef} className="box green"></div>
+      {/* <div ref={boxRef} className="box green"></div> */}
     </div>
   );
 }

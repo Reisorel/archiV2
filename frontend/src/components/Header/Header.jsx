@@ -102,6 +102,7 @@ export default function Header() {
       <div
         ref={logoRef}
         className="header-logo"
+        data-hover-detect="true"
         onClick={() => {
           navigate("/");
           window.scrollTo({ top: 0, behavior: "smooth" });
@@ -116,7 +117,9 @@ export default function Header() {
       </div>
 
       <div className={`header-content ${isMobileOn ? "mobile-open" : ""}`}>
-        <ul className="header-nav-list">
+        <ul
+        className="header-nav-list"
+        data-hover-detect="true">
           <li onClick={() => handleNavigation("news")}>
             <span>ACTUALITÉS</span>
           </li>

@@ -1,0 +1,41 @@
+* {
+  cursor: none;
+}
+// Cercle
+.custom-cursor {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  // border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid black;
+  position: fixed;
+  pointer-events: none;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: all 200ms ease-out;
+  z-index: 9999; /* S'assurer qu'il est au-dessus du Header */
+
+}
+// Intérieur
+.custom-cursor-inner {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  opacity: 1;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
+  z-index: 9999; /* S'assurer qu'il est au-dessus du Header */
+}
+
+.custom-cursor.click {
+  opacity: 0.5;
+}
+
+.custom-cursor-inner.cursorinnerhover {
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+}

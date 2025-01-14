@@ -12,6 +12,7 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import ProjectsDetails from "./components/Projects/ProjectsDetails/ProjectsDetails";
 import Test from "./components/Test/Test";
+import CustomCursor from "./components/Cursor/Cursor";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <>
       <div className="App">
         <BrowserRouter>
+        <CustomCursor/>
           <Header />
           <Background>
             <Routes>
