@@ -94,24 +94,73 @@ export default function Missions() {
   return (
     <div id="missions" className="missions-container">
       <div className="missions-secTitle">
-        <h1
-        ref={titleRef}
-        className="title">
+        <h1 ref={titleRef} className="title">
           MISSIONS
         </h1>
       </div>
-      <div
-      ref={gridRef}
-      className="missions-intro">
-        <p>
-          Chaque projet est une rencontre unique entre vos aspirations, les
-          exigences du lieu, et notre vision créative.
-        </p>
-        <p>
-          Nous vous accompagnons à chaque étape, de l’esquisse initiale à la
-          réalisation finale, avec une attention particulière portée aux détails
-          et à l’harmonie de chaque espace.
-        </p>
+      <div ref={gridRef} className="missions-intro">
+        <div className="missions-intro-grid">
+          <div className="missions-intro-grid1">
+            <p>
+              Mon domaine d’intervention va de la commande privée à la commande
+              publique. Je réalise vos projet de maison individuelle, d’habitat
+              collectif, de commerces, de bureaux. Je propose des projets «clés
+              en mains» allant jusqu’à l’aménagement intérieur.
+            </p>
+            <p>
+              J’interviens sur toutes les phases de projet pour des
+              constructions neuves, des extensions ou réhabilitations en passant
+              par la rénovation énergétique.
+            </p>
+          </div>
+          <div className="missions-intro-grid2">
+            <div className="task-list-div">
+              <div className="tast-list-left">
+                  <li>
+                    <i className="fas fa-home"></i>
+                    Neuf
+                  </li>
+                  <li>
+                    <i className="fas fa-tools"></i>Réhabilitation
+                  </li>
+                  <li>
+                    <i className="fas fa-expand-arrows-alt"></i>
+                    Extension
+                  </li>
+                  <li>
+                    <i className="fas fa-leaf"></i>
+                    Rénovation énergétique
+                  </li>
+                  <li>
+                    <i className="fas fa-paint-roller"></i>
+                    Architecture d’intérieur
+                  </li>
+              </div>
+              <div className="tast-list-right">
+                  <li>
+                    <i className="fas fa-house-user"></i>
+                    Maison individuelle
+                  </li>
+                  <li>
+                    <i className="fas fa-building"></i>
+                    Habitat collectif
+                  </li>
+                  <li>
+                    <i className="fas fa-store"></i>
+                    Commerces
+                  </li>
+                  <li>
+                    <i className="fas fa-briefcase"></i>
+                    Bureaux
+                  </li>
+                  <li>
+                    <i className="fas fa-school"></i>
+                    Equipements publics
+                  </li>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="missions-secContent grid" ref={gridRef}>
@@ -121,7 +170,7 @@ export default function Missions() {
             onClick={() => toggleAccordion(1)}
           >
             <h2 id="subtitle" className="sub-2">
-              I. REFLEXION ET ANALYSE
+              I. CONCEPTION ARCHITECTURALE
             </h2>
 
             <img
@@ -153,89 +202,82 @@ export default function Missions() {
                   avec son environnement.
                 </p>
               </div>
-
               <h2 className="sub-2">ETAPES :</h2>
-              <ul>
-                <li>
-                  <h3 className="sub-3">ETUDES DE FAISABILITE</h3>
-                  <div className="paragraph-group">
-                    <p>
-                      Avant de dessiner la première esquisse, j’analyse en
-                      profondeur la faisabilité du projet.
-                    </p>
-                  </div>
-                  <ul>
-                    <li>
-                      Identification des contraintes techniques (structure,
-                      accès, orientation, réseaux).
-                    </li>
-                    <li>
-                      Respect des réglementations en vigueur (urbanisme, normes
-                      de sécurité, performance énergétique)
-                    </li>
-                    <li>
-                      Évaluation des aspects financiers pour garantir que le
-                      projet s’inscrit dans votre budget, tout en optimisant les
-                      choix techniques et esthétiques.
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <h3 className="sub-3">DIAGNOSTIC DU LIEU</h3>
-                  <div className="paragraph-group">
-                    <p>
-                      Etude contextualisée du site, ses spécificités et son
-                      environnement.
-                    </p>
-                  </div>
-                  <ul>
-                    <li>
-                      Exploration des interactions entre l’architecture, le
-                      paysage, la lumière et les usages afin de garantir une
-                      intégration harmonieuse.
-                    </li>
-                    <li>
-                      Réalisation des relevés précis sur site pour mieux
-                      comprendre les potentialités et les contraintes
-                      spécifiques du lieu.
-                    </li>
-                    <li>
-                      Prise en compte l’histoire et l’identité du site pour
-                      concevoir un projet respectueux de son environnement et
-                      des attentes des parties prenantes.
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <h3 className="sub-3">CONSEILS PERSONNALISES</h3>{" "}
-                  <div className="paragraph-group">
-                    <p>
-                      En tant qu’indépendante, je privilégie une approche
-                      humaine et personnalisée.
-                    </p>
-                    <p>
-                      Chaque client et chaque projet étant unique, je m’attache
-                      à :
-                    </p>
-                  </div>
-                  <ul>
-                    <li>
-                      Vous écouter pour comprendre vos besoins, vos envies et
-                      votre mode de vie ou de travail.
-                    </li>
-                    <li>
-                      Vous guider dans les choix stratégiques : priorisation des
-                      espaces, sélection des matériaux, et optimisation des
-                      fonctionnalités.
-                    </li>
-                    <li>
-                      Vous proposer une vision claire et inspirante qui reflète
-                      vos aspirations tout en respectant les contraintes
-                      identifiées.
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+              <h3 className="sub-3">L'ESQUISSE</h3>
+              <div className="paragraph-group"></div>
+              <p>
+                Sur la base du programme défini, l’architecte établit si besoin
+                le relevé des existants. Il réalise une esquisse répondant au
+                programme.
+              </p>
+              <p>
+                Il précise l’implantation et l’adaptation au terrain,
+                l’orientation, les accès, l’enveloppe extérieure avec ses
+                ouvertures principales, l’organisation des espaces, leurs
+                liaisons, les solutions d’amélioration de l’existant.
+              </p>
+              <h3 className="sub-3">L'AVANT-PROJET</h3>
+              <div className="paragraph-group">
+                <p>
+                  L’architecte précise les dimensions de l’ouvrage, son aspect,
+                  présente les solutions retenues, détermine les surfaces de
+                  tous les éléments du programme et établit la notice
+                  descriptive précisant la nature des matériaux
+                  extérieurs/intérieurs. L’architecte estime un coût
+                  prévisionnel des travaux indicatif.
+                </p>
+              </div>
+              <h3 className="sub-3">L'AUTORISATION D'URBANISME</h3>{" "}
+              <div className="paragraph-group">
+                <p>
+                  Si le projet nécessite le dépôt d’une autorisation d’urbanisme
+                  (déclaration préalable, permis de construire, etc.), la
+                  mission est obligatoirement réalisée par l’architecte.
+                  L’architecte élabore et collecte des pièces nécessaires à la
+                  réalisation du dossier de demande d’autorisation d’urbanisme
+                  suivant la réglementation en vigueur.
+                </p>
+              </div>
+              <h3 className="sub-3">CONCEPTION FINALE ET DETAILLEE</h3>{" "}
+              <div className="paragraph-group">
+                <p>
+                  Cette phase permet de valider la nature et les
+                  caractéristiques des matériaux, des procédés constructifs et
+                  équipements intérieurs retenus.
+                </p>
+                <p>
+                  L’architecte, après avoir vérifié les conditions de leur mise
+                  en œuvre et l’incidence financière qui en découle, précise par
+                  des plans, coupes, et élévations les formes des différents
+                  éléments de la construction
+                </p>
+                <p>
+                  L’architecte établit l’ensemble des spécifications détaillées
+                  des ouvrages sous la forme d’un Cahier des Clauses Techniques
+                  Particulières. L’architecte établit un coût prévisionnel des
+                  travaux, par corps d’état et détermine le calendrier
+                  prévisible du déroulement de l’opération.
+                </p>
+                <p>
+                  L’architecte assiste son client dans l’arbitrage des
+                  prestations afin de respecter le budget travaux.
+                </p>
+              </div>
+              <h3 className="sub-3">
+                CONSULTATION DES ENTREPRISES ET ANALYSE DES OFFRES
+              </h3>{" "}
+              <div className="paragraph-group">
+                <p>
+                  L’architecte rassemble les éléments du projet nécessaires à la
+                  consultation permettant aux entrepreneurs consultés d’établir
+                  leurs offres quantifiées.
+                </p>
+                <p>
+                  L’architecte procède à l’analyse comparative des offres des
+                  entreprises, établit son rapport, propose au client une liste
+                  d’entreprises qui pourraient être retenues
+                </p>
+              </div>
             </div>
 
             <div className="accordion-content-image">
@@ -259,7 +301,7 @@ export default function Missions() {
             onClick={() => toggleAccordion(2)}
           >
             <h2 id="subtitle" className="sub-2">
-              II. DESIGN ET CONCEPTION
+              II. REALISATION ET SUIVI DE CHANTIER
             </h2>
             <img
               src={downChevron}
@@ -293,80 +335,93 @@ export default function Missions() {
               <h2 className="sub-2">ETAPES :</h2>
               <ul>
                 <li>
-                  <h3 className="sub-3">CONCEPTION ARCHITECTURALE</h3>
-                  <div className="paragraph-group">
-                    <p>
-                      Imaginer et concevoir des espaces uniques, durables et
-                      adaptés à vos usages :
-                    </p>
-                  </div>
-                  <ul>
-                    <li>
-                      Je traduis vos besoins en solutions architecturales
-                      personnalisées, alliant créativité et rigueur technique.
-                    </li>
-                    <li>
-                      Chaque projet est conçu pour optimiser les espaces, la
-                      lumière et les circulations, en garantissant un confort
-                      optimal.
-                    </li>
-                    <li>
-                      Intégration systématique d'une réflexion sur la durabilité
-                      et l’impact environnemental, avec des choix responsables
-                      en termes de matériaux et d’implantation.
-                    </li>
-                  </ul>
+                  <h3 className="sub-3">
+                    ASSISTANCE A LA SIGNATURE DES TRAVAUX
+                  </h3>
                 </li>
+                <div className="paragraph-group">
+                  <p>
+                    Signature des contrats de travaux entreprise, mise en place
+                    de la date d’ouverture du chantier et du planning
+                    prévisionnel des travaux, Déclaration d’Ouverture de
+                    Chantier.
+                  </p>
+                </div>
                 <li>
-                  <h3 className="sub-3">AMENAGEMENT INTERIEUR</h3>
-                  <div className="paragraph-group">
-                    <p>
-                      L’intérieur d’un espace est aussi important que sa
-                      structure. Chaque détail est étudié pour créer un
-                      environnement harmonieux et accueillant :
-                    </p>
-                  </div>
-                  <ul>
-                    <li>
-                      Travail sur les volumes et les proportions pour maximiser
-                      l’usage et le confort.
-                    </li>
-                    <li>
-                      Sélection soignée des matériaux, textures et couleurs pour
-                      refléter vos goûts et vos besoins, toujours en respect du
-                      budget définit.
-                    </li>
-                    <li>
-                      Mise en valeur des ouvertures et de la lumière naturelle
-                      pour créer des espaces lumineux et agréables à vivre.
-                    </li>
-                  </ul>
+                  <h3 className="sub-3">PREPARATION DE CHANTIER</h3>
                 </li>
+                <div className="paragraph-group">
+                  <p>
+                    L’architecte organise les opérations préalables au démarrage
+                    des travaux. En concertation avec les entreprises, il
+                    organise leurs interventions et les modalités pratiques du
+                    déroulement du chantier
+                  </p>
+                </div>
                 <li>
-                  <h3 className="sub-3">ESQUISSE ET RENDUS 3D</h3>
-                  <div className="paragraph-group">
-                    <p>
-                      Formalisation tangible et profesionnelle du projet afin
-                      d'illustrer chaque détail de votre futur espace avant sa
-                      mise en œuvre :
-                    </p>
-                  </div>
-                  <ul>
-                    <li>
-                      Réalisation d'esquisses claires et des rendus 3D détaillés
-                      pour illustrer les propositions.
-                    </li>
-                    <li>
-                      Ces visualisations permettent d’explorer différentes
-                      options et de prendre des décisions en toute sérénité.
-                    </li>
-                    <li>
-                      Les maquettes numériques offrent une vue réaliste du
-                      projet, facilitant les ajustements et l’alignement avec
-                      vos attentes.
-                    </li>
-                  </ul>
+                  <h3 className="sub-3">VISAS DE TRAVAUX</h3>
                 </li>
+
+                <div className="paragraph-group">
+                  <p>
+                    Les études d’exécution s’il y a lieu, sont intégralement
+                    réalisées par les entreprises. L’architecte en examine alors
+                    la conformité au projet de conception générale qu’il a
+                    établi, et appose son visa sur les documents (plans et
+                    spécifications) si les dispositions de son projet sont
+                    respectées.
+                  </p>
+                </div>
+                <li>
+                  <h3 className="sub-3">
+                    DIRECTION DE L'EXECUTION DES TRAVAUX
+                  </h3>
+                </li>
+
+                <div className="paragraph-group">
+                  <p>
+                    L’architecte organise et dirige les réunions de chantier et
+                    en rédige les comptes-rendus, qu’il diffuse, aux
+                    entreprises, au client et aux éventuels autres destinataires
+                    intéressés
+                  </p>
+                  <p>
+                    Il vérifie l’avancement des travaux et leur conformité avec
+                    les pièces des contrats de travaux.
+                  </p>
+                </div>
+                <li>
+                  <h3 className="sub-3">SUIVI ADMINISTRATIF ET PAIEMENTS</h3>
+                </li>
+
+                <div className="paragraph-group">
+                  <p>
+                    L’architecte vérifie les factures des entrepreneurs. Il
+                    établit le décompte définitif de fin de chantier et propose
+                    le règlement des entreprises pour le solde.
+                  </p>
+                </div>
+                <li>
+                  <h3 className="sub-3">
+                    ASSISTANCE AUX OPERATIONS DE RECEPTION DE L'OUVRAGE
+                  </h3>
+                </li>
+
+                <div className="paragraph-group">
+                  <p>
+                    L’architecte assiste le client pour la réception des
+                    travaux. Il organise une visite contradictoire des travaux
+                    en vue de leur réception, rédige les procès-verbaux et
+                    établit la liste des réserves éventuellement formulées par
+                    le client au cours de la réception.
+                  </p>
+                  <p>
+                    Elle constitue le point de départ des délais de la garantie
+                    de parfait achèvement due par les seules entreprises, de la
+                    garantie de bon fonctionnement et de la responsabilité
+                    décennale.
+                  </p>
+                </div>
               </ul>
             </div>
 
@@ -391,7 +446,7 @@ export default function Missions() {
             onClick={() => toggleAccordion(3)}
           >
             <h2 id="subtitle" className="sub-2">
-              III. REALISATION ET SUIVI
+              III. PERIMETRE DES PRESTATIONS
             </h2>
             <img
               src={downChevron}
@@ -410,100 +465,75 @@ export default function Missions() {
               <h2 className="sub-2">OBJECTIF :</h2>
               <div className="paragraph-group">
                 <p>
-                  La phase de réalisation marque le passage du projet à sa
-                  concrétisation. Mon rôle est de m’assurer que chaque étape
-                  respecte la vision définie, les contraintes techniques et les
-                  attentes initiales.
+                  Vous pouvez aussi choisir des petites prestation individuelles
                 </p>
                 <p>
-                  À travers un suivi rigoureux, je veille à ce que les travaux
-                  soient exécutés dans les règles de l’art, tout en restant
-                  disponible pour ajuster les détails si nécessaire.
+                  Missions plus précises permettant de se concentrer sur une
+                  tâche précise.
                 </p>
               </div>
 
-              <h2 className="sub-2">ETAPES :</h2>
+              <h2 className="sub-2">EXEMPLE</h2>
               <ul>
                 <li>
-                  <h3 className="sub-3">DEMARCHES ADMINISTRATIVES</h3>
-                  <div className="paragraph-group">
-                    <p>
-                      La gestion des autorisations et des obligations légales
-                      est une étape essentielle pour assurer la conformité du
-                      projet :
-                    </p>
-                  </div>
-                  <ul>
-                    <li>
-                      Constitution et dépôt des dossiers administratifs, tels
-                      que les permis de construire et les déclarations
-                      préalables.
-                    </li>
-                    <li>
-                      Veille à la conformité avec les normes locales d'urbanisme
-                      et de sécurité.
-                    </li>
-                    <li>
-                      Coordination avec les parties prenantes institutionnelles
-                      pour garantir l'acceptation des dossiers sans retard.
-                    </li>
-                  </ul>
+                  <h3 className="sub-3">LA VISITE CONSEIL</h3>
                 </li>
+                <div className="paragraph-group">
+                  <p>
+                    Cette mission est indépendante des missions détaillées
+                    ci-avant. Elle peut être réalisée seule et sans suite.
+                  </p>
+                  <p>
+                    Elle permet de formaliser le programme et attentes du
+                    client. A l’issue de la visite, l’architecte élabore un
+                    rapport qui comprend le programme validé et une analyse des
+                    contraintes urbanistiques et financières de l’opération.
+                  </p>
+                </div>
                 <li>
-                  <h3 className="sub-3">COORDINATION ET SUIVI DES TRAVAUX</h3>
-                  <div className="paragraph-group">
-                    <p>
-                      Une supervision active et un dialogue constant avec les
-                      entreprises du bâtiment pour s'assurer d'une exécution
-                      fluide et rapide :
-                    </p>
-                  </div>
-                  <ul>
-                    <li>
-                      Sélection d’artisans et prestataires qualifiés, adaptés à
-                      la spécificité du projet.
-                    </li>
-                    <li>
-                      Suivi du calendrier des travaux pour garantir le respect
-                      des délais.
-                    </li>
-                    <li>
-                      Vérification de la conformité avec les plans et le cahier
-                      des charges.
-                    </li>
-                  </ul>
+                  <h3 className="sub-3">LA MISSION PARTIELLE</h3>
                 </li>
+                <div className="paragraph-group">
+                  <p>La mission partielle couvre</p>
+                  <ul>
+                    <li>la phase esquisse</li>
+                    <li>la phase avant-projet</li>
+                    <li>la phase autorisation d’urbanisme</li>
+                  </ul>
+                  <p>
+                    Cette mission s’arrête à l’autorisation d’urbanisme. Les
+                    plans remis ne sont pas destinés à la réalisation.
+                    <p>C’est au client de choisir les entreprises.</p>
+                  </p>
+                </div>
                 <li>
-                  <h3 className="sub-3">CCONTRÔLE DES LIVRAISONS</h3>
-                  <div className="paragraph-group">
-                    <p>
-                      La phase de contrôle et de livraison est l’aboutissement
-                      de votre projet architectural.
-                    </p>
-                    <p>
-                      Mon objectif est de garantir que la réalisation respecte
-                      scrupuleusement la vision définie, en assurant un haut
-                      niveau de qualité pour chaque détail.
-                    </p>
-                  </div>
-                  <ul>
-                    <li>
-                      Inspections régulières pour vérifier la conformité des
-                      travaux avec les plans, résoudre les imprévus et garantir
-                      des finitions impeccables.
-                    </li>
-                    <li>
-                      Validation du bon fonctionnement des installations
-                      techniques (électricité, plomberie, ventilation) et
-                      ajustements finaux.
-                    </li>
-                    <li>
-                      Remise officielle de l’espace, accompagné d’une prise en
-                      main personnalisée et, si nécessaire, d’un suivi
-                      post-livraison.
-                    </li>
-                  </ul>
+                  <h3 className="sub-3">LA MISSION PARTIELLE ETENDUE</h3>
                 </li>
+                <div className="paragraph-group">
+                  <p>
+                    La mission partielle étendue couvre les éléments de la
+                    mission partielle en ajoutant{" "}
+                  </p>
+                  <ul>
+                    <li>La phase de conception finale et détaillée</li>
+                    <li>La consultation et l'analyse des offres</li>
+                  </ul>
+                  <p>
+                    Cette mission inclut le dossier PRO/DCE, un document
+                    technique très complet qui regroupe l’ensemble des éléments
+                    nécessaires pour solliciter des devis auprès des entreprises
+                  </p>
+                </div>
+                <li>
+                  <h3 className="sub-3">LA MISSION COMPLETE</h3>
+                </li>
+                <div className="paragraph-group">
+                  <p>
+                    La mission complète couvre l'ensemble des prestation de
+                    conception architecturale et réalisaiton / suivi de
+                    chantiers couverts dans les parties I et II.
+                  </p>
+                </div>
               </ul>
             </div>
 

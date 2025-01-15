@@ -31,7 +31,7 @@ export default function About() {
       scrollTrigger: {
         trigger: titleRef.current, // Déclencheur global
         start: "top 90%",
-        toggleActions: "play none none none"
+        toggleActions: "play none none none",
       },
     });
 
@@ -67,7 +67,7 @@ export default function About() {
         scrollTrigger: {
           trigger: textRef.current,
           start: "top 90%", // L'animation démarre quand 90% de la div est visible
-          toggleActions: "play none none none"
+          toggleActions: "play none none none",
         },
       }
     );
@@ -143,23 +143,29 @@ export default function About() {
           <div ref={textRef} className="presentation-text">
             <div className="presentation-text-high">
               <p>
-                Architecte indépendante de 32 ans, je suis diplômée de l’École
-                d’Architecture de Rouen, où j’ai pu approfondir mes
-                connaissances lors d’une année d’étude à Rome.
+                Cassandre Marion Architecte est une agence d’architecture indépendante, créee
+                en 2024 et basée à Rennes.
               </p>
               <p>
-                Habilitée à exercer en mon nom propre depuis 2017, je mets à
-                profit dix ans d’expérience en agences parisiennes. J’ai
-                travaillé sur des projets publics et privés, allant de la
-                réhabilitation d’appartements haussmanniens à la conception
-                d’immeubles, en passant par la réalisation de complexes
-                nautiques municipaux. Je mêle ainsi architecture contemporaine
-                et patrimoniale
+                J’ai réalisé mes études à l’univerité de Rome III et à l’école
+                nationale d’architecture de Normandie. J’ai appris à analyser et
+                sublimer des lieux existants au travers de la question de
+                l’héritage patrimoniale, grâce à des masters spécialisés dans ce
+                domaine.
               </p>
               <p>
-                De retour à l'Ouest, je conçois des lieux sur-mesure,
-                fonctionnels et inspirants, en phase avec vos besoins et votre
-                histoire.
+                Au cours de mes 6 ans en agences parisiennes, j’ai travaillé sur
+                des programmes variés tant en réhabilitation qu’en conception
+                neuve. J’ai ainsi collaboré sur des rénovations de maisons, des
+                rénovations énergétique d’ensemble de logements, des bâtiments
+                tertiaires, des équipement publics.
+              </p>
+              <p>
+                Fort des ces expériences, je suis en mesure de vous accompagner
+                sur tous types de projet, de la conception à la réalisation. En
+                misant sur une écoute attentive et un échange constructif, je
+                vous accompagne dans la réalisation d’un projet sur mesure et
+                qui reflète pleinement votre quotidien et vos ambitions.
               </p>
             </div>
             <div className="presentation-text-low">
@@ -178,9 +184,7 @@ export default function About() {
           </div>
         </div>
 
-        <div
-        ref={cvRef}
-        className="about-grid-item">
+        <div ref={cvRef} className="about-grid-item">
           <div className="CV">
             <div className="date">
               <span className="year">2024.</span>
@@ -207,7 +211,7 @@ export default function About() {
             <div className="date">
               <span className="year">2016.</span>
               <span className="description">
-                Diplôme d'Architecte - ENSAM Rouen
+                Diplôme d'Architecte - ENSAN
               </span>
             </div>
           </div>

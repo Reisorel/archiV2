@@ -1,12 +1,13 @@
 @charset "UTF-8";
 .footer-container {
   background-color: #f3f3f3;
+  width: 100%;
+  height: auto;
   display: flex;
+  box-sizing: border-box;
   flex-direction: row; /* Les éléments sont alignés horizontalement */
   align-items: center;
   justify-content: space-between; /* Centre les enfants horizontalement */
-  width: 100%;
-  position: relative; /* Nécessaire pour le centrage absolu */
   padding-top: 1rem;
   border-top: 0.5px solid #ddd; /* Ligne fine au-dessus du footer */
 }

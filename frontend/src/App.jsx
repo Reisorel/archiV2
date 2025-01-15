@@ -13,6 +13,7 @@ import Projects from "./components/Projects/Projects";
 import ProjectsDetails from "./components/Projects/ProjectsDetails/ProjectsDetails";
 import Test from "./components/Test/Test";
 import CustomCursor from "./components/Cursor/Cursor";
+import FooterTest from "./components/Footer-test/FooterTest"
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                     <News />
                     <Missions />
                     <About />
+                    {/* <FooterTest></FooterTest> */}
                   </>
                 }
               />

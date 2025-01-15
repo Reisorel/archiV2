@@ -1,10 +1,10 @@
 import { useRef, useEffect } from "react";
-import "./Footer.css";
 import ordre from "../../assets/logos/ordre.jpg";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import upChevron from "../../assets/icons/up-arrow.svg";
+import "./Footer.css";
 
 // Enregistrement du plugin GSAP
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
@@ -22,6 +22,24 @@ function Footer() {
   const linkedinRef = useRef(null);
   const instagramRef = useRef(null);
   const iconsRef = useRef(null);
+  const footerRef = useRef(null); // Gère le reveal footer
+
+  useEffect(() => {
+    const footer = footerRef.current;
+
+    if (footer) {
+      const scrollTrigger = ScrollTrigger.create({
+        trigger: footer,
+        pin: true,
+        start: "bottom bottom",
+        end: "+=100%",
+      });
+
+      return () => {
+        scrollTrigger.kill(); // Nettoyage de l'animation lors du démontage
+      };
+    }
+  }, []);
 
   useEffect(() => {
     if (!linkedinRef.current || !instagramRef.current || !iconsRef.current) {

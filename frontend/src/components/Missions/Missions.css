@@ -12,6 +12,30 @@
   padding-bottom: 1rem;
 }
 
+.missions-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.missions-intro-grid2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-list-div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  list-style: none;
+  text-align: left;
+}
+
+.task-list-div i {
+  color: #555;
+}
+
 .missions-secContent {
   display: grid; /* Active le mode Grid */
   grid-template-rows: repeat(3, 1fr); /* 3 lignes égales */
