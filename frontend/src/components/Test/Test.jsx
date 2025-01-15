@@ -1,21 +1,16 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import "./Test.css";
+import "./Test.css"; // ⚠️ Assure-toi que le fichier Test.css est bien référencé
+
+const images = [
+  "/images/projects/house1.jpg",
+  "/images/projects/house2.jpg",
+  "/images/projects/house3.jpg",
+  "/images/projects/house4.jpg",
+];
 
 export default function Test() {
-  const boxRef = useRef(null); // Référence directe à l'élément DOM
-
-  useEffect(() => {
-    gsap.fromTo(
-      boxRef.current,
-      { x: -400, opacity: 0 }, // Position de départ
-      { x: 0, opacity: 1, duration: 1, ease: "power2.out" } // Position finale
-    );
-  }, []);
-
   return (
-    <div className="test-container">
-      {/* <div ref={boxRef} className="box green"></div> */}
-    </div>
-  );
+    <div>Test</div>
+  )
 }
