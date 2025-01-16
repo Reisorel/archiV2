@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap"; // Importer GSAP
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { sliderData } from "./Data/SliderData";
 
 import leftChevron from "../../assets/icons/left-arrow.svg";
 import rightChevron from "../../assets/icons/right-arrow.svg";
@@ -10,35 +11,6 @@ import "./Caroussel.css";
 
 gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(ScrollTrigger);
-
-// État pour l'index du slider, initialisé à 1
-const sliderData = [
-  {
-    id: 1,
-    name: "APPARTEMENT PARISIEN",
-    description: "Paris 7, Ile-De-France",
-  },
-  {
-    id: 2,
-    name: "MAISON INDIVIDUELLE",
-    description: "Saint-Aubin, Normandie",
-  },
-  {
-    id: 3,
-    name: "GARAGE INDIVIDUEL",
-    description: "Rennes, Bretagne",
-  },
-  {
-    id: 4,
-    name: "FERME DOUBLE NIVEAU",
-    description: "Breville, Normandie",
-  },
-  {
-    id: 5,
-    name: "RENOVATION",
-    description: "Nantes, Pays-De-La-Loire",
-  },
-];
 
 export default function Caroussel() {
   const scrollToNextSection = () => {
@@ -84,7 +56,7 @@ export default function Caroussel() {
   }
 
   useEffect(() => {
-    const intervalID = setInterval(() => toggleImage(1), 4000);
+    const intervalID = setInterval(() => toggleImage(1), 7000);
 
     return () => clearInterval(intervalID);
   }, []);
@@ -96,8 +68,8 @@ export default function Caroussel() {
 
         <div ref={sliderImagesRef} className="slider-images">
           <img
-            src={`/images/caroussel/img-${sliderIndex}.jpg`}
-            alt="caroussel pictures"
+            src={sliderData.find((obj) => obj.id === sliderIndex).src}
+            alt={sliderData.find((obj) => obj.id === sliderIndex).name}
             className="slider-img"
           />
         </div>

@@ -16,13 +16,59 @@ const img7 = "images/missions/7construction.jpg";
 const img8 = "images/missions/8escalier.jpg";
 const img9 = "images/missions/9maison.jpg";
 
-// icons
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Missions() {
-  const titleRef = useRef(null);
-  const gridRef = useRef(null);
+  const titleRef = useRef(null); // Animation titre
+  const gridRef = useRef(null); // Animation menus déroulants
+  const textRef = useRef(null); // Animation texte gauche
+  const taskRef = useRef(null); // Animation domaines
+
+  // Aninmation texte central
+  useEffect(() => {
+    gsap.fromTo(
+      textRef.current,
+      {
+        opacity: 0,
+        y: 50, // Position initiale en bas
+      },
+      {
+        opacity: 1,
+        y: 0, // Arrivée normale
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: "top 90%", // L'animation démarre quand 90% de la div est visible
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
+
+  //Animation tasks
+  useEffect(() => {
+    // Sélectionne tous les éléments <li> dans les deux colonnes
+    const taskItems = gsap.utils.toArray(".task-list-div li");
+
+    // Animation GSAP task
+    gsap.fromTo(
+      taskItems,
+      { x: 50, opacity: 0 }, // Départ hors écran à droite, invisible
+      {
+        x: 0, // Arrivée à la position normale
+        opacity: 1, // Apparition complète
+        duration: 3, // Durée d'apparition de chaque élément
+        ease: "power3.out", // Effet fluide
+        stagger: 0.2, // Intervalle progressif entre chaque élément
+        scrollTrigger: {
+          trigger: ".missions-intro-grid2", // Déclenchement lorsque la section entre dans la vue
+          start: "top 80%", // Commence quand le haut de la section est à 80% de l'écran
+          toggleActions: "play none none none", // Joue une seule fois
+        },
+      }
+    );
+  }, []);
 
   // initialisation état menu accordéon
   const [isAccordionOpen, setIsAccordionOpen] = useState(null);
@@ -99,64 +145,74 @@ export default function Missions() {
         </h1>
       </div>
       <div ref={gridRef} className="missions-intro">
-        <div className="missions-intro-grid">
+        <div ref={textRef} className="missions-intro-grid">
           <div className="missions-intro-grid1">
-            <p>
-              Mon domaine d’intervention va de la commande privée à la commande
-              publique. Je réalise vos projet de maison individuelle, d’habitat
-              collectif, de commerces, de bureaux. Je propose des projets «clés
-              en mains» allant jusqu’à l’aménagement intérieur.
-            </p>
-            <p>
-              J’interviens sur toutes les phases de projet pour des
-              constructions neuves, des extensions ou réhabilitations en passant
-              par la rénovation énergétique.
-            </p>
+            <div className="intro-text-div">
+              <p>
+                Je réalise des projets architecturaux, allant du logement
+                individuel à la commande publique, en accompagnant mes clients
+                sur toutes les étapes, du concept initial à la livraison finale.
+              </p>
+              <p>
+                J’interviens sur toutes les phases de projet pour des
+                constructions neuves, des extensions ou réhabilitations en
+                passant par la rénovation énergétique.
+              </p>
+              <p>
+                Chaque projet est unique. Je m'engage à concevoir des espaces
+                qui allient esthétique, fonctionnalité et durabilité, tout en
+                répondant aux besoins spécifiques de mes clients.
+              </p>
+              <p>
+                Mon objectif : transformer vos idées en réalisations concrètes
+                qui reflètent vos vision et votre ambition.
+              </p>
+            </div>
           </div>
           <div className="missions-intro-grid2">
             <div className="task-list-div">
-              <div className="tast-list-left">
-                  <li>
-                    <i className="fas fa-home"></i>
-                    Neuf
-                  </li>
-                  <li>
-                    <i className="fas fa-tools"></i>Réhabilitation
-                  </li>
-                  <li>
-                    <i className="fas fa-expand-arrows-alt"></i>
-                    Extension
-                  </li>
-                  <li>
-                    <i className="fas fa-leaf"></i>
-                    Rénovation énergétique
-                  </li>
-                  <li>
-                    <i className="fas fa-paint-roller"></i>
-                    Architecture d’intérieur
-                  </li>
+              <div className="task-list-left">
+                <li>
+                  <i className="fas fa-home"></i>
+                  Neuf
+                </li>
+                <li>
+                  <i className="fas fa-tools"></i>Réhabilitation
+                </li>
+                <li>
+                  <i className="fas fa-expand-arrows-alt"></i>
+                  Extension
+                </li>
+                <li>
+                  <i className="fas fa-leaf"></i>
+                  Rénovation énergétique
+                </li>
+                <li>
+                  <i className="fas fa-paint-roller"></i>
+                  Architecture d’intérieur
+                </li>
               </div>
-              <div className="tast-list-right">
-                  <li>
-                    <i className="fas fa-house-user"></i>
-                    Maison individuelle
-                  </li>
-                  <li>
-                    <i className="fas fa-building"></i>
-                    Habitat collectif
-                  </li>
-                  <li>
-                    <i className="fas fa-store"></i>
-                    Commerces
-                  </li>
-                  <li>
-                    <i className="fas fa-briefcase"></i>
-                    Bureaux
-                  </li>
-                  <li>
-                    <i className="fas fa-school"></i>
-                    Equipements publics
-                  </li>
+              <div className="task-list-right">
+                <li>
+                  <i className="fas fa-house-user"></i>
+                  Maison individuelle
+                </li>
+                <li>
+                  <i className="fas fa-building"></i>
+                  Habitat collectif
+                </li>
+                <li>
+                  <i className="fas fa-store"></i>
+                  Commerces
+                </li>
+                <li>
+                  <i className="fas fa-briefcase"></i>
+                  Bureaux
+                </li>
+                <li>
+                  <i className="fas fa-school"></i>
+                  Equipements publics
+                </li>
               </div>
             </div>
           </div>
@@ -503,8 +559,8 @@ export default function Missions() {
                   <p>
                     Cette mission s’arrête à l’autorisation d’urbanisme. Les
                     plans remis ne sont pas destinés à la réalisation.
-                    <p>C’est au client de choisir les entreprises.</p>
                   </p>
+                  <p>C’est au client de choisir les entreprises.</p>
                 </div>
                 <li>
                   <h3 className="sub-3">LA MISSION PARTIELLE ETENDUE</h3>

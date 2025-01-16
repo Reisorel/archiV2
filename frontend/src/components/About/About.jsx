@@ -23,7 +23,6 @@ export default function About() {
 
   const [index, setIndex] = useState(0); // Index du mot courant
   const wordRef = useRef(null); // Index du mot courant
-
   const cvRef = useRef(null); // Animation date
 
   useEffect(() => {

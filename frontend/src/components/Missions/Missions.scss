@@ -1,38 +1,82 @@
 .missions-container {
-  margin-left: 2rem;
-  margin-right: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   overflow: hidden;
+  scroll-margin-left: 2rem;
 }
 
 .missions-intro {
-  font-family: "DinPro";
-  text-align: left;
-  font-size: 1.5rem;
-  padding-bottom: 1rem;
+  text-align: justify;
+  padding-bottom: 5rem;
 }
 
 .missions-intro-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
 }
 
 .missions-intro-grid2 {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.intro-text-div {
+  padding-top: 0;
+  padding-right: 1rem;
+  margin-top: 0;
+  margin-right: 1rem;
+}
+
+.intro-text-div :nth-child(1) {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #111;
+}
+.intro-text-div p:nth-child(2) {
+  margin-bottom: 1rem;
+}
+.intro-text-div p:nth-child(3) {
+  margin-bottom: 1rem;
+}
+.intro-text-div p:nth-child(4) {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #111;
 }
 
 .task-list-div {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
   list-style: none;
   text-align: left;
 }
 
+.task-list-left {
+  border-right: 2px solid #333;
+}
+
+.task-list-right {
+  margin-left: 2rem;
+}
+
+.task-list-div li {
+  margin: 2rem;
+  width: fit-content;
+}
+
+.task-list-div li:nth-child(1) {
+  margin-top: 0;
+}
+.task-list-div li:nth-child(5) {
+  margin-bottom: 0;
+
+}
+
 .task-list-div i {
-  color: #555;
+  color: #000000;
+  margin-right: 1rem;
 }
 
 
