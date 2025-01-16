@@ -143,35 +143,10 @@ export default function ProjectsDetails() {
       </div>
 
       <div className="projectDetails-2">
-        <div className="ProjectDetail-2-col">
-          <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house1)} >
-            <img src={gallery.house1} alt={"house1"} />
-          </div>
-        </div>
-        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house2)}>
-          <img src={gallery.house2} alt={"house2"} />
-        </div>
-        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house3)}>
-          <img src={gallery.house3} alt={"house3"} />
-        </div>
-        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house4)}>
-          <img src={gallery.house4} alt={"house4"} />
-        </div>
-        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house5)}>
-          <img src={gallery.house5} alt={"house5"} />
-        </div>
-        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house6)}>
-          <img src={gallery.house6} alt={"house6"} />
-        </div>
-        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house7)}>
-          <img src={gallery.house7} alt={"house7"} />
-        </div>
-        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house8)}>
-          <img src={gallery.house8} alt={"house8"} />
-        </div>
-        <div className="ProjectDetail-2-col" onClick={() => openModal(gallery.house9)}>
-          <img src={gallery.house9} alt={"house9"} />
-        </div>
+        
+
+
+
         {/* Composant Modale */}
         <Modal
           isOpen={isModalOpen}
