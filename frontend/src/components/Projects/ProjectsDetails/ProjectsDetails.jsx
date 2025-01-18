@@ -6,7 +6,6 @@ import { projectsData, galleryProjects } from "./Data/ProjectData";
 import "./ProjectsDetails.css";
 
 export default function ProjectsDetails() {
-
   const titleRef = useRef(null); // Animation titre
   const techRef = useRef(null); // Animation domaines
 
@@ -37,34 +36,33 @@ export default function ProjectsDetails() {
     );
   }, []);
 
-    //Animation tasks
-    useEffect(() => {
-      // Sélectionne tous les éléments <li> dans les deux colonnes
-      const techItems = gsap.utils.toArray(".project-tech-list li");
+  //Animation tasks
+  useEffect(() => {
+    // Sélectionne tous les éléments <li> dans les deux colonnes
+    const techItems = gsap.utils.toArray(".project-tech-list li");
 
-      // Animation GSAP task
-      gsap.fromTo(
-        techItems,
-        { x: 50, opacity: 0 }, // Départ hors écran à droite, invisible
-        {
-          x: 0, // Arrivée à la position normale
-          opacity: 1, // Apparition complète
-          duration: 3, // Durée d'apparition de chaque élément
-          ease: "power3.out", // Effet fluide
-          stagger: 0.2, // Intervalle progressif entre chaque élément
-          scrollTrigger: {
-            trigger: ".projectDetails-1-tech", // Déclenchement lorsque la section entre dans la vue
-            start: "top 80%", // Commence quand le haut de la section est à 80% de l'écran
-            toggleActions: "play none none none", // Joue une seule fois
-          },
-        }
-      );
-    }, []);
-
+    // Animation GSAP task
+    gsap.fromTo(
+      techItems,
+      { x: 50, opacity: 0 }, // Départ hors écran à droite, invisible
+      {
+        x: 0, // Arrivée à la position normale
+        opacity: 1, // Apparition complète
+        duration: 3, // Durée d'apparition de chaque élément
+        ease: "power3.out", // Effet fluide
+        stagger: 0.2, // Intervalle progressif entre chaque élément
+        scrollTrigger: {
+          trigger: ".projectDetails-1-tech", // Déclenchement lorsque la section entre dans la vue
+          start: "top 80%", // Commence quand le haut de la section est à 80% de l'écran
+          toggleActions: "play none none none", // Joue une seule fois
+        },
+      }
+    );
+  }, []);
 
   const { slug } = useParams();
   const projet = projectsData.find((proj) => proj.slug === slug);
-  const gallery = galleryProjects.find((g) => g.gallerySlug === "gallery1");
+  const { layout } = projet;
 
   // États pour la modale
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -92,10 +90,9 @@ export default function ProjectsDetails() {
         </div>
         <div className="projectDetails-1-infos">
           <div className="projecDetails-1-title">
-            <h2
-            className="sub-2"
-            ref={titleRef}
-            >{projet.title}</h2>
+            <h2 className="sub-2" ref={titleRef}>
+              {projet.title}
+            </h2>
             <p>{projet.location}</p>
           </div>
           <div className="projectDetails-1-text">
@@ -104,9 +101,7 @@ export default function ProjectsDetails() {
               <p>{projet.description2}</p>
             </div>
             <div className="projectDetails-1-tech">
-              <ul
-              ref={techRef}
-              className="project-tech-list">
+              <ul ref={techRef} className="project-tech-list">
                 <div className="tech-list-left">
                   <li>
                     <i className="fas fa-tools"></i> <strong>Type :</strong>{" "}
@@ -142,10 +137,30 @@ export default function ProjectsDetails() {
         </div>
       </div>
 
-      <div className="projectDetails-2">
-        
-
-
+      <div
+        className="projectDetails-2"
+        style={{
+          display: "grid",
+          gridTemplateColumns: layout.gridTemplateColumns,
+          gridTemplateRows: layout.gridTemplateRows,
+          gap: layout.gap,
+        }}
+      >
+        {layout.images.map((image, index) => (
+          <div
+            key={index}
+            className="ProjectDetail-2-col"
+            style={{
+              gridColumn: image.gridColumn,
+              gridRow: image.gridRow,
+            }}
+            onClick={() => openModal(image.src)} // Ouvre la modale avec l'image cliquée
+          >
+            <div className="ProjectDetail-2-col-imgDiv">
+              <img src={image.src} alt={image.alt} />
+            </div>
+          </div>
+        ))}
 
         {/* Composant Modale */}
         <Modal

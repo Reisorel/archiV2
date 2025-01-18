@@ -22,7 +22,6 @@ export default function Missions() {
   const titleRef = useRef(null); // Animation titre
   const gridRef = useRef(null); // Animation menus déroulants
   const textRef = useRef(null); // Animation texte gauche
-  const taskRef = useRef(null); // Animation domaines
 
   // Aninmation texte central
   useEffect(() => {

@@ -53,6 +53,37 @@ export const projectsData = [
     `,
     description2: `Chaque ouverture a été pensée pour sublimer les volumes existants et offrir une parfaite harmonie entre tradition et modernité.Les matériaux nobles comme le chêne massif et le laiton patiné apportent une touche intemporelle, tandis que les finitions minutieuses révèlent un savoir-faire d’exception. L’ensemble du projet a été guidé par une exigence de qualité et une attention particulière aux détails.
     `,
+    layout: {
+      gridTemplateColumns: "repeat(2, 400px)", // Grille avec 2 colonnes
+      gridTemplateRows: "repeat(5, 600px)", // 5 lignes de 100px
+      gap: "1rem", // Espacement entre les éléments
+      images: [
+        {
+          src: project1,
+          alt: "Salon moderne",
+          gridColumn: "span 1",
+          gridRow: "span 1"
+        },
+        {
+          src: project1,
+          alt: "Cuisine fonctionnelle",
+          gridColumn: "span 1",
+          gridRow: "span 1"
+        },
+        {
+          src: project1,
+          alt: "Chambre lumineuse",
+          gridColumn: "span 1",
+          gridRow: "span 1"
+        },
+        {
+          src: project1,
+          alt: "Salle de bain élégante",
+          gridColumn: "span 1",
+          gridRow: "span 1"
+        },
+      ]
+    }
   },
   {
     id: 2,
