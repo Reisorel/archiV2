@@ -1,72 +1,51 @@
 import { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap"; // Importer GSAP
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { sliderData } from "./Data/SliderData";
+import gsap from "gsap";
+
 
 import leftChevron from "../../assets/icons/left-arrow.svg";
 import rightChevron from "../../assets/icons/right-arrow.svg";
 import downChevron from "../../assets/icons/down-arrow.svg";
 import "./Caroussel.css";
 
-gsap.registerPlugin(ScrollToPlugin);
-gsap.registerPlugin(ScrollTrigger);
-
 export default function Caroussel() {
+
+  // État pour gérer l'index de la slide affichée actuellement
+  const [sliderIndex, setSliderIndex] = useState(1);
+
+  // Fonction scroll next section
   const scrollToNextSection = () => {
-    gsap.to(window, {
-      duration: 0.3, // Durée du scroll (en secondes)
-      scrollTo: "#news", // Cible l'ID de la section News
-      ease: "power2.inOut", // Effet d'animation fluide
+    const nextSection = document.querySelector("#news");
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // Fonction pour changer l'image (précédente ou suivante)
+  const toggleImage = (indexPayload) => {
+    setSliderIndex((prevIndex) => {
+      // Calcule le nouvel index en ajoutant indexPayload
+      const newIndex = prevIndex + indexPayload;
+      // Si on dépasse la dernière image, on revient à la première
+      if (newIndex > sliderData.length) return 1;
+      // Si on va en dessous de la première image, on revient à la dernière
+      if (newIndex < 1) return sliderData.length;
+      return newIndex;
     });
   };
 
-  const [sliderIndex, setSliderIndex] = useState(1);
-  const sliderImagesRef = useRef(null); // Référence pour l'image
-
-  function toggleImage(indexPayload) {
-    if (!sliderImagesRef.current) return; // Vérifie que l'élément existe
-
-    // Animation de sortie de l'image actuelle
-    gsap.to(sliderImagesRef.current, {
-      opacity: 0,
-      duration: 0.5,
-      ease: "power2.inOut",
-      onComplete: () => {
-        // Mise à jour de l'index de l'image après l'animation
-        setSliderIndex((prevIndex) => {
-          const newIndex = prevIndex + indexPayload;
-          if (newIndex > sliderData.length) return 1;
-          if (newIndex < 1) return sliderData.length;
-          return newIndex;
-        });
-
-        // Animation d'entrée pour la nouvelle image
-        setTimeout(() => {
-          if (sliderImagesRef.current) {
-            gsap.to(sliderImagesRef.current, {
-              opacity: 1,
-              duration: 0.5,
-              ease: "power2.inOut",
-            });
-          }
-        }, 50); // Petit délai pour s'assurer que l'image est bien changée
-      },
-    });
-  }
-
+  // Effet pour gérer l'autoplay (changement automatique des slides)
   useEffect(() => {
-    const intervalID = setInterval(() => toggleImage(1), 7000);
-
-    return () => clearInterval(intervalID);
+    const intervalID = setInterval(() => toggleImage(1), 2000); // Change de slide toutes les 2 secondes
+    return () => clearInterval(intervalID); // Nettoie l'intervalle quand le composant est démonté
   }, []);
 
   return (
-    <>
     <div className="slider-container">
       <div className="slider">
-
-        <div ref={sliderImagesRef} className="slider-images">
+      {/* Conteneur de l'image affichée */}
+        <div className="slider-images">
+      {/* Affiche l'image de la slide actuelle */}
           <img
             src={sliderData.find((obj) => obj.id === sliderIndex).src}
             alt={sliderData.find((obj) => obj.id === sliderIndex).name}
@@ -74,47 +53,46 @@ export default function Caroussel() {
           />
         </div>
         <div className="slider-content">
+          <p className="image-info">
+            <span className="image-name">
+              {sliderData.find((obj) => obj.id === sliderIndex).name}
+            </span>
+            <br />
+            <span className="image-description">
+              {sliderData.find((obj) => obj.id === sliderIndex).description}
+            </span>
+          </p>
 
-        <p className="image-info">
-          <span className="image-name">
-            {sliderData.find((obj) => obj.id === sliderIndex).name}
-          </span>
-          <br />
-          <span className="image-description">
-            {sliderData.find((obj) => obj.id === sliderIndex).description}
-          </span>
-        </p>
+          <button
+            onClick={() => toggleImage(-1)}
+            className="navigation-button prev-button"
+          >
+            <img src={leftChevron} alt="previous image" />
+          </button>
+          <button
+            onClick={() => toggleImage(1)}
+            className="navigation-button next-button"
+          >
+            <img src={rightChevron} alt="next-image" />
+          </button>
 
-        <button
-          onClick={() => toggleImage(-1)}
-          className="navigation-button prev-button"
-        >
-          <img src={leftChevron} alt="previous image" />
-        </button>
-        <button
-          onClick={() => toggleImage(1)}
-          className="navigation-button next-button"
-        >
-          <img src={rightChevron} alt="next-image" />
-        </button>
+          <div className="dots-container">
+            {sliderData.map((slide) => (
+              <div
+                key={slide.id}
+                className={`dot ${
+                  sliderIndex === slide.id ? "active" : "passive"
+                }`}
+                onClick={() => setSliderIndex(slide.id)}
+              ></div>
+            ))}
+          </div>
 
-        <div className="dots-container">
-          {sliderData.map((slide) => (
-            <div
-              key={slide.id}
-              className={`dot ${
-                sliderIndex === slide.id ? "active" : "passive"
-              }`} // "active" uniquement pour la boule active
-              onClick={() => setSliderIndex(slide.id)} // Permet de naviguer au clic
-            ></div>
-          ))}
-        </div>
-        <button className="down-button" onClick={scrollToNextSection}>
-          <img src={downChevron} alt="down-chevron" />
-        </button>
+          <button className="down-button" onClick={scrollToNextSection}>
+            <img src={downChevron} alt="down-chevron" />
+          </button>
         </div>
       </div>
-      </div>
-    </>
+    </div>
   );
 }

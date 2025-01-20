@@ -16,4 +16,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Au moins la hauteur de la fenêtre */
+}
+
+.App > *:not(footer) {
+  flex: 1; /* La place restante se répartit sur la zone de contenu */
 }/*# sourceMappingURL=App.css.map */
