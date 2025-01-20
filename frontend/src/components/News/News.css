@@ -25,6 +25,7 @@
   align-items: center;
   box-shadow: 0 2px 4px rgba(237, 237, 237, 0.4);
   overflow: hidden;
+  cursor: pointer;
 }
 .news-secContent .news-singleNew:nth-child(4) {
   grid-column: span 2; /* S'étend sur 2 colonnes */
@@ -38,6 +39,7 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
+  cursor: pointer;
   /* Voile gris */
   /* Contenu texte */
 }

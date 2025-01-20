@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useParams } from "react-router-dom";
 import Modal from "./Modal/Modal";
-import { projectsData, galleryProjects } from "./Data/ProjectData";
+import { projectsData } from "./Data/ProjectData";
 import "./ProjectsDetails.css";
 
 export default function ProjectsDetails() {
@@ -36,7 +36,7 @@ export default function ProjectsDetails() {
     );
   }, []);
 
-  //Animation tasks
+  //Animation domaines
   useEffect(() => {
     // Sélectionne tous les éléments <li> dans les deux colonnes
     const techItems = gsap.utils.toArray(".project-tech-list li");
@@ -105,30 +105,29 @@ export default function ProjectsDetails() {
                 <div className="tech-list-left">
                   <li>
                     <i className="fas fa-tools"></i> <strong>Type :</strong>{" "}
-                    Réhabilitation & Modernisation
+                    {projet.type}
                   </li>
                   <li>
                     <i className="fas fa-map-marker-alt"></i>{" "}
-                    <strong>Localisation :</strong> Rennes
+                    <strong>Localisation :</strong> {projet.loc}
                   </li>
                   <li>
                     <i className="fas fa-ruler-combined"></i>{" "}
-                    <strong>Superficie :</strong> 120 m²
+                    <strong>Superficie :</strong> {projet.sup}
                   </li>
                 </div>
                 <div className="tech-list-right">
                   <li>
                     <i className="fas fa-user-tie"></i>{" "}
-                    <strong>Maîtrise d’ouvrage :</strong> Commande privée
+                    <strong>Maîtrise d’ouvrage :</strong> {projet.mo}
                   </li>
                   <li>
                     <i className="fas fa-lightbulb"></i>{" "}
-                    <strong>Intervention :</strong> De l’étude à la
-                    concrétisation
+                    <strong>Intervention :</strong> {projet.inter}
                   </li>
                   <li>
                     <i className="fas fa-check-circle"></i>{" "}
-                    <strong>Avancement :</strong> Projet finalisé
+                    <strong>Avancement :</strong> {projet.avance}
                   </li>
                 </div>
               </ul>
@@ -156,8 +155,23 @@ export default function ProjectsDetails() {
             }}
             onClick={() => openModal(image.src)} // Ouvre la modale avec l'image cliquée
           >
-            <div className="ProjectDetail-2-col-imgDiv">
-              <img src={image.src} alt={image.alt} />
+            <div
+              className="ProjectDetail-2-col-imgDiv"
+              style={{
+                width: "100%",
+                height: "100%",
+                overflow: "hidden",
+              }}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
             </div>
           </div>
         ))}

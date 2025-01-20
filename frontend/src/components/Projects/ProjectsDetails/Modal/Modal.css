@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Conteneur principal */
 .modal-overlay {
   position: fixed;
@@ -15,16 +16,19 @@
 /* Contenu de la modale */
 .modal-content {
   position: relative;
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 90vw; /* Ajuste la largeur max à 90% de l'écran */
+  max-height: 80vh; /* Ajuste la hauteur max à 80% de l'écran */
   background-color: #fff;
   border-radius: 5px;
   overflow: hidden;
 }
 
 .modal-content img {
-  width: 100%;
-  height: auto;
+  max-width: 90vw; /* Maximum 90% de la largeur de l'écran */
+  height: 80vh;
+  -o-object-fit: contain;
+     object-fit: contain; /* Ajuste l'image pour qu'elle soit entièrement visible */
+  width: auto; /* Garde les proportions */
 }
 
 .close-btn {
@@ -34,4 +38,29 @@
   font-size: 2rem;
   color: rgb(0, 0, 0);
   cursor: pointer;
+}
+
+.modal-overlay {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.modal-content {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=Modal.css.map */

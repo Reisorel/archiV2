@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import "./News.css";
+import { useNavigate } from "react-router-dom"; // Import du hook useNavigate
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { newsData } from "./Data/NewsData"
+import { newsData } from "./Data/NewsData";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function News() {
+  const navigate = useNavigate(); // Initialisez le hook useNavigate
   const titleRef = useRef(null);
   const gridRef = useRef(null);
 
@@ -62,6 +64,15 @@ export default function News() {
     }
   }, []);
 
+  const handleNavigate = (slug) => {
+    navigate(`/projects/${slug}`); // Navigue vers la route du projet
+    window.scrollTo({
+      top: 0, // Scroll en haut de la page
+      left: 0,
+      behavior: "smooth", // Animation de défilement fluide
+    });
+  };
+
   return (
     <div id="news" className="news-container">
       <div className="news-secTitle">
@@ -71,9 +82,13 @@ export default function News() {
       </div>
 
       <div ref={gridRef} className="news-secContent grid">
-        {newsData.map(({ id, imgSrc, title }) => {
+        {newsData.map(({ id, imgSrc, title, slug }) => {
           return (
-            <div key={id} className="news-singleNew">
+            <div
+              key={id}
+              className="news-singleNew"
+              onClick={() => handleNavigate(slug)} // Navigation au clic
+            >
               <div className="news-imageDiv">
                 <img src={imgSrc} alt={title} />
                 <div className="news-hoverContent">{title}</div>
