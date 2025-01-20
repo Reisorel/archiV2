@@ -21,14 +21,12 @@ export default function Caroussel() {
     }
   };
 
+
   // Fonction pour changer l'image (précédente ou suivante)
   const toggleImage = (indexPayload) => {
     setSliderIndex((prevIndex) => {
-      // Calcule le nouvel index en ajoutant indexPayload
       const newIndex = prevIndex + indexPayload;
-      // Si on dépasse la dernière image, on revient à la première
       if (newIndex > sliderData.length) return 1;
-      // Si on va en dessous de la première image, on revient à la dernière
       if (newIndex < 1) return sliderData.length;
       return newIndex;
     });
@@ -64,13 +62,13 @@ export default function Caroussel() {
           </p>
 
           <button
-            onClick={() => toggleImage(-1)}
+            onClick={() => toggleImage(1)}
             className="navigation-button prev-button"
           >
             <img src={leftChevron} alt="previous image" />
           </button>
           <button
-            onClick={() => toggleImage(1)}
+            onClick={() => toggleImage(-1)}
             className="navigation-button next-button"
           >
             <img src={rightChevron} alt="next-image" />
