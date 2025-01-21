@@ -1,1 +1,48 @@
-/*# sourceMappingURL=Test.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;600&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Signika Negative", sans-serif, Arial;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  width: 150vh;
+  height: 60vh;
+  border: 1px solid white;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 0 10px;
+}/*# sourceMappingURL=Test.css.map */

@@ -32,7 +32,7 @@ function App() {
                 path="/"
                 element={
                   <>
-                    <Caroussel />
+                    {/* <Caroussel /> */}
                     <News />
                     <Missions />
                     <About />

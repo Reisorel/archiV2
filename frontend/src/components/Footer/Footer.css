@@ -95,6 +95,7 @@
 .chevron img {
   height: 40px;
   width: auto;
+  cursor: pointer;
 }
 
 .right-paragraph {
@@ -186,4 +187,5 @@
 
 .icon:hover i {
   color: white; /* Change la couleur de l'icône en blanc pour contraste */
+  cursor: pointer;
 }/*# sourceMappingURL=Footer.css.map */

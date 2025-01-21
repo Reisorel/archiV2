@@ -95,6 +95,7 @@
 .chevron img {
   height: 40px;
   width: auto;
+  cursor: pointer;
 }
 
 .right-paragraph {
@@ -178,7 +179,6 @@
 .icon:hover {
   cursor: pointer;
   animation: shakeY 1s ease-in-out; /* Applique l'animation verticale au survol */
-
 }
 
 .icon:hover::before {
@@ -187,4 +187,5 @@
 
 .icon:hover i {
   color: white; /* Change la couleur de l'icône en blanc pour contraste */
+  cursor: pointer;
 }

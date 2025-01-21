@@ -90,8 +90,12 @@ function Footer() {
             <strong>Agence d'architecture basée à Rennes</strong>
           </p>
           <p>BRETAGNE / NORMANDIE / PARIS</p>
-          <div className="chevron" onClick={handleScrollToTop}>
-            <img src={upChevron} alt="up-chevron" />
+          <div
+          data-hover-detect="true"
+          className="chevron"
+          onClick={handleScrollToTop}>
+            <img
+            src={upChevron} alt="up-chevron" />
           </div>
         </div>
 

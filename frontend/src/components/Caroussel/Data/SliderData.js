@@ -1,6 +1,6 @@
 const slider1 = "images/caroussel/Appartement1.jpg";
-const slider2 = "images/caroussel/Appartement2.jpg";
-const slider3 = "images/caroussel/Campagne1.jpg";
+const slider2 = "images/caroussel/Commerce1.jpg";
+const slider3 = "images/caroussel/Maison_mer1.jpg";
 const slider4 = "images/caroussel/Chambre1.jpg";
 const slider5 = "images/caroussel/Ferme1.jpg";
 
@@ -13,8 +13,8 @@ export const sliderData = [
   },
   {
     id: 2,
-    name: "APPARTEMENT PARISIEN PLAN",
-    description: "Paris 7, Ile-De-France",
+    name: "BOULANGERIE",
+    description: "Rennes 7, Ile-De-France",
     src: slider2,
   },
   {
