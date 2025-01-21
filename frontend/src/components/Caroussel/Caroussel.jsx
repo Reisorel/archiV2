@@ -128,7 +128,7 @@ export default function Caroussel() {
           {/* Bouton pour descendre */}
           <div className="down-button-container">
             <button
-            data-hover-detect="true" 
+            data-hover-detect="true"
             className="down-button" onClick={scrollToNextSection}>
               <img src={downChevron} alt="down-chevron" />
             </button>

@@ -15,6 +15,7 @@ const Test = () => {
   const slidesRef = useRef([]); // Références pour les slides
   const currentIndexRef = useRef(0); // Référence mutable pour l'index courant
   const autoplayRef = useRef(null); // Référence pour l'autoplay
+  const isAnimatingRef = useRef(false); // Verrou pour les animations
   const slideDuration = 0.75; // Durée de transition (en secondes)
   const autoplayInterval = 3000; // Intervalle d'autoplay (en ms)
   const totalSlides = slideData.length;
@@ -43,6 +44,9 @@ const Test = () => {
   };
 
   const gotoSlide = (steps) => {
+    if (isAnimatingRef.current) return; // Si une animation est en cours, on sort
+    isAnimatingRef.current = true; // Verrouille pendant l'animation
+
     const currentIndex = currentIndexRef.current; // Index actuel
     const targetIndex = (currentIndex + steps + totalSlides) % totalSlides; // Calcul de l'index cible
 
@@ -56,7 +60,13 @@ const Test = () => {
     gsap.fromTo(
       slidesRef.current[targetIndex],
       { xPercent: steps * 100 },
-      { xPercent: 0, duration: slideDuration }
+      {
+        xPercent: 0,
+        duration: slideDuration,
+        onComplete: () => {
+          isAnimatingRef.current = false; // Libère le verrou après l'animation
+        },
+      }
     );
 
     // Met à jour l'index courant
@@ -77,11 +87,11 @@ const Test = () => {
 
   return (
     <div className="wrapper">
-      <div className="slider slider-one">
+      <div className="slider-test">
         {slideData.map((slide, index) => (
           <div
             key={index}
-            className="slide"
+            className="slide-test"
             style={{ backgroundColor: slide.color }}
             ref={(el) => (slidesRef.current[index] = el)}
           >
@@ -89,7 +99,7 @@ const Test = () => {
           </div>
         ))}
       </div>
-      <div className="buttons">
+      <div className="buttons-test">
         <button id="prev" onClick={handlePrev}>
           Previous
         </button>
