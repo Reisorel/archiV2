@@ -5,7 +5,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Background from "./components/Background/Background";
 import CustomCursor from "./components/Cursor/Cursor";
-import Router from "./routes/Router"; 
+import Router from "./routes/Router";
 
 function App() {
   return (

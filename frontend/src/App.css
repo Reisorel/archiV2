@@ -1,10 +1,10 @@
 @charset "UTF-8";
 @import "./assets/styles/main.css";
 @import 'aos/dist/aos.css';
+
 body {
   display: flex;
   flex-direction: column;
-  font-size: 16px; /* Ajuste si nécessaire */
   line-height: 1.6; /* Pour une meilleure lisibilité */
   color: #333; /* Couleur neutre élégante */
   margin: 0;
@@ -21,3 +21,4 @@ body {
 .App > *:not(footer) {
   flex: 1; /* La place restante se répartit sur la zone de contenu */
 }/*# sourceMappingURL=App.css.map */
+
