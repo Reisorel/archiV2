@@ -1,6 +1,4 @@
-@charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;600&display=swap");
-.slider-test {
+.slider-frame {
   width: 100%;
   height: 600px;
   position: relative;
@@ -11,7 +9,7 @@
   align-items: center;
 }
 
-.slide-test {
+.slider-slide {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -30,13 +28,12 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   justify-content: center;
   will-change: transform;
 }
 
-.image-info {
+.slider-image-info {
   line-height: 1.2;
   position: absolute;
   display: block;
@@ -45,28 +42,31 @@
   bottom: 1rem;
   color: white;
   font-weight: 300;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Ombre légère pour le texte */
-  z-index: 2; /* Par-dessus l'image */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 
-.image-name {
-  font-family: "DINPro";
+.slider-image-name {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 0;
 }
 
-.image-description {
-  font-family: "DINPro";
+.image-image-description {
   font-size: 1rem;
-  font-style: italic; /* Pour différencier visuellement */
+  font-style: italic;
 }
 
-.navigation-button {
+.slider-navigation-button {
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: rgba(51, 51, 51, 0.3); /* Transparence sur le fond uniquement */
+  background-color: rgba(
+    51,
+    51,
+    51,
+    0.3
+  );
   border: none;
   border-radius: 50%;
   top: 50%;
@@ -77,11 +77,16 @@
   align-items: center;
 }
 
-.navigation-button i {
+.slider-navigation-button i {
   color: rgb(255, 255, 255);
   opacity: 1;
   font-size: 1rem;
-  transition: transform 0.6s ease; /* Animation fluide */
+  transition: transform 0.6s ease;
+}
+
+.slider-navigation-button:hover i {
+  transform: rotateX(360deg); /* 2 tours sur l'axe X */
+  cursor: pointer;
 }
 
 .prev-button {
@@ -92,12 +97,52 @@
   right: 2rem;
 }
 
-.navigation-button:hover i {
-  transform: rotateX(360deg); /* 2 tours sur l'axe X */
+/* Dots de nagivation */
+
+.slider-dots-container {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.slider-dot.passive {
+  background-color: transparent; /* Fond blanc pour la boule active */
+  transform: scale(1.2); /* Légèrement agrandie */
   cursor: pointer;
 }
 
-.down-button-container {
+.slider-dot.passive:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.4
+  ); /* Fond plus opaque (60%) au survol */
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  background-color: white; /* Fond blanc pour la boule active */
+  transform: scale(1.2); /* Légèrement agrandie */
+  cursor: pointer;
+}
+
+//Bouton chevron bas
+
+.slider-down-button-container {
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -105,7 +150,7 @@
   z-index: 99;
 }
 
-.down-button {
+.slider-down-button {
   width: 50px;
   height: 50px;
   background-color: transparent;
@@ -118,12 +163,13 @@
   z-index: 99;
 }
 
-.down-button:hover {
+.slider-down-button:hover {
   animation: shakeY 1s ease-in-out; /* Applique l'animation verticale au survol */
 }
 
 @keyframes shakeY {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0); /* Position initiale */
   }
   25% {
@@ -136,47 +182,9 @@
     transform: translateY(-5px); /* Retourne légèrement vers le haut */
   }
 }
-.down-button img {
+
+.slider-down-button img {
   width: 45px; /* Taille du chevron */
   height: auto;
   cursor: pointer;
 }
-
-/* Conteneur des dots */
-.dots-container {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* Espace entre les boules */
-}
-
-/* Style de base des dots */
-.dot {
-  width: 12px;
-  height: 12px;
-  border: 1px solid white; /* Contour blanc pour les boules */
-  border-radius: 50%; /* Rend les boules rondes */
-  background-color: transparent; /* Fond transparent par défaut */
-  cursor: pointer; /* Change le curseur au survol */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Dot active */
-.dot.passive {
-  background-color: transparent; /* Fond blanc pour la boule active */
-  transform: scale(1.2); /* Légèrement agrandie */
-  cursor: pointer;
-}
-
-.dot.passive:hover {
-  background-color: rgba(255, 255, 255, 0.4); /* Fond plus opaque (60%) au survol */
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: white; /* Fond blanc pour la boule active */
-  transform: scale(1.2); /* Légèrement agrandie */
-  cursor: pointer;
-}/*# sourceMappingURL=Caroussel.css.map */

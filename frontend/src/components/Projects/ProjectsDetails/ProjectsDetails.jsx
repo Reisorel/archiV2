@@ -39,7 +39,7 @@ export default function ProjectsDetails() {
   //Animation domaines
   useEffect(() => {
     // Sélectionne tous les éléments <li> dans les deux colonnes
-    const techItems = gsap.utils.toArray(".project-tech-list li");
+    const techItems = gsap.utils.toArray(".projectDetails-tech-list li");
 
     // Animation GSAP task
     gsap.fromTo(
@@ -101,8 +101,8 @@ export default function ProjectsDetails() {
               <p>{projet.description2}</p>
             </div>
             <div className="projectDetails-1-tech">
-              <ul ref={techRef} className="project-tech-list">
-                <div className="tech-list-left">
+              <ul ref={techRef} className="projectDetails-tech-list">
+                <div className="projectDetails-tech-list-left">
                   <li>
                     <i className="fas fa-tools"></i> <strong>Type :</strong>{" "}
                     {projet.type}
@@ -116,7 +116,7 @@ export default function ProjectsDetails() {
                     <strong>Superficie :</strong> {projet.sup}
                   </li>
                 </div>
-                <div className="tech-list-right">
+                <div className="projectDetails-tech-list-right">
                   <li>
                     <i className="fas fa-user-tie"></i>{" "}
                     <strong>Maîtrise d’ouvrage :</strong> {projet.mo}

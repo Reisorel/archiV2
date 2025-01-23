@@ -1,20 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { missionsData } from "./Data/MissionsData";
+
 import downChevron from "../../assets/icons/down-arrow-black.svg";
 import "./Missions.css";
-
-const img1 = "images/missions/reflexion-1.jpg";
-const img2 = "images/missions/plan-2.jpg";
-const img3 = "images/missions/urbain-2.jpg";
-
-const img4 = "images/missions/4planscrayons.jpg";
-const img5 = "images/missions/5ordi.jpg";
-const img6 = "images/missions/6verticalhouse.jpg";
-
-const img7 = "images/missions/7construction.jpg";
-const img8 = "images/missions/8escalier.jpg";
-const img9 = "images/missions/9maison.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,7 +38,7 @@ export default function Missions() {
   //Animation tasks
   useEffect(() => {
     // Sélectionne tous les éléments <li> dans les deux colonnes
-    const taskItems = gsap.utils.toArray(".task-list-div li");
+    const taskItems = gsap.utils.toArray(".missions-task-list-div li");
 
     // Animation GSAP task
     gsap.fromTo(
@@ -146,7 +136,7 @@ export default function Missions() {
       <div ref={gridRef} className="missions-intro">
         <div ref={textRef} className="missions-intro-grid">
           <div className="missions-intro-grid1">
-            <div className="intro-text-div">
+            <div className="missions-intro-text-div">
               <p>
                 Je réalise des projets architecturaux, allant du logement
                 individuel à la commande publique, en accompagnant mes clients
@@ -169,8 +159,8 @@ export default function Missions() {
             </div>
           </div>
           <div className="missions-intro-grid2">
-            <div className="task-list-div">
-              <div className="task-list-left">
+            <div className="missions-task-list-div">
+              <div className="missions-task-list-left">
                 <li>
                   <i className="fas fa-home"></i>
                   Neuf
@@ -191,7 +181,7 @@ export default function Missions() {
                   Architecture d’intérieur
                 </li>
               </div>
-              <div className="task-list-right">
+              <div className="missions-task-list-right">
                 <li>
                   <i className="fas fa-house-user"></i>
                   Maison individuelle
@@ -218,7 +208,7 @@ export default function Missions() {
         </div>
       </div>
 
-      <div className="missions-secContent grid" ref={gridRef}>
+      <div className="missions-secContent" ref={gridRef}>
         <div className="missions-row">
           <div
             className="missions-accordion-header"
@@ -231,19 +221,19 @@ export default function Missions() {
             <img
               src={downChevron}
               alt="Chevron icon"
-              className={`chevron-icon ${
+              className={`missions-chevron-icon ${
                 isAccordionOpen === 1 ? "rotate" : ""
               }`}
             />
           </div>
           <div
-            className={`accordion-content grid ${
+            className={`missions-accordion-content grid ${
               isAccordionOpen === 1 ? "visible" : "hidden"
             } `}
           >
-            <div className="accordion-content-text">
+            <div className="missions-accordion-content-text">
               <h2 className="sub-2">OBJECTIF :</h2>
-              <div className="paragraph-group">
+              <div className="missions-paragraph-group">
                 <p>
                   La phase de conception est essentielle dans le processus
                   architectural : c’est à cette étape que la réflexion se
@@ -259,7 +249,7 @@ export default function Missions() {
               </div>
               <h2 className="sub-2">ETAPES :</h2>
               <h3 className="sub-3">L'ESQUISSE</h3>
-              <div className="paragraph-group"></div>
+              <div className="missions-paragraph-group"></div>
               <p>
                 Sur la base du programme défini, l’architecte établit si besoin
                 le relevé des existants. Il réalise une esquisse répondant au
@@ -272,7 +262,7 @@ export default function Missions() {
                 liaisons, les solutions d’amélioration de l’existant.
               </p>
               <h3 className="sub-3">L'AVANT-PROJET</h3>
-              <div className="paragraph-group">
+              <div className="missions-paragraph-group">
                 <p>
                   L’architecte précise les dimensions de l’ouvrage, son aspect,
                   présente les solutions retenues, détermine les surfaces de
@@ -283,7 +273,7 @@ export default function Missions() {
                 </p>
               </div>
               <h3 className="sub-3">L'AUTORISATION D'URBANISME</h3>{" "}
-              <div className="paragraph-group">
+              <div className="missions-paragraph-group">
                 <p>
                   Si le projet nécessite le dépôt d’une autorisation d’urbanisme
                   (déclaration préalable, permis de construire, etc.), la
@@ -294,7 +284,7 @@ export default function Missions() {
                 </p>
               </div>
               <h3 className="sub-3">CONCEPTION FINALE ET DETAILLEE</h3>{" "}
-              <div className="paragraph-group">
+              <div className="missions-paragraph-group">
                 <p>
                   Cette phase permet de valider la nature et les
                   caractéristiques des matériaux, des procédés constructifs et
@@ -321,7 +311,7 @@ export default function Missions() {
               <h3 className="sub-3">
                 CONSULTATION DES ENTREPRISES ET ANALYSE DES OFFRES
               </h3>{" "}
-              <div className="paragraph-group">
+              <div className="missions-paragraph-group">
                 <p>
                   L’architecte rassemble les éléments du projet nécessaires à la
                   consultation permettant aux entrepreneurs consultés d’établir
@@ -335,16 +325,25 @@ export default function Missions() {
               </div>
             </div>
 
-            <div className="accordion-content-image">
-              <div className="image-large">
-                <img src={img1} alt="" />
+            <div className="missions-accordion-content-image">
+              <div className="missions-image-large">
+                <img
+                  src={missionsData[0].imgSrc}
+                  alt={missionsData[0].description}
+                />
               </div>
-              <div className="image-small-container">
-                <div className="image-small">
-                  <img src={img2} alt="" />
+              <div className="missions-image-small-container">
+                <div className="missions-image-small">
+                  <img
+                    src={missionsData[1].imgSrc}
+                    alt={missionsData[1].description}
+                  />
                 </div>
-                <div className="image-small">
-                  <img src={img3} alt="" />
+                <div className="missions-image-small">
+                  <img
+                    src={missionsData[2].imgSrc}
+                    alt={missionsData[2].description}
+                  />
                 </div>
               </div>
             </div>
@@ -361,19 +360,19 @@ export default function Missions() {
             <img
               src={downChevron}
               alt="Chevron icon"
-              className={`chevron-icon ${
+              className={`missions-chevron-icon ${
                 isAccordionOpen === 2 ? "rotate" : ""
               }`}
             />
           </div>
           <div
-            className={`accordion-content grid ${
+            className={`missions-accordion-content grid ${
               isAccordionOpen === 2 ? "visible" : "hidden"
             } `}
           >
-            <div className="accordion-content-text">
+            <div className="missions-accordion-content-text">
               <h2 className="sub-2">OBJECTIF :</h2>
-              <div className="paragraph-group">
+              <div className="missions-paragraph-group">
                 <p>
                   La phase de conception constitue le socle du projet
                   d'architecte : c’est à cette étape que la réflexion se
@@ -394,7 +393,7 @@ export default function Missions() {
                     ASSISTANCE A LA SIGNATURE DES TRAVAUX
                   </h3>
                 </li>
-                <div className="paragraph-group">
+                <div className="missions-paragraph-group">
                   <p>
                     Signature des contrats de travaux entreprise, mise en place
                     de la date d’ouverture du chantier et du planning
@@ -405,7 +404,7 @@ export default function Missions() {
                 <li>
                   <h3 className="sub-3">PREPARATION DE CHANTIER</h3>
                 </li>
-                <div className="paragraph-group">
+                <div className="missions-paragraph-group">
                   <p>
                     L’architecte organise les opérations préalables au démarrage
                     des travaux. En concertation avec les entreprises, il
@@ -417,7 +416,7 @@ export default function Missions() {
                   <h3 className="sub-3">VISAS DE TRAVAUX</h3>
                 </li>
 
-                <div className="paragraph-group">
+                <div className="missions-paragraph-group">
                   <p>
                     Les études d’exécution s’il y a lieu, sont intégralement
                     réalisées par les entreprises. L’architecte en examine alors
@@ -433,7 +432,7 @@ export default function Missions() {
                   </h3>
                 </li>
 
-                <div className="paragraph-group">
+                <div className="missions-paragraph-group">
                   <p>
                     L’architecte organise et dirige les réunions de chantier et
                     en rédige les comptes-rendus, qu’il diffuse, aux
@@ -449,7 +448,7 @@ export default function Missions() {
                   <h3 className="sub-3">SUIVI ADMINISTRATIF ET PAIEMENTS</h3>
                 </li>
 
-                <div className="paragraph-group">
+                <div className="missions-paragraph-group">
                   <p>
                     L’architecte vérifie les factures des entrepreneurs. Il
                     établit le décompte définitif de fin de chantier et propose
@@ -462,7 +461,7 @@ export default function Missions() {
                   </h3>
                 </li>
 
-                <div className="paragraph-group">
+                <div className="missions-paragraph-group">
                   <p>
                     L’architecte assiste le client pour la réception des
                     travaux. Il organise une visite contradictoire des travaux
@@ -480,16 +479,25 @@ export default function Missions() {
               </ul>
             </div>
 
-            <div className="accordion-content-image">
-              <div className="image-large">
-                <img src={img4} alt="" />
+            <div className="missions-accordion-content-image">
+              <div className="missions-image-large">
+                <img
+                  src={missionsData[3].imgSrc}
+                  alt={missionsData[3].description}
+                />
               </div>
-              <div className="image-small-container">
-                <div className="image-small">
-                  <img src={img5} alt="" />
+              <div className="missions-image-small-container">
+                <div className="missions-image-small">
+                  <img
+                    src={missionsData[4].imgSrc}
+                    alt={missionsData[4].description}
+                  />
                 </div>
-                <div className="image-small">
-                  <img src={img6} alt="" />
+                <div className="missions-image-small">
+                  <img
+                    src={missionsData[5].imgSrc}
+                    alt={missionsData[5].description}
+                  />
                 </div>
               </div>
             </div>
@@ -506,19 +514,19 @@ export default function Missions() {
             <img
               src={downChevron}
               alt="Chevron icon"
-              className={`chevron-icon ${
+              className={`missions-chevron-icon ${
                 isAccordionOpen === 3 ? "rotate" : ""
               }`}
             />
           </div>
           <div
-            className={`accordion-content grid ${
+            className={`missions-accordion-content grid ${
               isAccordionOpen === 3 ? "visible" : "hidden"
             } `}
           >
-            <div className="accordion-content-text">
+            <div className="missions-accordion-content-text">
               <h2 className="sub-2">OBJECTIF :</h2>
-              <div className="paragraph-group">
+              <div className="missions-paragraph-group">
                 <p>
                   Vous pouvez aussi choisir des petites prestation individuelles
                 </p>
@@ -533,7 +541,7 @@ export default function Missions() {
                 <li>
                   <h3 className="sub-3">LA VISITE CONSEIL</h3>
                 </li>
-                <div className="paragraph-group">
+                <div className="missions-paragraph-group">
                   <p>
                     Cette mission est indépendante des missions détaillées
                     ci-avant. Elle peut être réalisée seule et sans suite.
@@ -548,7 +556,7 @@ export default function Missions() {
                 <li>
                   <h3 className="sub-3">LA MISSION PARTIELLE</h3>
                 </li>
-                <div className="paragraph-group">
+                <div className="missions-paragraph-group">
                   <p>La mission partielle couvre</p>
                   <ul>
                     <li>la phase esquisse</li>
@@ -564,7 +572,7 @@ export default function Missions() {
                 <li>
                   <h3 className="sub-3">LA MISSION PARTIELLE ETENDUE</h3>
                 </li>
-                <div className="paragraph-group">
+                <div className="missions-paragraph-group">
                   <p>
                     La mission partielle étendue couvre les éléments de la
                     mission partielle en ajoutant{" "}
@@ -582,7 +590,7 @@ export default function Missions() {
                 <li>
                   <h3 className="sub-3">LA MISSION COMPLETE</h3>
                 </li>
-                <div className="paragraph-group">
+                <div className="missions-paragraph-group">
                   <p>
                     La mission complète couvre l'ensemble des prestation de
                     conception architecturale et réalisaiton / suivi de
@@ -592,16 +600,25 @@ export default function Missions() {
               </ul>
             </div>
 
-            <div className="accordion-content-image">
-              <div className="image-large">
-                <img src={img7} alt="" />
+            <div className="missions-accordion-content-image">
+              <div className="missions-image-large">
+                <img
+                  src={missionsData[6].imgSrc}
+                  alt={missionsData[6].description}
+                />
               </div>
-              <div className="image-small-container">
-                <div className="image-small">
-                  <img src={img8} alt="" />
+              <div className="missions-image-small-container">
+                <div className="missions-image-small">
+                  <img
+                    src={missionsData[7].imgSrc}
+                    alt={missionsData[7].description}
+                  />
                 </div>
-                <div className="image-small">
-                  <img src={img9} alt="" />
+                <div className="missions-image-small">
+                  <img
+                    src={missionsData[8].imgSrc}
+                    alt={missionsData[8].description}
+                  />
                 </div>
               </div>
             </div>

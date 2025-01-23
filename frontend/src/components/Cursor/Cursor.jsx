@@ -53,7 +53,7 @@ const CustomCursor = () => {
       link.addEventListener('mouseleave', handleMouseLeave);
     });
 
-    // 🧹 Nettoyage des événements et suppression des éléments au démontage
+    // Nettoyage des événements et suppression des éléments au démontage
     return () => {
       document.removeEventListener('mousemove', moveCursor);
       document.removeEventListener('mousedown', handleMouseDown);

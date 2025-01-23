@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Caroussel from "../components/Caroussel/Caroussel";
+import Slider from "../components/Slider/Slider";
 import News from "../components/News/News";
 import Missions from "../components/Missions/Missions";
 import About from "../components/About/About";
@@ -18,7 +18,7 @@ export default function Router() {
         path="/"
         element={
           <>
-            <Caroussel />
+            <Slider />
             <News />
             <Missions />
             <About />
