@@ -178,14 +178,14 @@
 /* Effet au survol */
 .footer-icon:hover {
   cursor: pointer;
-  animation: shakeY 1s ease-in-out; /* Applique l'animation verticale au survol */
+  animation: shakeY 1s ease-in-out;
 }
 
 .footer-icon:hover::before {
-  width: 100%; /* La bande se remplit au survol */
+  width: 100%;
 }
 
 .footer-icon:hover i {
-  color: white; /* Change la couleur de l'icône en blanc pour contraste */
+  color: white;
   cursor: pointer;
 }/*# sourceMappingURL=Footer.css.map */

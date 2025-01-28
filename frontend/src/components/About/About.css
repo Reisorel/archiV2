@@ -5,18 +5,18 @@
   padding-bottom: 5rem;
 }
 
-.about-infos-container {
+.infos-container {
   display: grid;
   grid-template-columns: 1fr 2fr 1.5fr; /* La 1ère colonne est 2 fois plus petite */
   gap: 5rem;
 }
 
-.about-grid-column {
+.about-grid-item {
   display: flex;
   flex-direction: column;
 }
 
-.about-picture {
+.picture {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +26,7 @@
   overflow: hidden; /* Empêche le dépassement */
 }
 
-.about-picture img {
+.picture img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -34,46 +34,45 @@
   border-radius: 2px;
 }
 
-.about-presentation-text {
+.presentation-text {
   text-align: justify;
-  margin: 0 auto;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #333; /* Couleur légèrement adoucie */
+  margin: 0 auto; /* Centre la section */
 }
 
-.about-presentation-text p:first-of-type {
+.presentation-text p:first-of-type {
   font-size: 1.2rem;
   font-weight: 500;
   color: #111;
 }
 
-.about-presentation-text p {
+.presentation-text p {
   margin-bottom: 1.5rem;
 }
 
-.about-text-anim {
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-.about-CV {
+.CV {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  padding: 1rem 0; /* Ajoute un peu d'espace en haut et en bas */
   overflow: visible;
-  gap: 2rem;
+  gap: 2rem; /* Définit l'espacement vertical entre chaque .date */
   position: relative;
 }
 
-.about-CV::before {
+.CV::before {
   content: "";
   position: absolute;
   left: -2rem; /* Positionne la ligne sur le côté gauche */
   top: 1rem; /* Démarre la ligne après le padding */
   bottom: 1rem; /* Termine la ligne avant le padding */
-  width: 2px;
-  background-color: black;
+  width: 2px; /* Épaisseur de la ligne */
+  background-color: black; /* Couleur de la ligne */
 }
 
-.about-date {
+.date {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -84,7 +83,12 @@
   color: #333;
 }
 
-.about-year {
-  font-weight: bold;
+.year {
+  font-weight: bold; /* Optionnel : mise en valeur de l'année */
   font-size: 1.2rem;
+}
+
+.line2 {
+  font-size: 1.2rem;
+  font-weight: 500;
 }/*# sourceMappingURL=About.css.map */
