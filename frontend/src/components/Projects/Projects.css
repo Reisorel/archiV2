@@ -1,8 +1,16 @@
 @charset "UTF-8";
+.projects-framer {
+  background-color: #ffffff;
+  z-index: 100;
+  position: relative;
+}
+
 .projects-container {
+  z-index: 100;
   margin-left: 8rem;
   margin-right: 8rem;
   margin-bottom: 5rem;
+  background-color: #ffffff;
 }
 
 .projects-secContent-grid {

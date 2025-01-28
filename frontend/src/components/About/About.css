@@ -5,6 +5,7 @@
   padding-bottom: 5rem;
   position: relative;
   z-index: 100;
+  background-color: #ffffff;
   overflow: hidden; /* Évite les débordements qui pourraient causer un espace */
 }
 

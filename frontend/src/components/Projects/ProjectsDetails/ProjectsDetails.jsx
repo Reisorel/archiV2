@@ -83,105 +83,107 @@ export default function ProjectsDetails() {
   }
 
   return (
-    <div id="projectDetails" className="projectDetails-container">
-      <div className="projectDetails-1">
-        <div className="projectDetails-1-imageDiv">
-          <img src={projet.imgSrc} alt={projet.title} />
-        </div>
-        <div className="projectDetails-1-infos">
-          <div className="projecDetails-1-title">
-            <h2 className="sub-2" ref={titleRef}>
-              {projet.title}
-            </h2>
-            <p>{projet.location}</p>
+    <div className="projectDetails-framer">
+      <div id="projectDetails" className="projectDetails-container">
+        <div className="projectDetails-1">
+          <div className="projectDetails-1-imageDiv">
+            <img src={projet.imgSrc} alt={projet.title} />
           </div>
-          <div className="projectDetails-1-text">
-            <div className="projectDetails-1-description">
-              <p>{projet.description1}</p>
-              <p>{projet.description2}</p>
+          <div className="projectDetails-1-infos">
+            <div className="projecDetails-1-title">
+              <h2 className="sub-2" ref={titleRef}>
+                {projet.title}
+              </h2>
+              <p>{projet.location}</p>
             </div>
-            <div className="projectDetails-1-tech">
-              <ul ref={techRef} className="projectDetails-tech-list">
-                <div className="projectDetails-tech-list-left">
-                  <li>
-                    <i className="fas fa-tools"></i> <strong>Type :</strong>{" "}
-                    {projet.type}
-                  </li>
-                  <li>
-                    <i className="fas fa-map-marker-alt"></i>{" "}
-                    <strong>Localisation :</strong> {projet.loc}
-                  </li>
-                  <li>
-                    <i className="fas fa-ruler-combined"></i>{" "}
-                    <strong>Superficie :</strong> {projet.sup}
-                  </li>
-                </div>
-                <div className="projectDetails-tech-list-right">
-                  <li>
-                    <i className="fas fa-user-tie"></i>{" "}
-                    <strong>Maîtrise d’ouvrage :</strong> {projet.mo}
-                  </li>
-                  <li>
-                    <i className="fas fa-lightbulb"></i>{" "}
-                    <strong>Intervention :</strong> {projet.inter}
-                  </li>
-                  <li>
-                    <i className="fas fa-check-circle"></i>{" "}
-                    <strong>Avancement :</strong> {projet.avance}
-                  </li>
-                </div>
-              </ul>
+            <div className="projectDetails-1-text">
+              <div className="projectDetails-1-description">
+                <p>{projet.description1}</p>
+                <p>{projet.description2}</p>
+              </div>
+              <div className="projectDetails-1-tech">
+                <ul ref={techRef} className="projectDetails-tech-list">
+                  <div className="projectDetails-tech-list-left">
+                    <li>
+                      <i className="fas fa-tools"></i> <strong>Type :</strong>{" "}
+                      {projet.type}
+                    </li>
+                    <li>
+                      <i className="fas fa-map-marker-alt"></i>{" "}
+                      <strong>Localisation :</strong> {projet.loc}
+                    </li>
+                    <li>
+                      <i className="fas fa-ruler-combined"></i>{" "}
+                      <strong>Superficie :</strong> {projet.sup}
+                    </li>
+                  </div>
+                  <div className="projectDetails-tech-list-right">
+                    <li>
+                      <i className="fas fa-user-tie"></i>{" "}
+                      <strong>Maîtrise d’ouvrage :</strong> {projet.mo}
+                    </li>
+                    <li>
+                      <i className="fas fa-lightbulb"></i>{" "}
+                      <strong>Intervention :</strong> {projet.inter}
+                    </li>
+                    <li>
+                      <i className="fas fa-check-circle"></i>{" "}
+                      <strong>Avancement :</strong> {projet.avance}
+                    </li>
+                  </div>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div
-        className="projectDetails-2"
-        style={{
-          display: "grid",
-          gridTemplateColumns: layout.gridTemplateColumns,
-          gridTemplateRows: layout.gridTemplateRows,
-          gap: layout.gap,
-        }}
-      >
-        {layout.images.map((image, index) => (
-          <div
-            key={index}
-            className="ProjectDetail-2-col"
-            style={{
-              gridColumn: image.gridColumn,
-              gridRow: image.gridRow,
-            }}
-            onClick={() => openModal(image.src)} // Ouvre la modale avec l'image cliquée
-          >
+        <div
+          className="projectDetails-2"
+          style={{
+            display: "grid",
+            gridTemplateColumns: layout.gridTemplateColumns,
+            gridTemplateRows: layout.gridTemplateRows,
+            gap: layout.gap,
+          }}
+        >
+          {layout.images.map((image, index) => (
             <div
-              className="ProjectDetail-2-col-imgDiv"
+              key={index}
+              className="ProjectDetail-2-col"
               style={{
-                width: "100%",
-                height: "100%",
-                overflow: "hidden",
+                gridColumn: image.gridColumn,
+                gridRow: image.gridRow,
               }}
+              onClick={() => openModal(image.src)} // Ouvre la modale avec l'image cliquée
             >
-              <img
-                src={image.src}
-                alt={image.alt}
+              <div
+                className="ProjectDetail-2-col-imgDiv"
                 style={{
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
+                  overflow: "hidden",
                 }}
-              />
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
 
-        {/* Composant Modale */}
-        <Modal
-          isOpen={isModalOpen}
-          imageSrc={selectedImage}
-          onClose={closeModal}
-        />
+          {/* Composant Modale */}
+          <Modal
+            isOpen={isModalOpen}
+            imageSrc={selectedImage}
+            onClose={closeModal}
+          />
+        </div>
       </div>
     </div>
   );

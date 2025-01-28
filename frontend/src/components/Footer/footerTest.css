@@ -1,4 +1,13 @@
 @charset "UTF-8";
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  background-color: rgb(213, 0, 250);
+  height: 242px;
+}
+
 .footer-container {
   background-color: #f3f3f3;
   width: 100%;
@@ -188,4 +197,4 @@
 .footer-icon:hover i {
   color: white;
   cursor: pointer;
-}/*# sourceMappingURL=Footer.css.map */
+}/*# sourceMappingURL=footerTest.css.map */

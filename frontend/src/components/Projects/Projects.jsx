@@ -64,31 +64,33 @@ export default function Projects() {
   }, []);
 
   return (
-    <div className="projects-container">
-      <div id="projects" className="projects-secTitle">
-        <h3 className="title" ref={titleRef}>
-          PROJETS
-        </h3>
-      </div>
+    <div className="projects-framer">
+      <div className="projects-container">
+        <div id="projects" className="projects-secTitle">
+          <h3 className="title" ref={titleRef}>
+            PROJETS
+          </h3>
+        </div>
 
-      <div ref={gridRef} className="projects-secContent-grid">
-        {projectsData.map((projet) => (
-          <div
-            key={projet.id}
-            className="projects-row"
-            onClick={() => {
-              navigate(`/projects/${projet.slug}`);
-              window.scrollTo(0, 0);
-            }}
-          >
-            <div className="project-name">
-              <h2 className="sub-2">{projet.title}</h2>
+        <div ref={gridRef} className="projects-secContent-grid">
+          {projectsData.map((projet) => (
+            <div
+              key={projet.id}
+              className="projects-row"
+              onClick={() => {
+                navigate(`/projects/${projet.slug}`);
+                window.scrollTo(0, 0);
+              }}
+            >
+              <div className="project-name">
+                <h2 className="sub-2">{projet.title}</h2>
+              </div>
+              <div className="projects-imageDiv">
+                <img src={projet.imgSrc} alt={projet.title} />
+              </div>
             </div>
-            <div className="projects-imageDiv">
-              <img src={projet.imgSrc} alt={projet.title} />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
