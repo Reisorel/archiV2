@@ -12,7 +12,7 @@
   border-top: 0.5px solid #ddd; /* Ligne fine au-dessus du footer */
 }
 
-.left-paragraph {
+.footer-left-paragraph {
   font-family: "DinPro";
   width: 15rem;
   align-self: flex-start; /* Aligne le paragraphe en haut de sa div parente */
@@ -25,27 +25,27 @@
   border-left: 1px solid #ddd; /* Ligne verticale entre les colonnes */
 }
 
-.left-paragraph p {
+.footer-left-paragraph p {
   margin: 0;
 }
 
-.left-paragraph p:nth-child(2) {
+.footer-left-paragraph p:nth-child(2) {
   margin-top: 1rem; /* Ajoute une marge uniquement au deuxième <p> */
 }
 
-.ordre {
+.footer-ordre {
   display: flex; /* Garde le contenu aligné verticalement */
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
 }
 
-.ordre img {
+.footer-ordre img {
   width: 200px;
   height: auto;
 }
 
-.center-paragraph {
+.footer-center-paragraph {
   font-family: "DINPro";
   align-self: flex-start; /* Aligne le paragraphe en haut de sa div parente */
   align-items: center;
@@ -56,15 +56,15 @@
   border-left: 1px solid #ddd; /* Ligne verticale entre les colonnes */
 }
 
-.center-paragraph p {
+.footer-center-paragraph p {
   margin: 0;
 }
 
-.center-paragraph p:not(:last-child) {
+.footer-center-paragraph p:not(:last-child) {
   margin-bottom: 1.5rem; /* Ajoute une marge seulement entre les paragraphes */
 }
 
-.chevron {
+.footer-chevron {
   display: flex;
   cursor: pointer;
   align-items: center; /* Centre le contenu dans le chevron */
@@ -74,7 +74,7 @@
   transition: transform 0.3s ease-in-out; /* Transition fluide pour d'autres changements */
 }
 
-.chevron:hover {
+.footer-chevron:hover {
   animation: shakeY 1s ease-in-out; /* Applique l'animation verticale au survol */
 }
 
@@ -92,13 +92,13 @@
     transform: translateY(-5px); /* Retourne légèrement vers le haut */
   }
 }
-.chevron img {
+.footer-chevron img {
   height: 40px;
   width: auto;
   cursor: pointer;
 }
 
-.right-paragraph {
+.footer-right-paragraph {
   font-family: "DINPro";
   width: 15rem;
   display: flex;
@@ -111,22 +111,22 @@
   padding: 1rem;
 }
 
-.right-paragraph p {
+.footer-right-paragraph p {
   margin: 0;
 }
 
-.right-paragraph p:not(:last-child) {
+.footer-right-paragraph p:not(:last-child) {
   margin-bottom: 1.2rem; /* Ajoute une marge seulement entre les paragraphes */
 }
 
-.icon-container {
+.footer-icon-container {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative; /* Fixe le contexte de positionnement */
 }
 
-.icon {
+.footer-icon {
   position: relative; /* Chaque icône garde sa propre position */
   display: flex;
   color: rgb(0, 0, 0);
@@ -144,7 +144,7 @@
   transition: transform 0.3s ease;
 }
 
-.icon a {
+.footer-icon a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +155,7 @@
   z-index: 1;
 }
 
-.icon i {
+.footer-icon i {
   font-size: 20px; /* Taille de l'icône */
   font-weight: 500;
   color: black; /* Couleur initiale */
@@ -163,7 +163,7 @@
 }
 
 /* Ajout de la bande de remplissage */
-.icon::before {
+.footer-icon::before {
   content: "";
   position: absolute;
   top: 0;
@@ -176,16 +176,16 @@
 }
 
 /* Effet au survol */
-.icon:hover {
+.footer-icon:hover {
   cursor: pointer;
-  animation: shakeY 1s ease-in-out; /* Applique l'animation verticale au survol */
+  animation: shakeY 1s ease-in-out;
 }
 
-.icon:hover::before {
-  width: 100%; /* La bande se remplit au survol */
+.footer-icon:hover::before {
+  width: 100%;
 }
 
-.icon:hover i {
-  color: white; /* Change la couleur de l'icône en blanc pour contraste */
+.footer-icon:hover i {
+  color: white;
   cursor: pointer;
 }/*# sourceMappingURL=Footer.css.map */

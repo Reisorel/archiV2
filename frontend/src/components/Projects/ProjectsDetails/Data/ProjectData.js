@@ -290,7 +290,7 @@ export const projectsData = [
     avance: "livré",
     layout: {
       gridTemplateColumns: "repeat(2, 400px)",
-      gridTemplateRows: "repeat(10, 600px)",
+      gridTemplateRows: "repeat(2, 600px)",
       gap: "1rem",
       imageDimensions: {
         width: "400px",
