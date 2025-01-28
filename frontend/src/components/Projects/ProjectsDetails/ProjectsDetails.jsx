@@ -78,6 +78,17 @@ export default function ProjectsDetails() {
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      console.log("Scroll forcé après délai");
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }, 50); // Délai minimal pour attendre la fin du rendu
+  }, [slug]);
+
   if (!projet) {
     return <h2>Projet introuvable</h2>;
   }

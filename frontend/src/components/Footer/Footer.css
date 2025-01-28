@@ -1,0 +1,200 @@
+@charset "UTF-8";
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  background-color: rgb(213, 0, 250);
+  height: 242px;
+}
+
+.footer-container {
+  background-color: #f3f3f3;
+  width: 100%;
+  height: auto;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row; /* Les éléments sont alignés horizontalement */
+  align-items: center;
+  justify-content: space-between; /* Centre les enfants horizontalement */
+  padding-top: 1rem;
+  border-top: 0.5px solid #ddd; /* Ligne fine au-dessus du footer */
+}
+
+.footer-left-paragraph {
+  font-family: "DinPro";
+  width: 15rem;
+  align-self: flex-start; /* Aligne le paragraphe en haut de sa div parente */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 1rem;
+  margin-left: 2rem;
+  padding: 1rem;
+  border-left: 1px solid #ddd; /* Ligne verticale entre les colonnes */
+}
+
+.footer-left-paragraph p {
+  margin: 0;
+}
+
+.footer-left-paragraph p:nth-child(2) {
+  margin-top: 1rem; /* Ajoute une marge uniquement au deuxième <p> */
+}
+
+.footer-ordre {
+  display: flex; /* Garde le contenu aligné verticalement */
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.footer-ordre img {
+  width: 200px;
+  height: auto;
+}
+
+.footer-center-paragraph {
+  font-family: "DINPro";
+  align-self: flex-start; /* Aligne le paragraphe en haut de sa div parente */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem;
+  border-left: 1px solid #ddd; /* Ligne verticale entre les colonnes */
+}
+
+.footer-center-paragraph p {
+  margin: 0;
+}
+
+.footer-center-paragraph p:not(:last-child) {
+  margin-bottom: 1.5rem; /* Ajoute une marge seulement entre les paragraphes */
+}
+
+.footer-chevron {
+  display: flex;
+  cursor: pointer;
+  align-items: center; /* Centre le contenu dans le chevron */
+  justify-content: center;
+  margin: 1rem;
+  margin-top: 2rem;
+  transition: transform 0.3s ease-in-out; /* Transition fluide pour d'autres changements */
+}
+
+.footer-chevron:hover {
+  animation: shakeY 1s ease-in-out; /* Applique l'animation verticale au survol */
+}
+
+@keyframes shakeY {
+  0%, 100% {
+    transform: translateY(0); /* Position initiale */
+  }
+  25% {
+    transform: translateY(-5px); /* Déplace légèrement vers le haut */
+  }
+  50% {
+    transform: translateY(5px); /* Déplace légèrement vers le bas */
+  }
+  75% {
+    transform: translateY(-5px); /* Retourne légèrement vers le haut */
+  }
+}
+.footer-chevron img {
+  height: 40px;
+  width: auto;
+  cursor: pointer;
+}
+
+.footer-right-paragraph {
+  font-family: "DINPro";
+  width: 15rem;
+  display: flex;
+  border-left: 1px solid #ddd; /* Ligne verticale entre les colonnes */
+  align-self: flex-start; /* Aligne le paragraphe en haut de sa div parente */
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  margin-right: 2rem;
+  padding: 1rem;
+}
+
+.footer-right-paragraph p {
+  margin: 0;
+}
+
+.footer-right-paragraph p:not(:last-child) {
+  margin-bottom: 1.2rem; /* Ajoute une marge seulement entre les paragraphes */
+}
+
+.footer-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Fixe le contexte de positionnement */
+}
+
+.footer-icon {
+  position: relative; /* Chaque icône garde sa propre position */
+  display: flex;
+  color: rgb(0, 0, 0);
+  width: 30px;
+  height: 30px;
+  margin: 1rem;
+  outline: none; /* Supprime le contour bleu au clic/focus */
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid #000000;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.footer-icon a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-icon i {
+  font-size: 20px; /* Taille de l'icône */
+  font-weight: 500;
+  color: black; /* Couleur initiale */
+  transition: color 0.3s ease;
+}
+
+/* Ajout de la bande de remplissage */
+.footer-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  transition: width 0.4s ease-in-out;
+  z-index: 0;
+}
+
+/* Effet au survol */
+.footer-icon:hover {
+  cursor: pointer;
+  animation: shakeY 1s ease-in-out;
+}
+
+.footer-icon:hover::before {
+  width: 100%;
+}
+
+.footer-icon:hover i {
+  color: white;
+  cursor: pointer;
+}/*# sourceMappingURL=Footer.css.map */
