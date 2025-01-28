@@ -3,20 +3,23 @@
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 5rem;
+  position: relative;
+  z-index: 100;
+  overflow: hidden; /* Évite les débordements qui pourraient causer un espace */
 }
 
-.infos-container {
+.about-infos-container {
   display: grid;
   grid-template-columns: 1fr 2fr 1.5fr; /* La 1ère colonne est 2 fois plus petite */
   gap: 5rem;
 }
 
-.about-grid-item {
+.about-grid-column {
   display: flex;
   flex-direction: column;
 }
 
-.picture {
+.about-picture {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +29,7 @@
   overflow: hidden; /* Empêche le dépassement */
 }
 
-.picture img {
+.about-picture img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -34,45 +37,46 @@
   border-radius: 2px;
 }
 
-.presentation-text {
+.about-presentation-text {
   text-align: justify;
-  line-height: 1.5;
-  font-size: 1rem;
-  font-weight: 300;
-  color: #333; /* Couleur légèrement adoucie */
   margin: 0 auto; /* Centre la section */
 }
 
-.presentation-text p:first-of-type {
+.about-presentation-text p:first-of-type {
   font-size: 1.2rem;
   font-weight: 500;
   color: #111;
 }
 
-.presentation-text p {
+.about-presentation-text p {
   margin-bottom: 1.5rem;
 }
 
-.CV {
+.about-text-anim {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.about-CV {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0; /* Ajoute un peu d'espace en haut et en bas */
+  padding: 1rem 0;
   overflow: visible;
-  gap: 2rem; /* Définit l'espacement vertical entre chaque .date */
+  gap: 2rem;
   position: relative;
 }
 
-.CV::before {
+.about-CV::before {
   content: "";
   position: absolute;
-  left: -2rem; /* Positionne la ligne sur le côté gauche */
-  top: 1rem; /* Démarre la ligne après le padding */
-  bottom: 1rem; /* Termine la ligne avant le padding */
-  width: 2px; /* Épaisseur de la ligne */
-  background-color: black; /* Couleur de la ligne */
+  left: -2rem;
+  top: 1rem;
+  bottom: 1rem;
+  width: 2px;
+  background-color: black;
 }
 
-.date {
+.about-date {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -83,12 +87,7 @@
   color: #333;
 }
 
-.year {
+.about-year {
   font-weight: bold; /* Optionnel : mise en valeur de l'année */
   font-size: 1.2rem;
-}
-
-.line2 {
-  font-size: 1.2rem;
-  font-weight: 500;
 }/*# sourceMappingURL=About.css.map */

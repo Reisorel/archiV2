@@ -104,7 +104,7 @@ export default function About() {
 
   // Animation dates
   useEffect(() => {
-    const dates = gsap.utils.toArray(".date").reverse(); // Récupère les éléments dans l'ordre inverse
+    const dates = gsap.utils.toArray(".about-date").reverse(); // Récupère les éléments dans l'ordre inverse
 
     gsap.fromTo(
       dates,
@@ -131,16 +131,16 @@ export default function About() {
           A PROPOS
         </h1>
       </div>
-      <div className="infos-container">
-        <div className="about-grid-item">
-          <div ref={pictureRef} className="picture">
+      <div className="about-infos-container">
+        <div className="about-grid-column">
+          <div ref={pictureRef} className="about-picture">
             <img src={portrait} alt="" />
           </div>
         </div>
 
-        <div className="about-grid-item">
-          <div ref={textRef} className="presentation-text">
-            <div className="presentation-text-high">
+        <div className="about-grid-column">
+          <div ref={textRef} className="about-presentation-text">
+            <div className="about-presentation-text-high">
               <p>
                 Cassandre Marion Architecte est une agence d’architecture indépendante, créee
                 en 2024 et basée à Rennes.
@@ -169,12 +169,12 @@ export default function About() {
             </div>
             <div className="presentation-text-low">
               <p>
-                <span className="line2">
+                <span className="about-text-anim">
                   N'hésitez pas à me contacter pour discuter ensemble de{" "}
                 </span>
                 <span className="line2">
                   votre projet {article}{" "}
-                  <span ref={wordRef} className="line2">
+                  <span ref={wordRef} className="about-text-anim">
                     {words[index]}
                   </span>{" "}
                 </span>
@@ -183,32 +183,32 @@ export default function About() {
           </div>
         </div>
 
-        <div ref={cvRef} className="about-grid-item">
-          <div className="CV">
-            <div className="date">
-              <span className="year">2024.</span>
+        <div ref={cvRef} className="about-grid-column">
+          <div className="about-CV">
+            <div className="about-date">
+              <span className="about-year">2024.</span>
               <span className="description">
                 Création de mon agence (Rennes)
               </span>
             </div>
-            <div className="date">
-              <span className="year">2021.</span>
+            <div className="about-date">
+              <span className="about-year">2021.</span>
               <span className="description">
                 Chatillon Architecture (Paris)
               </span>
             </div>
-            <div className="date">
-              <span className="year">2018.</span>
+            <div className="about-date">
+              <span className="about-year">2018.</span>
               <span className="description">
                 Dubuisson Architecture (Paris)
               </span>
             </div>
-            <div className="date">
-              <span className="year">2017.</span>
+            <div className="about-date">
+              <span className="about-year">2017.</span>
               <span className="description">Architecte HMONP</span>
             </div>
-            <div className="date">
-              <span className="year">2016.</span>
+            <div className="about-date">
+              <span className="about-year">2016.</span>
               <span className="description">
                 Diplôme d'Architecte - ENSAN
               </span>
