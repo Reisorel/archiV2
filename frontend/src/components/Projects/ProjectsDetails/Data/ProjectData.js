@@ -37,9 +37,9 @@ const maison_campagne3 = "/images/projectsDetails/3.Maison-Campagne/MAISON_CAMPA
 const maison_campagne4 = "/images/projectsDetails/3.Maison-Campagne/MAISON_CAMPAGNE4.jpg"
 
 //4 Maison-ville
-const maison_ville1 = "/images/projectsDetails/4.Maison-Ville/MAISON_VILLE4.jpg"
-const maison_ville2 = "/images/projectsDetails/4.Maison-Ville/MAISON_VILLE4.jpg"
-const maison_ville3 = "/images/projectsDetails/4.Maison-Ville/MAISON_VILLE4.jpg"
+const maison_ville1 = "/images/projectsDetails/4.Maison-Ville/MAISON_VILLE1.jpg"
+const maison_ville2 = "/images/projectsDetails/4.Maison-Ville/MAISON_VILLE2.jpg"
+const maison_ville3 = "/images/projectsDetails/4.Maison-Ville/MAISON_VILLE3.jpg"
 const maison_ville4 = "/images/projectsDetails/4.Maison-Ville/MAISON_VILLE4.jpg"
 
 //5 Corps de Ferme

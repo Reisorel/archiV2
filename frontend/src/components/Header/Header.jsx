@@ -11,10 +11,10 @@ export default function Header() {
   const location = useLocation();
 
   const [showHeader, setShowHeader] = useState(true);
+  const [lockScroll, setLockScroll] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileOn, setIsMobileOn] = useState(false);
   const logoRef = useRef(null); // Référence pour GSAP
-
 
   useEffect(() => {
     gsap.fromTo(
@@ -33,13 +33,28 @@ export default function Header() {
   // Gérer l'affichage du header au scroll
   useEffect(() => {
     const handleScroll = () => {
-      setShowHeader(window.scrollY < lastScrollY);
-      setLastScrollY(window.scrollY);
+      if (lockScroll) return; // Si le scroll est verrouillé, on ne fait rien
+
+      setShowHeader(window.scrollY < lastScrollY); // Affichage du header en fonction du scroll
+      setLastScrollY(window.scrollY); // Mise à jour de la position du scroll
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, lockScroll]); // Dépend aussi de lockScroll
+
+  // Écouter les changements de l'état de la modale
+  useEffect(() => {
+    const handleModalStateChange = (event) => {
+      setShowHeader(!event.detail); // Si la modale est ouverte, on cache le header
+      setLockScroll(event.detail); // Bloquer le scroll si la modale est ouverte, et le débloquer si fermée
+    };
+
+    document.addEventListener("modalStateChange", handleModalStateChange);
+    return () => {
+      document.removeEventListener("modalStateChange", handleModalStateChange);
+    };
+  }, []);
 
   // Gestion du scroll après navigation
   useEffect(() => {
@@ -95,8 +110,6 @@ export default function Header() {
     });
   };
 
-
-
   return (
     <header className={`header-container ${showHeader ? "show" : "hide"}`}>
       <div
@@ -117,9 +130,7 @@ export default function Header() {
       </div>
 
       <div className={`header-content ${isMobileOn ? "mobile-open" : ""}`}>
-        <ul
-        className="header-nav-list"
-        data-hover-detect="true">
+        <ul className="header-nav-list" data-hover-detect="true">
           <li onClick={() => handleNavigation("news")}>
             <span>ACTUALITÉS</span>
           </li>
@@ -135,8 +146,7 @@ export default function Header() {
           <li onClick={() => handleNavigation("footer")}>
             <span>CONTACT</span>
           </li>
-          <li onClick={() => handleNavigation("footer")}>
-          </li>
+          <li onClick={() => handleNavigation("footer")}></li>
         </ul>
       </div>
     </header>

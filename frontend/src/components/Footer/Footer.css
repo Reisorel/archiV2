@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   z-index: 0;
-  background-color: rgb(213, 0, 250);
+  background-color: #f3f3f3;
   height: 242px;
 }
 
