@@ -87,9 +87,10 @@ export default function Header() {
       return;
     }
 
-    if (location.pathname !== "/") {
-      // Si on est sur une autre page, on navigue vers "/"
-      navigate("/", { replace: true });
+    // Si on est sur une autre page, on navigue vers "/"
+    if (location.pathname !== "/" && targetId === "header-logo") {
+      navigate("/", { replace: true, state: { scrollToLogo: true } });
+      window.scrollTo(0, 0);
 
       // Exécuter le scroll après la navigation une fois que la page est bien chargée
       requestAnimationFrame(() => {
@@ -116,10 +117,7 @@ export default function Header() {
         ref={logoRef}
         className="header-logo"
         data-hover-detect="true"
-        onClick={() => {
-          navigate("/");
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
+        onClick={() => handleNavigation("header-logo")}
       >
         <h1>CASSANDRE MARION</h1>
         <h2>ARCHITECTE DE-HMONP</h2>
