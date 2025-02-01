@@ -71,6 +71,10 @@ export default function Missions() {
         block: "start",
       });
     }
+    // Attends que le DOM se mette à jour avant de rafraîchir GSAP
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 300); // Petit délai pour laisser les animations terminer
   };
 
   useEffect(() => {
