@@ -71,28 +71,33 @@ export default function Header() {
     closeMobileMenu(); // Ferme le menu mobile après un clic
 
     if (targetId === "projects") {
-      // Si on clique sur "PROJETS", on va sur "/projects" et on remonte en haut
-      navigate("/projects", { replace: true });
-      window.scrollTo(0, 0);
+      if (location.pathname === "/projects") {
+        // Déjà sur "/projects" → Scroll smooth en haut
+        gsap.to(window, { duration: 0.8, scrollTo: 0, ease: "power2.inOut" });
+      } else {
+        // Pas encore sur "/projects" → On y navigue
+        navigate("/projects", { replace: true });
+        window.scrollTo(0, 0);
+      }
       return;
     }
 
+    // Si on clique sur "CONTACT", on reste sur la page et scrolle tout en bas sans changer l'URL
     if (targetId === "footer") {
-      // Si on clique sur "CONTACT", on reste sur la page et scrolle tout en bas sans changer l'URL
       gsap.to(window, {
         duration: 0.8,
-        scrollTo: { y: "max" }, // "max" permet d'aller tout en bas
+        scrollTo: { y: "max" },
         ease: "power2.inOut",
       });
       return;
     }
 
-    // Si on est sur une autre page, on navigue vers "/"
-    if (location.pathname !== "/" && targetId === "header-logo") {
-      navigate("/", { replace: true, state: { scrollToLogo: true } });
+    // Gérer le scroll vers une section même si on est sur une autre page
+    if (location.pathname !== "/") {
+      // On est sur une autre page → Naviguer vers "/" et scroller après chargement
+      navigate("/", { replace: true, state: { scrollTo: targetId } });
       window.scrollTo(0, 0);
 
-      // Exécuter le scroll après la navigation une fois que la page est bien chargée
       requestAnimationFrame(() => {
         gsap.to(window, {
           duration: 0.8,
@@ -103,7 +108,7 @@ export default function Header() {
       return;
     }
 
-    // Si on est déjà sur "/", scroller immédiatement à la section demandée
+    // Scroll smooth vers la section demandée
     gsap.to(window, {
       duration: 0.8,
       scrollTo: `#${targetId}`,
@@ -132,11 +137,11 @@ export default function Header() {
           <li onClick={() => handleNavigation("news")}>
             <span>ACTUALITÉS</span>
           </li>
-          <li onClick={() => handleNavigation("missions")}>
-            <span>MISSIONS</span>
-          </li>
           <li onClick={() => handleNavigation("projects", true)}>
             <span>PROJETS</span>
+          </li>
+          <li onClick={() => handleNavigation("missions")}>
+            <span>MISSIONS</span>
           </li>
           <li onClick={() => handleNavigation("about")}>
             <span>A PROPOS</span>
