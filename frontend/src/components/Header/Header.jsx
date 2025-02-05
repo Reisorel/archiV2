@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
+import { useNavigate, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { projectsData } from "../Projects/ProjectsDetails/Data/ProjectData";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -11,11 +12,16 @@ export default function Header() {
   const location = useLocation();
 
   const [showHeader, setShowHeader] = useState(true);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const [lockScroll, setLockScroll] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileOn, setIsMobileOn] = useState(false);
-  const logoRef = useRef(null); // Référence pour GSAP
 
+  const logoRef = useRef(null); // Référence pour GSAP
+  const dropdownRef = useRef(null); // Référence pour le menu déroulant project
+
+  //Gère l'arrivée du logo
   useEffect(() => {
     gsap.fromTo(
       logoRef.current,
@@ -23,6 +29,26 @@ export default function Header() {
       { x: 0, opacity: 1, duration: 1.2, ease: "power3.out" } // Arrivée fluide
     );
   }, []);
+
+  //Gère le menu déroulant projects
+  useEffect(() => {
+    if (dropdownRef.current) {
+      if (isDropdownOpen) {
+        gsap.fromTo(
+          dropdownRef.current,
+          { height: 0, opacity: 0 },
+          { height: "auto", opacity: 1, duration: 0.2, ease: "power2.out" }
+        );
+      } else {
+        gsap.to(dropdownRef.current, {
+          height: 0,
+          opacity: 0,
+          duration: 0.3,
+          ease: "power2.in",
+        });
+      }
+    }
+  }, [isDropdownOpen]);
 
   // Basculer l'état du menu mobile
   const toggleMobileMenu = () => setIsMobileOn((prev) => !prev);
@@ -116,6 +142,12 @@ export default function Header() {
     });
   };
 
+  const projects = [
+    { id: 1, name: "Maison Contemporaine", slug: "maison-contemporaine" },
+    { id: 2, name: "Extension en Bois", slug: "extension-bois" },
+    { id: 3, name: "Rénovation d'Appartement", slug: "renovation-appartement" },
+  ];
+
   return (
     <header className={`header-container ${showHeader ? "show" : "hide"}`}>
       <div
@@ -137,9 +169,30 @@ export default function Header() {
           <li onClick={() => handleNavigation("news")}>
             <span>ACTUALITÉS</span>
           </li>
-          <li onClick={() => handleNavigation("projects", true)}>
-            <span>PROJETS</span>
+          <li
+            onMouseEnter={() => setIsDropdownOpen(true)}
+            onMouseLeave={() => setIsDropdownOpen(false)}
+            className="projects-menu"
+          >
+            <span onClick={() => handleNavigation("projects", true)}>
+              PROJETS
+            </span>
+
+            <ul
+              ref={dropdownRef}
+              className={`dropdown-menu ${isDropdownOpen ? "open" : ""}`}
+            >
+              {projectsData.map((project) => (
+                <li
+                  key={project.id}
+                  onClick={() => navigate(`/projects/${project.slug}`)}
+                >
+                  <p>{project.title}</p>
+                </li>
+              ))}
+            </ul>
           </li>
+
           <li onClick={() => handleNavigation("missions")}>
             <span>MISSIONS</span>
           </li>

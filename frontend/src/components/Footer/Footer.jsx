@@ -30,35 +30,35 @@ export default function FooterTest() {
   };
 
   // Gère l'arrivée des icones
-  // useEffect(() => {
-  //   if (!linkedinRef.current || !instagramRef.current || !iconsRef.current) {
-  //     console.warn("Une ou plusieurs références sont nulles !");
-  //     return;
-  //   }
+  useEffect(() => {
+    if (!linkedinRef.current || !instagramRef.current || !iconsRef.current) {
+      console.warn("Une ou plusieurs références sont nulles !");
+      return;
+    }
 
-  //   gsap.fromTo(
-  //     [linkedinRef.current, instagramRef.current],
-  //     { x: 300, opacity: 0 },
-  //     {
-  //       x: 0,
-  //       opacity: 1,
-  //       duration: 0.5,
-  //       ease: "power3.out",
-  //       stagger: {
-  //         amount: 0.6, // Augmente la durée totale du stagger
-  //         from: "start",
-  //       },
-  //       scrollTrigger: {
-  //         trigger: iconsRef.current,
-  //         start: "top 100%",
-  //         toggleActions: "play none none none",
-  //       },
-  //     }
-  //   );
+    gsap.fromTo(
+      [linkedinRef.current, instagramRef.current],
+      { x: 300, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        ease: "power3.out",
+        stagger: {
+          amount: 0.6, // Augmente la durée totale du stagger
+          from: "start",
+        },
+        scrollTrigger: {
+          trigger: iconsRef.current,
+          start: "top 100%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
 
-  //   // Forcer ScrollTrigger à recalculer ses positions après le chargement
-  //   ScrollTrigger.refresh();
-  // }, []);
+    // Forcer ScrollTrigger à recalculer ses positions après le chargement
+    ScrollTrigger.refresh();
+  }, []);
 
   useEffect(() => {
     const footer = footerRef.current;
