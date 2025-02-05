@@ -1,18 +1,29 @@
 {
   "name": "archi-app",
   "version": "1.0.0",
+  "description": "Cassandre Marion Architecture website",
   "private": true,
+  "scripts": {
+    "start": "node backend/server.js",
+    "heroku-postbuild": "cd frontend && npm ci && npm run build",
+    "postinstall": "cd frontend && npm install"
+  },
   "dependencies": {
+    "@vitejs/plugin-react": "^4.3.2",
+    "express": "^4.21.0",
     "@fortawesome/fontawesome-free": "^6.7.2",
     "boxicons": "^2.1.4",
     "gsap": "^3.12.5"
   },
-  "scripts": {
-    "start": "cd backend && node server.js",
-    "heroku-postbuild": "cd frontend && npm ci && npm run build"
-  },
   "engines": {
     "node": "22.9.0",
     "npm": "10.8.3"
+  },
+  "devDependencies": {
+    "@eslint/config-array": "^0.18.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "vite": "^5.4.8"
   }
 }
