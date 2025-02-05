@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "atchi-app-backend",
   "version": "1.0.0",
   "description": "backend for Cassandre Marion Architecte",
   "main": "server.js",
