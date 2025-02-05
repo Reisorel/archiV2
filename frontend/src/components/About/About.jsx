@@ -188,7 +188,7 @@ export default function About() {
             <div className="about-date">
               <span className="about-year">2024.</span>
               <span className="description">
-                Création de mon agence (Rennes)
+                Création de mon agence 👏 (Rennes)
               </span>
             </div>
             <div className="about-date">
