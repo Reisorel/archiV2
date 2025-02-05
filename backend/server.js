@@ -2,9 +2,7 @@ const express = require("express");
 const cors = require("cors"); // Assurez-vous d'importer cors
 const bodyParser = require("body-parser"); // Assurez-vous d'importer body-parser
 const path = require("path"); // Assurez-vous d'importer path
-
 const app = express();
-const port = 3000;
 
 // Middlewares
 app.use(cors());
@@ -19,6 +17,7 @@ app.get("*", (req, res) => {
 });
 
 // Lancement du serveur
-app.listen(port, () => {
-  console.log(`Serveur lancé sur http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
