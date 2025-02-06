@@ -20,7 +20,7 @@ export default function FooterTest() {
   const footerRef = useRef(null); // Référence à l'élément DOM du footer
   const triggerRef = useRef(null); // Référence au trigger GSAP
 
-  // Fonction de retour en haut de la page avec une animation fluide
+  // Fonction retour haut de page
   const handleScrollToTop = () => {
     gsap.to(window, {
       duration: 1, // Durée du défilement (en secondes)
@@ -29,7 +29,7 @@ export default function FooterTest() {
     });
   };
 
-  // Gère l'arrivée des icones
+  // Fonction arrivée des icones
   useEffect(() => {
     if (!linkedinRef.current || !instagramRef.current || !iconsRef.current) {
       console.warn("Une ou plusieurs références sont nulles !");
@@ -60,15 +60,14 @@ export default function FooterTest() {
     ScrollTrigger.refresh();
   }, []);
 
+  // Fonction reveal du footer
   useEffect(() => {
     const footer = footerRef.current;
 
     if (!footer) return; // Vérifie que le footer est bien monté
 
-    // Fonction pour calculer le "chevauchement" (overlap)
     const getOverlap = () => Math.min(window.innerHeight, footer.offsetHeight);
 
-    // Fonction pour ajuster dynamiquement la marge supérieure
     const adjustFooterOverlap = () => {
       if (footer) {
         const overlap = getOverlap();
@@ -76,12 +75,12 @@ export default function FooterTest() {
       }
     };
 
-    // Nettoie l'ancien trigger avant d'en créer un nouveau
+    // Supprime l'ancien trigger si existant
     if (triggerRef.current) {
       triggerRef.current.kill();
+      triggerRef.current = null;
     }
 
-    // Laisse un délai pour que le DOM soit prêt avant d'initialiser GSAP
     const timeout = setTimeout(() => {
       adjustFooterOverlap();
 
@@ -91,25 +90,27 @@ export default function FooterTest() {
         start: `top ${window.innerHeight - getOverlap()}`,
         end: `+=${getOverlap()}`,
         pin: true,
-        markers: false, // Désactiver les marqueurs en production
+        markers: false,
       });
 
       triggerRef.current = trigger; // Stocke le trigger dans la ref
-    }, 50); // Petit délai pour laisser le DOM se stabiliser
 
-    // Écoute les événements de redimensionnement
+      // Force un rafraîchissement de GSAP pour s'assurer que l'animation est bien prise en compte
+      ScrollTrigger.refresh();
+    }, 50);
+
     window.addEventListener("resize", adjustFooterOverlap);
 
-    // Cleanup
     return () => {
-      clearTimeout(timeout); // Nettoie le timeout
+      clearTimeout(timeout);
       if (triggerRef.current) {
-        triggerRef.current.kill(); // Supprime le trigger GSAP
+        triggerRef.current.kill();
         triggerRef.current = null;
       }
-      window.removeEventListener("resize", adjustFooterOverlap); // Supprime l'écouteur
+      window.removeEventListener("resize", adjustFooterOverlap);
     };
-  }, [location.pathname]); // Réagit aux changements d'URL
+  }, [location.pathname]); // Déclenchement à chaque changement de page
+
 
   return (
     <footer ref={footerRef} className="footer">
