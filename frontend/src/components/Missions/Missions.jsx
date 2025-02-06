@@ -239,60 +239,101 @@ export default function Missions() {
               <h2 className="sub-2">OBJECTIF :</h2>
               <div className="missions-paragraph-group">
                 <p>
-                  La phase de conception est essentielle dans le processus
-                  architectural : c’est à cette étape que la réflexion se
-                  concrétise. Mon objectif est de traduire vos besoins et
-                  aspirations en un projet clair, fonctionnel et esthétique
+                  Tout commence ici ! La mission de conception constitue le
+                  socle de tout projet d'architecture. C’est à ce stade que les
+                  éléments de réflexion de votre projet se concrétisent en
+                  projections, plans et matériaux.{" "}
                 </p>
-                <br></br>
                 <p>
-                  Chaque espace est conçu et pensé sur mesure pour répondre à
-                  vos usages spécifiques, tout en dialoguant harmonieusement
-                  avec son environnement.
+                  {" "}
+                  <strong>
+                    Mon rôle dans cette phase est de vous aider à traduire vos
+                    besoins et aspirations en un projet clair, fonctionnel et
+                    esthétique.
+                  </strong>
                 </p>
-              </div>
-              <h2 className="sub-2">ETAPES :</h2>
-              <h3 className="sub-3">L'ESQUISSE</h3>
-              <div className="missions-paragraph-group"></div>
-              <p>
-                Sur la base du programme défini, l’architecte établit si besoin
-                le relevé des existants. Il réalise une esquisse répondant au
-                programme.
-              </p>
-              <p>
-                Il précise l’implantation et l’adaptation au terrain,
-                l’orientation, les accès, l’enveloppe extérieure avec ses
-                ouvertures principales, l’organisation des espaces, leurs
-                liaisons, les solutions d’amélioration de l’existant.
-              </p>
-              <h3 className="sub-3">L'AVANT-PROJET</h3>
-              <div className="missions-paragraph-group">
                 <p>
-                  L’architecte précise les dimensions de l’ouvrage, son aspect,
-                  présente les solutions retenues, détermine les surfaces de
-                  tous les éléments du programme et établit la notice
-                  descriptive précisant la nature des matériaux
-                  extérieurs/intérieurs. L’architecte estime un coût
-                  prévisionnel des travaux indicatif.
+                  Nous travaillons avec vous pour que chaque espace soit conçu
+                  et pensé sur mesure afin de répondre à vos usages futurs
+                  spécifiques, tout en respectant son environnement et la
+                  réglementation en vigueur..
                 </p>
               </div>
-              <h3 className="sub-3">L'AUTORISATION D'URBANISME</h3>{" "}
+              <h2 className="sub-2">PHASES :</h2>
+              <h3 className="sub-3">
+                <i className="fa-solid fa-pencil"></i>
+                L'ESQUISSE
+              </h3>
               <div className="missions-paragraph-group">
                 <p>
-                  Si le projet nécessite le dépôt d’une autorisation d’urbanisme
-                  (déclaration préalable, permis de construire, etc.), la
-                  mission est obligatoirement réalisée par l’architecte.
-                  L’architecte élabore et collecte des pièces nécessaires à la
-                  réalisation du dossier de demande d’autorisation d’urbanisme
-                  suivant la réglementation en vigueur.
+                  Sur la base d'un programme défini ensemble, l’architecte
+                  établit d'abord un relevé des éléments existants (terrain,
+                  bâti…) pour en documenter graphiquement les caractéristiques.
+                  Ce relevé sert ensuite de base pour la réalisation d’une
+                  esquisse conforme à ce programme.
+                </p>
+                <p>
+                  L’esquisse d’architecture produite inclut notamment la
+                  formalisation des éléments suivants :
+                  <ul>
+                    <li>L’implantation et l’adaptation au terrain</li>
+                    <li>L’orientation</li>
+                    <li>Les différents accès</li>
+                    <li>
+                      L’enveloppe extérieure et ses ouvertures principales
+                    </li>
+                    <li>
+                      L’organisation des espaces, leurs liaisons, les solutions
+                      d’amélioration de l’existant.
+                    </li>
+                  </ul>
                 </p>
               </div>
-              <h3 className="sub-3">CONCEPTION FINALE ET DETAILLEE</h3>{" "}
+              <h3 className="sub-3">
+                <i className="fa-solid fa-ruler"></i>
+                L'AVANT-PROJET
+              </h3>
               <div className="missions-paragraph-group">
                 <p>
-                  Cette phase permet de valider la nature et les
-                  caractéristiques des matériaux, des procédés constructifs et
-                  équipements intérieurs retenus.
+                  La phase d’avant-projet vise à préciser les dimensions de
+                  l’ouvrage, son aspect. L’architecte présente également les
+                  solutions retenues, détermines les surfaces de tous les
+                  éléments du programme et établit la notice descriptive
+                  précisant la nature des matériaux extérieurs/intérieurs.
+                </p>
+                <p>
+                  Enfin une estimation chiffrée du coût prévisionnel des travaux
+                  à venir est réalisée.
+                </p>
+              </div>
+              <h3 className="sub-3">
+                <i className="fa-solid fa-house-circle-check"></i>
+                L'AUTORISATION D'URBANISME
+              </h3>{" "}
+              <div className="missions-paragraph-group">
+                <p>
+                  Lors de cette phase, l’architecte prend en charge les actions
+                  réglementaires et administratives à réaliser lors du projet.
+                  Cette phase couvre l’ensemble des dépôts de documents liés aux
+                  autorisations d’urbanisme (déclaration préalable, permis de
+                  construire, etc.)
+                </p>
+                <p>
+                  A cet effet, l’architecte élabore et collecte des pièces
+                  nécessaires à la réalisation du dossier de demande
+                  d’autorisation d’urbanisme suivant la réglementation en
+                  vigueur.
+                </p>
+              </div>
+              <h3 className="sub-3">
+                <i className="fa-solid fa-compass-drafting"></i>
+                LA CONCEPTION FINALE ET DETAILLEE
+              </h3>{" "}
+              <div className="missions-paragraph-group">
+                <p>
+                  La conception finale et détaillée permet de valider la nature
+                  et les caractéristiques des matériaux, des procédés
+                  constructifs et équipements intérieurs retenus.
                 </p>
                 <p>
                   L’architecte, après avoir vérifié les conditions de leur mise
@@ -303,23 +344,24 @@ export default function Missions() {
                 <p>
                   L’architecte établit l’ensemble des spécifications détaillées
                   des ouvrages sous la forme d’un Cahier des Clauses Techniques
-                  Particulières. L’architecte établit un coût prévisionnel des
-                  travaux, par corps d’état et détermine le calendrier
-                  prévisible du déroulement de l’opération.
+                  Particulières (CCTP). L’architecte établit un coût
+                  prévisionnel des travaux, par corps d’état et détermine le
+                  calendrier prévisible du déroulement de l’opération.
                 </p>
                 <p>
-                  L’architecte assiste son client dans l’arbitrage des
-                  prestations afin de respecter le budget travaux.
+                  Pour clore la phase de conception, l’architecte assiste son
+                  client dans l’arbitrage des prestations afin de respecter le
+                  budget travaux.
                 </p>
               </div>
               <h3 className="sub-3">
-                CONSULTATION DES ENTREPRISES ET ANALYSE DES OFFRES
+                <i className="fa-solid fa-comments"></i>
+                LA CONSULTATION DES ENTREPRISES ET L'ANALYSE DES OFFRES
               </h3>{" "}
               <div className="missions-paragraph-group">
                 <p>
-                  L’architecte rassemble les éléments du projet nécessaires à la
-                  consultation permettant aux entrepreneurs consultés d’établir
-                  leurs offres quantifiées.
+                  L’architecte rassemble les éléments du projet permettant aux
+                  entrepreneurs consultés d’établir leurs offres quantifiées.
                 </p>
                 <p>
                   L’architecte procède à l’analyse comparative des offres des
@@ -378,10 +420,8 @@ export default function Missions() {
               <h2 className="sub-2">OBJECTIF :</h2>
               <div className="missions-paragraph-group">
                 <p>
-                  La phase de conception constitue le socle du projet
-                  d'architecte : c’est à cette étape que la réflexion se
-                  concrétise. Mon objectif est de traduire vos besoins et
-                  aspirations en un projet clair, fonctionnel et esthétique.
+                  La mission de réalisation et suivi de chantier consiste en la
+                  mise en
                 </p>
                 <p>
                   Chaque espace est pensé, conçu et formalisé sur mesure pour
@@ -390,97 +430,109 @@ export default function Missions() {
                 </p>
               </div>
 
-              <h2 className="sub-2">ETAPES :</h2>
-              <ul>
-                <li>
-                  <h3 className="sub-3">
-                    ASSISTANCE A LA SIGNATURE DES TRAVAUX
-                  </h3>
-                </li>
-                <div className="missions-paragraph-group">
-                  <p>
-                    Signature des contrats de travaux entreprise, mise en place
-                    de la date d’ouverture du chantier et du planning
-                    prévisionnel des travaux, Déclaration d’Ouverture de
-                    Chantier.
-                  </p>
-                </div>
-                <li>
-                  <h3 className="sub-3">PREPARATION DE CHANTIER</h3>
-                </li>
-                <div className="missions-paragraph-group">
-                  <p>
-                    L’architecte organise les opérations préalables au démarrage
-                    des travaux. En concertation avec les entreprises, il
-                    organise leurs interventions et les modalités pratiques du
-                    déroulement du chantier
-                  </p>
-                </div>
-                <li>
-                  <h3 className="sub-3">VISAS DE TRAVAUX</h3>
-                </li>
-
-                <div className="missions-paragraph-group">
-                  <p>
-                    Les études d’exécution s’il y a lieu, sont intégralement
-                    réalisées par les entreprises. L’architecte en examine alors
-                    la conformité au projet de conception générale qu’il a
-                    établi, et appose son visa sur les documents (plans et
-                    spécifications) si les dispositions de son projet sont
-                    respectées.
-                  </p>
-                </div>
-                <li>
-                  <h3 className="sub-3">
-                    DIRECTION DE L'EXECUTION DES TRAVAUX
-                  </h3>
-                </li>
-
-                <div className="missions-paragraph-group">
-                  <p>
-                    L’architecte organise et dirige les réunions de chantier et
-                    en rédige les comptes-rendus, qu’il diffuse, aux
-                    entreprises, au client et aux éventuels autres destinataires
-                    intéressés
-                  </p>
-                  <p>
-                    Il vérifie l’avancement des travaux et leur conformité avec
-                    les pièces des contrats de travaux.
-                  </p>
-                </div>
-                <li>
-                  <h3 className="sub-3">SUIVI ADMINISTRATIF ET PAIEMENTS</h3>
-                </li>
-
-                <div className="missions-paragraph-group">
-                  <p>
-                    L’architecte vérifie les factures des entrepreneurs. Il
-                    établit le décompte définitif de fin de chantier et propose
-                    le règlement des entreprises pour le solde.
-                  </p>
-                </div>
-                <li>
-                  <h3 className="sub-3">
-                    ASSISTANCE AUX OPERATIONS DE RECEPTION DE L'OUVRAGE
-                  </h3>
-                </li>
-
-                <div className="missions-paragraph-group">
-                  <p>
-                    L’architecte assiste le client pour la réception des
-                    travaux. Il organise une visite contradictoire des travaux
-                    en vue de leur réception, rédige les procès-verbaux et
-                    établit la liste des réserves éventuellement formulées par
-                    le client au cours de la réception.
-                  </p>
-                  <p>
-                    Elle constitue le point de départ des délais de la garantie
-                    de parfait achèvement due par les seules entreprises, de la
-                    garantie de bon fonctionnement et de la responsabilité
-                    décennale.
-                  </p>
-                </div>
-              </ul>
+              <h2 className="sub-2">PHASES :</h2>
+              <h3 className="sub-3">
+                <i className="fa-solid fa-file-signature"></i>
+                ASSISTANCE A LA SIGNATURE DES TRAVAUX
+              </h3>
+              <div className="missions-paragraph-group">
+                <p>
+                  Sur la base d'un programme défini ensemble, l’architecte
+                  établit d'abord un relevé des éléments existants (terrain,
+                  bâti…) pour en documenter graphiquement les caractéristiques.
+                  Ce relevé sert ensuite de base pour la réalisation d’une
+                  esquisse conforme à ce programme.
+                </p>
+                <p>
+                  L’esquisse d’architecture produite inclut notamment la
+                  formalisation des éléments suivants :
+                </p>
+              </div>
+              <h3 className="sub-3">
+                <i className="fa-solid fa-handshake"></i>
+                PREPARATION DE CHANTIER
+              </h3>
+              <div className="missions-paragraph-group">
+                <p>
+                  Sur la base d'un programme défini ensemble, l’architecte
+                  établit d'abord un relevé des éléments existants (terrain,
+                  bâti…) pour en documenter graphiquement les caractéristiques.
+                  Ce relevé sert ensuite de base pour la réalisation d’une
+                  esquisse conforme à ce programme.
+                </p>
+                <p>
+                  L’esquisse d’architecture produite inclut notamment la
+                  formalisation des éléments suivants :
+                </p>
+              </div>
+              <h3 className="sub-3">
+                <i className="fa-solid fa-stamp"></i>
+                VISAS DE TRAVAUX
+              </h3>
+              <div className="missions-paragraph-group">
+                <p>
+                  Sur la base d'un programme défini ensemble, l’architecte
+                  établit d'abord un relevé des éléments existants (terrain,
+                  bâti…) pour en documenter graphiquement les caractéristiques.
+                  Ce relevé sert ensuite de base pour la réalisation d’une
+                  esquisse conforme à ce programme.
+                </p>
+                <p>
+                  L’esquisse d’architecture produite inclut notamment la
+                  formalisation des éléments suivants :
+                </p>
+              </div>
+              <h3 className="sub-3">
+                <i className="fa-solid fa-helmet-safety"></i>
+                DIRECTION DE L'EXECUTION DES TRAVAUX
+              </h3>
+              <div className="missions-paragraph-group">
+                <p>
+                  Sur la base d'un programme défini ensemble, l’architecte
+                  établit d'abord un relevé des éléments existants (terrain,
+                  bâti…) pour en documenter graphiquement les caractéristiques.
+                  Ce relevé sert ensuite de base pour la réalisation d’une
+                  esquisse conforme à ce programme.
+                </p>
+                <p>
+                  L’esquisse d’architecture produite inclut notamment la
+                  formalisation des éléments suivants :
+                </p>
+              </div>
+              <h3 className="sub-3">
+              <i className="fa-solid fa-file-invoice"></i>
+                SUIVI ADMINISTRATIF ET PAIEMENTS
+              </h3>
+              <div className="missions-paragraph-group">
+                <p>
+                  Sur la base d'un programme défini ensemble, l’architecte
+                  établit d'abord un relevé des éléments existants (terrain,
+                  bâti…) pour en documenter graphiquement les caractéristiques.
+                  Ce relevé sert ensuite de base pour la réalisation d’une
+                  esquisse conforme à ce programme.
+                </p>
+                <p>
+                  L’esquisse d’architecture produite inclut notamment la
+                  formalisation des éléments suivants :
+                </p>
+              </div>
+              <h3 className="sub-3">
+              <i className="fa-solid fa-key"></i>
+                ASSISTANCE AUX OPERATIONS DE RECEPTION DE L'OUVRAGE
+              </h3>
+              <div className="missions-paragraph-group">
+                <p>
+                  Sur la base d'un programme défini ensemble, l’architecte
+                  établit d'abord un relevé des éléments existants (terrain,
+                  bâti…) pour en documenter graphiquement les caractéristiques.
+                  Ce relevé sert ensuite de base pour la réalisation d’une
+                  esquisse conforme à ce programme.
+                </p>
+                <p>
+                  L’esquisse d’architecture produite inclut notamment la
+                  formalisation des éléments suivants :
+                </p>
+              </div>
             </div>
 
             <div className="missions-accordion-content-image">

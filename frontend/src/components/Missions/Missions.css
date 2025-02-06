@@ -86,12 +86,12 @@
 
 .missions-secContent {
   display: grid; /* Active le mode Grid */
-  grid-template-rows: repeat(3, 1fr); /* 3 lignes égales */
-  grid-template-rows: 1fr; /* 1 colonne */
+  grid-template-rows: auto; /* Permet aux lignes de s'adapter */
   gap: 1.5rem; /* Espacement entre les éléments */
   width: 100%; /* Largeur complète */
   text-align: center; /* Centre le texte dans chaque cellule */
   align-items: center;
+  height: auto;
 }
 
 .missions-row {
@@ -112,11 +112,16 @@
 }
 
 .missions-accordion-content {
-  max-height: 0;
-  overflow: hidden;
   grid-template-columns: 3fr 1fr; /* Colonne texte (3 parts), images (1 part) */
-  display: grid;
   gap: 1rem;
+  max-height: 0; /* Laisse la hauteur s'ajuster */
+  overflow: hidden;
+  display: grid;
+}
+
+.missions-accordion-content.visible {
+  display: flex;
+  max-height: none; /* Ajuste en fonction du contenu */
 }
 
 .missions-accordion-content-text {
@@ -141,17 +146,12 @@
   margin-bottom: 0.5rem;
 }
 
-.missions-accordion-content.visible {
-  display: flex;
-  max-height: 1500px; /* Ajuste selon le contenu */
-}
-
 .missions-paragraph-group {
   margin-bottom: 1rem;
 }
 
 .missions-paragraph-group p {
-  margin: 0;
+  margin: 1;
 }
 
 .missions-accordion-content-text ul {
@@ -170,6 +170,12 @@
   margin-bottom: 0.8rem;
   position: relative;
   list-style-type: square;
+}
+
+.sub-3 i {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: #111;
 }
 
 .missions-chevron-icon {

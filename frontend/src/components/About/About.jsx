@@ -9,12 +9,12 @@ export default function About() {
   const words = [
     "rénovation 🛠️",
     "construction 🔨",
-    "destruction 💣",
     "maison individuelle🏠",
     "appartement 🏢",
     "permis de constuire 📜",
     "maitrise d'oeuvre 👷‍♀️",
     "maison à la mer 🌊",
+    "commerce 🏪",
   ];
 
   const titleRef = useRef(null); // Animation titre
@@ -146,8 +146,8 @@ export default function About() {
                 en 2024 et basée à Rennes.
               </p>
               <p>
-                J’ai réalisé mes études à l’univerité de Rome III et à l’école
-                nationale d’architecture de Normandie. J’ai appris à analyser et
+                J’ai réalisé mes études à l’univerité de Rome III et à l’Ecole
+                Nationale d’Architecture de Normandie. J’ai appris à analyser et
                 sublimer des lieux existants au travers de la question de
                 l’héritage patrimoniale, grâce à des masters spécialisés dans ce
                 domaine.
@@ -164,7 +164,7 @@ export default function About() {
                 sur tous types de projet, de la conception à la réalisation. En
                 misant sur une écoute attentive et un échange constructif, je
                 vous accompagne dans la réalisation d’un projet sur mesure et
-                qui reflète pleinement votre quotidien et vos ambitions.
+                qui reflète pleinement votre quotidien et vos envies.
               </p>
             </div>
             <div className="presentation-text-low">
