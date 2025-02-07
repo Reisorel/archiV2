@@ -1,14 +1,14 @@
 const missions1 = "images/missions/1maquette.jpg";
-const missions2 = "images/missions/2urbain.jpg";
+const missions2 = "images/missions/2ordi.jpg";
 const missions3 = "images/missions/3plan.jpg";
 
-const missions4 = "images/missions/4plans.jpg";
-const missions5 = "images/missions/5ordi.jpg";
-const missions6 = "images/missions/6verticalhouse.jpg";
+const missions4 = "images/missions/4construction.jpg";
+const missions5 = "images/missions/5escalier.jpg";
+const missions6 = "images/missions/6chantier.jpg";
 
-const missions7 = "images/missions/7construction.jpg";
-const missions8 = "images/missions/8escalier.jpg";
-const missions9 = "images/missions/9maison.jpg";
+const missions7 = "images/missions/7plans.jpg";
+const missions8 = "images/missions/8rendu.jpg";
+const missions9 = "images/missions/9plans.jpg";
 
 export const missionsData = [
   {
