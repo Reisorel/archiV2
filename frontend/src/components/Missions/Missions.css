@@ -69,6 +69,7 @@
   margin: 2rem;
   width: -moz-fit-content;
   width: fit-content;
+  font-size: 1.1rem;
 }
 
 .missions-task-list-div li:nth-child(1) {

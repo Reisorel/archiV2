@@ -142,23 +142,32 @@ export default function Missions() {
           <div className="missions-intro-grid1">
             <div className="missions-intro-text-div">
               <p>
-                Je réalise des projets architecturaux, allant du logement
-                individuel à la commande publique, en accompagnant mes clients
-                sur toutes les étapes, du concept initial à la livraison finale.
+                Architecte indépendante, je conçois et réalise des projets sur
+                mesure. <br></br>De l’esquisse initiale à la livraison, je porte
+                une attention particulière à l’identité du lieu et aux attentes
+                de mes clients
               </p>
               <p>
-                J’interviens sur toutes les phases de projet pour des
-                constructions neuves, des extensions ou réhabilitations en
-                passant par la rénovation énergétique.
+                Mon champ de compétence s'étend sur tout type de réalisation
+                architecturale, allant de la maison individuelle à la commande
+                publique en passant par la réhabilitation, l'extension ou encore
+                le logement collectif.
               </p>
               <p>
-                Chaque projet est unique. Je m'engage à concevoir des espaces
-                qui allient esthétique, fonctionnalité et durabilité, tout en
-                répondant aux besoins spécifiques de mes clients.
+                Je vous accompagne sur chaque étape du projet, de la conception
+                à la réalisation, en intégrant toutes les phases essentielles :
+                études préliminaires, dépôt de permis, suivi de chantier,
+                livraison finale...
               </p>
               <p>
                 Mon objectif : transformer vos idées en réalisations concrètes
-                qui reflètent vos vision et votre ambition.
+                et durables.
+              </p>
+              <p>
+                Adoptant une approche alliant créativité, méthode et rigueur
+                dans mon travail, vous trouverez ci-dessous l’ensemble du champ
+                de mon expertise, structuré en trois sections : conception,
+                réalisation et périmètre des prestations.
               </p>
             </div>
           </div>
