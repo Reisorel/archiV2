@@ -247,7 +247,7 @@ export default function Missions() {
                 <p>
                   {" "}
                   <strong>
-                    Mon rôle dans cette phase est de vous aider à traduire vos
+                    Mon rôle dans cette mission est de vous aider à traduire vos
                     besoins et aspirations en un projet clair, fonctionnel et
                     esthétique.
                   </strong>
@@ -420,13 +420,21 @@ export default function Missions() {
               <h2 className="sub-2">OBJECTIF :</h2>
               <div className="missions-paragraph-group">
                 <p>
-                  La mission de réalisation et suivi de chantier consiste en la
-                  mise en
+                  Lors de la mission de réalisation et du suivi de chantier, je
+                  veille à donner vie aux plans conçus en amont, en collaborant
+                  étroitement avec les artisans et les maîtres d’œuvre.
                 </p>
                 <p>
-                  Chaque espace est pensé, conçu et formalisé sur mesure pour
-                  répondre à vos usages spécifiques, tout en dialoguant
-                  harmonieusement avec son environnement.
+                  <strong>
+                    Mon engagement dans cette mission est de sélectionner des
+                    artisans de qualité, d’orchestrer et de superviser chaque
+                    étape du chantier avec rigueur et minutie.
+                  </strong>
+                </p>
+                <p>
+                  L'enjeu de mon intervention est ici de garantir une finition
+                  soignée jusque dans les moindres détails, afin d’assurer une
+                  réalisation fidèle à vos attentes.
                 </p>
               </div>
 
@@ -437,15 +445,14 @@ export default function Missions() {
               </h3>
               <div className="missions-paragraph-group">
                 <p>
-                  Sur la base d'un programme défini ensemble, l’architecte
-                  établit d'abord un relevé des éléments existants (terrain,
-                  bâti…) pour en documenter graphiquement les caractéristiques.
-                  Ce relevé sert ensuite de base pour la réalisation d’une
-                  esquisse conforme à ce programme.
+                  Au cours de cette phase, l’architecte prend en charge la
+                  signature des contrats de travaux avec les entreprises, la
+                  mise en place de la date d’ouverture du chantier ainsi que
+                  l’élaboration du planning prévisionnel des travaux.
                 </p>
                 <p>
-                  L’esquisse d’architecture produite inclut notamment la
-                  formalisation des éléments suivants :
+                  Il s’occupe également de la Déclaration d’Ouverture de
+                  Chantier auprès de la municipalité référente.
                 </p>
               </div>
               <h3 className="sub-3">
@@ -454,15 +461,11 @@ export default function Missions() {
               </h3>
               <div className="missions-paragraph-group">
                 <p>
-                  Sur la base d'un programme défini ensemble, l’architecte
-                  établit d'abord un relevé des éléments existants (terrain,
-                  bâti…) pour en documenter graphiquement les caractéristiques.
-                  Ce relevé sert ensuite de base pour la réalisation d’une
-                  esquisse conforme à ce programme.
-                </p>
-                <p>
-                  L’esquisse d’architecture produite inclut notamment la
-                  formalisation des éléments suivants :
+                  L’architecte prend en main l’organisation des opérations
+                  préalables au démarrage des travaux. En concertation avec les
+                  entreprises, il coordonne leurs interventions et définit les
+                  modalités pratiques du déroulement du chantier, veillant à une
+                  mise en œuvre fluide et efficace.
                 </p>
               </div>
               <h3 className="sub-3">
@@ -471,15 +474,16 @@ export default function Missions() {
               </h3>
               <div className="missions-paragraph-group">
                 <p>
-                  Sur la base d'un programme défini ensemble, l’architecte
-                  établit d'abord un relevé des éléments existants (terrain,
-                  bâti…) pour en documenter graphiquement les caractéristiques.
-                  Ce relevé sert ensuite de base pour la réalisation d’une
-                  esquisse conforme à ce programme.
+                  Si des études d’exécution sont nécessaires, elles sont
+                  intégralement réalisées par les entreprises. L’architecte joue
+                  alors un rôle clé en s’assurant que chaque élément est
+                  conforme au projet de conception qu’il a élaboré.
                 </p>
                 <p>
-                  L’esquisse d’architecture produite inclut notamment la
-                  formalisation des éléments suivants :
+                  A cet effet, l'architecte examine attentivement les plans et
+                  les spécifications, vérifie que toutes les dispositions de son
+                  projet sont respectées, et appose son visa d'acceptation une
+                  fois la validation effectuée.
                 </p>
               </div>
               <h3 className="sub-3">
@@ -488,49 +492,58 @@ export default function Missions() {
               </h3>
               <div className="missions-paragraph-group">
                 <p>
-                  Sur la base d'un programme défini ensemble, l’architecte
-                  établit d'abord un relevé des éléments existants (terrain,
-                  bâti…) pour en documenter graphiquement les caractéristiques.
-                  Ce relevé sert ensuite de base pour la réalisation d’une
-                  esquisse conforme à ce programme.
+                  L’architecte prend en charge l’organisation et l’animation des
+                  réunions de chantier, rassemblant les entreprises, le client
+                  et les différents acteurs concernés. Il veille à ce que chaque
+                  point clé soit abordé et consigne les décisions prises dans
+                  des comptes-rendus détaillés, qu’il diffuse ensuite aux
+                  entreprises, au client et à tous les intervenants intéressés.
                 </p>
                 <p>
-                  L’esquisse d’architecture produite inclut notamment la
-                  formalisation des éléments suivants :
+                  Tout au long du chantier, l'achitecte suit de près
+                  l’avancement des travaux, s’assurant que chaque réalisation
+                  est conforme aux engagements définis dans les contrats et aux
+                  exigences du projet.
                 </p>
               </div>
               <h3 className="sub-3">
-              <i className="fa-solid fa-file-invoice"></i>
+                <i className="fa-solid fa-file-invoice"></i>
                 SUIVI ADMINISTRATIF ET PAIEMENTS
               </h3>
               <div className="missions-paragraph-group">
                 <p>
-                  Sur la base d'un programme défini ensemble, l’architecte
-                  établit d'abord un relevé des éléments existants (terrain,
-                  bâti…) pour en documenter graphiquement les caractéristiques.
-                  Ce relevé sert ensuite de base pour la réalisation d’une
-                  esquisse conforme à ce programme.
+                  L’architecte assure une gestion rigoureuse et transparente des
+                  aspects financiers du chantier. Il vérifie attentivement les
+                  factures des entrepreneurs, s’assurant que chaque prestation
+                  correspond aux travaux réalisés. Il établit ensuite le
+                  décompte définitif de fin de chantier, garantissant une
+                  évaluation juste et précise des coûts engagés.
                 </p>
                 <p>
-                  L’esquisse d’architecture produite inclut notamment la
-                  formalisation des éléments suivants :
+                  Enfin, l'architecte propose le règlement des entreprises pour
+                  le solde, veillant à ce que chaque acteur soit payé en toute
+                  équité, dans le respect des engagements contractuels.
                 </p>
               </div>
               <h3 className="sub-3">
-              <i className="fa-solid fa-key"></i>
+                <i className="fa-solid fa-key"></i>
                 ASSISTANCE AUX OPERATIONS DE RECEPTION DE L'OUVRAGE
               </h3>
               <div className="missions-paragraph-group">
                 <p>
-                  Sur la base d'un programme défini ensemble, l’architecte
-                  établit d'abord un relevé des éléments existants (terrain,
-                  bâti…) pour en documenter graphiquement les caractéristiques.
-                  Ce relevé sert ensuite de base pour la réalisation d’une
-                  esquisse conforme à ce programme.
+                  L’architecte accompagne le client lors de la réception des
+                  travaux, une étape clé du projet. Il organise une visite
+                  contradictoire sur site pour examiner chaque détail et
+                  s’assurer que tout est conforme aux attentes. À cette
+                  occasion, il rédige les procès-verbaux et dresse la liste des
+                  éventuelles réserves formulées par le client.
                 </p>
                 <p>
-                  L’esquisse d’architecture produite inclut notamment la
-                  formalisation des éléments suivants :
+                  Cette réception marque le point de départ des garanties
+                  essentielles : la garantie de parfait achèvement, qui incombe
+                  aux entreprises, ainsi que la garantie de bon fonctionnement
+                  et la responsabilité décennale, assurant la pérennité de
+                  l’ouvrage
                 </p>
               </div>
             </div>
@@ -584,76 +597,138 @@ export default function Missions() {
               <h2 className="sub-2">OBJECTIF :</h2>
               <div className="missions-paragraph-group">
                 <p>
-                  Vous pouvez aussi choisir des petites prestation individuelles
+                  Si certains projets nécessitent un accompagnement complet, de
+                  la conception à la réalisation, d’autres peuvent se concentrer
+                  sur des étapes précises du processus architectural.
                 </p>
                 <p>
-                  Missions plus précises permettant de se concentrer sur une
-                  tâche précise.
+                  C’est pourquoi j’offre une approche modulaire, permettant
+                  d’intervenir sur des missions ciblées, en fonction des besoins
+                  et du niveau d’accompagnement souhaité. Que ce soit pour une
+                  simple visite conseil, une mission partielle, ou une
+                  assistance jusqu’à la phase de chantier, chaque prestation est
+                  pensée pour s’adapter au projet et garantir un suivi
+                  personnalisé.
+                </p>
+                <p>
+                  <strong>
+                    Cette flexibilité permet à mes clients de bénéficier d’un
+                    accompagnement sur mesure, sans engagement global, et
+                    d’avancer à leur rythme dans la concrétisation de leur
+                    projet architectural.
+                  </strong>
                 </p>
               </div>
 
               <h2 className="sub-2">EXEMPLE</h2>
-              <ul>
-                <li>
-                  <h3 className="sub-3">LA VISITE CONSEIL</h3>
-                </li>
-                <div className="missions-paragraph-group">
-                  <p>
-                    Cette mission est indépendante des missions détaillées
-                    ci-avant. Elle peut être réalisée seule et sans suite.
-                  </p>
-                  <p>
-                    Elle permet de formaliser le programme et attentes du
-                    client. A l’issue de la visite, l’architecte élabore un
-                    rapport qui comprend le programme validé et une analyse des
-                    contraintes urbanistiques et financières de l’opération.
-                  </p>
-                </div>
-                <li>
-                  <h3 className="sub-3">LA MISSION PARTIELLE</h3>
-                </li>
-                <div className="missions-paragraph-group">
-                  <p>La mission partielle couvre</p>
+              <h3 className="sub-3">
+                <i className="fa-regular fa-lightbulb"></i>
+                LA VISITE CONSEIL
+              </h3>
+              <div className="missions-paragraph-group">
+                <p>
+                  Cette mission est totalement indépendante des autres
+                  prestations et peut être réalisée seule, sans engagement pour
+                  la suite du projet. Elle offre l’opportunité de faire le point
+                  sur vos besoins, d’affiner votre programme et de mieux cerner
+                  les enjeux de votre projet.
+                </p>
+                <p>
+                  À l’issue de cette visite comprenant un déplacement sur le
+                  site de votre projet, j’élabore un rapport détaillé qui
+                  formalise vos attentes et met en lumière les contraintes
+                  urbanistiques et financières à anticiper.
+                </p>
+                <p>
+                  La mission de visite conseil pose des bases solides
+                  d'exploration de votre projet avant d’envisager les prochaines
+                  étapes en toute confiance.
+                </p>
+              </div>
+              <h3 className="sub-3">
+                <i className="fa-solid fa-file"></i>
+                LA MISSION PARTIELLE
+              </h3>
+              <div className="missions-paragraph-group">
+                <p>
+                  La mission partielle permet de cadrer votre projet en amont et
+                  comprend les phases suivantes de la section II :
                   <ul>
-                    <li>la phase esquisse</li>
-                    <li>la phase avant-projet</li>
-                    <li>la phase autorisation d’urbanisme</li>
+                    <li>
+                      <strong>La phase d’esquisse</strong>, pour poser les
+                      premières intentions architecturales et définir les
+                      grandes lignes du projet.
+                    </li>
+                    <li>
+                      <strong>La phase d’avant-projet</strong>, qui affine le
+                      concept et prend en compte les contraintes techniques et
+                      réglementaires.
+                    </li>
+                    <li>
+                      <strong>La phase d’autorisation d’urbanisme</strong>, avec
+                      la constitution des dossiers nécessaires pour obtenir les
+                      validations administratives.
+                    </li>
                   </ul>
-                  <p>
-                    Cette mission s’arrête à l’autorisation d’urbanisme. Les
-                    plans remis ne sont pas destinés à la réalisation.
-                  </p>
-                  <p>C’est au client de choisir les entreprises.</p>
-                </div>
-                <li>
-                  <h3 className="sub-3">LA MISSION PARTIELLE ETENDUE</h3>
-                </li>
-                <div className="missions-paragraph-group">
-                  <p>
-                    La mission partielle étendue couvre les éléments de la
-                    mission partielle en ajoutant{" "}
-                  </p>
+                </p>
+                <p>
+                  Cette mission se termine avec la phase obtention de
+                  l’autorisation d’urbanisme. Les plans fournis ne sont pas
+                  destinés à la réalisation, laissant au client la liberté de
+                  choisir les entreprises pour la suite du projet.
+                </p>
+              </div>
+              <h3 className="sub-3">
+                <i className="fa-solid fa-file-circle-plus"></i>
+                LA MISSION PARTIELLE ETENDUE
+              </h3>
+              <div className="missions-paragraph-group">
+                <p>
+                  La mission partielle étendue complète les phases de la mission
+                  partielle en y ajoutant :
                   <ul>
-                    <li>La phase de conception finale et détaillée</li>
-                    <li>La consultation et l'analyse des offres</li>
+                    <li>
+                      <strong>
+                        La phase de conception finale et détaillée
+                      </strong>
+                      , où chaque aspect du projet est affiné et précisé pour
+                      garantir une exécution fluide et conforme à vos attentes.
+                    </li>
+                    <li>
+                      <strong>
+                        La phase de consultation et l’analyse des offres
+                      </strong>
+                      , qui vous permettent de comparer les propositions des
+                      entreprises et de faire les meilleurs choix en toute
+                      connaissance des prestations proposées.
+                    </li>
                   </ul>
-                  <p>
-                    Cette mission inclut le dossier PRO/DCE, un document
-                    technique très complet qui regroupe l’ensemble des éléments
-                    nécessaires pour solliciter des devis auprès des entreprises
-                  </p>
-                </div>
-                <li>
-                  <h3 className="sub-3">LA MISSION COMPLETE</h3>
-                </li>
-                <div className="missions-paragraph-group">
-                  <p>
-                    La mission complète couvre l'ensemble des prestation de
-                    conception architecturale et réalisaiton / suivi de
-                    chantiers couverts dans les parties I et II.
-                  </p>
-                </div>
-              </ul>
+                </p>
+                <p>
+                  Cette mission inclut également le dossier PRO/DCE, un document
+                  technique complet rassemblant l’ensemble des éléments
+                  nécessaires pour solliciter des devis précis et fiables auprès
+                  des entreprises. Vous bénéficiez ainsi d’un cadre structuré et
+                  professionnel pour lancer votre projet en toute confiance.
+                </p>
+              </div>
+              <h3 className="sub-3">
+                <i className="fa-solid fa-medal"></i>
+                LA MISSION COMPLETE
+              </h3>
+              <div className="missions-paragraph-group">
+                <p>
+                  La mission complète prend en charge l’ensemble du projet, de
+                  la conception architecturale à la réalisation et au suivi du
+                  chantier.
+                </p>
+                <p>
+                  Elle englobe toutes les prestations détaillées dans les
+                  parties I et II, assurant ainsi un accompagnement global et
+                  structuré, de l’esquisse initiale jusqu’à la livraison finale
+                  du projet.
+                </p>
+              </div>
             </div>
 
             <div className="missions-accordion-content-image">
