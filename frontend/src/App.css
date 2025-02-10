@@ -1,9 +1,11 @@
 @import "./assets/styles/main.css";
 @import 'aos/dist/aos.css';
-body {
+html, body {
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100vw;
 }/*# sourceMappingURL=App.css.map */

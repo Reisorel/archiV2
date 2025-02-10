@@ -4,6 +4,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { projectsData } from "../Projects/ProjectsDetails/Data/ProjectData";
+import ScrollLock from "react-scrolllock"; // 👈 Ajout de react-scrolllock
+
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -17,6 +19,7 @@ export default function Header() {
   const [lockScroll, setLockScroll] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileOn, setIsMobileOn] = useState(false);
+  // useDisableScroll(isMobileOn);
 
   const logoRef = useRef(null); // Référence pour GSAP
   const dropdownRef = useRef(null); // Référence pour le menu déroulant project
@@ -82,16 +85,15 @@ export default function Header() {
     };
   }, []);
 
-  // Gestion du scroll après navigation
   useEffect(() => {
-    if (location.state?.scrollTo) {
-      gsap.to(window, {
-        duration: 0.8,
-        scrollTo: `#${location.state.scrollTo}`,
-        ease: "power2.inOut",
-      });
+    if (isMobileOn) {
+      document.body.classList.add("no-scroll");
+      console.log("Scroll désactivé !");
+    } else {
+      document.body.classList.remove("no-scroll");
+      console.log("Scroll réactivé !");
     }
-  }, [location]);
+  }, [isMobileOn]);
 
   const handleNavigation = (targetId) => {
     closeMobileMenu(); // Ferme le menu mobile après un clic
@@ -142,69 +144,70 @@ export default function Header() {
     });
   };
 
-  const projects = [
-    { id: 1, name: "Maison Contemporaine", slug: "maison-contemporaine" },
-    { id: 2, name: "Extension en Bois", slug: "extension-bois" },
-    { id: 3, name: "Rénovation d'Appartement", slug: "renovation-appartement" },
-  ];
-
   return (
-    <header className={`header-container ${showHeader ? "show" : "hide"}`}>
-      <div
-        ref={logoRef}
-        className="header-logo"
-        data-hover-detect="true"
-        onClick={() => handleNavigation("header-logo")}
-      >
-        <h1>CASSANDRE MARION</h1>
-        <h2>ARCHITECTE DE-HMONP</h2>
-      </div>
+    <>
+      {/* Activation du scroll lock si le menu mobile est ouvert */}
+      <ScrollLock isActive={isMobileOn} />
 
-      <div className="header-hamburger-menu" onClick={toggleMobileMenu}>
-        {isMobileOn ? "X" : "☰"}
-      </div>
+      <header className={`header-container ${showHeader ? "show" : "hide"}`}>
+        <div
+          ref={logoRef}
+          className="header-logo"
+          data-hover-detect="true"
+          onClick={() => handleNavigation("header-logo")}
+        >
+          <h1>CASSANDRE MARION</h1>
+          <h2>ARCHITECTE DE-HMONP</h2>
+        </div>
 
-      <div className={`header-content ${isMobileOn ? "mobile-open" : ""}`}>
-        <ul className="header-nav-list" data-hover-detect="true">
-          <li onClick={() => handleNavigation("news")}>
-            <span>ACTUALITÉS</span>
-          </li>
-          <li
-            onMouseEnter={() => setIsDropdownOpen(true)}
-            onMouseLeave={() => setIsDropdownOpen(false)}
-            className="projects-menu"
-          >
-            <span onClick={() => handleNavigation("projects", true)}>
-              PROJETS
-            </span>
+        <div className="header-hamburger-menu" onClick={toggleMobileMenu}>
+          {isMobileOn ? <i className="fa-solid fa-x"></i> : <i className="fa-solid fa-bars"></i>
+          }
+        </div>
 
-            <ul
-              ref={dropdownRef}
-              className={`dropdown-menu ${isDropdownOpen ? "open" : ""}`}
+        <div className={`header-content ${isMobileOn ? "mobile-open" : ""}`}>
+          <ul className="header-nav-list" data-hover-detect="true">
+            <li onClick={() => handleNavigation("news")}>
+              <span>ACTUALITÉS</span>
+            </li>
+            <li
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+              className="projects-menu"
             >
-              {projectsData.map((project) => (
-                <li
-                  key={project.id}
-                  onClick={() => navigate(`/projects/${project.slug}`)}
-                >
-                  <p>{project.title}</p>
-                </li>
-              ))}
-            </ul>
-          </li>
+              <span onClick={() => handleNavigation("projects", true)}>
+                PROJETS
+              </span>
 
-          <li onClick={() => handleNavigation("missions")}>
-            <span>MISSIONS</span>
-          </li>
-          <li onClick={() => handleNavigation("about")}>
-            <span>A PROPOS</span>
-          </li>
-          <li onClick={() => handleNavigation("footer")}>
-            <span>CONTACT</span>
-          </li>
-          <li onClick={() => handleNavigation("footer")}></li>
-        </ul>
-      </div>
-    </header>
+              <ul
+                ref={dropdownRef}
+                className={`dropdown-menu ${isDropdownOpen ? "open" : ""}`}
+              >
+                {projectsData.map((project) => (
+                  <li
+                    key={project.id}
+                    onClick={() => navigate(`/projects/${project.slug}`)}
+                  >
+                    <p>{project.title}</p>
+                  </li>
+                ))}
+              </ul>
+            </li>
+
+            <li onClick={() => handleNavigation("missions")}>
+              <span>MISSIONS</span>
+            </li>
+            <li onClick={() => handleNavigation("about")}>
+              <span>A PROPOS</span>
+            </li>
+            <li onClick={() => handleNavigation("footer")}>
+              <span>CONTACT</span>
+            </li>
+            <li onClick={() => handleNavigation("footer")}></li>
+          </ul>
+        </div>
+      </header>
+    </>
   );
+
 }

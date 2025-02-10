@@ -284,6 +284,7 @@ export default function Missions() {
                 <p>
                   L’esquisse d’architecture produite inclut notamment la
                   formalisation des éléments suivants :
+                </p>
                   <ul>
                     <li>L’implantation et l’adaptation au terrain</li>
                     <li>L’orientation</li>
@@ -296,7 +297,6 @@ export default function Missions() {
                       d’amélioration de l’existant.
                     </li>
                   </ul>
-                </p>
               </div>
               <h3 className="sub-3">
                 <i className="fa-solid fa-ruler"></i>
@@ -662,6 +662,7 @@ export default function Missions() {
                 <p>
                   La mission partielle permet de cadrer votre projet en amont et
                   comprend les phases suivantes de la section II :
+                </p>
                   <ul>
                     <li>
                       <strong>La phase d’esquisse</strong>, pour poser les
@@ -679,7 +680,6 @@ export default function Missions() {
                       validations administratives.
                     </li>
                   </ul>
-                </p>
                 <p>
                   Cette mission se termine avec la phase obtention de
                   l’autorisation d’urbanisme. Les plans fournis ne sont pas
@@ -695,6 +695,7 @@ export default function Missions() {
                 <p>
                   La mission partielle étendue complète les phases de la mission
                   partielle en y ajoutant :
+                </p>
                   <ul>
                     <li>
                       <strong>
@@ -712,7 +713,6 @@ export default function Missions() {
                       connaissance des prestations proposées.
                     </li>
                   </ul>
-                </p>
                 <p>
                   Cette mission inclut également le dossier PRO/DCE, un document
                   technique complet rassemblant l’ensemble des éléments

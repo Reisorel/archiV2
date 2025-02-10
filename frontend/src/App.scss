@@ -1,12 +1,14 @@
 @import "./assets/styles/main.css";
 @import 'aos/dist/aos.css';
 
-body {
+html, body {
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 // .App {
@@ -18,3 +20,4 @@ body {
 // .App > *:not(footer) {
 //   flex: 1; /* La place restante se répartit sur la zone de contenu */
 // }
+
