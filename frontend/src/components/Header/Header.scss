@@ -60,7 +60,6 @@
 }
 
 .header-nav-list span {
-  font-family: "DinPro";
   color: rgb(0, 0, 0);
   text-decoration: none;
   padding: 5px;
@@ -161,89 +160,138 @@
 
   .header-logo {
     padding: 0.5rem 1rem; /* Réduction du padding pour éviter qu'il prenne trop d'espace */
-    align-items: flex-start; /* Alignement à gauche */
-    margin-left: 0.25rem; /* Moins d'espace que sur desktop */
+    align-items: flex-start;
+    margin-left: 0.25rem;
     max-width: 100vw;
   }
 
   .header-logo h1 {
-    font-size: 1.2rem; /* Taille réduite */
-    letter-spacing: 1px; /* Moins d'espace entre les lettres */
+    font-size: 1.2rem;
+    letter-spacing: 1px;
   }
 
   .header-logo h2 {
-    font-size: 0.9rem; /* Réduction pour mobile */
+    font-size: 0.9rem;
   }
 
+  /* 🌟 MENU MOBILE 🌟 */
   .header-content {
-    display: none;
-    background-color: rgb(22, 81, 192);
-    flex-direction: column;
+    background-color: rgb(255, 255, 255);
     position: fixed;
+    top: 100%;
     width: 100vw;
     height: calc(100vh - 90px);
-    top: 100%;
+    flex-direction: column;
     padding: 0;
     margin: 0;
-    transition: transform 0.3s ease-in-out;
-    transform: translateY(-100%); /* Caché au départ */
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
   }
 
+  /* 🌟 OUVERTURE DU MENU 🌟 */
   .header-content.mobile-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+  }
+
+  /* 🌟 FERMETURE DU MENU (évite le ghost) 🌟 */
+  .header-content:not(.mobile-open) {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    visibility: hidden; /* ⚠️ S'applique après la transition */
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+  }
+
+  /* 🌟 LISTE DE NAVIGATION 🌟 */
+  .header-nav-list {
     background-color: rgb(255, 255, 255);
     display: flex;
+    height: auto;
+    width: 80%;
     flex-direction: column;
-    position: fixed;
-    flex-direction: column;
-    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1); /* Ombre uniquement vers le bas */
+    list-style: none;
+    align-items: center;
     justify-content: center;
-    transform: translateY(0); /* Fait apparaître le menu */
-
-    .header-nav-list {
-      background-color: rgb(255, 255, 255);
-      height: auto;
-      display: flex;
-      width: 80%;
-      flex-direction: column;
-      list-style: none; /* Supprime les puces */
-      align-items: center;
-      justify-content: center; /* Centre verticalement */
-      text-align: center; /* Pour centrer le texte */
-      margin: 0; /* Force le centrage */
-      padding: 0;
-      gap: 0rem; /* Espacement entre les éléments */
-    }
-    .header-nav-list li {
-      width: 100%;
-      text-align: center;
-      margin: 1rem;
-      padding: 1rem;
-
-      border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Fine bordure sous chaque élément */
-    }
-
-    .header-nav-list li:last-child {
-      border-bottom: none; /* Pas de bordure sur le dernier élément */
-    }
-
-    .header-nav-list span {
-      margin: 0;
-      padding: 0;
-      font-size: 1.5rem; /* Augmenter légèrement la taille */
-      font-weight: 500;
-    }
+    text-align: center;
+    margin: 1rem;
+    padding: 0rem;
+    gap: 0rem;
   }
+
+  .header-nav-list li {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .header-nav-list li:last-child {
+    border-bottom: none;
+  }
+
+  .header-nav-list span {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  /* 🌟 ICONES HAMBURGER 🌟 */
   .header-hamburger-menu {
-    display: block;
-    cursor: pointer;
-    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
     position: absolute;
-    padding: 10px 0;
     top: 50%;
-    right: 1rem;
+    right: 2rem;
     transform: translateY(-50%);
+    cursor: pointer;
+
+    svg {
+      position: absolute;
+      transition: opacity 0.4s ease, transform 0.3s ease;
+    }
+
+    .icon-menu {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .icon-close {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    /* Quand le menu est ouvert */
+    &.open {
+      .icon-menu {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      .icon-close {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
   }
 }
+
 
 // @media screen and (max-width: 480px) {
 // }

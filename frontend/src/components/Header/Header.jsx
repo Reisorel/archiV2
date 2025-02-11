@@ -4,8 +4,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { projectsData } from "../Projects/ProjectsDetails/Data/ProjectData";
-import ScrollLock from "react-scrolllock"; // 👈 Ajout de react-scrolllock
-
+import ScrollLock from "react-scrolllock"; // package react-scrolllock
+import { IoMdMenu } from "react-icons/io";
+import { IoMdClose } from "react-icons/io";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -19,12 +20,11 @@ export default function Header() {
   const [lockScroll, setLockScroll] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileOn, setIsMobileOn] = useState(false);
-  // useDisableScroll(isMobileOn);
 
-  const logoRef = useRef(null); // Référence pour GSAP
-  const dropdownRef = useRef(null); // Référence pour le menu déroulant project
+  const logoRef = useRef(null); // Référence logo
+  const dropdownRef = useRef(null); // Référence menu déroulant projets
 
-  //Gère l'arrivée du logo
+  // Gère l'arrivée du logo
   useEffect(() => {
     gsap.fromTo(
       logoRef.current,
@@ -33,7 +33,7 @@ export default function Header() {
     );
   }, []);
 
-  //Gère le menu déroulant projects
+  // Gère le menu déroulant projets
   useEffect(() => {
     if (dropdownRef.current) {
       if (isDropdownOpen) {
@@ -84,16 +84,6 @@ export default function Header() {
       document.removeEventListener("modalStateChange", handleModalStateChange);
     };
   }, []);
-
-  useEffect(() => {
-    if (isMobileOn) {
-      document.body.classList.add("no-scroll");
-      console.log("Scroll désactivé !");
-    } else {
-      document.body.classList.remove("no-scroll");
-      console.log("Scroll réactivé !");
-    }
-  }, [isMobileOn]);
 
   const handleNavigation = (targetId) => {
     closeMobileMenu(); // Ferme le menu mobile après un clic
@@ -160,9 +150,12 @@ export default function Header() {
           <h2>ARCHITECTE DE-HMONP</h2>
         </div>
 
-        <div className="header-hamburger-menu" onClick={toggleMobileMenu}>
-          {isMobileOn ? <i className="fa-solid fa-x"></i> : <i className="fa-solid fa-bars"></i>
-          }
+        <div
+          className={`header-hamburger-menu ${isMobileOn ? "open" : ""}`}
+          onClick={toggleMobileMenu}
+        >
+          <IoMdMenu className="icon-menu" />
+          <IoMdClose className="icon-close" />
         </div>
 
         <div className={`header-content ${isMobileOn ? "mobile-open" : ""}`}>
@@ -209,5 +202,4 @@ export default function Header() {
       </header>
     </>
   );
-
 }
