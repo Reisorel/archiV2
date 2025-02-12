@@ -334,4 +334,14 @@ li {
 .sub-3 {
   font-size: 1rem;
   font-weight: 500;
+}
+
+@media screen and (max-width: 760px) {
+  .title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-top: 2px solid black;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
 }/*# sourceMappingURL=main.css.map */

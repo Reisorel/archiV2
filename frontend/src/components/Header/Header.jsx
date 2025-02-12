@@ -154,8 +154,10 @@ export default function Header() {
           className={`header-hamburger-menu ${isMobileOn ? "open" : ""}`}
           onClick={toggleMobileMenu}
         >
-          <IoMdMenu className="icon-menu" />
-          <IoMdClose className="icon-close" />
+          <div className="burger-wrapper">
+            <IoMdMenu className="icon-menu" />
+            <IoMdClose className="icon-close" />
+          </div>
         </div>
 
         <div className={`header-content ${isMobileOn ? "mobile-open" : ""}`}>
@@ -198,6 +200,26 @@ export default function Header() {
             </li>
             <li onClick={() => handleNavigation("footer")}></li>
           </ul>
+          <div className="header-icon-container">
+            <div className="header-icon">
+              <a
+                href="https://www.linkedin.com/in/cassandre-marion-0ab776128/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bx bxl-linkedin"></i>
+              </a>
+            </div>
+            <div className="header-icon">
+              <a
+                href="https://www.instagram.com/cassandremrn_architecte?igsh=MWw5Z2pzOGI1NnYwaQ=="
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bx bxl-instagram"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </header>
     </>

@@ -134,6 +134,7 @@
 
 .slider-down-button-container {
   position: absolute;
+  display: block;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%); /* Centre parfaitement le conteneur */
@@ -175,4 +176,34 @@
   width: 45px; /* Taille du chevron */
   height: auto;
   cursor: pointer;
+}
+
+@media screen and (max-width: 760px) {
+  .slider-frame {
+    height: 600px;
+  }
+  .slider-image-info {
+    line-height: 1.2;
+    position: absolute;
+    display: block;
+    flex-direction: column;
+    left: 1rem;
+    bottom: 0;
+    color: white;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+  .slider-image-name {
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  .slider-image-description {
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+  .slider-down-button-container {
+    display: none;
+  }
 }/*# sourceMappingURL=Slider.css.map */
