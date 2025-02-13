@@ -3,7 +3,6 @@
   padding-left: 2rem;
   padding-right: 2rem;
   overflow: hidden;
-  scroll-margin-left: 2rem;
 }
 
 .missions-intro {
@@ -224,6 +223,11 @@
 }
 
 @media screen and (max-width: 760px) {
+  .missions-intro {
+    text-align: justify;
+    margin-bottom: 2.5rem;
+    padding: 0;
+  }
   .missions-intro-grid {
     display: grid;
     grid-template-columns: 1fr; /* Une seule colonne */
@@ -231,13 +235,17 @@
   }
   .missions-intro-grid1 {
     grid-row: 2; /* Place le texte en deuxième */
+    margin-top: 2.5rem;
+    margin-bottom: 0;
+    padding: 0;
   }
   .missions-intro-grid2 {
     grid-row: 1; /* Place la liste en premier */
+    background-color: rgb(255, 255, 255);
   }
   .missions-task-list-div {
     display: grid;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     grid-template-columns: 1fr 1fr;
     gap: 0rem; /* ✅ Pas d'espacement entre les colonnes */
     align-items: start;
@@ -247,12 +255,12 @@
     margin: 0; /* ✅ Supprime les marges qui pourraient créer un espace */
   }
   .missions-task-list-left {
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     padding: 0;
     padding: 0;
   }
   .missions-task-list-right {
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     padding: 0;
     padding: 0;
   }
@@ -271,5 +279,26 @@
     padding: 0;
     margin: 0;
     height: 2rem; /* ✅ Hauteur fixe */
+  }
+  .missions-intro-text-div {
+    margin: 0;
+    padding: 0;
+  }
+  .missions-intro-text-div :nth-child(1) {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #111;
+    margin: 0;
+    padding: 0;
+  }
+  .missions-intro-text-div p:nth-child(4) {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #111;
+  }
+  .missions-intro-text-div p:nth-child(5) {
+    color: #111;
+    margin-bottom: 0;
   }
 }/*# sourceMappingURL=Missions.css.map */
