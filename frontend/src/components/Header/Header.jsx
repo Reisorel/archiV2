@@ -147,7 +147,7 @@ export default function Header() {
           onClick={() => handleNavigation("header-logo")}
         >
           <h1>CASSANDRE MARION</h1>
-          <h2>ARCHITECTE DE-HMONP</h2>
+          <h2>ATELIER D'ARCHITECTURE</h2>
         </div>
 
         <div

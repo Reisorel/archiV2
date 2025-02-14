@@ -306,4 +306,46 @@
     color: #111;
     margin-bottom: 0;
   }
+
+  // Contenus box mission mobile
+  .missions-secContent {
+    gap: 1rem; /* Espacement entre les éléments */
+  }
+
+  .missions-row {
+    padding: 1rem; /* Espacement autour du texte */
+    border-radius: 2px; /* Coins arrondis */
+    font-weight: 500; /* Épaisseur de la police */
+    color: #333; /* Couleur du texte */
+    text-align: left;
+    border: 0.5px solid #ddd;
+  }
+
+  .missions-chevron-icon {
+    width: 1.25rem; /* Ajuste la taille selon tes besoins */
+    margin-right: 0rem;
+  }
+  // Masque les images illustration en mobile
+  .missions-accordion-content-image {
+    display: none;
+  }
+  // Masque les paragraphes en mobile
+  .missions-paragraph-group {
+    display: none; // Cache le texte par défaut
+  }
+  
+  .missions-paragraph-group.visible {
+    display: block; // Affiche uniquement quand la classe est ajoutée via JS
+  }
+
+  .sub-3 {
+    padding-top: 1rem;
+  }
+
+  .sub-3 i {
+    padding-left: 0;
+    padding-right: 1rem;
+    color: #111;
+  }
+
 }

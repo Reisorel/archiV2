@@ -13,6 +13,29 @@ export default function Missions() {
   const gridRef = useRef(null); // Animation menus déroulants
   const textRef = useRef(null); // Animation texte gauche
 
+  // Gestion visibilité section mobile
+  const [visibleSections, setVisibleSections] = useState({}); // Initialisation état mobile
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 760); // Détection taille d'écran
+
+  // Gestion affichage sections mobiles.
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 760);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+    // Fonction pour afficher/masquer les paragraphes (uniquement en mobile)
+    const toggleSection = (section) => {
+      if (!isMobile) return; // Ignore le clic sur desktop
+      setVisibleSections((prev) => ({
+        ...prev,
+        [section]: !prev[section],
+      }));
+    };
+
+
+
   // Aninmation texte central
   useEffect(() => {
     gsap.fromTo(
@@ -269,12 +292,12 @@ export default function Missions() {
                 </p>
               </div>
               <h2 className="sub-2">PHASES :</h2>
-              <h3 className="sub-3">
+              <h3 className="sub-3" onClick={() => toggleSection("esquisse")}>
                 <i className="fa-solid fa-pencil"></i>
-                L'ESQUISSE
+                ESQUISSE
               </h3>
-              <div className="missions-paragraph-group">
-                <p>
+              <div className={`missions-paragraph-group ${visibleSections["esquisse"] ? "visible" : ""}`}>
+              <p>
                   Sur la base d'un programme défini ensemble, l’architecte
                   établit d'abord un relevé des éléments existants (terrain,
                   bâti…) pour en documenter graphiquement les caractéristiques.
@@ -298,11 +321,11 @@ export default function Missions() {
                     </li>
                   </ul>
               </div>
-              <h3 className="sub-3">
+              <h3 className="sub-3" onClick={() => toggleSection("avant")}>
                 <i className="fa-solid fa-ruler"></i>
-                L'AVANT-PROJET
+                AVANT-PROJET
               </h3>
-              <div className="missions-paragraph-group">
+              <div className={`missions-paragraph-group ${visibleSections["avant"] ? "visible" : ""}`}>
                 <p>
                   La phase d’avant-projet vise à préciser les dimensions de
                   l’ouvrage, son aspect. L’architecte présente également les
@@ -315,11 +338,11 @@ export default function Missions() {
                   à venir est réalisée.
                 </p>
               </div>
-              <h3 className="sub-3">
+              <h3 className="sub-3" onClick={() => toggleSection("urba")}>
                 <i className="fa-solid fa-house-circle-check"></i>
-                L'AUTORISATION D'URBANISME
+                AUTORISATION D'URBANISME
               </h3>{" "}
-              <div className="missions-paragraph-group">
+              <div className={`missions-paragraph-group ${visibleSections["urba"] ? "visible" : ""}`}>
                 <p>
                   Lors de cette phase, l’architecte prend en charge les actions
                   réglementaires et administratives à réaliser lors du projet.
@@ -334,11 +357,11 @@ export default function Missions() {
                   vigueur.
                 </p>
               </div>
-              <h3 className="sub-3">
+              <h3 className="sub-3" onClick={() => toggleSection("finale")}>
                 <i className="fa-solid fa-compass-drafting"></i>
-                LA CONCEPTION FINALE ET DETAILLEE
+                CONCEPTION FINALE ET DETAILLEE
               </h3>{" "}
-              <div className="missions-paragraph-group">
+              <div className={`missions-paragraph-group ${visibleSections["finale"] ? "visible" : ""}`}>
                 <p>
                   La conception finale et détaillée permet de valider la nature
                   et les caractéristiques des matériaux, des procédés
@@ -363,11 +386,12 @@ export default function Missions() {
                   budget travaux.
                 </p>
               </div>
-              <h3 className="sub-3">
+              <h3 className="sub-3" onClick={() => toggleSection("consult")}>
                 <i className="fa-solid fa-comments"></i>
-                LA CONSULTATION DES ENTREPRISES ET L'ANALYSE DES OFFRES
+                CONSULTATION DES ENTREPRISES
+                <br></br>ET ANALYSE DES OFFRES
               </h3>{" "}
-              <div className="missions-paragraph-group">
+              <div className={`missions-paragraph-group ${visibleSections["consult"] ? "visible" : ""}`}>
                 <p>
                   L’architecte rassemble les éléments du projet permettant aux
                   entrepreneurs consultés d’établir leurs offres quantifiées.
