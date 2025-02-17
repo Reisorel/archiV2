@@ -90,3 +90,91 @@
   font-weight: bold; /* Optionnel : mise en valeur de l'année */
   font-size: 1.2rem;
 }
+
+@media screen and (max-width: 760px) {
+  .about-infos-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne */
+    grid-template-rows: auto auto auto auto; /* Chaque élément prend une ligne */
+    gap: 1rem;
+  }
+
+  .about-grid-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments */
+    width: 100%; /* S'assure que chaque bloc prend toute la largeur */
+  }
+
+  .about-picture {
+    width: 100%; /* Prend toute la largeur */
+    max-width: 300px; /* Taille raisonnable */
+    height: auto;
+    justify-self: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .about-presentation-text {
+    width: 100%; /* Prend toute la largeur */
+    height: auto;
+    max-width: 100%;
+    text-align: justify;
+  }
+  .about-presentation-text p:nth-of-type(2),
+  .about-presentation-text p:nth-of-type(3),
+  .about-presentation-text p:nth-of-type(4) {
+    display: none; /* Cache ces paragraphes */
+  }
+
+  .about-presentation-text-low {
+    width: 100%;
+    text-align: center;
+    grid-row: 3; /* Place cet élément après le texte */
+  }
+
+  .about-CV {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne pour empiler les dates */
+    gap: 1rem;
+    grid-row: 4;
+  }
+
+  .about-date {
+    display: grid;
+    grid-template-columns: auto 1fr; /* La date prend sa taille, le texte s'adapte */
+    align-items: center; /* Assure que l'année et le texte soient bien alignés */
+    gap: 0.5rem; /* Espacement entre l’année et le texte */
+  }
+
+  .about-year {
+    font-weight: bold;
+    font-size: 1.2rem;
+    white-space: nowrap; /* Empêche le retour à la ligne */
+  }
+
+  .about-date:nth-child(1) .description {
+    display: inline;
+  }
+
+  .about-date:first-child {
+    align-items: flex-start; /* Alignement en haut uniquement pour la première date */
+  }
+
+  .about-date:first-child .description {
+    padding-top: 2px; /* Ajustement pour aligner "Création de mon agence" avec "2024." */
+  }
+
+  .about-CV::before {
+    content: "";
+    position: absolute;
+    left: 0rem;
+    top: 1rem;
+    bottom: 1rem;
+    width: 2px;
+    background-color: black;
+  }
+
+
+}

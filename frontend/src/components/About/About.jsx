@@ -6,6 +6,7 @@ import "./About.css";
 const portrait = "/images/about/Cassandre.jpg";
 
 export default function About() {
+
   const words = [
     "rénovation 🛠️",
     "construction 🔨",
@@ -134,7 +135,7 @@ export default function About() {
       <div className="about-infos-container">
         <div className="about-grid-column">
           <div ref={pictureRef} className="about-picture">
-            <img src={portrait} alt="" />
+            <img src={portrait} alt="image-portrait" />
           </div>
         </div>
 

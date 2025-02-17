@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { missionsData } from "./Data/MissionsData";
+import { useNavigate } from "react-router-dom";
+
 
 import downChevron from "../../assets/icons/down-arrow-black.svg";
 import "./Missions.css";
@@ -12,6 +14,8 @@ export default function Missions() {
   const titleRef = useRef(null); // Animation titre
   const gridRef = useRef(null); // Animation menus déroulants
   const textRef = useRef(null); // Animation texte gauche
+  const navigate = useNavigate();
+
 
   // Gestion visibilité section mobile
   const [visibleSections, setVisibleSections] = useState({}); // Initialisation état mobile
@@ -174,6 +178,7 @@ export default function Missions() {
                 publique en passant par la réhabilitation, l'extension ou encore
                 le logement collectif.
               </p>
+              <p>Curieux d'en savoir un peu plus ? Venez par <span onClick={() => navigate("/projects")}>ici.</span></p>
               <p>
                 Je vous accompagne sur chaque étape du projet, de la conception
                 à la réalisation, en intégrant toutes les phases essentielles :
