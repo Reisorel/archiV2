@@ -25,16 +25,14 @@ export default function Missions() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-    // Fonction pour afficher/masquer les paragraphes (uniquement en mobile)
-    const toggleSection = (section) => {
-      if (!isMobile) return; // Ignore le clic sur desktop
-      setVisibleSections((prev) => ({
-        ...prev,
-        [section]: !prev[section],
-      }));
-    };
-
-
+  // Fonction pour afficher/masquer les paragraphes (uniquement en mobile)
+  const toggleSection = (section) => {
+    if (!isMobile) return; // Ignore le clic sur desktop
+    setVisibleSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
 
   // Aninmation texte central
   useEffect(() => {
@@ -269,7 +267,7 @@ export default function Missions() {
           >
             <div className="missions-accordion-content-text">
               <h2 className="sub-2">OBJECTIF :</h2>
-              <div className="missions-paragraph-group">
+              <div className="missions-paragraph-group missions-paragraph-group-obj">
                 <p>
                   Tout commence ici ! La mission de conception constitue le
                   socle de tout projet d'architecture. C’est à ce stade que les
@@ -288,16 +286,32 @@ export default function Missions() {
                   Nous travaillons avec vous pour que chaque espace soit conçu
                   et pensé sur mesure afin de répondre à vos usages futurs
                   spécifiques, tout en respectant son environnement et la
-                  réglementation en vigueur..
+                  réglementation en vigueur.
                 </p>
               </div>
               <h2 className="sub-2">PHASES :</h2>
               <h3 className="sub-3" onClick={() => toggleSection("esquisse")}>
-                <i className="fa-solid fa-pencil"></i>
-                ESQUISSE
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-pencil"></i>
+                    ESQUISSE
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["esquisse"] ? "rotate" : ""
+                  }`}
+                />
               </h3>
-              <div className={`missions-paragraph-group ${visibleSections["esquisse"] ? "visible" : ""}`}>
-              <p>
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["esquisse"] ? "visible" : ""
+                }`}
+              >
+                <p>
                   Sur la base d'un programme défini ensemble, l’architecte
                   établit d'abord un relevé des éléments existants (terrain,
                   bâti…) pour en documenter graphiquement les caractéristiques.
@@ -308,24 +322,38 @@ export default function Missions() {
                   L’esquisse d’architecture produite inclut notamment la
                   formalisation des éléments suivants :
                 </p>
-                  <ul>
-                    <li>L’implantation et l’adaptation au terrain</li>
-                    <li>L’orientation</li>
-                    <li>Les différents accès</li>
-                    <li>
-                      L’enveloppe extérieure et ses ouvertures principales
-                    </li>
-                    <li>
-                      L’organisation des espaces, leurs liaisons, les solutions
-                      d’amélioration de l’existant.
-                    </li>
-                  </ul>
+                <ul>
+                  <li>L’implantation et l’adaptation au terrain</li>
+                  <li>L’orientation</li>
+                  <li>Les différents accès</li>
+                  <li>L’enveloppe extérieure et ses ouvertures principales</li>
+                  <li>
+                    L’organisation des espaces, leurs liaisons, les solutions
+                    d’amélioration de l’existant.
+                  </li>
+                </ul>
               </div>
               <h3 className="sub-3" onClick={() => toggleSection("avant")}>
-                <i className="fa-solid fa-ruler"></i>
-                AVANT-PROJET
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-ruler"></i>
+                    AVANT-PROJET
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["avant"] ? "rotate" : ""
+                  }`}
+                />
               </h3>
-              <div className={`missions-paragraph-group ${visibleSections["avant"] ? "visible" : ""}`}>
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["avant"] ? "visible" : ""
+                }`}
+              >
                 <p>
                   La phase d’avant-projet vise à préciser les dimensions de
                   l’ouvrage, son aspect. L’architecte présente également les
@@ -339,10 +367,26 @@ export default function Missions() {
                 </p>
               </div>
               <h3 className="sub-3" onClick={() => toggleSection("urba")}>
-                <i className="fa-solid fa-house-circle-check"></i>
-                AUTORISATION D'URBANISME
-              </h3>{" "}
-              <div className={`missions-paragraph-group ${visibleSections["urba"] ? "visible" : ""}`}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-house-circle-check"></i>
+                    AUTORISATION D'URBANISME
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["urba"] ? "rotate" : ""
+                  }`}
+                />
+              </h3>
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["urba"] ? "visible" : ""
+                }`}
+              >
                 <p>
                   Lors de cette phase, l’architecte prend en charge les actions
                   réglementaires et administratives à réaliser lors du projet.
@@ -358,10 +402,26 @@ export default function Missions() {
                 </p>
               </div>
               <h3 className="sub-3" onClick={() => toggleSection("finale")}>
-                <i className="fa-solid fa-compass-drafting"></i>
-                CONCEPTION FINALE ET DETAILLEE
-              </h3>{" "}
-              <div className={`missions-paragraph-group ${visibleSections["finale"] ? "visible" : ""}`}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-compass-drafting"></i>
+                    CONCEPTION FINALE ET DÉTAILLÉE
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["finale"] ? "rotate" : ""
+                  }`}
+                />
+              </h3>
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["finale"] ? "visible" : ""
+                }`}
+              >
                 <p>
                   La conception finale et détaillée permet de valider la nature
                   et les caractéristiques des matériaux, des procédés
@@ -387,11 +447,29 @@ export default function Missions() {
                 </p>
               </div>
               <h3 className="sub-3" onClick={() => toggleSection("consult")}>
-                <i className="fa-solid fa-comments"></i>
-                CONSULTATION DES ENTREPRISES
-                <br></br>ET ANALYSE DES OFFRES
-              </h3>{" "}
-              <div className={`missions-paragraph-group ${visibleSections["consult"] ? "visible" : ""}`}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-comments"></i>
+                    CONSULTATION DES ENTREPRISES
+                    <br />
+                    ET ANALYSE DES OFFRES
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["consult"] ? "rotate" : ""
+                  }`}
+                />
+              </h3>
+
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["consult"] ? "visible" : ""
+                }`}
+              >
                 <p>
                   L’architecte rassemble les éléments du projet permettant aux
                   entrepreneurs consultés d’établir leurs offres quantifiées.
@@ -451,7 +529,7 @@ export default function Missions() {
           >
             <div className="missions-accordion-content-text">
               <h2 className="sub-2">OBJECTIF :</h2>
-              <div className="missions-paragraph-group">
+              <div className="missions-paragraph-group missions-paragraph-group-obj">
                 <p>
                   Lors de la mission de réalisation et du suivi de chantier, je
                   veille à donner vie aux plans conçus en amont, en collaborant
@@ -472,11 +550,29 @@ export default function Missions() {
               </div>
 
               <h2 className="sub-2">PHASES :</h2>
-              <h3 className="sub-3">
-                <i className="fa-solid fa-file-signature"></i>
-                ASSISTANCE A LA SIGNATURE DES TRAVAUX
+              <h3 className="sub-3" onClick={() => toggleSection("signature")}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-ruler"></i>
+                    ASSISTANCE A SIGNATURE DES TRAVAUX
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["signature"] ? "rotate" : ""
+                  }`}
+                />
               </h3>
-              <div className="missions-paragraph-group">
+
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["signature"] ? "visible" : ""
+                }`}
+              >
+                {" "}
                 <p>
                   Au cours de cette phase, l’architecte prend en charge la
                   signature des contrats de travaux avec les entreprises, la
@@ -488,11 +584,29 @@ export default function Missions() {
                   Chantier auprès de la municipalité référente.
                 </p>
               </div>
-              <h3 className="sub-3">
-                <i className="fa-solid fa-handshake"></i>
-                PREPARATION DE CHANTIER
+              <h3 className="sub-3" onClick={() => toggleSection("prepa")}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-handshake"></i>
+                    PRÉPARATION DE CHANTIER
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["prepa"] ? "rotate" : ""
+                  }`}
+                />
               </h3>
-              <div className="missions-paragraph-group">
+
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["prepa"] ? "visible" : ""
+                }`}
+              >
+                {" "}
                 <p>
                   L’architecte prend en main l’organisation des opérations
                   préalables au démarrage des travaux. En concertation avec les
@@ -501,11 +615,29 @@ export default function Missions() {
                   mise en œuvre fluide et efficace.
                 </p>
               </div>
-              <h3 className="sub-3">
-                <i className="fa-solid fa-stamp"></i>
-                VISAS DE TRAVAUX
+              <h3 className="sub-3" onClick={() => toggleSection("visa")}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-stamp"></i>
+                    VISAS DE TRAVAUX
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["visa"] ? "rotate" : ""
+                  }`}
+                />
               </h3>
-              <div className="missions-paragraph-group">
+
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["visa"] ? "visible" : ""
+                }`}
+              >
+                {" "}
                 <p>
                   Si des études d’exécution sont nécessaires, elles sont
                   intégralement réalisées par les entreprises. L’architecte joue
@@ -519,11 +651,29 @@ export default function Missions() {
                   fois la validation effectuée.
                 </p>
               </div>
-              <h3 className="sub-3">
-                <i className="fa-solid fa-helmet-safety"></i>
-                DIRECTION DE L'EXECUTION DES TRAVAUX
+              <h3 className="sub-3" onClick={() => toggleSection("exec")}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-helmet-safety"></i>
+                    DIRECTION DE L'EXÉCUTION DES TRAVAUX
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["exec"] ? "rotate" : ""
+                  }`}
+                />
               </h3>
-              <div className="missions-paragraph-group">
+
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["exec"] ? "visible" : ""
+                }`}
+              >
+                {" "}
                 <p>
                   L’architecte prend en charge l’organisation et l’animation des
                   réunions de chantier, rassemblant les entreprises, le client
@@ -539,11 +689,29 @@ export default function Missions() {
                   exigences du projet.
                 </p>
               </div>
-              <h3 className="sub-3">
-                <i className="fa-solid fa-file-invoice"></i>
-                SUIVI ADMINISTRATIF ET PAIEMENTS
+              <h3 className="sub-3" onClick={() => toggleSection("suivi")}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-file-invoice"></i>
+                    SUIVI ADMINISTRATIF ET PAIEMENTS
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["suivi"] ? "rotate" : ""
+                  }`}
+                />
               </h3>
-              <div className="missions-paragraph-group">
+
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["suivi"] ? "visible" : ""
+                }`}
+              >
+                {" "}
                 <p>
                   L’architecte assure une gestion rigoureuse et transparente des
                   aspects financiers du chantier. Il vérifie attentivement les
@@ -558,11 +726,29 @@ export default function Missions() {
                   équité, dans le respect des engagements contractuels.
                 </p>
               </div>
-              <h3 className="sub-3">
-                <i className="fa-solid fa-key"></i>
-                ASSISTANCE AUX OPERATIONS DE RECEPTION DE L'OUVRAGE
+              <h3 className="sub-3" onClick={() => toggleSection("reception")}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-key"></i>
+                    ASSISTANCE AUX OPÉRATIONS DE RÉCEPTION DE L'OUVRAGE
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["reception"] ? "rotate" : ""
+                  }`}
+                />
               </h3>
-              <div className="missions-paragraph-group">
+
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["reception"] ? "visible" : ""
+                }`}
+              >
+                {" "}
                 <p>
                   L’architecte accompagne le client lors de la réception des
                   travaux, une étape clé du projet. Il organise une visite
@@ -628,7 +814,7 @@ export default function Missions() {
           >
             <div className="missions-accordion-content-text">
               <h2 className="sub-2">OBJECTIF :</h2>
-              <div className="missions-paragraph-group">
+              <div className="missions-paragraph-group missions-paragraph-group-obj">
                 <p>
                   Si certains projets nécessitent un accompagnement complet, de
                   la conception à la réalisation, d’autres peuvent se concentrer
@@ -654,11 +840,28 @@ export default function Missions() {
               </div>
 
               <h2 className="sub-2">EXEMPLE</h2>
-              <h3 className="sub-3">
-                <i className="fa-regular fa-lightbulb"></i>
-                LA VISITE CONSEIL
+              <h3 className="sub-3" onClick={() => toggleSection("conseil")}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-regular fa-lightbulb"></i>
+                    LA VISITE CONSEIL
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["conseil"] ? "rotate" : ""
+                  }`}
+                />
               </h3>
-              <div className="missions-paragraph-group">
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["conseil"] ? "visible" : ""
+                }`}
+              >
+                {" "}
                 <p>
                   Cette mission est totalement indépendante des autres
                   prestations et peut être réalisée seule, sans engagement pour
@@ -678,32 +881,58 @@ export default function Missions() {
                   étapes en toute confiance.
                 </p>
               </div>
-              <h3 className="sub-3">
-                <i className="fa-solid fa-file"></i>
-                LA MISSION PARTIELLE
+              <h3 className="sub-3" onClick={() => toggleSection("partielle")}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-file"></i>
+                    LA MISSION PARTIELLE
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["partielle"] ? "rotate" : ""
+                  }`}
+                />
               </h3>
-              <div className="missions-paragraph-group">
+
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["partielle"] ? "visible" : ""
+                }`}
+              >
+                {" "}
+              </div>
+
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["partielle"] ? "visible" : ""
+                }`}
+              >
+                {" "}
                 <p>
                   La mission partielle permet de cadrer votre projet en amont et
                   comprend les phases suivantes de la section II :
                 </p>
-                  <ul>
-                    <li>
-                      <strong>La phase d’esquisse</strong>, pour poser les
-                      premières intentions architecturales et définir les
-                      grandes lignes du projet.
-                    </li>
-                    <li>
-                      <strong>La phase d’avant-projet</strong>, qui affine le
-                      concept et prend en compte les contraintes techniques et
-                      réglementaires.
-                    </li>
-                    <li>
-                      <strong>La phase d’autorisation d’urbanisme</strong>, avec
-                      la constitution des dossiers nécessaires pour obtenir les
-                      validations administratives.
-                    </li>
-                  </ul>
+                <ul>
+                  <li>
+                    <strong>La phase d’esquisse</strong>, pour poser les
+                    premières intentions architecturales et définir les grandes
+                    lignes du projet.
+                  </li>
+                  <li>
+                    <strong>La phase d’avant-projet</strong>, qui affine le
+                    concept et prend en compte les contraintes techniques et
+                    réglementaires.
+                  </li>
+                  <li>
+                    <strong>La phase d’autorisation d’urbanisme</strong>, avec
+                    la constitution des dossiers nécessaires pour obtenir les
+                    validations administratives.
+                  </li>
+                </ul>
                 <p>
                   Cette mission se termine avec la phase obtention de
                   l’autorisation d’urbanisme. Les plans fournis ne sont pas
@@ -711,32 +940,47 @@ export default function Missions() {
                   choisir les entreprises pour la suite du projet.
                 </p>
               </div>
-              <h3 className="sub-3">
-                <i className="fa-solid fa-file-circle-plus"></i>
-                LA MISSION PARTIELLE ETENDUE
+              <h3 className="sub-3" onClick={() => toggleSection("etendue")}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-file-circle-plus"></i>
+                    LA MISSION PARTIELLE ÉTENDUE
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["etendue"] ? "rotate" : ""
+                  }`}
+                />
               </h3>
-              <div className="missions-paragraph-group">
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["etendue"] ? "visible" : ""
+                }`}
+              >
+                {" "}
                 <p>
                   La mission partielle étendue complète les phases de la mission
                   partielle en y ajoutant :
                 </p>
-                  <ul>
-                    <li>
-                      <strong>
-                        La phase de conception finale et détaillée
-                      </strong>
-                      , où chaque aspect du projet est affiné et précisé pour
-                      garantir une exécution fluide et conforme à vos attentes.
-                    </li>
-                    <li>
-                      <strong>
-                        La phase de consultation et l’analyse des offres
-                      </strong>
-                      , qui vous permettent de comparer les propositions des
-                      entreprises et de faire les meilleurs choix en toute
-                      connaissance des prestations proposées.
-                    </li>
-                  </ul>
+                <ul>
+                  <li>
+                    <strong>La phase de conception finale et détaillée</strong>,
+                    où chaque aspect du projet est affiné et précisé pour
+                    garantir une exécution fluide et conforme à vos attentes.
+                  </li>
+                  <li>
+                    <strong>
+                      La phase de consultation et l’analyse des offres
+                    </strong>
+                    , qui vous permettent de comparer les propositions des
+                    entreprises et de faire les meilleurs choix en toute
+                    connaissance des prestations proposées.
+                  </li>
+                </ul>
                 <p>
                   Cette mission inclut également le dossier PRO/DCE, un document
                   technique complet rassemblant l’ensemble des éléments
@@ -745,11 +989,28 @@ export default function Missions() {
                   professionnel pour lancer votre projet en toute confiance.
                 </p>
               </div>
-              <h3 className="sub-3">
-                <i className="fa-solid fa-medal"></i>
-                LA MISSION COMPLETE
+              <h3 className="sub-3" onClick={() => toggleSection("complete")}>
+                <div className="mission-section-sub3">
+                  <span>
+                    <i className="fa-solid fa-medal"></i>
+                    LA MISSION COMPLÈTE
+                  </span>
+                </div>
+
+                <img
+                  src={downChevron}
+                  alt="Chevron icon"
+                  className={`missions-chevron-icon ${
+                    visibleSections["complete"] ? "rotate" : ""
+                  }`}
+                />
               </h3>
-              <div className="missions-paragraph-group">
+              <div
+                className={`missions-paragraph-group ${
+                  visibleSections["complete"] ? "visible" : ""
+                }`}
+              >
+                {" "}
                 <p>
                   La mission complète prend en charge l’ensemble du projet, de
                   la conception architecturale à la réalisation et au suivi du

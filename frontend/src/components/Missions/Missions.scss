@@ -166,6 +166,11 @@
   list-style-type: square;
 }
 
+.sub-3 .missions-chevron-icon {
+  display: none;
+}
+
+
 .sub-3 i {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -330,16 +335,21 @@
     display: none;
   }
   // Masque les paragraphes en mobile
-  .missions-paragraph-group {
+  .missions-paragraph-group:not(.missions-paragraph-group-obj) {
     display: none; // Cache le texte par défaut
   }
-  
+
   .missions-paragraph-group.visible {
     display: block; // Affiche uniquement quand la classe est ajoutée via JS
   }
 
   .sub-3 {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between; /* Aligne texte + icône à gauche, chevron à droite */
+    align-items: center; /* Centre verticalement */
+    cursor: pointer;
   }
 
   .sub-3 i {
@@ -347,5 +357,10 @@
     padding-right: 1rem;
     color: #111;
   }
+
+  .sub-3 .missions-chevron-icon {
+    display: block;
+  }
+
 
 }
