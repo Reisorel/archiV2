@@ -134,7 +134,7 @@
   justify-content: center;
   align-items: center;
   position: relative; /* Fixe le contexte de positionnement */
-  overflow: hidden; // Empêche le décalage x300 des icones 
+  overflow: hidden; // Empêche le décalage x300 des icones
 }
 
 .footer-icon {
@@ -199,4 +199,46 @@
 .footer-icon:hover i {
   color: white;
   cursor: pointer;
+}
+
+@media screen and (max-width: 760px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne */
+    grid-template-rows: auto auto auto; /* Trois lignes */
+    gap: 1rem; /* Espacement entre les éléments */
+    justify-items: center; /* Centre les éléments horizontalement */
+    padding: 2rem 1rem; /* Ajustement du padding */
+  }
+
+  /* Réorganisation des sections */
+  .footer-right-paragraph {
+    order: 1; /* Passe en premier */
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-left-paragraph {
+    order: 2; /* Passe en deuxième */
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-center-paragraph {
+    order: 3; /* Passe en dernier */
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Ajustement des bordures pour éviter la séparation */
+  .footer-left-paragraph,
+  .footer-center-paragraph {
+    border-left: none; /* Supprime la ligne séparatrice */
+    border-top: 1px solid #ddd; /* Ajoute une ligne fine entre les sections */
+    padding-top: 1rem;
+  }
+
+  .footer-chevron {
+    margin-top: 1.5rem; /* Ajout d'un espace entre les éléments */
+  }
 }
