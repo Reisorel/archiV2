@@ -89,8 +89,9 @@ export default function FooterTest() {
         trigger: footer,
         start: `top ${window.innerHeight - getOverlap()}`,
         end: `+=${getOverlap()}`,
+        scrub: true,
         pin: true,
-        markers: false,
+        markers: true,
       });
 
       triggerRef.current = trigger; // Stocke le trigger dans la ref

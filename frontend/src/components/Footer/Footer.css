@@ -22,7 +22,6 @@
 }
 
 .footer-left-paragraph {
-  font-family: "DinPro";
   width: 15rem;
   align-self: flex-start; /* Aligne le paragraphe en haut de sa div parente */
   align-items: center;
@@ -55,7 +54,6 @@
 }
 
 .footer-center-paragraph {
-  font-family: "DINPro";
   align-self: flex-start; /* Aligne le paragraphe en haut de sa div parente */
   align-items: center;
   text-align: center;
@@ -201,6 +199,14 @@
 }
 
 @media screen and (max-width: 760px) {
+  .footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    background-color: #f3f3f3;
+    height: 500px;
+  }
   .footer-container {
     display: grid;
     grid-template-columns: 1fr; /* Une seule colonne */
@@ -211,26 +217,31 @@
   }
   /* Réorganisation des sections */
   .footer-right-paragraph {
-    order: 1; /* Passe en premier */
+    order: 2; /* Passe en premier */
     text-align: center;
     width: 100%;
+    margin: 0;
+    padding: 0;
   }
   .footer-left-paragraph {
-    order: 2; /* Passe en deuxième */
+    order: 3; /* Passe en deuxième */
     text-align: center;
     width: 100%;
+    margin: 0;
+    padding: 0;
   }
   .footer-center-paragraph {
-    order: 3; /* Passe en dernier */
+    order: 1; /* Passe en dernier */
     text-align: center;
     width: 100%;
+    margin: 0;
+    padding: 0;
+    border-left: none; /* Supprime la ligne séparatrice */
   }
   /* Ajustement des bordures pour éviter la séparation */
   .footer-left-paragraph,
   .footer-center-paragraph {
     border-left: none; /* Supprime la ligne séparatrice */
-    border-top: 1px solid #ddd; /* Ajoute une ligne fine entre les sections */
-    padding-top: 1rem;
   }
   .footer-chevron {
     margin-top: 1.5rem; /* Ajout d'un espace entre les éléments */
