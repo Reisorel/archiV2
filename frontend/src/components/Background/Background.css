@@ -2,7 +2,6 @@
   padding: 99px 0 0 0;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   margin: 0;
   background-color: rgb(255, 255, 255);
 }
