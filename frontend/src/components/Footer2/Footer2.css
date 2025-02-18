@@ -1,23 +1,44 @@
+@charset "UTF-8";
 .footer {
+  margin: 0;
+  padding: 0;
   position: relative;
   display: flex;
-  flex-direction: column;
-  z-index: 0;
-  background-color: #f3f3f3;
-  height: 242px;
+  height: 250px;
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
+  -webkit-clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+          clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
 }
 
 .footer-container {
-  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: calc(100vh + 250px);
+  top: -100vh;
   width: 100%;
-  height: auto;
+}
+
+.footer-sticky {
+  margin: 0;
+  padding: 0;
+  height: 250px;
+  position: sticky;
+  top: calc(100vh - 250px);
+  width: 100%;
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+  height: 100%;
+  width: 100%;
   display: flex;
-  box-sizing: border-box;
-  flex-direction: row; /* Les éléments sont alignés horizontalement */
-  align-items: center;
-  justify-content: space-between; /* Centre les enfants horizontalement */
-  padding-top: 1rem;
-  border-top: 0.5px solid #ddd; /* Ligne fine au-dessus du footer */
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .footer-left-paragraph {
@@ -97,9 +118,7 @@
   75% {
     transform: translateY(-5px); /* Retourne légèrement vers le haut */
   }
-
 }
-
 .footer-chevron img {
   height: 40px;
   width: auto;
@@ -107,7 +126,6 @@
 }
 
 .footer-right-paragraph {
-  font-family: "DINPro";
   width: 15rem;
   display: flex;
   border-left: 1px solid #ddd; /* Ligne verticale entre les colonnes */
@@ -132,7 +150,7 @@
   justify-content: center;
   align-items: center;
   position: relative; /* Fixe le contexte de positionnement */
-  overflow: hidden; // Empêche le décalage x300 des icones
+  overflow: hidden;
 }
 
 .footer-icon {
@@ -173,7 +191,7 @@
 
 /* Ajout de la bande de remplissage */
 .footer-icon::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -200,26 +218,36 @@
 }
 
 @media screen and (max-width: 760px) {
-
   .footer {
     position: relative;
     display: flex;
-    flex-direction: column;
-    z-index: 0;
-    background-color: #f3f3f3;
-    height: 500px;
+    height: 600px;
+    width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    -webkit-clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+            clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
   }
-
   .footer-container {
+    position: relative;
+    height: calc(100vh + 600px);
+    top: -100vh;
+    width: 100%;
+  }
+  .footer-sticky {
+    height: 600px;
+    position: sticky;
+    top: calc(100vh - 600px);
+    width: 100%;
+  }
+  .content {
     display: grid;
     grid-template-columns: 1fr; /* Une seule colonne */
     grid-template-rows: auto auto auto; /* Trois lignes */
     gap: 1rem; /* Espacement entre les éléments */
     justify-items: center; /* Centre les éléments horizontalement */
-    padding: 2rem 1rem; /* Ajustement du padding */
+    padding: 2 rem 1rem; /* Ajustement du padding */
   }
-
-  /* Réorganisation des sections */
   .footer-right-paragraph {
     order: 2; /* Passe en premier */
     text-align: center;
@@ -227,16 +255,13 @@
     margin: 0;
     padding: 0;
   }
-
   .footer-left-paragraph {
     order: 3; /* Passe en deuxième */
     text-align: center;
     width: 100%;
     margin: 0;
     padding: 0;
-    border: none;
   }
-
   .footer-center-paragraph {
     order: 1; /* Passe en dernier */
     text-align: center;
@@ -245,14 +270,4 @@
     padding: 0;
     border-left: none; /* Supprime la ligne séparatrice */
   }
-
-  /* Ajustement des bordures pour éviter la séparation */
-  .footer-left-paragraph,
-  .footer-center-paragraph {
-    border-left: none; /* Supprime la ligne séparatrice */
-  }
-
-  .footer-chevron {
-    margin-top: 1.5rem; /* Ajout d'un espace entre les éléments */
-  }
-}
+}/*# sourceMappingURL=Footer2.css.map */

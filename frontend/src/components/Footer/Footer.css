@@ -229,6 +229,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    border: none;
   }
   .footer-center-paragraph {
     order: 1; /* Passe en dernier */

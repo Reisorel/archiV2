@@ -10,7 +10,7 @@ import "./Footer.scss"; // Import css
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger); // Activation des plugins gsap
 
-export default function FooterTest() {
+export default function Footer() {
 
   const iconsRef = useRef(null); // Référence à l'élément DOM icons
   const linkedinRef = useRef(null); // Référence à l'élément DOM linkedin
