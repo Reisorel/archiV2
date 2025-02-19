@@ -257,7 +257,6 @@
     margin: 0;
     padding: 0;
     border: none;
-    background-color: aqua;
   }
   .footer-right-paragraph p:first-child {
     font-size: 1.25rem;
@@ -269,7 +268,6 @@
     margin: 0;
     padding: 0;
     border: none;
-    background-color: rgb(245, 0, 216);
   }
   .footer-center-paragraph {
     order: 1; /* Passe en dernier */
@@ -279,7 +277,6 @@
     padding: 0;
     border-left: none; /* Supprime la ligne séparatrice */
     border: none;
-    background-color: rgb(10, 226, 28);
   }
   /* Style de base du remplissage */
   /* Style de base du remplissage */
