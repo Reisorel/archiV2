@@ -7,6 +7,7 @@ import { projectsData } from "../Projects/ProjectsDetails/Data/ProjectData";
 import ScrollLock from "react-scrolllock"; // package react-scrolllock
 import { IoMdMenu } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
+import leftChevronBlack from "../../assets/icons/left-arrow-black.svg";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -20,6 +21,7 @@ export default function Header() {
   const [lockScroll, setLockScroll] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileOn, setIsMobileOn] = useState(false);
+  const [isProjectsOpen, setIsProjectsOpen] = useState(false); // state pour l'affichage projects dans menu mobile
 
   const logoRef = useRef(null); // Référence logo
   const dropdownRef = useRef(null); // Référence menu déroulant projets
@@ -54,7 +56,10 @@ export default function Header() {
   }, [isDropdownOpen]);
 
   // Basculer l'état du menu mobile
-  const toggleMobileMenu = () => setIsMobileOn((prev) => !prev);
+  const toggleMobileMenu = () => {
+    setIsMobileOn((prev) => !prev);
+    setIsDropdownOpen(false); // Ferme toujours le sous-menu projets
+  };
 
   // Ferme le menu mobile après un clic sur un lien
   const closeMobileMenu = () => setIsMobileOn(false);
@@ -166,27 +171,76 @@ export default function Header() {
               <span>ACTUALITÉS</span>
             </li>
             <li
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
               className="projects-menu"
+              onMouseEnter={() => !isMobileOn && setIsDropdownOpen(true)}
+              onMouseLeave={() => !isMobileOn && setIsDropdownOpen(false)}
             >
-              <span onClick={() => handleNavigation("projects", true)}>
-                PROJETS
-              </span>
-
-              <ul
-                ref={dropdownRef}
-                className={`dropdown-menu ${isDropdownOpen ? "open" : ""}`}
-              >
-                {projectsData.map((project) => (
-                  <li
-                    key={project.id}
-                    onClick={() => navigate(`/projects/${project.slug}`)}
+              {isMobileOn ? (
+                isDropdownOpen ? (
+                  // Affichage des projets en mode mobile
+                  <div className="mobile-projects-menu">
+                    <span
+                      className="back-button"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      <img
+                        src={leftChevronBlack}
+                        alt="Retour"
+                        className="chevron-icon"
+                      />
+                      Retour
+                    </span>
+                    <ul>
+                      <li
+                        onClick={() => {
+                          navigate("/projects");
+                          setIsDropdownOpen(false); // Ferme le sous-menu projets
+                          setIsMobileOn(false); // Ferme le menu mobile
+                        }}
+                      >
+                        <p>
+                          <strong>TOUS LES PROJETS</strong>
+                        </p>
+                      </li>
+                      {projectsData.map((project) => (
+                        <li
+                          key={project.id}
+                          onClick={() => {
+                            navigate(`/projects/${project.slug}`);
+                            setIsDropdownOpen(false); // Ferme le sous-menu projets
+                            setIsMobileOn(false); // Ferme le menu mobile
+                          }}
+                        >
+                          <p>{project.title}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  // Affichage du bouton pour entrer dans les projets
+                  <span onClick={() => setIsDropdownOpen(true)}>PROJETS</span>
+                )
+              ) : (
+                // Mode desktop, menu déroulant classique
+                <>
+                  <span onClick={() => handleNavigation("projects", true)}>
+                    PROJETS
+                  </span>
+                  <ul
+                    ref={dropdownRef}
+                    className={`dropdown-menu ${isDropdownOpen ? "open" : ""}`}
                   >
-                    <p>{project.title}</p>
-                  </li>
-                ))}
-              </ul>
+                    {projectsData.map((project) => (
+                      <li
+                        key={project.id}
+                        onClick={() => navigate(`/projects/${project.slug}`)}
+                      >
+                        <p>{project.title}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </li>
 
             <li onClick={() => handleNavigation("missions")}>
