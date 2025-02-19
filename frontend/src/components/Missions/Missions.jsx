@@ -178,7 +178,14 @@ export default function Missions() {
               </p>
               <p>
                 Curieux d'en savoir un peu plus ? Venez par{" "}
-                <span onClick={() => navigate("/projects")}>ici.</span>
+                <span
+                  onClick={() => {
+                    navigate("/projects");
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  ici.
+                </span>
               </p>
               <p>
                 Je vous accompagne sur chaque étape du projet, de la conception
