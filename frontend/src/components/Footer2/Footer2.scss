@@ -1,10 +1,10 @@
 // Footer principal
 .footer {
-  margin: 0;
-  padding: 0;
   position: relative;
   display: flex;
+  margin: 0;
   height: 250px;
+  padding: 0;
   width: 100vw;
   max-width: 100%;
   box-sizing: border-box;
@@ -19,6 +19,7 @@
   height: calc(100vh + 250px);
   top: -100vh;
   width: 100%;
+  box-sizing: border-box;
 }
 
 // Partie sticky qui reste collée
@@ -29,11 +30,12 @@
   position: sticky;
   top: calc(100vh - 250px);
   width: 100%;
+  box-sizing: border-box;
 }
 
 .content {
   margin: 0;
-  padding: 0;
+  padding: 2rem 0 0 0;
   background-color: #f3f3f3;
   height: 100%;
   width: 100%;
@@ -98,7 +100,7 @@
   align-items: center; /* Centre le contenu dans le chevron */
   justify-content: center;
   margin: 1rem;
-  margin-top: 2rem;
+  margin-top: 0rem;
   transition: transform 0.3s ease-in-out; /* Transition fluide pour d'autres changements */
 }
 
@@ -263,6 +265,12 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    border: none;
+    background-color: aqua;
+
+    p:first-child {
+      font-size: 1.25rem;
+    }
   }
 
   .footer-left-paragraph {
@@ -271,6 +279,8 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    border: none;
+    background-color: rgb(245, 0, 216);
   }
 
   .footer-center-paragraph {
@@ -280,5 +290,63 @@
     margin: 0;
     padding: 0;
     border-left: none; /* Supprime la ligne séparatrice */
+    border: none;
+    background-color: rgb(10, 226, 28);
+  }
+
+  /* Style de base du remplissage */
+  /* Style de base du remplissage */
+  .footer-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: black;
+    transition: width 0.6s ease-in-out;
+    z-index: 0;
+    animation: none; /* Désactive l'animation par défaut */
+  }
+
+  /* Remplissage activé SEULEMENT quand la classe footer-visible est ajoutée à footer-icon */
+  .footer-icon.footer-visible::before {
+    animation: start-fill 0.6s ease-in-out 0.5s forwards;
+  }
+
+  /* Animation du remplissage */
+  @keyframes start-fill {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  /* Style de base de l'icône */
+  .footer-icon i {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    position: relative;
+    z-index: 1;
+    transition: color 0.4s ease-in-out;
+    animation: none; /* Désactive l'animation par défaut */
+  }
+
+  /* Changement de couleur activé SEULEMENT quand la classe footer-visible est ajoutée à footer-icon */
+  .footer-icon.footer-visible i {
+    animation: change-color 0.4s ease-in-out 0.5s forwards;
+  }
+
+  /* Animation du changement de couleur */
+  @keyframes change-color {
+    0% {
+      color: black;
+    }
+    100% {
+      color: white;
+    }
   }
 }

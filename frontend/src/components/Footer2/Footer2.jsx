@@ -28,14 +28,17 @@ export default function Footer2() {
   };
 
   // Fonction arrivée des icones
+  // Fonction arrivée des icônes
   useEffect(() => {
     if (!linkedinRef.current || !instagramRef.current || !iconsRef.current) {
       console.warn("Une ou plusieurs références sont nulles !");
       return;
     }
 
+    const icons = [linkedinRef.current, instagramRef.current];
+
     gsap.fromTo(
-      [linkedinRef.current, instagramRef.current],
+      icons,
       { x: 300, opacity: 0 },
       {
         x: 0,
@@ -43,19 +46,50 @@ export default function Footer2() {
         duration: 0.5,
         ease: "power3.out",
         stagger: {
-          amount: 0.6, // Augmente la durée totale du stagger
+          each: 0.3, // Ajoute un délai entre chaque icône
           from: "start",
+          onComplete: function () {
+            icons.forEach((icon, index) => {
+              setTimeout(() => {
+                if (icon) {
+                  icon.classList.add("footer-visible");
+                } else {
+                  console.warn(
+                    `Impossible d'ajouter la classe, icône ${index} introuvable ❌`
+                  );
+                }
+              }, index * 300);
+            });
+
+            // Vérification après un petit délai
+          },
         },
         scrollTrigger: {
           trigger: iconsRef.current,
-          start: "top 100%",
-          toggleActions: "play none restart none",
+          start: "top 5%", // Déclenche plus tôt
+          end: "top 5%", // Supprime la classe juste avant que l'icône disparaisse
+          toggleActions: "restart none none none", // Toujours repartir de zéro
+          onLeave: () => {
+            console.log("🚨 Icônes recouvertes, suppression des classes...");
+            icons.forEach((icon) => {
+              if (icon) {
+                icon.classList.remove("footer-visible"); // Supprime la classe pour l'animation CSS
+                gsap.set(icon, { x: 300, opacity: 0 }); // Réinitialisation immédiate de la position
+                console.log(
+                  `Classe retirée et état réinitialisé pour ${icon.className} ❌`
+                );
+              }
+            });
+          },
         },
       }
     );
 
-    // Forcer ScrollTrigger à recalculer ses positions après le chargement
     ScrollTrigger.refresh();
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, [location.pathname]);
 
   return (
@@ -74,10 +108,6 @@ export default function Footer2() {
               </div>
             </div>
             <div className="footer-center-paragraph">
-              <p>
-                <strong>Agence d'architecture basée à Rennes</strong>
-              </p>
-              <p>BRETAGNE / NORMANDIE / PARIS</p>
               <div
                 data-hover-detect="true"
                 className="footer-chevron"
@@ -85,6 +115,10 @@ export default function Footer2() {
               >
                 <img src={upChevron} alt="Retour en haut" />
               </div>
+              <p>
+                <strong>Atelier d'architecture basée à Rennes</strong>
+              </p>
+              <p>BRETAGNE / NORMANDIE / PARIS</p>
             </div>
             <div className="footer-right-paragraph">
               <p>
