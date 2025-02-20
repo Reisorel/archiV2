@@ -7,8 +7,8 @@
 
 .projects-container {
   z-index: 100;
-  margin-left: 8rem;
-  margin-right: 8rem;
+  margin-left: 15rem;
+  margin-right: 15rem;
   margin-bottom: 5rem;
   background-color: #ffffff;
 }
@@ -66,4 +66,20 @@
      object-fit: cover;
   overflow: hidden;
   cursor: pointer;
+}
+
+@media screen and (max-width: 760px) {
+  .projects-container {
+    z-index: 100;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 5rem;
+    background-color: #ffffff;
+  }
+  .projects-secTitle {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }/*# sourceMappingURL=Projects.css.map */
