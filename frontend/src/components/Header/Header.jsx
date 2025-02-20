@@ -165,6 +165,7 @@ export default function Header() {
           </div>
         </div>
 
+        {/* Menu mobile avec le wrapper pour l'animation */}
         <div className={`header-content ${isMobileOn ? "mobile-open" : ""}`}>
           <ul className="header-nav-list" data-hover-detect="true">
             <li onClick={() => handleNavigation("news")}>
