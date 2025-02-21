@@ -10,11 +10,37 @@ import "./ProjectsDetails.css";
 export default function ProjectsDetails() {
   const titleRef = useRef(null); // Animation titre
   const techRef = useRef(null); // Animation domaines
+  const leftArrowRef = useRef(null);
+  const rightArrowRef = useRef(null);
 
-    // Récupération données projet courant
-    const { slug } = useParams();
-    const projet = projectsData.find((proj) => proj.slug === slug);
-    const { layout } = projet;
+  // Récupération données projet courant
+  const { slug } = useParams();
+  const projet = projectsData.find((proj) => proj.slug === slug);
+  const { layout } = projet;
+
+  // Animation translation chevron
+  const handleArrowClick = (arrowRef, direction) => {
+    if (!arrowRef.current || gsap.isTweening(arrowRef.current)) return; // ⛔ Empêche les clics pendant l'animation
+
+    gsap.killTweensOf(arrowRef.current); // 🔥 Stoppe toute animation en cours
+    gsap.set(arrowRef.current, { x: 0 }); // 🔄 Remet à zéro AVANT l'animation
+    gsap.to(arrowRef.current, { clearProps: "all" }); // 🔥 Supprime toutes les propriétés CSS GSAP
+
+    gsap.fromTo(
+      arrowRef.current,
+      { x: 0 }, // ✅ Démarre toujours à 0
+      {
+        x: direction,
+        duration: 0.1,
+        ease: "power2.out",
+        yoyo: true,
+        repeat: 1,
+        onComplete: () => {
+          gsap.set(arrowRef.current, { x: 0 }); // 🔄 Assure un retour parfait à zéro après l'animation
+        },
+      }
+    );
+  };
 
   useEffect(() => {
     if (!titleRef.current) {
@@ -42,7 +68,6 @@ export default function ProjectsDetails() {
     );
   }, [slug]); // 🔥 Rejoue l'animation chaque fois que `slug` change
 
-
   useEffect(() => {
     const techItems = gsap.utils.toArray(".projectDetails-tech-list li");
 
@@ -65,8 +90,6 @@ export default function ProjectsDetails() {
       }
     );
   }, [slug]); // 🔥 Rejoue à chaque changement de `slug`
-
-
 
   // Récupération données flèches navigation
   const currentIndex = projectsData.findIndex((proj) => proj.slug === slug);
@@ -130,8 +153,9 @@ export default function ProjectsDetails() {
             <Link
               to={`/projects/${prevProject.slug}`}
               className="projectDetails-nav-arrows"
+              onClick={() => handleArrowClick(leftArrowRef, -50)}
             >
-              <i className="fa-solid fa-chevron-left"></i>
+              <i ref={leftArrowRef} className="fa-solid fa-chevron-left"></i>
               <h2 className="sub-2">{prevProject.title}</h2>
             </Link>
 
@@ -139,9 +163,10 @@ export default function ProjectsDetails() {
             <Link
               to={`/projects/${nextProject.slug}`}
               className="projectDetails-nav-arrows"
+              onClick={() => handleArrowClick(rightArrowRef, 50)}
             >
               <h2 className="sub-2">{nextProject.title}</h2>
-              <i className="fa-solid fa-chevron-right"></i>
+              <i ref={rightArrowRef} className="fa-solid fa-chevron-right"></i>
             </Link>
           </div>
 
@@ -151,7 +176,7 @@ export default function ProjectsDetails() {
             </div>
             <div className="projectDetails-1-infos">
               <div className="projecDetails-1-title">
-                <h2 className="sub-2" ref={titleRef}>
+                <h2 className="title" ref={titleRef}>
                   {projet.title}
                 </h2>
                 <p>{projet.location}</p>
@@ -192,6 +217,19 @@ export default function ProjectsDetails() {
                       </li>
                     </div>
                   </ul>
+
+                  <div className="tags-div">
+                    {projet.tags && projet.tags.length > 0 && (
+                      <div className="tags-div-left">
+                        <p className="keyword-index">Mots-clés:</p>
+                        <ul>
+                          {projet.tags.map((tag, index) => (
+                            <li key={index}>{tag}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

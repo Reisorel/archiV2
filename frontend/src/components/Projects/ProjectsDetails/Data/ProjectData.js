@@ -104,6 +104,7 @@ export const projectsData = [
     mo: "privée",
     inter: "étude / conception / maitrise d'oeuvre",
     avance: "livré",
+    tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
       gridTemplateColumns: "repeat(2, 400px)", // Grille avec 2 colonnes
       gridTemplateRows: "repeat(5, 600px)", // 5 lignes de 100px
@@ -203,6 +204,7 @@ export const projectsData = [
     mo: "privée",
     inter: "étude / conception / maitrise d'oeuvre",
     avance: "En construction",
+    tags: ["bois", "extérieur", "Normandie", "maison", "extension"],
     layout: {
       gridTemplateColumns: "repeat(2, 600px)", // Grille avec 2 colonnes
       gridTemplateRows: "repeat(2, 400px)", // 5 lignes de 100px
@@ -260,6 +262,7 @@ export const projectsData = [
     mo: "privée",
     inter: "étude",
     avance: "livré",
+    tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
       gridTemplateColumns: "repeat(2, 600px)",
       gridTemplateRows: "repeat(2, 400px)",
@@ -311,6 +314,7 @@ export const projectsData = [
     mo: "privée",
     inter: "étude",
     avance: "livré",
+    tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
       gridTemplateColumns: "repeat(2, 400px)",
       gridTemplateRows: "repeat(2, 600px)",
@@ -362,6 +366,7 @@ export const projectsData = [
     mo: "privée",
     inter: "étude / conception / maitrise d'oeuvre",
     avance: "conception",
+    tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
       gridTemplateColumns: "repeat(2, 600px)",
       gridTemplateRows: "repeat(2, 400px)",
@@ -449,6 +454,7 @@ export const projectsData = [
     mo: "privée",
     inter: "étude / conception",
     avance: "conception",
+    tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
       gridTemplateColumns: "repeat(2, 600px)", // Grille avec 2 colonnes
       gridTemplateRows: "repeat(2, 400px)", // 5 lignes de 100px
@@ -494,6 +500,7 @@ export const projectsData = [
     mo: "privée",
     inter: "étude / conception / maitrise d'oeuvre",
     avance: "conception",
+    tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
       gridTemplateColumns: "repeat(1, 600px)", // Grille avec 2 colonnes
       gridTemplateRows: "repeat(1, 400px)", // 5 lignes de 100px
