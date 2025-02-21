@@ -3,11 +3,18 @@ import { gsap } from "gsap";
 import { useParams } from "react-router-dom";
 import Modal from "./Modal/Modal";
 import { projectsData } from "./Data/ProjectData";
+import { Link } from "react-router-dom";
+
 import "./ProjectsDetails.css";
 
 export default function ProjectsDetails() {
   const titleRef = useRef(null); // Animation titre
   const techRef = useRef(null); // Animation domaines
+
+    // Récupération données projet courant
+    const { slug } = useParams();
+    const projet = projectsData.find((proj) => proj.slug === slug);
+    const { layout } = projet;
 
   useEffect(() => {
     if (!titleRef.current) {
@@ -15,13 +22,12 @@ export default function ProjectsDetails() {
       return;
     }
 
-    // Animation pour le titre
+    // Réinitialise GSAP avant de rejouer l'animation
+    gsap.killTweensOf(titleRef.current);
+
     gsap.fromTo(
       titleRef.current,
-      {
-        y: 50,
-        opacity: 0,
-      },
+      { y: 50, opacity: 0 },
       {
         y: 0,
         opacity: 1,
@@ -34,35 +40,48 @@ export default function ProjectsDetails() {
         },
       }
     );
-  }, []);
+  }, [slug]); // 🔥 Rejoue l'animation chaque fois que `slug` change
 
-  //Animation domaines
+
   useEffect(() => {
-    // Sélectionne tous les éléments <li> dans les deux colonnes
     const techItems = gsap.utils.toArray(".projectDetails-tech-list li");
 
-    // Animation GSAP task
+    gsap.killTweensOf(techItems); // Réinitialise avant de rejouer
+
     gsap.fromTo(
       techItems,
-      { x: 50, opacity: 0 }, // Départ hors écran à droite, invisible
+      { x: 50, opacity: 0 },
       {
-        x: 0, // Arrivée à la position normale
-        opacity: 1, // Apparition complète
-        duration: 3, // Durée d'apparition de chaque élément
-        ease: "power3.out", // Effet fluide
-        stagger: 0.2, // Intervalle progressif entre chaque élément
+        x: 0,
+        opacity: 1,
+        duration: 3,
+        ease: "power3.out",
+        stagger: 0.2,
         scrollTrigger: {
-          trigger: ".projectDetails-1-tech", // Déclenchement lorsque la section entre dans la vue
-          start: "top 80%", // Commence quand le haut de la section est à 80% de l'écran
-          toggleActions: "play none none none", // Joue une seule fois
+          trigger: ".projectDetails-1-tech",
+          start: "top 80%",
+          toggleActions: "play none none none",
         },
       }
     );
-  }, []);
+  }, [slug]); // 🔥 Rejoue à chaque changement de `slug`
 
-  const { slug } = useParams();
-  const projet = projectsData.find((proj) => proj.slug === slug);
-  const { layout } = projet;
+
+
+  // Récupération données flèches navigation
+  const currentIndex = projectsData.findIndex((proj) => proj.slug === slug);
+
+  if (currentIndex === -1) {
+    return <h2>Projet introuvable</h2>;
+  }
+
+  const projectCount = projectsData.length;
+  console.log(projectCount);
+  const prevIndex = (currentIndex - 1 + projectCount) % projectCount;
+  const nextIndex = (currentIndex + 1) % projectCount;
+
+  const prevProject = projectsData[prevIndex];
+  const nextProject = projectsData[nextIndex];
 
   useEffect(() => {
     gsap.to(window, {
@@ -78,22 +97,21 @@ export default function ProjectsDetails() {
 
   const openModal = (index) => {
     if (typeof index !== "number" || isNaN(index)) {
-      console.error(
-        "❌ Erreur: L'index fourni à openModal est invalide.",
-        index
-      );
       return;
     }
-    console.log("✅ Ouverture de la modale avec index :", index); // Vérification
     setCurrentImageIndex(index);
     setIsModalOpen(true);
-    document.dispatchEvent(new CustomEvent("modalStateChange", { detail: true }));
+    document.dispatchEvent(
+      new CustomEvent("modalStateChange", { detail: true })
+    );
   };
 
   const closeModal = () => {
     setCurrentImageIndex(null);
     setIsModalOpen(false);
-    document.dispatchEvent(new CustomEvent("modalStateChange", { detail: false }));
+    document.dispatchEvent(
+      new CustomEvent("modalStateChange", { detail: false })
+    );
   };
 
   if (!projet) {
@@ -104,6 +122,29 @@ export default function ProjectsDetails() {
     <>
       <div className="projectDetails-framer">
         <div id="projectDetails" className="projectDetails-container">
+          <div
+            className="projectDetails-nav-arrows-div"
+            data-hover-detect="true"
+          >
+            {/* Projet précédent */}
+            <Link
+              to={`/projects/${prevProject.slug}`}
+              className="projectDetails-nav-arrows"
+            >
+              <i className="fa-solid fa-chevron-left"></i>
+              <h2 className="sub-2">{prevProject.title}</h2>
+            </Link>
+
+            {/* Projet suivant */}
+            <Link
+              to={`/projects/${nextProject.slug}`}
+              className="projectDetails-nav-arrows"
+            >
+              <h2 className="sub-2">{nextProject.title}</h2>
+              <i className="fa-solid fa-chevron-right"></i>
+            </Link>
+          </div>
+
           <div className="projectDetails-1">
             <div className="projectDetails-1-imageDiv">
               <img src={projet.imgSrc} alt={projet.title} />
