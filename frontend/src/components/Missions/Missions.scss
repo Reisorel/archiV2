@@ -170,7 +170,6 @@
   display: none;
 }
 
-
 .sub-3 i {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -244,6 +243,7 @@
   }
 
   .missions-task-list-div {
+    background-color: rgb(243, 16, 239);
     display: grid;
     background-color: transparent;
     grid-template-columns: 1fr 1fr;
@@ -274,7 +274,7 @@
       5,
       1fr
     ); /* ✅ Même hauteur pour toutes les lignes */
-    gap: 1rem;
+    gap: 2rem;
     align-items: stretch; /* ✅ Forcer la même hauteur */
   }
 
@@ -361,8 +361,4 @@
   .sub-3 .missions-chevron-icon {
     display: block;
   }
-
-
-
-
 }

@@ -248,6 +248,7 @@
     background-color: rgb(255, 255, 255);
   }
   .missions-task-list-div {
+    background-color: rgb(243, 16, 239);
     display: grid;
     background-color: transparent;
     grid-template-columns: 1fr 1fr;
@@ -272,7 +273,7 @@
   .missions-task-list-right {
     display: grid;
     grid-template-rows: repeat(5, 1fr); /* ✅ Même hauteur pour toutes les lignes */
-    gap: 1rem;
+    gap: 2rem;
     align-items: stretch; /* ✅ Forcer la même hauteur */
   }
   .missions-task-list-div li {

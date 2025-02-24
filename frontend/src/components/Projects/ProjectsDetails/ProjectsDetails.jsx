@@ -190,22 +190,36 @@ export default function ProjectsDetails() {
                   <ul ref={techRef} className="projectDetails-tech-list">
                     <div className="projectDetails-tech-list-left">
                       <li>
-                        <i className="fas fa-tools"></i> <strong>Type :</strong>{" "}
-                        {projet.type}
+                        <span className="projectDetails-icon-text">
+                          <i className="fas fa-tools"></i>{" "}
+                          <strong>Type :</strong>{" "}
+                        </span>
+                        <span className="project-type">{projet.type}</span>
                       </li>
                       <li>
-                        <i className="fas fa-map-marker-alt"></i>{" "}
-                        <strong>Localisation :</strong> {projet.loc}
+                        <span className="projectDetails-icon-text">
+                          <i className="fas fa-map-marker-alt"></i>{" "}
+                          <strong>Localisation :</strong>
+                        </span>
+
+                        <span className="project-type">{projet.loc}</span>
                       </li>
                       <li>
-                        <i className="fas fa-ruler-combined"></i>{" "}
-                        <strong>Superficie :</strong> {projet.sup}
+                        <span className="projectDetails-icon-text">
+                          <i className="fas fa-ruler-combined"></i>{" "}
+                          <strong>Superficie :</strong>
+                        </span>
+                        <span className="project-type">{projet.sup}</span>
                       </li>
                     </div>
                     <div className="projectDetails-tech-list-right">
                       <li>
-                        <i className="fas fa-user-tie"></i>{" "}
-                        <strong>Maîtrise d’ouvrage :</strong> {projet.mo}
+                        <span className="projectDetails-icon-text">
+                          <i className="fas fa-user-tie"></i>{" "}
+                          <strong>Maîtrise d’ouvrage :</strong>
+                        </span>
+
+                        <span className="project-type">{projet.mo}</span>
                       </li>
                       <li>
                         <i className="fas fa-lightbulb"></i>{" "}
