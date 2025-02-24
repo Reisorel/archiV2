@@ -222,12 +222,18 @@ export default function ProjectsDetails() {
                         <span className="project-type">{projet.mo}</span>
                       </li>
                       <li>
-                        <i className="fas fa-lightbulb"></i>{" "}
-                        <strong>Intervention :</strong> {projet.inter}
+                        <span className="projectDetails-icon-text">
+                          <i className="fas fa-lightbulb"></i>{" "}
+                          <strong>Intervention :</strong>
+                        </span>
+                        <span className="project-type">{projet.inter}</span>
                       </li>
                       <li>
-                        <i className="fas fa-check-circle"></i>{" "}
-                        <strong>Avancement :</strong> {projet.avance}
+                        <span className="projectDetails-icon-text">
+                          <i className="fas fa-check-circle"></i>{" "}
+                          <strong>Avancement :</strong>
+                        </span>
+                        <span className="project-type">{projet.avance}</span>
                       </li>
                     </div>
                   </ul>

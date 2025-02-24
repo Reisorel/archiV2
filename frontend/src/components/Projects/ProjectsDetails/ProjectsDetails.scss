@@ -351,7 +351,7 @@
   .projectDetails-tech-list-left, .projectDetails-tech-list-right  {
     display: grid;
     grid-template-rows: repeat(3, 1fr); /* ✅ Même hauteur pour toutes les lignes */
-    gap: 3rem;
+    gap: 2rem;
     align-items: stretch; /* ✅ Forcer la même hauteur */
     margin: 0;
     padding: 0;
@@ -363,7 +363,7 @@
     padding: 0rem;
     margin: 0rem;
     width: fit-content;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
   }
 
 
@@ -387,14 +387,45 @@
   }
 
 
-
   .tags-div {
     display: flex;
-    justify-content: left;
-    align-items: left;
-    margin: 0;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    width: 100%; /* 👈 S'assure que la div prenne toute la largeur disponible */
     padding: 0;
-    width: 100%;
+    margin: 0; /* 👈 Centre la div elle-même si elle est dans un parent plus large */
+  }
+
+  .tags-div-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 👈 S'assure que le contenu interne est aussi centré */
+    align-items: center;
+  }
+
+  .keyword-index {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    padding: 0 1rem 1rem 0;
+    margin: 0;
+  }
+
+  .tags-div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 8px; /* 🔥 Ajuste l'espace entre chaque mot-clé */
+    align-items: center; /* 🔥 Centre verticalement */
+  }
+
+  .tags-div li {
+    text-decoration: none;
+    background-color: #f5f5f5; /* Juste pour visualiser */
+    border-radius: 5px; /* Ajoute un léger arrondi */
+    font-size: 1rem;
+    white-space: nowrap; /* 🔥 Empêche la coupure des mots */
   }
 
   // GRID PHOTO MOBILE  //
@@ -404,6 +435,30 @@
     margin-bottom: 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
-    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(2, 600px); // Par défaut, 2 colonnes de 600px
+    grid-template-rows: repeat(2, 400px); // 2 lignes de 400px
+    gap: 2rem;
+    background-color: rgb(175, 19, 19);
+    overflow: hidden;
+  }
+
+  .ProjectDetail-2-col-imgDiv {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 50px;
+    height: auto;
+  }
+
+  .ProjectDetail-2-col img {
+    width: 100%;
+
+    transition: transform 3s ease;
+    cursor: pointer;
+  }
+
+  .ProjectDetail-2-col:hover img {
+    transform: scale(1.1);
   }
 }
