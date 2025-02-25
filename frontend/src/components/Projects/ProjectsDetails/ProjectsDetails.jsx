@@ -199,7 +199,7 @@ export default function ProjectsDetails() {
                       <li>
                         <span className="projectDetails-icon-text">
                           <i className="fas fa-map-marker-alt"></i>{" "}
-                          <strong>Localisation :</strong>
+                          <strong>Localisation :</strong>{" "}
                         </span>
 
                         <span className="project-type">{projet.loc}</span>
@@ -207,7 +207,7 @@ export default function ProjectsDetails() {
                       <li>
                         <span className="projectDetails-icon-text">
                           <i className="fas fa-ruler-combined"></i>{" "}
-                          <strong>Superficie :</strong>
+                          <strong>Superficie :</strong>{" "}
                         </span>
                         <span className="project-type">{projet.sup}</span>
                       </li>
@@ -216,7 +216,7 @@ export default function ProjectsDetails() {
                       <li>
                         <span className="projectDetails-icon-text">
                           <i className="fas fa-user-tie"></i>{" "}
-                          <strong>Maîtrise d’ouvrage :</strong>
+                          <strong>Maîtrise d’ouvrage :</strong>{" "}
                         </span>
 
                         <span className="project-type">{projet.mo}</span>
@@ -224,14 +224,14 @@ export default function ProjectsDetails() {
                       <li>
                         <span className="projectDetails-icon-text">
                           <i className="fas fa-lightbulb"></i>{" "}
-                          <strong>Intervention :</strong>
+                          <strong>Intervention :</strong>{" "}
                         </span>
                         <span className="project-type">{projet.inter}</span>
                       </li>
                       <li>
                         <span className="projectDetails-icon-text">
                           <i className="fas fa-check-circle"></i>{" "}
-                          <strong>Avancement :</strong>
+                          <strong>Avancement :</strong>{" "}
                         </span>
                         <span className="project-type">{projet.avance}</span>
                       </li>
@@ -254,55 +254,47 @@ export default function ProjectsDetails() {
               </div>
             </div>
           </div>
-
-          <div
-            className="projectDetails-2"
-            style={{
-              display: "grid",
-              gridTemplateColumns: layout.gridTemplateColumns,
-              gridTemplateRows: layout.gridTemplateRows,
-              gap: layout.gap,
-            }}
-          >
-            {layout.images.map((image, index) => (
-              <div
-                key={index}
-                className="ProjectDetail-2-col"
-                style={{
-                  gridColumn: image.gridColumn,
-                  gridRow: image.gridRow,
-                }}
-                onClick={() => openModal(index)} // Ouvre la modale avec l'image cliquée
-              >
+          <div className="ProjectDetails-2-framer">
+            <div
+              className="projectDetails-2"
+              style={{
+                display: "grid",
+                gridTemplateColumns: layout.gridTemplateColumns,
+                gridTemplateRows: layout.gridTemplateRows,
+              }}
+            >
+              {layout.images.map((image, index) => (
                 <div
-                  className="ProjectDetail-2-col-imgDiv"
+                  key={index}
+                  className="ProjectDetail-2-col"
                   style={{
-                    width: "100%",
-                    height: "100%",
-                    overflow: "hidden",
+                    gridColumn: image.gridColumn,
+                    gridRow: image.gridRow,
                   }}
+                  onClick={() => openModal(index)}
                 >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
-              </div>
-            ))}
+                  <div
+                    className="ProjectDetail-2-col-imgDiv"
 
-            {/* Composant Modale */}
-            <Modal
-              isOpen={isModalOpen}
-              images={layout.images} // Passe toutes les images
-              currentImageIndex={currentImageIndex} // Passe l'index courant
-              onClose={closeModal} // Callback pour fermer
-              onNavigate={(newIndex) => setCurrentImageIndex(newIndex)} // Callback pour naviguer
-            />
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="ProjectImage"
+                    />
+                  </div>
+                </div>
+              ))}
+
+              {/* Composant Modale */}
+              <Modal
+                isOpen={isModalOpen}
+                images={layout.images} // Passe toutes les images
+                currentImageIndex={currentImageIndex} // Passe l'index courant
+                onClose={closeModal} // Callback pour fermer
+                onNavigate={(newIndex) => setCurrentImageIndex(newIndex)} // Callback pour naviguer
+              />
+            </div>
           </div>
         </div>
       </div>

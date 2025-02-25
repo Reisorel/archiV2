@@ -84,6 +84,7 @@ const appart_nantes3 =
 
 //7 Boulangerie
 const boulangerie1 = "/images/projectsDetails/7.Commerce/COMMERCE1.jpg";
+const boulangerie2 = "/images/projectsDetails/7.Commerce/COMMERCE2.jpg";
 
 export const projectsData = [
   {
@@ -106,13 +107,8 @@ export const projectsData = [
     avance: "livré",
     tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
-      gridTemplateColumns: "repeat(2, 400px)", // Grille avec 2 colonnes
-      gridTemplateRows: "repeat(5, 600px)", // 5 lignes de 100px
-      gap: "1rem",
-      imageDimensions: {
-        width: "400px",
-        height: "600px",
-      },
+      gridTemplateColumns: "repeat(2, minmax(20vw, fr))", // 2 colonnes flexibles
+      gridTemplateRows: "auto", // Laisse le contenu s’adapter
       images: [
         {
           src: apt_paris1,
@@ -206,13 +202,8 @@ export const projectsData = [
     avance: "En construction",
     tags: ["bois", "extérieur", "Normandie", "maison", "extension"],
     layout: {
-      gridTemplateColumns: "repeat(2, 600px)", // Grille avec 2 colonnes
-      gridTemplateRows: "repeat(2, 400px)", // 5 lignes de 100px
-      gap: "1rem",
-      imageDimensions: {
-        width: "600px",
-        height: "400px",
-      },
+      gridTemplateColumns: "repeat(2, minmax(40vw, 1fr))", // 2 colonnes flexibles
+      gridTemplateRows: "auto", // Laisse le contenu s’adapter
       images: [
         {
           src: maison_mer1,
@@ -264,13 +255,8 @@ export const projectsData = [
     avance: "livré",
     tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
-      gridTemplateColumns: "repeat(2, 600px)",
-      gridTemplateRows: "repeat(2, 400px)",
-      gap: "1rem",
-      imageDimensions: {
-        width: "600px",
-        height: "400px",
-      },
+      gridTemplateColumns: "repeat(2, minmax(40vw, 1fr))", // 2 colonnes flexibles
+      gridTemplateRows: "auto", // Laisse le contenu s’adapter
       images: [
         {
           src: maison_campagne1,
@@ -316,13 +302,8 @@ export const projectsData = [
     avance: "livré",
     tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
-      gridTemplateColumns: "repeat(2, 400px)",
-      gridTemplateRows: "repeat(2, 600px)",
-      gap: "1rem",
-      imageDimensions: {
-        width: "400px",
-        height: "600px",
-      },
+      gridTemplateColumns: "repeat(2, minmax(40vw, 1fr))", // 2 colonnes flexibles
+      gridTemplateRows: "auto", // Laisse le contenu s’adapter
       images: [
         {
           src: maison_ville1,
@@ -368,13 +349,8 @@ export const projectsData = [
     avance: "conception",
     tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
-      gridTemplateColumns: "repeat(2, 600px)",
-      gridTemplateRows: "repeat(2, 400px)",
-      gap: "1rem",
-      imageDimensions: {
-        width: "600px",
-        height: "400px",
-      },
+      gridTemplateColumns: "repeat(2, minmax(40vw, 1fr))", // 2 colonnes flexibles
+      gridTemplateRows: "auto", // Laisse le contenu s’adapter
       images: [
         {
           src: ferme1,
@@ -456,13 +432,8 @@ export const projectsData = [
     avance: "conception",
     tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
-      gridTemplateColumns: "repeat(2, 600px)", // Grille avec 2 colonnes
-      gridTemplateRows: "repeat(2, 400px)", // 5 lignes de 100px
-      gap: "1rem",
-      imageDimensions: {
-        height: "600px",
-        width: "400px",
-      },
+      gridTemplateColumns: "repeat(2, minmax(40vw, 1fr))", // 2 colonnes flexibles
+      gridTemplateRows: "auto", // Laisse le contenu s’adapter
       images: [
         {
           src: appart_nantes1,
@@ -489,7 +460,7 @@ export const projectsData = [
     id: 7,
     slug: "commerce-rennais",
     imgSrc: project7,
-    title: "COMMERCE RENNAIS",
+    title: "PÂTISSERIE RENNAISE",
     location: "Ile-Et-Vilaine",
     grade: "Rénovation",
     description1: `Située au cœur du centre-ville rennais, cette pâtisserie a fait l’objet d’une rénovation complète pour offrir un cadre raffiné et chaleureux. L’aménagement a été pensé pour valoriser la façade existante tout en apportant une touche contemporaine avec des matériaux soigneusement sélectionnés. Derrière la vitrine élégante, l’espace intérieur a été optimisé pour conjuguer confort et fluidité, permettant une expérience agréable aussi bien pour les clients que pour les artisans.`,
@@ -502,17 +473,18 @@ export const projectsData = [
     avance: "conception",
     tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
-      gridTemplateColumns: "repeat(1, 600px)", // Grille avec 2 colonnes
-      gridTemplateRows: "repeat(1, 400px)", // 5 lignes de 100px
-      gap: "1rem",
-      imageDimensions: {
-        height: "600px",
-        width: "400px",
-      },
+      gridTemplateColumns: "repeat(2, minmax(40vw, 1fr))",
+      gridTemplateRows: "auto",
       images: [
         {
           src: boulangerie1,
           alt: "Facade1",
+          gridColumn: "span 1",
+          gridRow: "span 2",
+        },
+        {
+          src: boulangerie2,
+          alt: "Facade2",
           gridColumn: "span 1",
           gridRow: "span 2",
         },
