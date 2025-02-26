@@ -1,5 +1,9 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useRef } from "react";
+import { gsap } from "gsap"; // AJOUT
+import { Draggable } from "gsap/Draggable"; // AJOUT
 import "./Modal.css";
+
+gsap.registerPlugin(Draggable); // AJOUT
 
 export default function Modal({
   isOpen,
@@ -9,6 +13,7 @@ export default function Modal({
   onNavigate,
 }) {
   const totalImages = images.length;
+  const imageRef = useRef(null); // AJOUT : Référence pour l’image
 
   // useCallback pour mémoriser `handleNext` et `handlePrev`
   const handleNext = useCallback(() => {
@@ -45,6 +50,27 @@ export default function Modal({
     };
   }, [isOpen, handleNext, handlePrev, onClose]);
 
+  // AJOUT : Gestion du swipe tactile avec Draggable
+  useEffect(() => {
+    if (!isOpen || !imageRef.current) return;
+
+    const draggableInstance = Draggable.create(imageRef.current, {
+      type: "x", // Swipe horizontal
+      inertia: true, // Effet d'inertie
+      onDragEnd: function () {
+        if (this.getDirection() === "left") {
+          handleNext(); // Passe à l’image suivante
+        } else if (this.getDirection() === "right") {
+          handlePrev(); // Passe à l’image précédente
+        }
+      },
+    });
+
+    return () => {
+      // Nettoyage du Draggable lorsqu’on ferme la modale
+      draggableInstance[0].kill();
+    };
+  }, [isOpen, handleNext, handlePrev]);
 
   if (!isOpen) return null;
 
@@ -68,6 +94,7 @@ export default function Modal({
         {currentImage ? (
           <img
             key={currentImageIndex}
+            ref={imageRef} // AJOUT : Référence pour GSAP
             src={currentImage.src}
             alt={currentImage.alt}
             className="show"
