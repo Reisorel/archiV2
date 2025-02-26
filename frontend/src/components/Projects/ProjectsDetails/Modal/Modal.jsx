@@ -14,6 +14,8 @@ export default function Modal({
 }) {
   const totalImages = images.length;
   const imageRef = useRef(null); // AJOUT : Référence pour l’image
+  const modalRef = useRef(null); // Référence pour la modale entière
+
 
   // useCallback pour mémoriser `handleNext` et `handlePrev`
   const handleNext = useCallback(() => {
@@ -78,7 +80,7 @@ export default function Modal({
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-content" ref={modalRef} onClick={(e) => e.stopPropagation()}>
         <button
           className="close-btn"
           onClick={onClose}

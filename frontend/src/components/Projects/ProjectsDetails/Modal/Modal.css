@@ -18,7 +18,7 @@
   position: relative;
   max-width: 90vw; /* Ajuste la largeur max à 90% de l'écran */
   max-height: 80vh; /* Ajuste la hauteur max à 80% de l'écran */
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 2px;
   overflow: hidden;
 }
