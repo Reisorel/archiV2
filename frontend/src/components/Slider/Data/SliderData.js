@@ -12,8 +12,8 @@ export const sliderData = [
   },
   {
     id: 2,
-    name: "BOULANGERIE",
-    description: "Rennes 7, Ile-De-France",
+    name: "PATISSERIE",
+    description: "Rennes, Bretagne",
     src: slider2,
   },
   {

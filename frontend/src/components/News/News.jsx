@@ -8,7 +8,7 @@ import { newsData } from "./Data/NewsData";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function News() {
-  const navigate = useNavigate(); // Initialisez le hook useNavigate
+  const navigate = useNavigate(); 
   const titleRef = useRef(null);
   const gridRef = useRef(null);
 

@@ -45,7 +45,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(12, 12, 12, 0.3);
+        background: rgba(12, 12, 12, 0.6);
         opacity: 0;
         transition: opacity 0.3s ease;
         z-index: 1;
@@ -104,7 +104,7 @@
         .news-hoverContent {
           opacity: 1; /* Affiche le texte */
           // transition: opacity 1s ease; /* Transition fluide pour l'affichage du texte */
-          transform: translate(-50%, -50%); /* 🔥 Remonte progressivement */
+          transform: translate(-50%, -20%); /* 🔥 Remonte progressivement */
         }
       }
     }
