@@ -96,3 +96,22 @@
     transform: scale(1);
   }
 }
+
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 90vw; /* Garde une largeur raisonnable */
+    max-height: 90vh; /* Garde une hauteur raisonnable */
+    display: flex; /* Permet d'ajuster l'image */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content img {
+    max-width: 100%; /* Évite qu'elle dépasse */
+    max-height: 100%; /* Permet d’occuper toute la hauteur disponible */
+    width: auto; /* Garde le bon ratio */
+    height: auto; /* Garde le bon ratio */
+    object-fit: contain; /* Assure que l'image soit bien cadrée */
+    display: block;
+  }
+}

@@ -255,14 +255,7 @@ export default function ProjectsDetails() {
             </div>
           </div>
           <div className="ProjectDetails-2-framer">
-            <div
-              className="projectDetails-2"
-              style={{
-                display: "grid",
-                gridTemplateColumns: layout.gridTemplateColumns,
-                gridTemplateRows: layout.gridTemplateRows,
-              }}
-            >
+            <div className="projectDetails-2">
               {layout.images.map((image, index) => (
                 <div
                   key={index}
@@ -273,10 +266,7 @@ export default function ProjectsDetails() {
                   }}
                   onClick={() => openModal(index)}
                 >
-                  <div
-                    className="ProjectDetail-2-col-imgDiv"
-
-                  >
+                  <div className="ProjectDetail-2-col-imgDiv">
                     <img
                       src={image.src}
                       alt={image.alt}

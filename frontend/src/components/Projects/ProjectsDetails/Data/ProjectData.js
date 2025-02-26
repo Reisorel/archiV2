@@ -107,8 +107,6 @@ export const projectsData = [
     avance: "livré",
     tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
-      gridTemplateColumns: "repeat(2, minmax(20vw, fr))", // 2 colonnes flexibles
-      gridTemplateRows: "auto", // Laisse le contenu s’adapter
       images: [
         {
           src: apt_paris1,
@@ -202,8 +200,6 @@ export const projectsData = [
     avance: "En construction",
     tags: ["bois", "extérieur", "Normandie", "maison", "extension"],
     layout: {
-      gridTemplateColumns: "repeat(2, minmax(40vw, 1fr))", // 2 colonnes flexibles
-      gridTemplateRows: "auto", // Laisse le contenu s’adapter
       images: [
         {
           src: maison_mer1,
@@ -255,8 +251,6 @@ export const projectsData = [
     avance: "livré",
     tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
-      gridTemplateColumns: "repeat(2, minmax(40vw, 1fr))", // 2 colonnes flexibles
-      gridTemplateRows: "auto", // Laisse le contenu s’adapter
       images: [
         {
           src: maison_campagne1,
@@ -302,8 +296,6 @@ export const projectsData = [
     avance: "livré",
     tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
-      gridTemplateColumns: "repeat(2, minmax(40vw, 1fr))", // 2 colonnes flexibles
-      gridTemplateRows: "auto", // Laisse le contenu s’adapter
       images: [
         {
           src: maison_ville1,
@@ -349,8 +341,6 @@ export const projectsData = [
     avance: "conception",
     tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
-      gridTemplateColumns: "repeat(2, minmax(40vw, 1fr))", // 2 colonnes flexibles
-      gridTemplateRows: "auto", // Laisse le contenu s’adapter
       images: [
         {
           src: ferme1,
@@ -432,8 +422,6 @@ export const projectsData = [
     avance: "conception",
     tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
-      gridTemplateColumns: "repeat(2, minmax(40vw, 1fr))", // 2 colonnes flexibles
-      gridTemplateRows: "auto", // Laisse le contenu s’adapter
       images: [
         {
           src: appart_nantes1,
@@ -473,8 +461,6 @@ export const projectsData = [
     avance: "conception",
     tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
     layout: {
-      gridTemplateColumns: "repeat(2, minmax(40vw, 1fr))",
-      gridTemplateRows: "auto",
       images: [
         {
           src: boulangerie1,

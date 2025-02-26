@@ -221,11 +221,13 @@
 }
 
 .projectDetails-2 {
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(10vw, 25vw)); // Fixe une taille min et max en vw
+  grid-template-rows: auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  display: grid;
-  background-color: rgb(255, 255, 255);
-  gap: 1rem
 }
 
 .ProjectDetail-2-col-imgDiv {
@@ -240,7 +242,7 @@
 .ProjectImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .ProjectDetail-2-col img {
@@ -446,19 +448,20 @@
 /* ==== GRD PHOTO MOBILE ==== */
 
   .ProjectDetails-2-framer {
-    display: flex;
     overflow: hidden;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
 
   .projectDetails-2 {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, minmax(40vw, 1fr)); // Valeur par défaut (mobile)
+    grid-template-rows: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    display: grid;
-    background-color: rgb(255, 255, 255);
     overflow: hidden;
-    gap: 0.5rem
   }
 
   .ProjectDetail-2-col-imgDiv {
