@@ -120,7 +120,7 @@ export default function Missions() {
         ease: "power3.out",
         scrollTrigger: {
           trigger: titleRef.current,
-          start: "top 90%",
+          start: "top bottom",
           toggleActions: "play reverse play reverse",
         },
       }
