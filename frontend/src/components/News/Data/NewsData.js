@@ -1,53 +1,53 @@
-const new1 = "images/news/Appartement1.jpg";
-const new2 = "images/news/Ferme1.jpg";
-const new3 = "images/news/Campagne1.jpg";
-const new4 = "images/news/Appartement2.jpg";
-const new5 = "images/news/Chambre1.jpg";
+const new1 = "images/news/1.appartement-parisien.jpg";
+const new2 = "images/news/2.maison-mer.jpg";
+const new3 = "images/news/3.maisons-campagne.jpg";
+const new4 = "images/news/4.maison-ville.jpg";
+const new5 = "images/news/5.ferme.jpg";
 
 export const newsData = [
   {
     id: 1,
     slug: "appartement-parisien",
     imgSrc: new1,
-    title: "Appartement de ville",
-    location: "Paris 7ème",
+    title: "APPARTEMENT PARISIEN",
+    location: "PARIS 7ème",
     grade: "Rénovation",
-    description: "Une bien belle rénov !",
+    description: "Rénovation et suivi de chantier",
   },
   {
     id: 2,
     slug: "corps-de-ferme",
     imgSrc: new2,
-    title: "Corps de ferme",
-    location: "Calvados",
+    title: "CORPS DE FERME NORMAND",
+    location: "ESCOVILLE",
     grade: "Extension",
-    description: "Belle ferme",
+    description: "Extension et suivi de chantier",
   },
   {
     id: 3,
     slug: "maison-a-la-mer",
     imgSrc: new3,
-    title: "Maison de bord de mer",
-    location: "Calvados",
+    title: "MAISON A LA MER",
+    location: "BERNIERES-SUR-MER",
     grade: "Agrandissement",
-    description: "Belle maison à Bernières",
+    description: "Extension et permis de construire",
   },
   {
     id: 4,
-    slug: "appartement-parisien",
+    slug: "maison-de-ville",
     imgSrc: new4,
-    title: "Appartement Parisien",
-    location: "Paris 7ème",
+    title: "MAISON DE VILLE",
+    location: "Romilié",
     grade: "Rénovation",
-    description: "Photo cuisine",
+    description: "Extension et permis de construire",
   },
   {
     id: 5,
     slug: "appartement-nantais",
     imgSrc: new5,
-    title: "Chambre",
-    location: "Loire-Atlantique",
+    title: "APPARTEMENT NANTAIS",
+    location: "NANTES",
     grade: "Agrandissement",
-    description: "Dessin chambre",
+    description: "Esquisse et permis de construire",
   },
 ];

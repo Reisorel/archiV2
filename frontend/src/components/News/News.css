@@ -19,7 +19,6 @@
   flex-direction: column;
   border-radius: 2px;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(237, 237, 237, 0.4);
   overflow: hidden;
   cursor: pointer;
 }
@@ -46,42 +45,56 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(200, 200, 200, 0.3);
+  background: rgba(12, 12, 12, 0.3);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 1;
 }
 .news-secContent .news-singleNew .news-imageDiv .news-hoverContent {
-  font-weight: 500;
   position: absolute;
-  bottom: 15px;
-  left: 15px;
-  color: #fff;
-  font-size: 1.2rem;
-  text-align: left;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  top: 60%; /* 🔥 Position initiale plus basse */
+  left: 50%;
+  transform: translate(-50%, 200px); /* 🔥 Décalé vers le bas */
+  opacity: 0; /* Caché au départ */
+  transition: transform 0.5s ease-out, opacity 0.25s ease-out;
   z-index: 2;
-  width: calc(100% - 20px);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.news-secContent .news-singleNew .news-imageDiv .hoverContent-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+.news-secContent .news-singleNew .news-imageDiv .hoverContent-container h2 {
+  white-space: nowrap; /* 🔥 Empêche le retour à la ligne forcé */
+  display: flex;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+.news-secContent .news-singleNew .news-imageDiv .hoverContent-container p {
+  color: #fff;
+  padding: 0;
+  margin: 0;
 }
 .news-secContent .news-singleNew .news-imageDiv img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  transition: transform 3s ease; /* Effet de zoom */
+  transition: transform 0.5s ease; /* Effet de zoom */
 }
 .news-secContent .news-singleNew .news-imageDiv:hover img {
   transform: scale(1.1); /* Zoom sur l'image */
 }
 .news-secContent .news-singleNew .news-imageDiv:hover::before {
   opacity: 1; /* Affiche le voile gris */
-  transition: opacity 3s ease; /* Transition fluide pour l'apparition */
+  transition: opacity 0.5s ease; /* Transition fluide pour l'apparition */
 }
 .news-secContent .news-singleNew .news-imageDiv:hover .news-hoverContent {
   opacity: 1; /* Affiche le texte */
-  transition: opacity 1s ease; /* Transition fluide pour l'affichage du texte */
+  transform: translate(-50%, -50%); /* 🔥 Remonte progressivement */
 }
 
 @media screen and (max-width: 760px) {

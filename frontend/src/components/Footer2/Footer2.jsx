@@ -124,7 +124,7 @@ export default function Footer2() {
               <p>
                 <strong>T: 06 88 59 75 02</strong>
               </p>
-              <p>cassandre.architecte@gmail.com</p>
+              <p>cassandre.architecture@gmail.com</p>
               <div ref={iconsRef} className="footer-icon-container">
                 <div
                   data-hover-detect="true"

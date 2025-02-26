@@ -82,7 +82,7 @@ export default function News() {
       </div>
 
       <div ref={gridRef} className="news-secContent grid">
-        {newsData.map(({ id, imgSrc, title, slug }) => {
+        {newsData.map(({ id, imgSrc, title, slug, description, location }) => {
           return (
             <div
               key={id}
@@ -91,7 +91,13 @@ export default function News() {
             >
               <div className="news-imageDiv">
                 <img src={imgSrc} alt={title} />
-                <div className="news-hoverContent">{title}</div>
+                  <div className="news-hoverContent">
+                    <div className="hoverContent-container">
+                      <h2 className="sub-2">{title}</h2>
+                      <p>{description}</p>
+                      <p>{location}</p>
+                    </div>
+                  </div>
               </div>
             </div>
           );
