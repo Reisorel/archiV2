@@ -27,29 +27,67 @@ export default function About() {
   const cvRef = useRef(null); // Animation date
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: titleRef.current, // Déclencheur global
-        start: "top 90%",
-        toggleActions: "play none none none",
-      },
-    });
+    if (!titleRef.current) {
+      console.error("titleRef.current is null. The reference is not attached.");
+      return;
+    }
 
-    // Animation du titre
-    tl.fromTo(
+    // Animation pour le titre
+    const titleAnimation = gsap.fromTo(
       titleRef.current,
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.5, ease: "power3.out" }
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 90%",
+          toggleActions: "play reverse play reverse",
+        },
+      }
     );
 
-    // Animation de l'image qui arrive de la gauche
-    tl.fromTo(
-      pictureRef.current,
-      { x: -200, opacity: 0 },
-      { x: 0, opacity: 1, duration: 1.2, ease: "power3.out" },
-      "-=1" // Démarre légèrement avant la fin de l'animation du titre
-    );
+    return () => {
+      titleAnimation.kill(); // Nettoyage de l'animation au démontage du composant
+    };
   }, []);
+
+  useEffect(() => {
+    if (!pictureRef.current) {
+      console.error("pictureRef.current is null. The reference is not attached.");
+      return;
+    }
+
+    // Animation pour l'image
+    const pictureAnimation = gsap.fromTo(
+      pictureRef.current,
+      {
+        x: -200,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: pictureRef.current,
+          start: "top 90%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    return () => {
+      pictureAnimation.kill(); // Nettoyage de l'animation au démontage du composant
+    };
+  }, []);
+
 
   // Aninmation texte central
   useEffect(() => {
