@@ -7,7 +7,7 @@ export const sliderData = [
   {
     id: 1,
     name: "APPARTEMENT PARISIEN",
-    description: "Paris 7ème",
+    description: "Paris 5ème",
     src: slider1,
   },
   {

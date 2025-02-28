@@ -177,14 +177,22 @@ export default function Missions() {
                 le logement collectif.
               </p>
               <p>
-                Curieux d'en savoir un peu plus ? Venez par{" "}
+                Pour en savoir plus sur mon parcours, rendez-vous{" "}
+                <span
+                onClick={() => {
+                  document.documentElement.querySelector(".about-container")?.scrollIntoView({ behavior: "smooth" });
+
+                }}
+                >par ici
+                </span>.
+                Vous pouvez également découvrir mon travail et mes réalisation{" "}
                 <span
                   onClick={() => {
                     navigate("/projects");
                     window.scrollTo(0, 0);
                   }}
                 >
-                  ici.
+                  là.
                 </span>
               </p>
               <p>

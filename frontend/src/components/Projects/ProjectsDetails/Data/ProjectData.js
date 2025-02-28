@@ -94,18 +94,23 @@ export const projectsData = [
     title: "APPARTEMENT PARISIEN",
     location: "Paris 7ème",
     grade: "Rénovation",
-    description1: `
-    Situé sur la rive gauche de Paris, cet appartement a bénéficié d’une rénovation complète, alliant élégance et fonctionnalité. L’intervention a permis de restructurer les espaces en valorisant la lumière naturelle et en optimisant le confort thermique et acoustique.Les menuiseries sur mesure, réalisées par des artisans locaux, s’intègrent parfaitement dans l’esthétique classique de l’appartement tout en offrant des performances accrues.
+    description1: `Situé sur la rive gauche de Paris, cet appartement a bénéficié d’une rénovation complète, alliant élégance et fonctionnalité. L’intervention a permis de restructurer les espaces en valorisant la lumière naturelle et en optimisant le confort thermique. Les agencements sur mesure sont en bois d’Oukoumé et intègrent la cuisine ainsi que du mobilier de rangement dans l’espace séjour et salle à manger.
     `,
-    description2: `Chaque ouverture a été pensée pour sublimer les volumes existants et offrir une parfaite harmonie entre tradition et modernité.Les matériaux nobles comme le chêne massif et le laiton patiné apportent une touche intemporelle, tandis que les finitions minutieuses révèlent un savoir-faire d’exception. L’ensemble du projet a été guidé par une exigence de qualité et une attention particulière aux détails.
-    `,
+    description2: `Des revêtements muraux en bouleau habillent la chambre et se prolongent dans les pièces intimes telles que le dressing et la salle de bain. Une attention particulière a été portée au traitement de la lumière, aux matériaux et aux détails de finition.`,
     type: "rénovation",
-    loc: "Paris 7ème",
-    sup: "120 m²",
+    loc: "Paris 5ème",
+    sup: "90 m²",
     mo: "privée",
-    inter: "étude / conception / maitrise d'oeuvre",
-    avance: "livré",
-    tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
+    inter: "mission complète",
+    avance: "livré août 2024",
+    tags: [
+      "bois",
+      "rénovation",
+      "Paris",
+      "appartement",
+      "intérieur",
+      "menuiseries",
+    ],
     layout: {
       images: [
         {
@@ -190,15 +195,15 @@ export const projectsData = [
     title: "MAISON A LA MER",
     location: "Calvados",
     grade: "Agrandissement",
-    description1: `Nichée sur la côte normande, cette maison de villégiature a été entièrement repensée pour conjuguer authenticité et confort moderne. L’intervention a permis d’ouvrir les espaces de vie sur l’extérieur, maximisant ainsi les vues sur le littoral tout en optimisant l’apport de lumière naturelle. L’architecture intérieure a été travaillée avec des matériaux nobles et chaleureux pour créer une atmosphère conviviale et apaisante.`,
-    description2: `Chaque pièce a été pensée pour favoriser une connexion fluide entre intérieur et extérieur, offrant un cadre de vie idéal pour les séjours en bord de mer. Le bois brut et les tonalités claires rappellent l’environnement côtier, tandis que des touches contemporaines viennent sublimer l’ensemble. L’attention portée aux détails et aux finitions confère à ce projet un équilibre subtil entre modernité et tradition, reflétant l’âme du lieu.`,
-    type: "extension",
+    description1: `Nichée sur la côte Normande, la maison existante est conservée et réhabilitée dans son enveloppe et ses installations techniques. Le projet prévoit de concevoir une extension qui reprend le langage de la maison existante dans son volume. Pour mieux établir la liaison avec la maison existante, un espace en simple rez-de-chaussée connecte les deux volumes. Ce dernier, au caractère plus contemporain, révèle au mieux les formes architecturales plus traditionnelles de la maison existante et du reste de l’extension. L’orientation du bâti et le dessin des façades sont conçus pour répondre à l’environnement paysagé et climatique du site.`,
+    description2: `Les façades Sud et Sud-Ouest sont largement ouvertes et prolongées par des terrasses. En été, l’arbre imposant situé devant la façade Sud apporte une protection naturelle en agissant comme pare-soleil. En hiver, les grandes ouvertures permettent de capter un maximum de soleil. Le rythme de ces façades rappelle, dans un esprit contemporain, les maisons à colombages présentes dans la ville. Une grande ouverture sur la façade Sud-Ouest cadre la vue sur le jardin. `,
+    type: "rénovation et extension",
     loc: "Bernières-Sur-Mer",
-    sup: "200 m²",
+    sup: "130 m²",
     mo: "privée",
-    inter: "étude / conception / maitrise d'oeuvre",
-    avance: "En construction",
-    tags: ["bois", "extérieur", "Normandie", "maison", "extension"],
+    inter: "conception",
+    avance: "En cours",
+    tags: ["bois", "extérieur", "Normandie", "maison", "extension", "terrasse", "Caen"],
     layout: {
       images: [
         {
@@ -241,15 +246,15 @@ export const projectsData = [
     title: "MAISON DE CAMPAGNE",
     location: "Ile-Et-Vilaine",
     grade: "Agrandissement",
-    description1: `Au cœur d’un paysage rural préservé, cette longère a fait l’objet d’une rénovation complète visant à respecter son caractère traditionnel tout en l’adaptant aux usages contemporains. L’aménagement intérieur a été entièrement repensé pour créer de vastes espaces lumineux, où la pierre, le bois et les matériaux naturels sont sublimés par une mise en valeur des volumes d’origine.`,
-    description2: `Chaque intervention a été pensée dans une logique de conservation et de modernisation harmonieuse. Les ouvertures ont été redessinées pour maximiser l’apport de lumière et créer un dialogue constant avec l’extérieur. L’intégration de solutions passives pour le confort thermique et la sélection de matériaux locaux ont guidé ce projet, dans une volonté de préservation et d’authenticité.`,
-    type: "rénovation",
-    loc: "Tintigniac",
-    sup: "230 m²",
+    description1: `Au cœur d’un paysage rural préservé, cet ensemble de bâtiment en friche a fait l’objet d’une rénovation complète visant à respecter son caractère traditionnel tout en l’adaptant aux usages contemporains. Deux maison individuelles remplacent les anciennes granges et étables. Pour ce faire, les volumes intérieurs on été entièrement repensé pour créer de vastes espaces lumineux. Les ouvertures ont été redessinées pour maximiser l’apport de lumière et créer un dialogue constant avec l’extérieur. `,
+    description2: `Le choix des matériaux tient une place centrale dans cette conception architecturale. Il s’agit de mettre en œuvre des matériaux de construction biosourcés tels que le bois peuplier pour les charpentes, planchers et menuiseries intérieures, la chaux, le chanvre et la terre pour les enduits intérieurs et les planchers. Pour répondre aux matériaux traditionnels présents dans la région, les toitures sont en tuile canalaverou couleur terre de Charente pour les toitures.`,
+    type: "rénovation et aménagement paysagr",
+    loc: "Saint-Romans-lès-Melle",
+    sup: "340 m²",
     mo: "privée",
-    inter: "étude",
-    avance: "livré",
-    tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
+    inter: "conception et permis de construire",
+    avance: "Permis de construire validé",
+    tags: ["pierre", "rénovation", "tuile", "granges", "chaux", "biosourcé"],
     layout: {
       images: [
         {
@@ -286,15 +291,17 @@ export const projectsData = [
     title: "MAISON DE VILLE",
     location: "Ile-Et-Vilaine",
     grade: "Extension",
-    description1: `Située au cœur d’un tissu urbain dense, cette maison de ville a été repensée pour répondre aux besoins d’une famille en quête d’espace et de lumière. Le projet s’articule autour d’une restructuration complète des volumes existants et d’une surélévation en bois, permettant d’optimiser la surface habitable sans empiéter sur l’empreinte au sol. L’ajout d’une extension a permis d’améliorer la fluidité entre les espaces de vie et de renforcer la connexion avec le jardin.`,
-    description2: `L’intervention a mis l’accent sur une architecture sobre et élégante, où le bardage bois et les grandes ouvertures rythment la façade. L’optimisation thermique a été un axe central du projet, avec une isolation renforcée et l’intégration de solutions passives. La surélévation en ossature bois allège l’ensemble et apporte une touche contemporaine, tout en respectant l’identité architecturale du quartier. Chaque détail a été pensé pour allier confort et esthétisme dans un cadre urbain optimisé.`,
-    type: "rénovation",
-    loc: "Romillé",
-    sup: "85 m²",
+    description1: `Cette maison s'inscrit dans l'alignement de constructions similaires, formant un front bâti homogène. Son identité repose avant tout sur cette unité d’ensemble, lui conférant un caractère générique. L’ambition globale du projet consiste à explorer et valoriser les possibilités qu’offre une telle configuration urbaine. La présente étude propose une extension et une surélévation qui donneront un caractère singulier à une typologie de maison standardisée.`,
+    description2: `L’idée est de s’affranchir des contraintes de la parcelle (orientation N/S, configuration en lanière, maison au centre...) et, à l’inverse, d’en exploiter le potentiel. Il s’agit de retrouver de nouvelles orientations où l’intérieur et l’extérieur se répondent grâce à des volumes forts.
+
+`,
+    type: "extension et surrélévation",
+    loc: "Lille",
+    sup: "150 m²",
     mo: "privée",
-    inter: "étude",
+    inter: "esquisse",
     avance: "livré",
-    tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
+    tags: ["extension", "surrélévation", "centre-ville", "maison"],
     layout: {
       images: [
         {
@@ -331,15 +338,15 @@ export const projectsData = [
     title: "CORPS DE FERME",
     location: "Calvados",
     grade: "Extension",
-    description1: `Située dans la plaine de Caen, cette ancienne ferme a été entièrement réhabilitée pour retrouver son caractère tout en améliorant son confort et sa fonctionnalité. La restructuration des volumes a permis d'optimiser la circulation et la luminosité, en intégrant des matériaux durables et des solutions performantes sur le plan thermique.`,
-    description2: `Les interventions ont mis en valeur la pierre d’origine et les charpentes existantes, tout en intégrant des aménagements sur mesure. Les nouvelles ouvertures apportent une belle profondeur aux espaces et renforcent le lien avec l’extérieur. Chaque détail a été pensé pour assurer une cohérence entre les matériaux, les proportions et l’usage quotidien des lieux.`,
+    description1: `Située dans la plaine de Caen, cet ancien corps de ferme à déja fait l’objet d’une première rénovation en 2015. Les habitants occupent le niveau intermédiaire. Le demande principale est l’aménagement des combles pour la création de chambres et de lieux de vie. Afin de proposer un projet d’ensemble cohérent les études ont également portées sur la reconfiguration du R+1 avec la création d’un escalier d’accès aux combles.`,
+    description2: `Le projet porte également sur la transformation du RDC pour accueillir une véritable entrée, des espaces de rangements, une buanderie, une  cave à vin, et un lieu de vie en lien avec le jardin.`,
     type: "rénovation",
     loc: "Escoville",
-    sup: "250 m²",
+    sup: "300 m²",
     mo: "privée",
-    inter: "étude / conception / maitrise d'oeuvre",
-    avance: "conception",
-    tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
+    inter: "mission complète",
+    avance: "études en cours",
+    tags: ["rénovation", "extension", "ferme", "combles", "aménagement", "Caen"],
     layout: {
       images: [
         {
@@ -412,15 +419,15 @@ export const projectsData = [
     title: "APPARTEMENT NANTAIS",
     location: "Loire-Atlantique",
     grade: "Agrandissement",
-    description1: `Situé en plein cœur de Nantes, cet appartement a fait l’objet d’une rénovation intégrale visant à maximiser l’espace et la fluidité des circulations. L’intervention a permis de révéler le potentiel du lieu en optimisant la lumière naturelle et en intégrant des solutions de rangement sur mesure. La cuisine ouverte, entièrement repensée, s’articule harmonieusement autour du salon et de l’espace repas, créant une atmosphère chaleureuse et conviviale.`,
-    description2: `L’ensemble du projet repose sur un travail minutieux des volumes et des matériaux. Le bois, omniprésent, apporte une sensation de douceur et de continuité, tandis que les lignes épurées du mobilier encastré garantissent une parfaite cohérence visuelle. Dans la chambre sous combles, le choix d’un aménagement sur mesure exploite intelligemment la pente du toit pour offrir des espaces de rangement discrets et fonctionnels. Une rénovation pensée pour conjuguer esthétisme et confort au quotidien.`,
+    description1: `Situé en plein cœur de Nantes, cet appartement à fait l’objet d’une rénovation intégrale visant à maximiser l’espace et la fluidité des circulations. Initialement, l’appartement se développait sur un seul niveau. L’actuel salon était découpé pour accueillir une chambre et la salle de bain ne disposait d’aucune fenêtre. La configuration des espaces a été retravaillé avec la modification du cloisonnement, et l’installation d’un escalier afin d’accéder à l’étage des combles directement depuis l’appartement.`,
+    description2: `La cuisine actuelle est transformée en chambre. Une nouvelle cuisine ouverte, entièrement repensée, s’articule harmonieusement autour du salon et de l’espace repas. Une nouvelle salle de bain prend place à l’étage. Une seconde chambre vient compléter cet appartement pour modifier sa typologie en T3.`,
     type: "rénovation",
     loc: "Nantes",
-    sup: "250 m²",
+    sup: "50 m²",
     mo: "privée",
-    inter: "étude / conception",
-    avance: "conception",
-    tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
+    inter: "coneption et délcaration préalable",
+    avance: "chantier en cours",
+    tags: ["extension", "rénovation", "bois", "menuiseries", "intérieur", "Nantes"],
     layout: {
       images: [
         {
@@ -451,15 +458,15 @@ export const projectsData = [
     title: "PÂTISSERIE RENNAISE",
     location: "Ile-Et-Vilaine",
     grade: "Rénovation",
-    description1: `Située au cœur du centre-ville rennais, cette pâtisserie a fait l’objet d’une rénovation complète pour offrir un cadre raffiné et chaleureux. L’aménagement a été pensé pour valoriser la façade existante tout en apportant une touche contemporaine avec des matériaux soigneusement sélectionnés. Derrière la vitrine élégante, l’espace intérieur a été optimisé pour conjuguer confort et fluidité, permettant une expérience agréable aussi bien pour les clients que pour les artisans.`,
-    description2: `Chaque détail de cette pâtisserie a été conçu avec précision, de l’agencement du mobilier aux choix des teintes et textures. La devanture en verre, associée à un store sobrement orné, met en valeur l’identité du lieu et assure une ouverture fluide sur la place Saint-Germain. L’intérieur, baigné de lumière, invite à la dégustation avec un équilibre subtil entre convivialité et sophistication. Un espace pensé pour sublimer les créations gourmandes tout en favorisant l’échange et la proximité avec les clients.`,
+    description1: `Au coeur du centre historique de la ville de Rennes, ce local commercial à été complètement transformé afin d’accueillir une pâtisserie. L’espace intérieur a été optimisé pour conjuguer fonctionnalité et fluidité Chaque détail de cette pâtisserie a été conçu avec précision, de l’agencement du mobilier aux choix des teintes et textures. La devanture en verre, associée à un store sobrement orné, met en valeur l’identité du lieu et assure une ouverture fluide sur la place Saint-Germain.`,
+    description2: `L’intérieur, baigné de lumière, invite à la dégustation. L’espace est pensé pour sublimer les créations gourmandes tout en favorisant l’échange et la proximité avec les clients.`,
     type: "rénovation",
     loc: "Rennes",
-    sup: "98 m²",
+    sup: "65 m²",
     mo: "privée",
-    inter: "étude / conception / maitrise d'oeuvre",
-    avance: "conception",
-    tags: ["bois", "rénovation", "Paris", "appartement", "intérieur"],
+    inter: "Mission complète avec Lieu architecture",
+    avance: "Chantier en cours",
+    tags: ["commerce", "rénovation", "Rennes", "verre", "intérieur"],
     layout: {
       images: [
         {

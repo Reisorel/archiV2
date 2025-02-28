@@ -57,13 +57,24 @@
   cursor: pointer;
 }
 
+.projects-imageDiv {
+  overflow: hidden; /* Cache le dépassement de l'image */
+  cursor: pointer;
+}
+
 .projects-imageDiv img {
   height: 90%;
   width: 90%;
   object-fit: cover;
-  overflow: hidden;
+  transition: transform 3s ease; /* Effet de zoom */
   cursor: pointer;
+
 }
+
+.projects-imageDiv:hover img {
+  transform: scale(1.1); /* Zoom sur l'image */
+}
+
 
 @media screen and (max-width: 760px) {
   .projects-container {
