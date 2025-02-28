@@ -142,7 +142,7 @@ export default function Header() {
   return (
     <>
       {/* Activation du scroll lock si le menu mobile est ouvert */}
-      <ScrollLock isActive={isMobileOn} />
+      {/* <ScrollLock isActive={isMobileOn} /> */}
 
       <header className={`header-container ${showHeader ? "show" : "hide"}`}>
         <div
