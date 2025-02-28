@@ -106,52 +106,70 @@ export default function Missions() {
       return;
     }
 
-    // Animation pour le titre
-    gsap.fromTo(
-      titleRef.current,
-      {
-        y: 50,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: "top bottom",
-          toggleActions: "play reverse play reverse",
-        },
-      }
-    );
+    const title = titleRef.current;
 
-    // Animation pour les items de la grille
-    if (gridRef.current) {
-      const items = gridRef.current.querySelectorAll(".missions-row");
+    // Vérifier si la section est déjà visible au chargement
+    const rect = title.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
 
-      items.forEach((item, index) => {
-        gsap.fromTo(
-          item,
-          {
-            opacity: 0,
-            y: 50, // Position initiale (en-dessous)
+    if (isVisible) {
+      // ⚡ Si déjà visible → appliquer directement l'état final
+      gsap.set(title, { y: 0, opacity: 1 });
+    } else {
+      // 🎬 Sinon, on utilise scrollTrigger pour l'animation
+      gsap.fromTo(
+        title,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.5,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: title,
+            start: "top 90%",
+            toggleActions: "play none play none",
           },
-          {
-            opacity: 1,
-            y: 0, // Position finale (alignée normalement)
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: item,
-              start: "top 90%", // Début de l'animation
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      });
+        }
+      );
     }
-  }, []);
+  }, [location.pathname]); // Déclenchement si l'URL change
+
+
+  // Animation pour les items de la grille
+  useEffect(() => {
+    if (!gridRef.current) return;
+
+    const items = gridRef.current.querySelectorAll(".missions-row");
+    const animations = [];
+
+    items.forEach((item, index) => {
+      const animation = gsap.fromTo(
+        item,
+        {
+          opacity: 0,
+          y: 50, // Position initiale (en-dessous)
+        },
+        {
+          opacity: 1,
+          y: 0, // Position finale (alignée normalement)
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%", // Début de l'animation
+            toggleActions: "play none none none",
+          },
+        }
+      );
+      animations.push(animation);
+    });
+
+    // Cleanup function pour éviter les fuites mémoire
+    return () => {
+      animations.forEach((animation) => animation.kill());
+    };
+  }, []); // Exécution une seule fois au montage du composant
 
   return (
     <div id="missions" className="missions-container">
@@ -179,13 +197,15 @@ export default function Missions() {
               <p>
                 Pour en savoir plus sur mon parcours, rendez-vous{" "}
                 <span
-                onClick={() => {
-                  document.documentElement.querySelector(".about-container")?.scrollIntoView({ behavior: "smooth" });
-
-                }}
-                >par ici
-                </span>.
-                Vous pouvez également découvrir mon travail et mes réalisation{" "}
+                  onClick={() => {
+                    document.documentElement
+                      .querySelector(".about-container")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  par ici
+                </span>
+                . Vous pouvez également découvrir mon travail et mes réalisation{" "}
                 <span
                   onClick={() => {
                     navigate("/projects");
