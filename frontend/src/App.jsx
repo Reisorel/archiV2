@@ -17,8 +17,8 @@ function App() {
           <Background>
             <Router />
           </Background>
-          <Footer2 />
-        </BrowserRouter>
+          <Footer2 key={location.pathname} />
+          </BrowserRouter>
       </div>
     </>
   );

@@ -18,6 +18,11 @@ export default function Footer2() {
 
   const location = useLocation(); // Récupère les changements d'URL
 
+  useEffect(() => {
+  console.log("Animation du footer activée sur", location.pathname);
+}, [location.pathname]);
+
+
   // Fonction retour haut de page
   const handleScrollToTop = () => {
     gsap.to(window, {
