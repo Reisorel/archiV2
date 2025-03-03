@@ -28,7 +28,6 @@ export default function Footer2() {
   };
 
   // Fonction arrivée des icones
-  // Fonction arrivée des icônes
   useEffect(() => {
     if (!linkedinRef.current || !instagramRef.current || !iconsRef.current) {
       console.warn("Une ou plusieurs références sont nulles !");
@@ -70,14 +69,10 @@ export default function Footer2() {
           end: "top 5%", // Supprime la classe juste avant que l'icône disparaisse
           toggleActions: "restart none none none", // Toujours repartir de zéro
           onLeave: () => {
-            console.log("🚨 Icônes recouvertes, suppression des classes...");
             icons.forEach((icon) => {
               if (icon) {
                 icon.classList.remove("footer-visible"); // Supprime la classe pour l'animation CSS
                 gsap.set(icon, { x: 300, opacity: 0 }); // Réinitialisation immédiate de la position
-                console.log(
-                  `Classe retirée et état réinitialisé pour ${icon.className} ❌`
-                );
               }
             });
           },
@@ -116,7 +111,7 @@ export default function Footer2() {
                 <img src={upChevron} alt="Retour en haut" />
               </div>
               <p>
-                <strong>Atelier d'architecture basée à Rennes</strong>
+                <strong>Atelier d'architecture basé à Rennes</strong>
               </p>
               <p>BRETAGNE / NORMANDIE / PARIS</p>
             </div>
