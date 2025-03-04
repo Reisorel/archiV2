@@ -235,72 +235,68 @@ export default function Missions() {
           <div className="missions-intro-grid2">
             <div className="missions-task-list-div">
               <div className="missions-task-list-left">
-                <ul>
-                  <li>
-                    <div className="missions-task-icon-container">
-                      <i className="fas fa-home"></i>
-                    </div>
-                    <span>Neuf</span>
-                  </li>
-                  <li>
-                    <div className="missions-task-icon-container">
-                      <i className="fas fa-tools"></i>
-                    </div>
-                    <span>Réhabilitation</span>
-                  </li>
-                  <li>
-                    <div className="missions-task-icon-container">
-                      <i className="fas fa-expand-arrows-alt"></i>
-                    </div>
-                    <span>Extension</span>
-                  </li>
-                  <li>
-                    <div className="missions-task-icon-container">
-                      <i className="fas fa-leaf"></i>
-                    </div>
-                    <span>Rénovation Energétique</span>
-                  </li>
-                  <li>
-                    <div className="missions-task-icon-container">
-                      <i className="fas fa-paint-roller"></i>
-                    </div>
-                    <span>Architecture d'intérieur</span>
-                  </li>
-                </ul>
+                <li>
+                  <div className="missions-task-icon-container">
+                    <i className="fas fa-home"></i>
+                  </div>
+                  <span>Neuf</span>
+                </li>
+                <li>
+                  <div className="missions-task-icon-container">
+                    <i className="fas fa-tools"></i>
+                  </div>
+                  <span>Réhabilitation</span>
+                </li>
+                <li>
+                  <div className="missions-task-icon-container">
+                    <i className="fas fa-expand-arrows-alt"></i>
+                  </div>
+                  <span>Extension</span>
+                </li>
+                <li>
+                  <div className="missions-task-icon-container">
+                    <i className="fas fa-leaf"></i>
+                  </div>
+                  <span>Rénovation Energétique</span>
+                </li>
+                <li>
+                  <div className="missions-task-icon-container">
+                    <i className="fas fa-paint-roller"></i>
+                  </div>
+                  <span>Architecture d'intérieur</span>
+                </li>
               </div>
               <div className="missions-task-list-right">
-                <ul>
-                  <li>
-                    <div className="missions-task-icon-container">
-                      <i className="fas fa-house-user"></i>
-                    </div>
-                    <span>Maison individuelle</span>
-                  </li>
-                  <li>
-                    <div className="missions-task-icon-container">
-                      <i className="fas fa-building"></i>
-                    </div>
-                    <span>Habitat collectif</span>
-                  </li>
-                  <li>
-                    <div className="missions-task-icon-container">
-                      <i className="fas fa-store"></i>
-                    </div>
-                    <span>Commerces</span>
-                  </li>
-                  <li>
-                    <div className="missions-task-icon-container">
-                      <i className="fas fa-briefcase"></i>
-                    </div>
-                    <span>Bureaux</span>
-                  </li>
-                  <li>
-                    <div className="missions-task-icon-container">
-                      <i className="fas fa-school"></i>
-                    </div>
-                    <span>Equipements publics</span>
-                  </li>
-                </ul>
+                <li>
+                  <div className="missions-task-icon-container">
+                    <i className="fas fa-house-user"></i>
+                  </div>
+                  <span>Maison individuelle</span>
+                </li>
+                <li>
+                  <div className="missions-task-icon-container">
+                    <i className="fas fa-building"></i>
+                  </div>
+                  <span>Habitat collectif</span>
+                </li>
+                <li>
+                  <div className="missions-task-icon-container">
+                    <i className="fas fa-store"></i>
+                  </div>
+                  <span>Commerces</span>
+                </li>
+                <li>
+                  <div className="missions-task-icon-container">
+                    <i className="fas fa-briefcase"></i>
+                  </div>
+                  <span>Bureaux</span>
+                </li>
+                <li>
+                  <div className="missions-task-icon-container">
+                    <i className="fas fa-school"></i>
+                  </div>
+                  <span>Equipements publics</span>
+                </li>
               </div>
             </div>
           </div>
