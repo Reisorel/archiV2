@@ -1,10 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
+import { Draggable } from "gsap/Draggable"; // AJOUT
 import "./Slider.scss";
 import { sliderData } from "./Data/SliderData";
 import downChevron from "../../assets/icons/down-arrow.svg";
 
-const Test = () => {
+gsap.registerPlugin(Draggable); // AJOUT
+
+const Slider = () => {
   const slidesRef = useRef([]); // Références pour les slides
   const currentIndexRef = useRef(0); // Référence mutable pour l'index courant
   const autoplayRef = useRef(null); // Référence pour l'autoplay
@@ -14,6 +17,7 @@ const Test = () => {
   const totalSlides = sliderData.length; // Nombre total de slides
   const imageInfoRefs = useRef([]); // Références pour les éléments texte des slides
   const [activeDotIndex, setActiveDotIndex] = useState(0); // État pour l'index actif des dots
+  const sliderContainerRef = useRef(null); // Etat pour le draggable
 
   // Initialisation des positions et démarrage de l'autoplay
   useEffect(() => {
@@ -53,7 +57,6 @@ const Test = () => {
       y: -20,
       duration: 0.5,
       onComplete: () => {
-
         // Anime la slide actuelle pour qu'elle sorte
         gsap.to(slidesRef.current[currentIndex], {
           xPercent: -steps * 100,
@@ -154,7 +157,7 @@ const Test = () => {
     navigateStep(); // Lance la navigation rapide
   };
 
-  // Fonction scroll next section
+  // Fonction scroll next chevron bas
   const scrollToNextSection = () => {
     const nextSection = document.querySelector("#news");
     if (nextSection) {
@@ -163,64 +166,69 @@ const Test = () => {
   };
 
   return (
-      <div className="slider-frame">
+    <div className="slider-frame">
+      {sliderData.map((slide, index) => (
+        <div
+          key={slide.id}
+          className="slider-slide"
+          ref={(el) => (slidesRef.current[index] = el)}
+        >
+          <img src={slide.src} alt={slide.name} className="slider-img" />
+          {/* `Infos slide */}
+          <p
+            ref={(el) => (imageInfoRefs.current[index] = el)}
+            className="slider-image-info"
+          >
+            <span className="slider-image-name">{slide.name}</span>
+            <br />
+            <span className="slider-image-description">
+              {slide.description}
+            </span>
+          </p>
+        </div>
+      ))}
+      {/* Boutons de navigation */}
+      <button
+        onClick={handlePrev}
+        data-hover-detect="true"
+        className="slider-navigation-button prev-button"
+      >
+        <i className="fa-solid fa-chevron-left"></i>
+      </button>
+      <button
+        onClick={handleNext}
+        data-hover-detect="true"
+        className="slider-navigation-button next-button"
+      >
+        <i className="fa-solid fa-chevron-right"></i>
+      </button>
+
+      {/* Dots pour navigation */}
+      <div className="slider-dots-container">
         {sliderData.map((slide, index) => (
           <div
             key={slide.id}
-            className="slider-slide"
-            ref={(el) => (slidesRef.current[index] = el)}
-          >
-            <img src={slide.src} alt={slide.name} className="slider-img" />
-            {/* `Infos slide */}
-            <p
-              ref={(el) => (imageInfoRefs.current[index] = el)}
-              className="slider-image-info"
-            >
-              <span className="slider-image-name">{slide.name}</span>
-              <br />
-              <span className="slider-image-description">{slide.description}</span>
-            </p>
-          </div>
-        ))}
-        {/* Boutons de navigation */}
-        <button onClick={handlePrev}
-        data-hover-detect="true"
-        className="slider-navigation-button prev-button">
-          <i className="fa-solid fa-chevron-left"></i>
-        </button>
-        <button onClick={handleNext}
-        data-hover-detect="true"
-        className="slider-navigation-button next-button">
-          <i className="fa-solid fa-chevron-right"></i>
-        </button>
-
-        {/* Dots pour navigation */}
-        <div
-        className="slider-dots-container">
-          {sliderData.map((slide, index) => (
-            <div
-              key={slide.id}
-              data-hover-detect="true"
-              className={`slider-dot ${
-                activeDotIndex === index ? "active" : "passive"
-              }`}
-              onClick={() => fastNavigateToSlide(index)}
-            ></div>
-          ))}
-        </div>
-
-        {/* Bouton pour descendre */}
-        <div className="slider-down-button-container">
-          <button
             data-hover-detect="true"
-            className="slider-down-button"
-            onClick={scrollToNextSection}
-          >
-            <img src={downChevron} alt="down-chevron" />
-          </button>
-        </div>
+            className={`slider-dot ${
+              activeDotIndex === index ? "active" : "passive"
+            }`}
+            onClick={() => fastNavigateToSlide(index)}
+          ></div>
+        ))}
       </div>
+
+      {/* Bouton pour descendre */}
+      <div className="slider-down-button-container">
+        <button
+          data-hover-detect="true"
+          className="slider-down-button"
+          onClick={scrollToNextSection}
+        >
+          <img src={downChevron} alt="down-chevron" />
+        </button>
+      </div>
+    </div>
   );
 };
 
-export default Test;
+export default Slider;

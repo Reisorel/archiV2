@@ -195,6 +195,7 @@ export default function Header() {
                       <li
                         onClick={() => {
                           navigate("/projects");
+                          window.scrollTo(0, 0);
                           setIsDropdownOpen(false); // Ferme le sous-menu projets
                           setIsMobileOn(false); // Ferme le menu mobile
                         }}

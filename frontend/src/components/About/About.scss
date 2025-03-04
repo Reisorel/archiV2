@@ -91,6 +91,7 @@
   font-size: 1.2rem;
 }
 
+// Responsive mobile //
 @media screen and (max-width: 760px) {
   .about-infos-container {
     display: grid;
@@ -121,11 +122,12 @@
     max-width: 100%;
     text-align: justify;
   }
-  .about-presentation-text p:nth-of-type(2),
-  .about-presentation-text p:nth-of-type(3),
-  .about-presentation-text p:nth-of-type(4) {
-    display: none; /* Cache ces paragraphes */
-  }
+
+  // .about-presentation-text p:nth-of-type(2),
+  // .about-presentation-text p:nth-of-type(3),
+  // .about-presentation-text p:nth-of-type(4) {
+  //   display: none;
+  // }
 
   .about-presentation-text-low {
     width: 100%;
@@ -175,6 +177,128 @@
     width: 2px;
     background-color: black;
   }
+}
 
+// Responsive tablet //
+@media screen and (min-width: 761px) and (max-width: 1080px) {
+  .about-infos-container {
+    display: grid;
+    grid-template-columns: 50% 50%; /* Colonne gauche (image + CV) et colonne droite (texte) */
+    grid-template-rows: auto auto; /* Deux lignes : première pour l'image + texte, deuxième pour le CV */
+    grid-template-areas:
+      "image texte"
+      "cv texte"; /* On place l'image en haut, le CV juste en dessous et le texte à droite */
+    gap: 2rem;
+    align-items: start;
+    height: 100%; /* Assure que la hauteur est bien distribuée */
 
+  }
+
+  .about-grid-column:first-child {
+    grid-area: image;
+  }
+
+  .about-picture {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .about-picture img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Le CV juste en dessous de l’image */
+  .about-grid-column:nth-child(3) {
+    grid-area: cv; /* Le CV sous l’image */
+    width: 100%;
+  }
+
+  .about-CV {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  /* Colonne droite : Texte occupant toute la hauteur */
+  .about-grid-column:nth-child(2) {
+    grid-area: texte; /* Texte à droite */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligne le texte en haut */
+    align-self: stretch;
+    height: 100%;
+    width: 100%;
+    max-width: 90%;
+    overflow: hidden;
+  }
+
+  .about-presentation-text {
+    width: 100%;
+    max-width: 100%;
+    flex-grow: 1; /* Permet au texte de s'étirer en hauteur */
+    text-align: justify;
+    word-wrap: break-word; /* Coupe le texte proprement si besoin */
+    overflow-wrap: break-word; /* Idem, gestion des longues phrases */
+  }
+
+  .about-presentation-text-low {
+    width: 100%;
+    text-align: center;
+    grid-row: 3; /* Place cet élément après le texte */
+  }
+
+  .about-CV {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr; /* Une seule colonne pour empiler les dates */
+    gap: 1rem;
+    grid-row: 4;
+  }
+
+  .about-date {
+    display: grid;
+    grid-template-columns: auto 1fr; /* La date prend sa taille, le texte s'adapte */
+    align-items: center; /* Assure que l'année et le texte soient bien alignés */
+    gap: 2rem; /* Espacement entre l’année et le texte */
+  }
+
+  .about-year {
+    font-weight: bold;
+    font-size: 1.2rem;
+    white-space: nowrap; /* Empêche le retour à la ligne */
+  }
+
+  .place {
+    display: flex;
+    justify-content: left;
+  }
+
+  .about-date:nth-child(1) .description {
+    display: inline;
+  }
+
+  .about-date:first-child {
+    align-items: flex-start; /* Alignement en haut uniquement pour la première date */
+  }
+
+  .about-date:first-child .description {
+    padding-top: 2px; /* Ajustement pour aligner "Création de mon agence" avec "2024." */
+  }
+
+  .about-CV::before {
+    content: "";
+    position: absolute;
+    left: 0rem;
+    top: 1rem;
+    bottom: 1rem;
+    width: 2px;
+    background-color: black;
+  }
 }

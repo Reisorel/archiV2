@@ -6,7 +6,6 @@ import "./About.css";
 const portrait = "/images/about/Cassandre.jpg";
 
 export default function About() {
-
   const words = [
     "rénovation 🛠️",
     "construction 🔨",
@@ -59,7 +58,9 @@ export default function About() {
 
   useEffect(() => {
     if (!pictureRef.current) {
-      console.error("pictureRef.current is null. The reference is not attached.");
+      console.error(
+        "pictureRef.current is null. The reference is not attached."
+      );
       return;
     }
 
@@ -87,7 +88,6 @@ export default function About() {
       pictureAnimation.kill(); // Nettoyage de l'animation au démontage du composant
     };
   }, []);
-
 
   // Aninmation texte central
   useEffect(() => {
@@ -181,8 +181,8 @@ export default function About() {
           <div ref={textRef} className="about-presentation-text">
             <div className="about-presentation-text-high">
               <p>
-                Cassandre Marion Architecte est une agence d’architecture indépendante, créee
-                en 2024 et basée à Rennes.
+                Cassandre Marion Architecte est une agence d’architecture
+                indépendante, créee en 2024 et basée à Rennes.
               </p>
               <p>
                 J’ai réalisé mes études à l’univerité de Rome III et à l’Ecole
@@ -226,30 +226,34 @@ export default function About() {
           <div className="about-CV">
             <div className="about-date">
               <span className="about-year">2024.</span>
-              <span className="description">
-                Création de mon agence 👏 (Rennes)
+              <span className="about-description">
+                <span className="place">
+                  Création de mon agence 👏 (Rennes)
+                </span>
               </span>
             </div>
             <div className="about-date">
               <span className="about-year">2021.</span>
-              <span className="description">
-                Chatillon Architecture (Paris)
+              <span className="about-description">
+                <span className="place">Chatillon Architecture (Paris)</span>
               </span>
             </div>
             <div className="about-date">
               <span className="about-year">2018.</span>
-              <span className="description">
-                Dubuisson Architecture (Paris)
+              <span className="about-description">
+                <span className="place">Dubuisson Architecture (Paris)</span>
               </span>
             </div>
             <div className="about-date">
               <span className="about-year">2017.</span>
-              <span className="description">Architecte HMONP</span>
+              <span className="about-description">
+                <span className="place">Architecte HMONP</span>
+              </span>
             </div>
             <div className="about-date">
               <span className="about-year">2016.</span>
-              <span className="description">
-                Diplôme d'Architecte - ENSAN
+              <span className="about-description">
+                <span className="place">Diplôme d'Architecte - ENSAN</span>
               </span>
             </div>
           </div>

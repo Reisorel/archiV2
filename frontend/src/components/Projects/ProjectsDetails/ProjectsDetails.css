@@ -220,7 +220,7 @@
   white-space: nowrap; /* 🔥 Empêche la coupure des mots */
 }
 
-/* ==== GRD PHOTO DESKTOP ==== */
+/* ==== GRiD PHOTO DESKTOP ==== */
 .projectDetails-2 {
   background-color: rgb(255, 255, 255);
   display: grid;
@@ -456,5 +456,172 @@
   }
   .ProjectDetail-2-col:hover img {
     transform: scale(1.1);
+  }
+}
+@media screen and (min-width: 761px) and (max-width: 1080px) {
+  .projectDetails-container {
+    z-index: 100;
+    margin-top: 2rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Cache tout ce qui dépasse */
+  }
+  .projectDetails-nav-arrows-div {
+    margin-bottom: 2rem;
+  }
+  .projectDetails-nav-arrows h2 {
+    cursor: pointer;
+    color: initial;
+    font-size: 1rem;
+    contain: layout; /* Empêche l'élément de dépasser son conteneur */
+  }
+  .projectDetails-nav-arrows:nth-of-type(1) {
+    text-align: left;
+  }
+  .projectDetails-nav-arrows:nth-of-type(2) {
+    text-align: right;
+  }
+  .projectDetails-nav-arrows i {
+    font-size: 1rem;
+  }
+  .projectDetails-nav-arrows i:nth-child(1) {
+    margin-left: 0;
+  }
+  .projectDetails-nav-arrows i:nth-child(2) {
+    margin-right: 0;
+  }
+  .projectDetails-1 {
+    display: flex; /* On remplace la grille par flex */
+    position: relative; /* Nécessaire pour que l'enfant en absolute soit basé dessus */
+    flex-direction: column; /* On empile tout en colonne */
+    gap: 2rem; /* Espacement entre les blocs */
+    width: 100%;
+  }
+  .projecDetails-1-title {
+    align-items: left; /* Centre les titres */
+    text-align: left;
+  }
+  .projecDetails-1-title h2 {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  .projectDetails-1-imageDiv {
+    width: 100%;
+    max-width: 100%; /* S'assure que l'image ne dépasse pas */
+    height: auto; /* Ajuste la hauteur automatiquement */
+    position: relative; /* Le parent devient un référentiel */
+    overflow: hidden; /* Garde l'overflow */
+  }
+  .projectDetails-1-imageDiv img {
+    display: block; /* Pour éliminer les éventuels espaces blancs */
+    width: 100%; /* L’image s’ajuste en largeur à la div */
+    height: auto; /* ...et aussi en hauteur (tout en conservant ratio grâce à object-fit) */
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: 50% 50%;
+       object-position: 50% 50%; /* Centre l’image (facultatif, défaut = center) */
+  }
+  .projectDetails-1-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    overflow: hidden;
+  }
+  .projectDetails-1-description p:first-child {
+    margin-bottom: 1rem;
+  }
+  .projectDetails-1-tech {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .projectDetails-tech-list {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    align-items: start;
+    text-align: left;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .projectDetails-tech-list-left,
+  .projectDetails-tech-list-right {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr); /* ✅ Même hauteur pour toutes les lignes */
+    gap: 2rem;
+    align-items: stretch; /* ✅ Forcer la même hauteur */
+    margin: 0;
+    padding: 0;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .projectDetails-tech-list li {
+    min-height: 5rem; /* Définit une hauteur minimale de 2rem */
+    padding: 0rem;
+    margin: 0rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: rgb(255, 255, 255);
+  }
+  .projectDetails-tech-list i {
+    color: #000000;
+  }
+  .projectDetails-1-text {
+    display: grid;
+    grid-template-rows: auto auto; /* Chaque ligne s'ajuste à la hauteur de son contenu */
+    text-align: left;
+    gap: 2rem;
+  }
+  .icon-text {
+    display: inline; /* Affiche l'icône et le texte en gras sur la même ligne */
+  }
+  .project-type {
+    display: block; /* Force le contenu à passer à la ligne suivante */
+  }
+  .tags-div {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    width: 100%; /* 👈 S'assure que la div prenne toute la largeur disponible */
+    padding: 0;
+    margin: 0; /* 👈 Centre la div elle-même si elle est dans un parent plus large */
+  }
+  .tags-div-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 👈 S'assure que le contenu interne est aussi centré */
+    align-items: center;
+  }
+  .keyword-index {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    padding: 0 1rem 1rem 0;
+    margin: 0;
+  }
+  .tags-div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 8px; /* 🔥 Ajuste l'espace entre chaque mot-clé */
+    align-items: center; /* 🔥 Centre verticalement */
+  }
+  .tags-div li {
+    text-decoration: none;
+    background-color: #f5f5f5; /* Juste pour visualiser */
+    border-radius: 5px; /* Ajoute un léger arrondi */
+    font-size: 1rem;
+    white-space: nowrap; /* 🔥 Empêche la coupure des mots */
   }
 }/*# sourceMappingURL=ProjectsDetails.css.map */

@@ -21,10 +21,8 @@
 }
 
 .missions-intro-text-div {
-  padding-top: 0;
-  padding-right: 1rem;
-  margin-top: 0;
-  margin-right: 1rem;
+  padding: 0 1rem 0 0;
+  margin: 0 1rem 0 0;
 }
 
 .missions-intro-text-div p:nth-child(1) {
@@ -93,6 +91,7 @@
   width: fit-content;
   font-size: 1.1rem;
   display: flex;
+  padding: 1rem 0;
 }
 
 .missions-task-list-div li:nth-child(1) {
@@ -109,21 +108,22 @@
 }
 
 .missions-secContent {
-  display: grid; /* Active le mode Grid */
-  grid-template-rows: auto; /* Permet aux lignes de s'adapter */
-  gap: 1.5rem; /* Espacement entre les éléments */
-  width: 100%; /* Largeur complète */
-  text-align: center; /* Centre le texte dans chaque cellule */
+  display: grid;
+  grid-template-rows: auto;
+  gap: 1.5rem;
+  width: 100%;
+  text-align: center;
   align-items: center;
   height: auto;
+  margin-top: 1rem;
 }
 
 .missions-row {
-  padding: 1rem; /* Espacement autour du texte */
-  border-radius: 2px; /* Coins arrondis */
-  font-size: 1rem; /* Taille de police */
-  font-weight: 500; /* Épaisseur de la police */
-  color: #333; /* Couleur du texte */
+  padding: 1rem;
+  border-radius: 2px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
   text-align: left;
   border: 0.5px solid #ddd;
 }
@@ -339,18 +339,18 @@
     margin-bottom: 0;
   }
   .missions-secContent {
-    gap: 1rem; /* Espacement entre les éléments */
+    gap: 1rem;
   }
   .missions-row {
-    padding: 1rem; /* Espacement autour du texte */
-    border-radius: 2px; /* Coins arrondis */
-    font-weight: 500; /* Épaisseur de la police */
-    color: #333; /* Couleur du texte */
+    padding: 1rem;
+    border-radius: 2px;
+    font-weight: 500;
+    color: #333;
     text-align: left;
     border: 0.5px solid #ddd;
   }
   .missions-chevron-icon {
-    width: 1.25rem; /* Ajuste la taille selon tes besoins */
+    width: 1.25rem;
     margin-right: 0rem;
   }
   .missions-accordion-content-image {
@@ -366,8 +366,8 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     display: flex;
-    justify-content: space-between; /* Aligne texte + icône à gauche, chevron à droite */
-    align-items: center; /* Centre verticalement */
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
   }
   .sub-3 i {
@@ -377,5 +377,41 @@
   }
   .sub-3 .missions-chevron-icon {
     display: block;
+  }
+}
+@media screen and (min-width: 761px) and (max-width: 1080px) {
+  .missions-accordion-content-image {
+    display: none;
+  }
+  .missions-task-list-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    text-align: left;
+  }
+  .missions-task-list-left {
+    border-right: 2px solid #333;
+  }
+  .missions-task-list-right {
+    margin-left: 2rem;
+  }
+  .missions-task-list-div li {
+    margin: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 1.1rem;
+    display: flex;
+  }
+  .missions-task-list-div li:nth-child(1) {
+    margin-top: 0;
+  }
+  .missions-task-list-div li:nth-child(5) {
+    margin-bottom: 0;
+  }
+  .missions-task-list-div i {
+    color: #000000;
+    margin-right: 1rem;
   }
 }/*# sourceMappingURL=Missions.css.map */

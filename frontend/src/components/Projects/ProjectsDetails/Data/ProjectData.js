@@ -248,7 +248,7 @@ export const projectsData = [
     grade: "Agrandissement",
     description1: `Au cœur d’un paysage rural préservé, cet ensemble de bâtiment en friche a fait l’objet d’une rénovation complète visant à respecter son caractère traditionnel tout en l’adaptant aux usages contemporains. Deux maison individuelles remplacent les anciennes granges et étables. Pour ce faire, les volumes intérieurs on été entièrement repensé pour créer de vastes espaces lumineux. Les ouvertures ont été redessinées pour maximiser l’apport de lumière et créer un dialogue constant avec l’extérieur. `,
     description2: `Le choix des matériaux tient une place centrale dans cette conception architecturale. Il s’agit de mettre en œuvre des matériaux de construction biosourcés tels que le bois peuplier pour les charpentes, planchers et menuiseries intérieures, la chaux, le chanvre et la terre pour les enduits intérieurs et les planchers. Pour répondre aux matériaux traditionnels présents dans la région, les toitures sont en tuile canalaverou couleur terre de Charente pour les toitures.`,
-    type: "rénovation et aménagement paysagr",
+    type: "rénovation et aménagement paysager",
     loc: "Saint-Romans-lès-Melle",
     sup: "340 m²",
     mo: "privée",
