@@ -111,6 +111,7 @@ export const projectsData = [
       "intérieur",
       "menuiseries",
     ],
+    meta: "Rénovation complète d’un appartement rive gauche à Paris : lumière naturelle, confort thermique, bois d’Oukoumé, finitions soignées, élégance fonctionnelle",
     layout: {
       images: [
         {
@@ -203,7 +204,16 @@ export const projectsData = [
     mo: "privée",
     inter: "conception",
     avance: "En cours",
-    tags: ["bois", "extérieur", "Normandie", "maison", "extension", "terrasse", "Caen"],
+    tags: [
+      "bois",
+      "extérieur",
+      "Normandie",
+      "maison",
+      "extension",
+      "terrasse",
+      "Caen",
+    ],
+    meta: "Réhabilitation et extension d’une maison en Normandie, intégrant volumes traditionnels et contemporain, grandes ouvertures, terrasses, et lien paysager optimal.",
     layout: {
       images: [
         {
@@ -255,6 +265,7 @@ export const projectsData = [
     inter: "conception et permis de construire",
     avance: "Permis de construire validé",
     tags: ["pierre", "rénovation", "tuile", "granges", "chaux", "biosourcé"],
+    meta: "Rénovation d’un ensemble rural : deux maisons lumineuses, matériaux biosourcés (bois, chaux, chanvre), volumes réinventés et dialogue avec l’extérieur.",
     layout: {
       images: [
         {
@@ -302,6 +313,7 @@ export const projectsData = [
     inter: "esquisse",
     avance: "livré",
     tags: ["extension", "surrélévation", "centre-ville", "maison"],
+    meta: "Extension et surélévation d’une maison standardisée pour renforcer son identité. Nouvelles orientations, volumes forts et mise en valeur de la configuration urbaine.",
     layout: {
       images: [
         {
@@ -346,7 +358,15 @@ export const projectsData = [
     mo: "privée",
     inter: "mission complète",
     avance: "études en cours",
-    tags: ["rénovation", "extension", "ferme", "combles", "aménagement", "Caen"],
+    tags: [
+      "rénovation",
+      "extension",
+      "ferme",
+      "combles",
+      "aménagement",
+      "Caen",
+    ],
+    meta: "Aménagement des combles, reconfiguration du R+1, et transformation du RDC d’un ancien corps de ferme près de Caen. Optimisation des espaces et accès au jardin.",
     layout: {
       images: [
         {
@@ -427,7 +447,15 @@ export const projectsData = [
     mo: "privée",
     inter: "coneption et délcaration préalable",
     avance: "chantier en cours",
-    tags: ["extension", "rénovation", "bois", "menuiseries", "intérieur", "Nantes"],
+    tags: [
+      "extension",
+      "rénovation",
+      "bois",
+      "menuiseries",
+      "intérieur",
+      "Nantes",
+    ],
+    meta: "Rénovation d’un appartement à Nantes : nouveaux espaces fluides, cuisine ouverte, chambres repensées et accès direct aux combles pour un T3 lumineux.",
     layout: {
       images: [
         {
@@ -467,6 +495,7 @@ export const projectsData = [
     inter: "Mission complète avec Lieu architecture",
     avance: "Chantier en cours",
     tags: ["commerce", "rénovation", "Rennes", "verre", "intérieur"],
+    meta: "Transformation d’un local à Rennes en pâtisserie lumineuse et fonctionnelle : agencement précis, devanture élégante, lieu chaleureux et ouvert à la convivialité.",
     layout: {
       images: [
         {
@@ -485,5 +514,3 @@ export const projectsData = [
     },
   },
 ];
-
-// export default projectsData;

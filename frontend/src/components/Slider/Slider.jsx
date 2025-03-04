@@ -192,6 +192,7 @@ const Slider = () => {
         onClick={handlePrev}
         data-hover-detect="true"
         className="slider-navigation-button prev-button"
+        aria-label="Previous image"
       >
         <i className="fa-solid fa-chevron-left"></i>
       </button>
@@ -199,6 +200,7 @@ const Slider = () => {
         onClick={handleNext}
         data-hover-detect="true"
         className="slider-navigation-button next-button"
+        aria-label="Next image"
       >
         <i className="fa-solid fa-chevron-right"></i>
       </button>

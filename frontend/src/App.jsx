@@ -8,22 +8,25 @@ import CustomCursor from "./components/Cursor/Cursor";
 import Router from "./routes/Router";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { HelmetProvider } from "react-helmet-async";
 
 function App() {
   return (
     <>
-      <div className="App">
-        <BrowserRouter>
-          <CustomCursor />
-          <Header />
-          <Background>
-            <Router />
-          </Background>
-          <Footer2 />
-          <Analytics /> {/* Ajout de Vercel Analytics ici */}
-          <SpeedInsights /> {/* Ajout de Vercel Analytics ici */}
-        </BrowserRouter>
-      </div>
+      <HelmetProvider>
+        <div className="App">
+          <BrowserRouter>
+            <CustomCursor />
+            <Header />
+            <Background>
+              <Router />
+            </Background>
+            <Footer2 />
+            <Analytics /> {/* Ajout de Vercel Analytics ici */}
+            <SpeedInsights /> {/* Ajout de Vercel Analytics ici */}
+          </BrowserRouter>
+        </div>
+      </HelmetProvider>
     </>
   );
 }

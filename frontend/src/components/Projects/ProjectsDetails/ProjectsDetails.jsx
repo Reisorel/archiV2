@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Modal from "./Modal/Modal";
 import { projectsData } from "./Data/ProjectData";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 import "./ProjectsDetails.css";
 
@@ -99,7 +100,6 @@ export default function ProjectsDetails() {
   }
 
   const projectCount = projectsData.length;
-  console.log(projectCount);
   const prevIndex = (currentIndex - 1 + projectCount) % projectCount;
   const nextIndex = (currentIndex + 1) % projectCount;
 
@@ -143,6 +143,13 @@ export default function ProjectsDetails() {
 
   return (
     <>
+      <Helmet>
+        <title>{`Découvrez les détails du projet ${projet.title}, situé à ${projet.loc}, réalisé par Cassandre Marion.`}</title>
+        <meta
+          name="description"
+          content={projet.meta}
+        />
+      </Helmet>
       <div className="projectDetails-framer">
         <div id="projectDetails" className="projectDetails-container">
           <div

@@ -18,11 +18,6 @@ export default function Footer2() {
 
   const location = useLocation(); // Récupère les changements d'URL
 
-  useEffect(() => {
-  console.log("Animation du footer activée sur", location.pathname);
-}, [location.pathname]);
-
-
   // Fonction retour haut de page
   const handleScrollToTop = () => {
     gsap.to(window, {
@@ -104,7 +99,7 @@ export default function Footer2() {
               <p>Habilitée à la Maîtrise d'Oeuvre</p>
               <p>en son Nom Propre</p>
               <div className="footer-ordre">
-                <img src={ordre} alt="ordre" />
+                <img src={ordre} alt="Ordre des architectes" width="200" height="25" />
               </div>
             </div>
             <div className="footer-center-paragraph">
@@ -135,6 +130,7 @@ export default function Footer2() {
                     href="https://www.linkedin.com/in/cassandre-marion-0ab776128/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Visit Cassandre Marion's LinkedIn profile"
                   >
                     <i className="bx bxl-linkedin"></i>
                   </a>
@@ -148,6 +144,7 @@ export default function Footer2() {
                     href="https://www.instagram.com/cassandremrn_architecte?igsh=MWw5Z2pzOGI1NnYwaQ=="
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Visit Cassandre Marion's Instagram profile"
                   >
                     <i className="bx bxl-instagram"></i>
                   </a>

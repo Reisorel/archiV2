@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { projectsData } from "./ProjectsDetails/Data/ProjectData";
 import { useNavigate } from "react-router-dom";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Helmet } from "react-helmet-async";
 import "./Projects.css";
 
 export default function Projects() {
@@ -64,34 +65,43 @@ export default function Projects() {
   }, []);
 
   return (
-    <div className="projects-framer">
-      <div className="projects-container">
-        <div id="projects" className="projects-secTitle">
-          <h3 className="title" ref={titleRef}>
-            PROJETS
-          </h3>
-        </div>
+    <>
+      <Helmet>
+        <title>Galerie projets - Cassandre Marion architecture</title>
+        <meta
+          name="description"
+          content="Découvrez les projets d’architecture de Cassandre Marion : maisons, appartements, constructions, extensions, permis de construire  et réhabilitations."
+        />
+      </Helmet>
+      <div className="projects-framer">
+        <div className="projects-container">
+          <div id="projects" className="projects-secTitle">
+            <h3 className="title" ref={titleRef}>
+              PROJETS
+            </h3>
+          </div>
 
-        <div ref={gridRef} className="projects-secContent-grid">
-          {projectsData.map((projet) => (
-            <div
-              key={projet.id}
-              className="projects-row"
-              onClick={() => {
-                navigate(`/projects/${projet.slug}`);
-                window.scrollTo(0, 0);
-              }}
-            >
-              <div className="project-name">
-                <h2 className="sub-2">{projet.title}</h2>
+          <div ref={gridRef} className="projects-secContent-grid">
+            {projectsData.map((projet) => (
+              <div
+                key={projet.id}
+                className="projects-row"
+                onClick={() => {
+                  navigate(`/projects/${projet.slug}`);
+                  window.scrollTo(0, 0);
+                }}
+              >
+                <div className="project-name">
+                  <h2 className="sub-2">{projet.title}</h2>
+                </div>
+                <div className="projects-imageDiv">
+                  <img src={projet.imgSrc} alt={projet.title} />
+                </div>
               </div>
-              <div className="projects-imageDiv">
-                <img src={projet.imgSrc} alt={projet.title} />
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
