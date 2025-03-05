@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger"; // Import du plugin
-import "./About.css";
 
+import "./About.css";
 const portrait = "/images/about/Cassandre.jpg";
 
 export default function About() {
@@ -17,20 +17,15 @@ export default function About() {
     "commerce 🏪",
   ];
 
-  const titleRef = useRef(null); // Animation titre
-  const pictureRef = useRef(null); // Animation image
-  const textRef = useRef(null); // Animation texte
+  const titleRef = useRef(null); // Ref titre
+  const pictureRef = useRef(null); // Ref image
+  const textRef = useRef(null); // Ref texte
 
   const [index, setIndex] = useState(0); // Index du mot courant
-  const wordRef = useRef(null); // Index du mot courant
-  const cvRef = useRef(null); // Animation date
+  const wordRef = useRef(null); // Ref du mot courant
+  const cvRef = useRef(null); // Ref date
 
   useEffect(() => {
-    if (!titleRef.current) {
-      console.error("titleRef.current is null. The reference is not attached.");
-      return;
-    }
-
     // Animation pour le titre
     const titleAnimation = gsap.fromTo(
       titleRef.current,
@@ -57,13 +52,6 @@ export default function About() {
   }, []);
 
   useEffect(() => {
-    if (!pictureRef.current) {
-      console.error(
-        "pictureRef.current is null. The reference is not attached."
-      );
-      return;
-    }
-
     // Animation pour l'image
     const pictureAnimation = gsap.fromTo(
       pictureRef.current,
@@ -186,7 +174,7 @@ export default function About() {
               </p>
               <p>
                 J’ai réalisé mes études à l’univerité de Rome III et à l’Ecole
-                Nationale d’Architecture de Normandie. J’ai appris à analyser et
+                Nationale d’Architecture de Normandie. J’y ai appris à analyser et
                 sublimer des lieux existants au travers de la question de
                 l’héritage patrimoniale, grâce à des masters spécialisés dans ce
                 domaine.

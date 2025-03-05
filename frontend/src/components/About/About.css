@@ -20,6 +20,12 @@
   flex-direction: column;
 }
 
+.about-grid-column:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .about-picture {
   display: flex;
   justify-content: center;
@@ -59,12 +65,12 @@
 }
 
 .about-CV {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 1rem 0;
   overflow: visible;
   gap: 2rem;
-  position: relative;
 }
 
 .about-CV::before {
@@ -88,11 +94,27 @@
   color: #333;
 }
 
+.about-date:nth-of-type(1) {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Monte légèrement */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .about-year {
   font-weight: bold; /* Optionnel : mise en valeur de l'année */
   font-size: 1.2rem;
 }
 
+/* >>>>>>>>>>> MEDIA QUERIES <<<<<<<<<< */
 @media screen and (max-width: 760px) {
   .about-infos-container {
     display: grid;
@@ -167,7 +189,7 @@
     display: grid;
     grid-template-columns: 50% 50%; /* Colonne gauche (image + CV) et colonne droite (texte) */
     grid-template-rows: auto auto; /* Deux lignes : première pour l'image + texte, deuxième pour le CV */
-    grid-template-areas: "image texte" "cv texte"; /* On place l'image en haut, le CV juste en dessous et le texte à droite */
+    grid-template-areas: "image texte" "cv texte"; /* Placement spécifique en grille de 4 */
     gap: 2rem;
     align-items: start;
     height: 100%; /* Assure que la hauteur est bien distribuée */
@@ -188,24 +210,22 @@
     -o-object-fit: cover;
        object-fit: cover;
   }
-  /* Le CV juste en dessous de l’image */
   .about-grid-column:nth-child(3) {
-    grid-area: cv; /* Le CV sous l’image */
+    grid-area: cv;
     width: 100%;
   }
   .about-CV {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
     text-align: center;
+    gap: 1rem;
   }
-  /* Colonne droite : Texte occupant toute la hauteur */
   .about-grid-column:nth-child(2) {
-    grid-area: texte; /* Texte à droite */
+    grid-area: texte;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Aligne le texte en haut */
+    justify-content: flex-start;
     align-self: stretch;
     height: 100%;
     width: 100%;
@@ -257,8 +277,8 @@
     padding-top: 2px; /* Ajustement pour aligner "Création de mon agence" avec "2024." */
   }
   .about-CV::before {
-    content: "";
     position: absolute;
+    content: "";
     left: 0rem;
     top: 1rem;
     bottom: 1rem;
