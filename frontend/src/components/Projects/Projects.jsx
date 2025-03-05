@@ -1,23 +1,18 @@
 import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { projectsData } from "./ProjectsDetails/Data/ProjectData";
 import { useNavigate } from "react-router-dom";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
 import { Helmet } from "react-helmet-async";
+
 import "./Projects.css";
+import { projectsData } from "./ProjectsDetails/Data/ProjectData";
 
 export default function Projects() {
   const navigate = useNavigate(); // Hook pour naviguer entre les pages
-  const titleRef = useRef(null); // Animation titre
-  const gridRef = useRef(null); // Animation menus déroulants
+  const titleRef = useRef(null); // Ref titre
+  const gridRef = useRef(null); // Ref items grille
 
   useEffect(() => {
-    if (!titleRef.current) {
-      console.error("titleRef.current is null. The reference is not attached.");
-      return;
-    }
-
-    // Animation pour le titre
+    // Animation titre
     gsap.fromTo(
       titleRef.current,
       {
@@ -55,7 +50,7 @@ export default function Projects() {
             ease: "power3.out",
             scrollTrigger: {
               trigger: item,
-              start: "top 90%", // Début de l'animation
+              start: "top 90%",
               toggleActions: "play none none none",
             },
           }

@@ -1,9 +1,10 @@
 import React, { useEffect, useCallback, useRef } from "react";
-import { gsap } from "gsap"; // AJOUT
-import { Draggable } from "gsap/Draggable"; // AJOUT
+import { gsap } from "gsap";
+import { Draggable } from "gsap/Draggable";
+
 import "./Modal.css";
 
-gsap.registerPlugin(Draggable); // AJOUT
+gsap.registerPlugin(Draggable);
 
 export default function Modal({
   isOpen,
@@ -13,9 +14,8 @@ export default function Modal({
   onNavigate,
 }) {
   const totalImages = images.length;
-  const imageRef = useRef(null); // AJOUT : Référence pour l’image
-  const modalRef = useRef(null); // Référence pour la modale entière
-
+  const imageRef = useRef(null); // Ref image
+  const modalRef = useRef(null); // Ref modale entière
 
   // useCallback pour mémoriser `handleNext` et `handlePrev`
   const handleNext = useCallback(() => {
@@ -52,7 +52,7 @@ export default function Modal({
     };
   }, [isOpen, handleNext, handlePrev, onClose]);
 
-  // AJOUT : Gestion du swipe tactile avec Draggable
+  // Gestion du swipe tactile avec Draggable
   useEffect(() => {
     if (!isOpen || !imageRef.current) return;
 
@@ -80,7 +80,11 @@ export default function Modal({
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" ref={modalRef} onClick={(e) => e.stopPropagation()}>
+      <div
+        className="modal-content"
+        ref={modalRef}
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
           className="close-btn"
           onClick={onClose}
@@ -96,7 +100,7 @@ export default function Modal({
         {currentImage ? (
           <img
             key={currentImageIndex}
-            ref={imageRef} // AJOUT : Référence pour GSAP
+            ref={imageRef}
             src={currentImage.src}
             alt={currentImage.alt}
             className="show"

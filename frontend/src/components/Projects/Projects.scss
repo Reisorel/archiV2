@@ -6,9 +6,7 @@
 
 .projects-container {
   z-index: 100;
-  margin-left: 15rem;
-  margin-right: 15rem;
-  margin-bottom: 5rem;
+  margin: 0 15rem 5rem;
   background-color: #ffffff;
 }
 
@@ -18,20 +16,19 @@
   gap: 2rem; /* Espacement entre les éléments */
   text-align: center; /* Centre le texte dans chaque cellule */
   align-items: center;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin: 0 2rem;
 }
 
 .projects-row {
+  position: relative;
+  height: auto;
+  width: 100%;
+  justify-content: center;
   border-radius: 2px;
   font-size: 1rem;
   font-weight: 500;
   color: #333;
-  height: auto; /* Même hauteur que grid-auto-rows */
-  width: 100%;
   overflow: hidden;
-  position: relative;
-  justify-content: center; /* Assure un positionnement correct des enfants */
   cursor: pointer;
 }
 
@@ -58,7 +55,7 @@
 }
 
 .projects-imageDiv {
-  overflow: hidden; /* Cache le dépassement de l'image */
+  overflow: hidden;
   cursor: pointer;
 }
 
@@ -66,29 +63,24 @@
   height: 90%;
   width: 90%;
   object-fit: cover;
-  transition: transform 3s ease; /* Effet de zoom */
+  transition: transform 3s ease;
   cursor: pointer;
-
 }
 
 .projects-imageDiv:hover img {
-  transform: scale(1.1); /* Zoom sur l'image */
+  transform: scale(1.1);
 }
+/* >>>>>>>>>>> MEDIA QUERIES <<<<<<<<<< */
 
-
+// Mobile //
 @media screen and (max-width: 760px) {
   .projects-container {
     z-index: 100;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 5rem;
+    margin: 0 0 5rem;
     background-color: #ffffff;
   }
 
   .projects-secTitle {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 2rem;
   }
 }

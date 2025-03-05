@@ -1,18 +1,18 @@
 import React, { useState, useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { useParams } from "react-router-dom";
-import Modal from "./Modal/Modal";
-import { projectsData } from "./Data/ProjectData";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { useParams } from "react-router-dom";
+import { gsap } from "gsap";
 
 import "./ProjectsDetails.css";
+import Modal from "./Modal/Modal";
+import { projectsData } from "./Data/ProjectData";
+import { Helmet } from "react-helmet-async";
 
 export default function ProjectsDetails() {
-  const titleRef = useRef(null); // Animation titre
-  const techRef = useRef(null); // Animation domaines
-  const leftArrowRef = useRef(null);
-  const rightArrowRef = useRef(null);
+  const titleRef = useRef(null); // Ref titre
+  const techRef = useRef(null); // Ref tech
+  const leftArrowRef = useRef(null); // Ref left arrow
+  const rightArrowRef = useRef(null); // Ref right arrow
 
   // Récupération données projet courant
   const { slug } = useParams();
@@ -21,15 +21,15 @@ export default function ProjectsDetails() {
 
   // Animation translation chevron
   const handleArrowClick = (arrowRef, direction) => {
-    if (!arrowRef.current || gsap.isTweening(arrowRef.current)) return; // ⛔ Empêche les clics pendant l'animation
+    if (!arrowRef.current || gsap.isTweening(arrowRef.current)) return; // Empêche les clics pendant l'animation
 
-    gsap.killTweensOf(arrowRef.current); // 🔥 Stoppe toute animation en cours
-    gsap.set(arrowRef.current, { x: 0 }); // 🔄 Remet à zéro AVANT l'animation
-    gsap.to(arrowRef.current, { clearProps: "all" }); // 🔥 Supprime toutes les propriétés CSS GSAP
+    gsap.killTweensOf(arrowRef.current); // Stoppe toute animation en cours
+    gsap.set(arrowRef.current, { x: 0 }); // Remet à zéro AVANT l'animation
+    gsap.to(arrowRef.current, { clearProps: "all" }); // Supprime toutes les propriétés CSS GSAP
 
     gsap.fromTo(
       arrowRef.current,
-      { x: 0 }, // ✅ Démarre toujours à 0
+      { x: 0 },
       {
         x: direction,
         duration: 0.1,
@@ -37,18 +37,13 @@ export default function ProjectsDetails() {
         yoyo: true,
         repeat: 1,
         onComplete: () => {
-          gsap.set(arrowRef.current, { x: 0 }); // 🔄 Assure un retour parfait à zéro après l'animation
+          gsap.set(arrowRef.current, { x: 0 });
         },
       }
     );
   };
 
   useEffect(() => {
-    if (!titleRef.current) {
-      console.error("titleRef.current is null. The reference is not attached.");
-      return;
-    }
-
     // Réinitialise GSAP avant de rejouer l'animation
     gsap.killTweensOf(titleRef.current);
 
@@ -67,12 +62,13 @@ export default function ProjectsDetails() {
         },
       }
     );
-  }, [slug]); // 🔥 Rejoue l'animation chaque fois que `slug` change
+  }, [slug]); // Rejoue l'animation chaque fois que `slug` change
 
+  // Animation items tech
   useEffect(() => {
     const techItems = gsap.utils.toArray(".projectDetails-tech-list li");
 
-    gsap.killTweensOf(techItems); // Réinitialise avant de rejouer
+    gsap.killTweensOf(techItems);
 
     gsap.fromTo(
       techItems,
@@ -145,10 +141,7 @@ export default function ProjectsDetails() {
     <>
       <Helmet>
         <title>{`Découvrez les détails du projet ${projet.title}, situé à ${projet.loc}, réalisé par Cassandre Marion.`}</title>
-        <meta
-          name="description"
-          content={projet.meta}
-        />
+        <meta name="description" content={projet.meta} />
       </Helmet>
       <div className="projectDetails-framer">
         <div id="projectDetails" className="projectDetails-container">
