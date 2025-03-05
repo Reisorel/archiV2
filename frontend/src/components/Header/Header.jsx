@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./Header.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { IoMdMenu, IoMdClose } from "react-icons/io";
+
+import "./Header.css";
 import { projectsData } from "../Projects/ProjectsDetails/Data/ProjectData";
-import ScrollLock from "react-scrolllock"; // package react-scrolllock
-import { IoMdMenu } from "react-icons/io";
-import { IoMdClose } from "react-icons/io";
 import leftChevronBlack from "../../assets/icons/left-arrow-black.svg";
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -21,10 +20,9 @@ export default function Header() {
   const [lockScroll, setLockScroll] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileOn, setIsMobileOn] = useState(false);
-  const [isProjectsOpen, setIsProjectsOpen] = useState(false); // state pour l'affichage projects dans menu mobile
 
-  const logoRef = useRef(null); // Référence logo
-  const dropdownRef = useRef(null); // Référence menu déroulant projets
+  const logoRef = useRef(null);
+  const dropdownRef = useRef(null);
 
   // Gère l'arrivée du logo
   useEffect(() => {
@@ -55,7 +53,7 @@ export default function Header() {
     }
   }, [isDropdownOpen]);
 
-  // Basculer l'état du menu mobile
+  // Bascule l'état du menu mobile (fermé/ouvert)
   const toggleMobileMenu = () => {
     setIsMobileOn((prev) => !prev);
     setIsDropdownOpen(false); // Ferme toujours le sous-menu projets
@@ -64,7 +62,7 @@ export default function Header() {
   // Ferme le menu mobile après un clic sur un lien
   const closeMobileMenu = () => setIsMobileOn(false);
 
-  // Gérer l'affichage du header au scroll
+  // Gére l'affichage du header au scroll
   useEffect(() => {
     const handleScroll = () => {
       if (lockScroll) return; // Si le scroll est verrouillé, on ne fait rien
@@ -74,22 +72,23 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll); // Supprime l'écouteur scroll lors du démontage pour éviter fuite de mémoire.
   }, [lastScrollY, lockScroll]); // Dépend aussi de lockScroll
 
-  // Écouter les changements de l'état de la modale
+  // Écoute les changements de l'état de la modale
   useEffect(() => {
     const handleModalStateChange = (event) => {
       setShowHeader(!event.detail); // Si la modale est ouverte, on cache le header
-      setLockScroll(event.detail); // Bloquer le scroll si la modale est ouverte, et le débloquer si fermée
+      setLockScroll(event.detail); // Bloque le scroll si la modale est ouverte, et le débloque si fermée
     };
 
-    document.addEventListener("modalStateChange", handleModalStateChange);
+    document.addEventListener("modalStateChange", handleModalStateChange); // Détecte l'événmeent modalStateChange sur l'ensemble du doc
     return () => {
-      document.removeEventListener("modalStateChange", handleModalStateChange);
+      document.removeEventListener("modalStateChange", handleModalStateChange); // Supprime écouteur
     };
   }, []);
 
+  // Navigation depuis menu
   const handleNavigation = (targetId) => {
     closeMobileMenu(); // Ferme le menu mobile après un clic
 
@@ -105,7 +104,7 @@ export default function Header() {
       return;
     }
 
-    // Si on clique sur "CONTACT", on reste sur la page et scrolle tout en bas sans changer l'URL
+    // Navigation "contact" : scroll down toute la page actuelle
     if (targetId === "footer") {
       gsap.to(window, {
         duration: 0.8,
@@ -115,7 +114,7 @@ export default function Header() {
       return;
     }
 
-    // Gérer le scroll vers une section même si on est sur une autre page
+    // Gérer le scroll si changement de page autre que page principale
     if (location.pathname !== "/") {
       // On est sur une autre page → Naviguer vers "/" et scroller après chargement
       navigate("/", { replace: true, state: { scrollTo: targetId } });
@@ -141,8 +140,6 @@ export default function Header() {
 
   return (
     <>
-      {/* Activation du scroll lock si le menu mobile est ouvert */}
-      {/* <ScrollLock isActive={isMobileOn} /> */}
 
       <header className={`header-container ${showHeader ? "show" : "hide"}`}>
         <div
@@ -262,6 +259,7 @@ export default function Header() {
                 href="https://www.linkedin.com/in/cassandre-marion-0ab776128/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visitez le profil Linkedin de Cassandre Marion"
               >
                 <i className="bx bxl-linkedin"></i>
               </a>
@@ -271,6 +269,7 @@ export default function Header() {
                 href="https://www.instagram.com/cassandremrn_architecte?igsh=MWw5Z2pzOGI1NnYwaQ=="
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Découvrez le profil instagram de Cassandre Marion"
               >
                 <i className="bx bxl-instagram"></i>
               </a>

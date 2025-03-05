@@ -130,8 +130,8 @@ export default function Footer2() {
                     href="https://www.linkedin.com/in/cassandre-marion-0ab776128/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Visit Cassandre Marion's LinkedIn profile"
-                  >
+                    aria-label="Visitez le profil Linkedin de Cassandre Marion"
+                    >
                     <i className="bx bxl-linkedin"></i>
                   </a>
                 </div>
@@ -144,8 +144,8 @@ export default function Footer2() {
                     href="https://www.instagram.com/cassandremrn_architecte?igsh=MWw5Z2pzOGI1NnYwaQ=="
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Visit Cassandre Marion's Instagram profile"
-                  >
+                    aria-label="Découvrez le profil instagram de Cassandre Marion"
+                    >
                     <i className="bx bxl-instagram"></i>
                   </a>
                 </div>

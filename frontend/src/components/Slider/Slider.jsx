@@ -1,23 +1,20 @@
 import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
-import { Draggable } from "gsap/Draggable"; // AJOUT
+
 import "./Slider.scss";
 import { sliderData } from "./Data/SliderData";
 import downChevron from "../../assets/icons/down-arrow.svg";
 
-gsap.registerPlugin(Draggable); // AJOUT
-
 const Slider = () => {
-  const slidesRef = useRef([]); // Références pour les slides
-  const currentIndexRef = useRef(0); // Référence mutable pour l'index courant
-  const autoplayRef = useRef(null); // Référence pour l'autoplay
-  const isAnimatingRef = useRef(false); // Verrou pour les animations
-  const slideDuration = 1; // Durée de transition (en secondes)
-  const autoplayInterval = 6000; // Intervalle d'autoplay (en ms)
-  const totalSlides = sliderData.length; // Nombre total de slides
-  const imageInfoRefs = useRef([]); // Références pour les éléments texte des slides
-  const [activeDotIndex, setActiveDotIndex] = useState(0); // État pour l'index actif des dots
-  const sliderContainerRef = useRef(null); // Etat pour le draggable
+  const slidesRef = useRef([]); // Réf pour les slides
+  const currentIndexRef = useRef(0); // Réf mutable pour l'index courant
+  const autoplayRef = useRef(null); // Réf pour l'autoplay
+  const isAnimatingRef = useRef(false); // Verrou pour animations
+  const slideDuration = 1; // Durée de transition (en s)
+  const autoplayInterval = 6000; // Intervalle autoplay (en ms)
+  const totalSlides = sliderData.length; // Nombre total slides
+  const imageInfoRefs = useRef([]); // Réf éléments texte slides
+  const [activeDotIndex, setActiveDotIndex] = useState(0); // État index actif des dots
 
   // Initialisation des positions et démarrage de l'autoplay
   useEffect(() => {
@@ -104,7 +101,7 @@ const Slider = () => {
     startAutoplay(); // Redémarre l'autoplay
   };
 
-  // Fonction de navigaiton rapide clic DOTS
+  // Fonction de navigaiton rapide dots
   const fastNavigateToSlide = (targetIndex) => {
     stopAutoplay(); // Arrête l'autplay
 
@@ -119,7 +116,8 @@ const Slider = () => {
     const intermediateDuration = 0; // Durée de chaque transition intermédiaire
 
     let currentStep = 0; // Initialise un compteur pour suivre les étapes intermédiaires.
-
+    
+    // Gère navigation circulaire des slides
     const navigateStep = () => {
       if (currentStep < totalSteps) {
         const intermediateIndex =
@@ -205,7 +203,7 @@ const Slider = () => {
         <i className="fa-solid fa-chevron-right"></i>
       </button>
 
-      {/* Dots pour navigation */}
+      {/* Dots de navigation */}
       <div className="slider-dots-container">
         {sliderData.map((slide, index) => (
           <div
@@ -219,7 +217,7 @@ const Slider = () => {
         ))}
       </div>
 
-      {/* Bouton pour descendre */}
+      {/* Bouton descente */}
       <div className="slider-down-button-container">
         <button
           data-hover-detect="true"

@@ -1,9 +1,9 @@
 @charset "UTF-8";
 .slider-frame {
+  position: relative;
   width: 100vw;
   max-width: 100%;
   height: 650px;
-  position: relative;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -13,19 +13,18 @@
 }
 
 .slider-slide {
-  width: 100%;
-  height: 100%;
   position: absolute;
-  overflow: hidden;
   top: 0;
   left: 0;
-  color: white;
-  font-size: 50px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }
 
 .slider-img {
@@ -39,42 +38,42 @@
 }
 
 .slider-image-info {
-  line-height: 1.2;
   position: absolute;
-  display: block;
-  flex-direction: column;
   left: 2rem;
   bottom: 1rem;
+  z-index: 2;
+  display: block;
+  flex-direction: column;
+  line-height: 1.2;
   color: white;
   font-weight: 300;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  z-index: 2;
 }
 
 .slider-image-name {
-  font-size: 1rem;
-  font-weight: bold;
   margin-bottom: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .image-image-description {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-style: italic;
 }
 
 .slider-navigation-button {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
   background-color: rgba(51, 51, 51, 0.3);
   border: none;
   border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .slider-navigation-button i {
@@ -85,7 +84,7 @@
 }
 
 .slider-navigation-button:hover i {
-  transform: rotateX(360deg); /* 2 tours sur l'axe X */
+  transform: rotateX(360deg); /* animation 2 tours sur l'axe X */
   cursor: pointer;
 }
 
@@ -104,12 +103,12 @@
   right: 2rem;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .slider-dot {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
   border: 1px solid white;
   border-radius: 50%;
   background-color: transparent;
@@ -136,16 +135,16 @@
 
 .slider-down-button-container {
   position: absolute;
-  display: block;
-  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%); /* Centre parfaitement le conteneur */
   z-index: 99;
+  display: block;
+  bottom: 2rem;
 }
 
 .slider-down-button {
-  width: 50px;
-  height: 50px;
+  width: 3rem;
+  height: 3rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -175,35 +174,27 @@
   }
 }
 .slider-down-button img {
-  width: 45px; /* Taille du chevron */
+  width: 3rem;
   height: auto;
   cursor: pointer;
 }
 
+/* >>>>>>>>>>> MEDIA QUERIES <<<<<<<<<< */
 @media screen and (max-width: 760px) {
   .slider-frame {
     height: 500px;
   }
   .slider-image-info {
-    line-height: 1.2;
-    position: absolute;
-    display: block;
-    flex-direction: column;
     left: 1rem;
     bottom: 0;
-    color: white;
     font-weight: 300;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    z-index: 2;
   }
   .slider-image-name {
     font-size: 0.75rem;
     font-weight: 500;
-    margin-bottom: 0;
   }
   .slider-image-description {
     font-size: 0.75rem;
-    font-style: italic;
   }
   .slider-down-button-container {
     display: none;

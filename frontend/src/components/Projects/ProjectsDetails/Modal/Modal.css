@@ -123,4 +123,24 @@
        object-fit: contain; /* Assure que l'image soit bien cadrée */
     display: block;
   }
+  .modal-arrow {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(51, 51, 51, 0.3);
+    border: none;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-arrow i {
+    font-size: 0.75rem;
+  }
+  .close-btn {
+    font-size: 1.5rem;
+  }
 }/*# sourceMappingURL=Modal.css.map */
