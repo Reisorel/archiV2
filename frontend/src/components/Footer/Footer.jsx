@@ -1,29 +1,32 @@
-import React, { useEffect, useRef } from "react"; // Import des hooks
-import { useLocation } from "react-router-dom"; // Import useLocation de react router
-import ordre from "../../assets/logos/ordre.jpg"; // Import image ordre
-import upChevron from "../../assets/icons/up-arrow.svg"; // Import svg flèche
+import React, { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
-import gsap from "gsap"; // Import librairie gsap
-import ScrollTrigger from "gsap/ScrollTrigger"; // Import du plugin ScrollTrigger pour gérer les animations liées au scroll
-import { ScrollToPlugin } from "gsap/ScrollToPlugin"; // Import du plugin ScrollTo pour gérer le défilement animé
-import "./Footer2.scss"; // Import css
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+
+import "./Footer.scss";
+import ordre from "../../assets/logos/ordre.jpg";
+import upChevron from "../../assets/icons/up-arrow.svg";
+
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger); // Activation des plugins gsap
 
-export default function Footer2() {
+export default function Footer() {
   // Refs des icones
-  const iconsRef = useRef(null); // Référence à l'élément DOM icons
-  const linkedinRef = useRef(null); // Référence à l'élément DOM linkedin
-  const instagramRef = useRef(null); // Référence à l'élément DOM insta
+  const iconsRef = useRef(null); // Refs toutes icones
+  const linkedinRef = useRef(null); // Ref icone linkedin
+  const instagramRef = useRef(null); // Ref icone insta
 
-  const location = useLocation(); // Récupère les changements d'URL
+  const location = useLocation();
 
   // Fonction retour haut de page
   const handleScrollToTop = () => {
     gsap.to(window, {
-      duration: 1, // Durée du défilement (en secondes)
-      scrollTo: { y: 0 }, // Définit la position cible (0 = haut de la page)
-      ease: "power2.inOut", // Courbe d'animation pour une transition fluide
+      duration: 1,
+      scrollTo: { y: 0 },
+      ease: "power2.inOut",
     });
   };
 
@@ -60,7 +63,6 @@ export default function Footer2() {
               }, index * 300);
             });
 
-            // Vérification après un petit délai
           },
         },
         scrollTrigger: {

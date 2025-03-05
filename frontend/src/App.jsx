@@ -2,7 +2,7 @@ import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Footer2 from "./components/Footer2/Footer2";
+import Footer from "./components/Footer/Footer";
 import Background from "./components/Background/Background";
 import CustomCursor from "./components/Cursor/Cursor";
 import Router from "./routes/Router";
@@ -21,7 +21,7 @@ function App() {
             <Background>
               <Router />
             </Background>
-            <Footer2 />
+            <Footer />
             <Analytics /> {/* Ajout de Vercel Analytics ici */}
             <SpeedInsights /> {/* Ajout de Vercel Analytics ici */}
           </BrowserRouter>
