@@ -25,7 +25,7 @@ export const sliderData = [
   {
     id: 4,
     name: "APPARTEMENT PARISIEN",
-    description: "Paris 7ème",
+    description: "Paris 5ème",
     src: slider4,
   },
 ];

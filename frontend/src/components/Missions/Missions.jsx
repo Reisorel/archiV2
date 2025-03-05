@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { missionsData } from "./Data/MissionsData";
-import { useNavigate } from "react-router-dom";
 
-import downChevron from "../../assets/icons/down-arrow-black.svg";
 import "./Missions.css";
+import { missionsData } from "./Data/MissionsData";
+import downChevron from "../../assets/icons/down-arrow-black.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Missions() {
-  const titleRef = useRef(null); // Animation titre
-  const gridRef = useRef(null); // Animation menus déroulants
-  const textRef = useRef(null); // Animation texte gauche
+  const titleRef = useRef(null); // Ref titre
+  const gridRef = useRef(null); // Ref menus déroulants
+  const textRef = useRef(null); // Ref texte gauche
   const navigate = useNavigate();
 
   // Gestion visibilité section mobile
@@ -27,7 +27,7 @@ export default function Missions() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Fonction pour afficher/masquer les paragraphes (uniquement en mobile)
+  // Fonction afficher/masquer les paragraphes (uniquement en mobile)
   const toggleSection = (section) => {
     if (!isMobile) return; // Ignore le clic sur desktop
     setVisibleSections((prev) => ({
@@ -42,16 +42,16 @@ export default function Missions() {
       textRef.current,
       {
         opacity: 0,
-        y: 50, // Position initiale en bas
+        y: 50,
       },
       {
         opacity: 1,
-        y: 0, // Arrivée normale
+        y: 0,
         duration: 1,
         ease: "power3.out",
         scrollTrigger: {
           trigger: textRef.current,
-          start: "top 90%", // L'animation démarre quand 90% de la div est visible
+          start: "top 90%",
           toggleActions: "play none none none",
         },
       }
@@ -63,7 +63,7 @@ export default function Missions() {
     // Sélectionne tous les éléments <li> dans les deux colonnes
     const taskItems = gsap.utils.toArray(".missions-task-list-div li");
 
-    // Animation GSAP task
+    // Animation GSAP tasks
     gsap.fromTo(
       taskItems,
       { x: 50, opacity: 0 }, // Départ hors écran à droite, invisible
@@ -99,13 +99,8 @@ export default function Missions() {
       ScrollTrigger.refresh();
     }, 300); // Petit délai pour laisser les animations terminer
   };
-
+  // Animation titre
   useEffect(() => {
-    if (!titleRef.current) {
-      console.error("titleRef.current is null. The reference is not attached.");
-      return;
-    }
-
     const title = titleRef.current;
 
     // Vérifier si la section est déjà visible au chargement
@@ -133,9 +128,9 @@ export default function Missions() {
         }
       );
     }
-  }, [location.pathname]); // Déclenchement si l'URL change
+  }, [location.pathname]);
 
-  // Animation pour les items de la grille
+  // Animation blocs mission
   useEffect(() => {
     if (!gridRef.current) return;
 
@@ -235,68 +230,88 @@ export default function Missions() {
           <div className="missions-intro-grid2">
             <div className="missions-task-list-div">
               <div className="missions-task-list-left">
-                <li>
-                  <div className="missions-task-icon-container">
-                    <i className="fas fa-home"></i>
-                  </div>
-                  <span>Neuf</span>
-                </li>
-                <li>
-                  <div className="missions-task-icon-container">
-                    <i className="fas fa-tools"></i>
-                  </div>
-                  <span>Réhabilitation</span>
-                </li>
-                <li>
-                  <div className="missions-task-icon-container">
-                    <i className="fas fa-expand-arrows-alt"></i>
-                  </div>
-                  <span>Extension</span>
-                </li>
-                <li>
-                  <div className="missions-task-icon-container">
-                    <i className="fas fa-leaf"></i>
-                  </div>
-                  <span>Rénovation Energétique</span>
-                </li>
-                <li>
-                  <div className="missions-task-icon-container">
-                    <i className="fas fa-paint-roller"></i>
-                  </div>
-                  <span>Architecture d'intérieur</span>
-                </li>
+                <ul className="missions-task-ul">
+                  <li>
+                    <div className="missions-task-icon-container">
+                      <i className="fas fa-home"></i>
+                    </div>
+                    <span>Neuf</span>
+                  </li>
+                </ul>
+                <ul className="missions-task-ul">
+                  <li>
+                    <div className="missions-task-icon-container">
+                      <i className="fas fa-tools"></i>
+                    </div>
+                    <span>Réhabilitation</span>
+                  </li>
+                </ul>
+                <ul className="missions-task-ul">
+                  <li>
+                    <div className="missions-task-icon-container">
+                      <i className="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <span>Extension</span>
+                  </li>
+                </ul>
+                <ul className="missions-task-ul">
+                  <li>
+                    <div className="missions-task-icon-container">
+                      <i className="fas fa-leaf"></i>
+                    </div>
+                    <span>Rénovation Energétique</span>
+                  </li>
+                </ul>
+                <ul className="missions-task-ul">
+                  <li>
+                    <div className="missions-task-icon-container">
+                      <i className="fas fa-paint-roller"></i>
+                    </div>
+                    <span>Architecture d'intérieur</span>
+                  </li>
+                </ul>
               </div>
               <div className="missions-task-list-right">
-                <li>
-                  <div className="missions-task-icon-container">
-                    <i className="fas fa-house-user"></i>
-                  </div>
-                  <span>Maison individuelle</span>
-                </li>
-                <li>
-                  <div className="missions-task-icon-container">
-                    <i className="fas fa-building"></i>
-                  </div>
-                  <span>Habitat collectif</span>
-                </li>
-                <li>
-                  <div className="missions-task-icon-container">
-                    <i className="fas fa-store"></i>
-                  </div>
-                  <span>Commerces</span>
-                </li>
-                <li>
-                  <div className="missions-task-icon-container">
-                    <i className="fas fa-briefcase"></i>
-                  </div>
-                  <span>Bureaux</span>
-                </li>
-                <li>
-                  <div className="missions-task-icon-container">
-                    <i className="fas fa-school"></i>
-                  </div>
-                  <span>Equipements publics</span>
-                </li>
+                <ul className="missions-task-ul">
+                  <li>
+                    <div className="missions-task-icon-container">
+                      <i className="fas fa-house-user"></i>
+                    </div>
+                    <span>Maison individuelle</span>
+                  </li>
+                </ul>
+                <ul className="missions-task-ul">
+                  <li>
+                    <div className="missions-task-icon-container">
+                      <i className="fas fa-building"></i>
+                    </div>
+                    <span>Habitat collectif</span>
+                  </li>
+                </ul>
+                <ul className="missions-task-ul">
+                  <li>
+                    <div className="missions-task-icon-container">
+                      <i className="fas fa-store"></i>
+                    </div>
+                    <span>Commerces</span>
+                  </li>
+                </ul>
+                <ul className="missions-task-ul">
+                  <li>
+                    <div className="missions-task-icon-container">
+                      <i className="fas fa-briefcase"></i>
+                    </div>
+                    <span>Bureaux</span>
+                  </li>
+                </ul>
+                <ul className="missions-task-ul">
+                  <li>
+                    <div className="missions-task-icon-container">
+                      <i className="fas fa-school"></i>
+                    </div>
+                    <span>Equipements publics</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
