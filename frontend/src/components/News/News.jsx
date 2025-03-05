@@ -1,22 +1,19 @@
 import React, { useEffect, useRef } from "react";
-import "./News.css";
-import { useNavigate } from "react-router-dom"; // Import du hook useNavigate
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useNavigate } from "react-router-dom";
+
+import "./News.css";
 import { newsData } from "./Data/NewsData";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function News() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const titleRef = useRef(null);
   const gridRef = useRef(null);
 
   useEffect(() => {
-    if (!titleRef.current) {
-      console.error("titleRef.current is null. The reference is not attached.");
-      return;
-    }
     // Animation pour le titre
     gsap.fromTo(
       titleRef.current,

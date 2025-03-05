@@ -4,7 +4,7 @@ import Missions from "../Missions/Missions";
 import About from "../About/About";
 import { Helmet } from "react-helmet-async";
 
-// Ce composant sert juste à joindre les 4 composants de la page principale afin de leur donner une desccription meta via helmet. 
+// Ce composant sert juste à joindre les 4 composants de la page principale afin de leur donner une desccription meta via helmet pour le SEO.
 
 export default function HomePage() {
   return (
