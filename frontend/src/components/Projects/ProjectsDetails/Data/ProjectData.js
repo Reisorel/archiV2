@@ -1,39 +1,38 @@
 // images project gallery
-const project1 = "/images/projects/projects-gallery/1.appartement-parisien.jpg";
-const project2 = "/images/projects/projects-gallery/2.maison-mer.jpg";
-const project3 = "/images/projects/projects-gallery/3.maisons-campagne.jpg";
-const project4 = "/images/projects/projects-gallery/4.maison-ville.jpg";
-const project5 = "/images/projects/projects-gallery/5.ferme.jpg";
-const project6 = "/images/projects/projects-gallery/6.appartement-nantais.jpg";
-const project7 = "/images/projects/projects-gallery/7.patisserie.jpg";
+const project1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-paris-01_hcvtka.jpg";
+const project2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/t_archi-slider-template,c_crop,f_auto,g_auto,q_auto,w_3751/v1741279228/Cassandre_Marion_Architecture/Pages/7.Projects/maison-mer-01_ygtot7.jpg";
+const project3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/t_archi-slider-template,c_crop,f_auto,g_auto,q_auto,w_3751/v1741279229/Cassandre_Marion_Architecture/Pages/7.Projects/maison-ville-01_vysvh7.jpg";
+const project4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/t_archi-slider-template,c_crop,f_auto,g_auto,q_auto,w_3751/v1741279231/Cassandre_Marion_Architecture/Pages/7.Projects/maison-campagne-01_pfq2j8.jpg";
+const project5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/t_archi-slider-template,c_crop,f_auto,g_auto,q_auto,w_3751/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/ferme-01_mgw48v.jpg";
+const project6 = "https://res.cloudinary.com/dqrq4ullu/image/upload/t_archi-slider-template,c_crop,f_auto,g_auto,q_auto,w_3751/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-nantes_mazvnp.jpg";
+const project7 = "https://res.cloudinary.com/dqrq4ullu/image/upload/t_archi-slider-template,c_crop,f_auto,g_auto,q_auto,w_3751/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/patisserie-rennes_tk4scd.jpg";
+
 
 // images section project solo
-
-// 1.Appart-Paris
 const apt_paris1 =
-  "/images/projectsDetails/1.Appart-Paris/APPARTEMENT_PARISIEN.jpg";
+  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741280129/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-cuisine-01_as7vzc.jpg";
 const apt_paris2 =
-  "/images/projectsDetails/1.Appart-Paris/APPARTEMENT_PARISIEN2.jpg";
+  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741280119/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-cuisine-02_gwjjt0.jpg";
 const apt_paris3 =
-  "/images/projectsDetails/1.Appart-Paris/APPARTEMENT_PARISIEN3.jpg";
+  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741280120/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-cuisine-03_grac2h.jpg";
 const apt_paris4 =
-  "/images/projectsDetails/1.Appart-Paris/APPARTEMENT_PARISIEN4.jpg";
+  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741280120/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-cuisine04_vreuru.jpg";
 const apt_paris5 =
-  "/images/projectsDetails/1.Appart-Paris/APPARTEMENT_PARISIEN5.jpg";
+  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741280126/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-sdb-01_e1zlm2.jpg";
 const apt_paris6 =
-  "/images/projectsDetails/1.Appart-Paris/APPARTEMENT_PARISIEN6.jpg";
+  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741280129/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-sdb-02_fh7a9i.jpg";
 const apt_paris7 =
-  "/images/projectsDetails/1.Appart-Paris/APPARTEMENT_PARISIEN7.jpg";
+  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741280123/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-salon-01_qs2hiv.jpg";
 const apt_paris8 =
-  "/images/projectsDetails/1.Appart-Paris/APPARTEMENT_PARISIEN8.jpg";
+  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741280125/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-chambre-01_a2m0iv.jpg";
 const apt_paris9 =
-  "/images/projectsDetails/1.Appart-Paris/APPARTEMENT_PARISIEN9.jpg";
+  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741280130/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-chambre-02_hhq9sr.jpg";
 const apt_paris10 =
-  "/images/projectsDetails/1.Appart-Paris/APPARTEMENT_PARISIEN10.jpg";
+  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741280124/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-chambre-03_keonng.jpg";
 const apt_paris11 =
-  "/images/projectsDetails/1.Appart-Paris/APPARTEMENT_PARISIEN11.jpg";
+  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741280131/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-bois-01_qsfn36.jpg";
 const apt_paris12 =
-  "/images/projectsDetails/1.Appart-Paris/APPARTEMENT_PARISIEN12.jpg";
+  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741280121/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-bois-02_ldp8gs.jpg";
 
 // 2.Maison-mer
 const maison_mer1 = "/images/projectsDetails/2.Maison-Mer/MAISON_MER1.jpg";
