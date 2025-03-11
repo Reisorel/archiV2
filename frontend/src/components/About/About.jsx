@@ -176,7 +176,7 @@ export default function About() {
                 J’ai réalisé mes études à l’univerité de Rome III et à l’Ecole
                 Nationale d’Architecture de Normandie. J’y ai appris à analyser et
                 sublimer des lieux existants au travers de la question de
-                l’héritage patrimoniale, grâce à des masters spécialisés dans ce
+                l’héritage patrimonial, grâce à des masters spécialisés dans ce
                 domaine.
               </p>
               <p>
@@ -187,7 +187,7 @@ export default function About() {
                 tertiaires, des équipement publics.
               </p>
               <p>
-                Fort des ces expériences, je suis en mesure de vous accompagner
+                Forte des ces expériences, je suis en mesure de vous accompagner
                 sur tous types de projet, de la conception à la réalisation. En
                 misant sur une écoute attentive et un échange constructif, je
                 vous accompagne dans la réalisation d’un projet sur mesure et

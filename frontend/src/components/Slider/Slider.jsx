@@ -116,7 +116,7 @@ const Slider = () => {
     const intermediateDuration = 0; // Durée de chaque transition intermédiaire
 
     let currentStep = 0; // Initialise un compteur pour suivre les étapes intermédiaires.
-    
+
     // Gère navigation circulaire des slides
     const navigateStep = () => {
       if (currentStep < totalSteps) {
@@ -165,13 +165,17 @@ const Slider = () => {
 
   return (
     <div className="slider-frame">
+      {/* chargement image */}
       {sliderData.map((slide, index) => (
         <div
           key={slide.id}
           className="slider-slide"
           ref={(el) => (slidesRef.current[index] = el)}
         >
-          <img src={slide.src} alt={slide.name} className="slider-img" />
+          <img src={slide.src}
+          alt={slide.name}
+          className="slider-img"
+          />
           {/* `Infos slide */}
           <p
             ref={(el) => (imageInfoRefs.current[index] = el)}
