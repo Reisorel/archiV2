@@ -180,7 +180,7 @@ export default function Missions() {
                 Architecte indépendante, je conçois et réalise des projets sur
                 mesure. <br></br>De l’esquisse initiale à la livraison, je porte
                 une attention particulière à l’identité du lieu et aux attentes
-                de mes clients
+                de mes clients.
               </p>
               <p>
                 Mon champ de compétence s'étend sur tout type de réalisation
@@ -468,7 +468,7 @@ export default function Missions() {
                   réglementaires et administratives à réaliser lors du projet.
                   Cette phase couvre l’ensemble des dépôts de documents liés aux
                   autorisations d’urbanisme (déclaration préalable, permis de
-                  construire, etc.)
+                  construire).
                 </p>
                 <p>
                   A cet effet, l’architecte élabore et collecte des pièces
@@ -507,7 +507,7 @@ export default function Missions() {
                   L’architecte, après avoir vérifié les conditions de leur mise
                   en œuvre et l’incidence financière qui en découle, précise par
                   des plans, coupes, et élévations les formes des différents
-                  éléments de la construction
+                  éléments de la construction.
                 </p>
                 <p>
                   L’architecte établit l’ensemble des spécifications détaillées
@@ -553,7 +553,7 @@ export default function Missions() {
                 <p>
                   L’architecte procède à l’analyse comparative des offres des
                   entreprises, établit son rapport, propose au client une liste
-                  d’entreprises qui pourraient être retenues
+                  d’entreprises qui pourraient être retenues.
                 </p>
               </div>
             </div>
@@ -838,7 +838,7 @@ export default function Missions() {
                   essentielles : la garantie de parfait achèvement, qui incombe
                   aux entreprises, ainsi que la garantie de bon fonctionnement
                   et la responsabilité décennale, assurant la pérennité de
-                  l’ouvrage
+                  l’ouvrage.
                 </p>
               </div>
             </div>
