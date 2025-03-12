@@ -1,11 +1,17 @@
 // images project gallery
-const project1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-paris-01_hcvtka.jpg";
-const project2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/t_archi-slider-template,c_crop,f_auto,g_auto,q_auto,w_3751/v1741279228/Cassandre_Marion_Architecture/Pages/7.Projects/maison-mer-01_ygtot7.jpg";
-const project3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/t_archi-slider-template,c_crop,f_auto,g_auto,q_auto,w_3751/v1741279229/Cassandre_Marion_Architecture/Pages/7.Projects/maison-ville-01_vysvh7.jpg";
-const project4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/t_archi-slider-template,c_crop,f_auto,g_auto,q_auto,w_3751/v1741279231/Cassandre_Marion_Architecture/Pages/7.Projects/maison-campagne-01_pfq2j8.jpg";
-const project5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/t_archi-slider-template,c_crop,f_auto,g_auto,q_auto,w_3751/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/ferme-01_mgw48v.jpg";
-const project6 = "https://res.cloudinary.com/dqrq4ullu/image/upload/t_archi-slider-template,c_crop,f_auto,g_auto,q_auto,w_3751/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-nantes_mazvnp.jpg";
-const project7 = "https://res.cloudinary.com/dqrq4ullu/image/upload/t_archi-slider-template,c_crop,f_auto,g_auto,q_auto,w_3751/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/patisserie-rennes_tk4scd.jpg";
+const project1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-paris-01_hcvtka.webp";
+
+const project2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279228/Cassandre_Marion_Architecture/Pages/7.Projects/maison-mer-01_ygtot7.webp";
+
+const project3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279229/Cassandre_Marion_Architecture/Pages/7.Projects/maison-ville-01_vysvh7.webp";
+
+const project4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279231/Cassandre_Marion_Architecture/Pages/7.Projects/maison-campagne-01_pfq2j8.webp";
+
+const project5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/ferme-01_mgw48v.webp";
+
+const project6 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-nantes_mazvnp.webp";
+
+const project7 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/patisserie-rennes_tk4scd.webp";
 
 
 // images section project solo
