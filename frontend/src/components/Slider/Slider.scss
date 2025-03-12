@@ -33,6 +33,7 @@
   object-fit: cover;
   justify-content: center;
   will-change: transform;
+  object-position: center;
 }
 
 .slider-image-info {
@@ -213,7 +214,7 @@
   }
 }
 
-// Desktop big screen // 
+// Desktop big screen //
 @media screen and (min-width: 1241px) {
   .slider-frame {
     height: 750px;
