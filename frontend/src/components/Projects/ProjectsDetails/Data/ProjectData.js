@@ -1,107 +1,71 @@
 // images project gallery
 const project1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-paris-01_hcvtka.webp";
-
 const project2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279228/Cassandre_Marion_Architecture/Pages/7.Projects/maison-mer-01_ygtot7.webp";
-
 const project3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279229/Cassandre_Marion_Architecture/Pages/7.Projects/maison-ville-01_vysvh7.webp";
-
 const project4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279231/Cassandre_Marion_Architecture/Pages/7.Projects/maison-campagne-01_pfq2j8.webp";
-
 const project5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/ferme-01_mgw48v.webp";
-
 const project6 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-nantes_mazvnp.webp";
-
 const project7 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/patisserie-rennes_tk4scd.webp";
 
 
-// images section project solo
-const apt_paris1 =
-  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280129/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-cuisine-01_as7vzc.webp";
+// 1. Appartement-parisien
+const apt_paris1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280129/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-cuisine-01_as7vzc.webp";
+const apt_paris2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280119/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-cuisine-02_gwjjt0.webp";
+const apt_paris3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280120/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-cuisine-03_grac2h.webp";
+const apt_paris4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280120/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-cuisine04_vreuru.webp";
+const apt_paris5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280126/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-sdb-01_e1zlm2.webp";
+const apt_paris6 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280129/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-sdb-02_fh7a9i.webp";
+const apt_paris7 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280123/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-salon-01_qs2hiv.webp";
+const apt_paris8 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280125/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-chambre-01_a2m0iv.webp";
+const apt_paris9 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280130/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-chambre-02_hhq9sr.webp";
+const apt_paris10 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280124/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-chambre-03_keonng.webp";
+const apt_paris11 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280131/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-bois-01_qsfn36.webp";
+const apt_paris12 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280121/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-bois-02_ldp8gs.webp";
 
-const apt_paris2 =
-  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280119/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-cuisine-02_gwjjt0.webp";
-
-const apt_paris3 =
-  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280120/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-cuisine-03_grac2h.webp";
-
-const apt_paris4 =
-  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280120/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-cuisine04_vreuru.webp";
-
-const apt_paris5 =
-  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280126/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-sdb-01_e1zlm2.webp";
-
-const apt_paris6 =
-  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280129/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-sdb-02_fh7a9i.webp";
-
-const apt_paris7 =
-  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280123/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-salon-01_qs2hiv.webp";
-
-const apt_paris8 =
-  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280125/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-chambre-01_a2m0iv.webp";
-
-const apt_paris9 =
-  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280130/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-chambre-02_hhq9sr.webp";
-
-const apt_paris10 =
-  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280124/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-chambre-03_keonng.webp";
-
-const apt_paris11 =
-  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280131/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-bois-01_qsfn36.webp";
-
-const apt_paris12 =
-  "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741280121/Cassandre_Marion_Architecture/Pages/8.Projects_details/01-appartement-paris/appartement-paris-bois-02_ldp8gs.webp";
-
-
-// 2.Maison-mer
-const maison_mer1 = "/images/projectsDetails/2.Maison-Mer/MAISON_MER1.jpg";
-const maison_mer2 = "/images/projectsDetails/2.Maison-Mer/MAISON_MER2.jpg";
-const maison_mer3 = "/images/projectsDetails/2.Maison-Mer/MAISON_MER3.jpg";
-const maison_mer4 = "/images/projectsDetails/2.Maison-Mer/MAISON_MER4.jpg";
-const maison_mer5 = "/images/projectsDetails/2.Maison-Mer/MAISON_MER5.jpg";
+// 2. Maison-mer
+const maison_mer1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792304/Cassandre_Marion_Architecture/Pages/8.Projects_details/02-maison-mer/maison-mer-01_id13vw.webp";
+const maison_mer2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792306/Cassandre_Marion_Architecture/Pages/8.Projects_details/02-maison-mer/maison-mer-02_xtfty7.webp";
+const maison_mer3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/02-maison-mer/maison-mer-03_cqsdhd.webp";
+const maison_mer4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792304/Cassandre_Marion_Architecture/Pages/8.Projects_details/02-maison-mer/maison-mer-04_upmewf.webp";
+const maison_mer5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/02-maison-mer/maison-mer-05_fvdbio.webp";
 
 // 3. Maison-campagne
-const maison_campagne1 =
-  "/images/projectsDetails/3.Maison-Campagne/MAISON_CAMPAGNE1.jpg";
-const maison_campagne2 =
-  "/images/projectsDetails/3.Maison-Campagne/MAISON_CAMPAGNE2.jpg";
-const maison_campagne3 =
-  "/images/projectsDetails/3.Maison-Campagne/MAISON_CAMPAGNE3.jpg";
-const maison_campagne4 =
-  "/images/projectsDetails/3.Maison-Campagne/MAISON_CAMPAGNE4.jpg";
+const maison_campagne1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792311/Cassandre_Marion_Architecture/Pages/8.Projects_details/03-maison-campagne/maison-campagne-01_f20va7.webp";
+const maison_campagne2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/03-maison-campagne/maison-campagne-02_vijxev.webp";
+const maison_campagne3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/03-maison-campagne/maison-campagne-03_rz0hlr.webp";
+const maison_campagne4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/03-maison-campagne/maison-campagne-04_edlbhx.webp";
+
 
 //4 Maison-ville
-const maison_ville1 =
-  "/images/projectsDetails/4.Maison-Ville/MAISON_VILLE1.jpg";
-const maison_ville2 =
-  "/images/projectsDetails/4.Maison-Ville/MAISON_VILLE2.jpg";
-const maison_ville3 =
-  "/images/projectsDetails/4.Maison-Ville/MAISON_VILLE3.jpg";
-const maison_ville4 =
-  "/images/projectsDetails/4.Maison-Ville/MAISON_VILLE4.jpg";
+const maison_ville1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792306/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville-01_rnmqon.webp";
+const maison_ville2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792306/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville-02_thixts.webp";
+const maison_ville3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville-03_gac1ai.webp";
+const maison_ville4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792300/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville04_cr06na.webp";
+
 
 //5 Corps de Ferme
-const ferme1 = "/images/projectsDetails/5.Ferme/FERME1.jpg";
-const ferme2 = "/images/projectsDetails/5.Ferme/FERME2.jpg";
-const ferme3 = "/images/projectsDetails/5.Ferme/FERME3.jpg";
-const ferme4 = "/images/projectsDetails/5.Ferme/FERME4.jpg";
-const ferme5 = "/images/projectsDetails/5.Ferme/FERME5.jpg";
-const ferme6 = "/images/projectsDetails/5.Ferme/FERME6.jpg";
-const ferme7 = "/images/projectsDetails/5.Ferme/FERME7.jpg";
-const ferme8 = "/images/projectsDetails/5.Ferme/FERME8.jpg";
-const ferme9 = "/images/projectsDetails/5.Ferme/FERME9.jpg";
-const ferme10 = "/images/projectsDetails/5.Ferme/FERME10.jpg";
+const ferme1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-01_vp5nwg.webp";
+const ferme2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792302/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-02_bifyie.webp";
+const ferme3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792306/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-03_urd8c4.webp";
+const ferme4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792302/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-04_xcdhpd.webp";
+const ferme5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792302/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-05_ujr5ku.webp";
+const ferme6 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792303/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-06_kfiwvo.webp";
+const ferme7 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792302/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-07_flnvjm.webp";
+const ferme8 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792303/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-08_v9yhup.webp";
+const ferme9 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792303/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-09_orzu6d.webp";
+const ferme10 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-10_phhiaj.webp";
+
 
 //6 Appart Nantais
-const appart_nantes1 =
-  "/images/projectsDetails/6.Appart-Nantais/APPARTEMENT_NANTAIS1.jpg";
-const appart_nantes2 =
-  "/images/projectsDetails/6.Appart-Nantais/APPARTEMENT_NANTAIS2.jpg";
-const appart_nantes3 =
-  "/images/projectsDetails/6.Appart-Nantais/APPARTEMENT_NANTAIS3.jpg";
+const appart_nantes1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792304/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-01_ikmtg8.webp";
+const appart_nantes2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792307/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-02_ftu9sf.webp";
+const appart_nantes3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-03_ikxvc6.webp";
+
 
 //7 Boulangerie
-const boulangerie1 = "/images/projectsDetails/7.Commerce/COMMERCE1.jpg";
-const boulangerie2 = "/images/projectsDetails/7.Commerce/COMMERCE2.jpg";
+const commerce_rennais1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792308/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-1_kr0gdz.webp";
+const commerce_rennais2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-2_lromif.webp";
+
 
 export const projectsData = [
   {
@@ -516,13 +480,13 @@ export const projectsData = [
     layout: {
       images: [
         {
-          src: boulangerie1,
+          src: commerce_rennais1,
           alt: "Facade1",
           gridColumn: "span 1",
           gridRow: "span 2",
         },
         {
-          src: boulangerie2,
+          src: commerce_rennais2,
           alt: "Facade2",
           gridColumn: "span 1",
           gridRow: "span 2",
