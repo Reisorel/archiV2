@@ -1,8 +1,13 @@
-const new1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,f_auto,g_auto,q_auto/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-appartement-paeis-01_tztdgz.jpg";
-const new2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,f_auto,g_auto,q_auto/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-maison-mer-bernieres01_ol6dwp.jpg";
-const new3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,f_auto,g_auto,q_auto/v1741276471/Cassandre_Marion_Architecture/Pages/3.News/axo-maison-campagne-01_kctazy.jpg";
-const new4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,f_auto,g_auto,q_auto/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-maison-ville-01_x7fdhb.jpg"
-const new5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-ferme-breville-01_pvodek.jpg";
+const new1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_auto,q_auto/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-appartement-paris-01_tztdgz.jpg";
+
+const new2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_auto,q_auto/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-maison-mer-bernieres01_ol6dwp.jpg";
+
+const new3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_auto,q_auto/v1741276471/Cassandre_Marion_Architecture/Pages/3.News/axo-maison-campagne-01_kctazy.jpg";
+
+const new4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_auto,q_auto/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-maison-ville-01_x7fdhb.jpg";
+
+const new5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_auto,q_auto/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-ferme-breville-01_pvodek.jpg";
+
 
 export const newsData = [
   {
