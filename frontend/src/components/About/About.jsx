@@ -3,7 +3,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger"; // Import du plugin
 
 import "./About.css";
-const portrait = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_crop,f_auto,g_auto,q_auto,w_3751/v1741278231/Cassandre_Marion_Architecture/Pages/5.About/cassandre-marion-architecte-01_cklvkv.jpg";
+const portrait = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741278231/Cassandre_Marion_Architecture/Pages/5.About/cassandre-marion-architecte-01_cklvkv.webp";
 
 export default function About() {
   const words = [
