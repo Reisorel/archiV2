@@ -62,9 +62,14 @@ const appart_nantes2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scal
 const appart_nantes3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-03_ikxvc6.webp";
 
 
-//7 Boulangerie
-const commerce_rennais1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792308/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-1_kr0gdz.webp";
-const commerce_rennais2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-2_lromif.webp";
+//7 Pâtisserie
+const commerce_rennais1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-1_lromif.webp";
+const commerce_rennais2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-2_dsq17s.webp";
+const commerce_rennais3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-3_ibd2ot.webp";
+const commerce_rennais4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219732/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-4_k3aqpo.webp";
+const commerce_rennais5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-5_vwhhtj.webp";
+const commerce_rennais6 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-6_xirnhk.webp";
+const commerce_rennais7 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp";
 
 
 export const projectsData = [
@@ -482,12 +487,42 @@ export const projectsData = [
         {
           src: commerce_rennais1,
           alt: "Facade1",
-          gridColumn: "span 1",
+          gridColumn: "span 2",
           gridRow: "span 2",
         },
         {
           src: commerce_rennais2,
-          alt: "Facade2",
+          alt: "chantier1",
+          gridColumn: "span 1",
+          gridRow: "span 2",
+        },
+        {
+          src: commerce_rennais3,
+          alt: "chantier2",
+          gridColumn: "span 1",
+          gridRow: "span 2",
+        },
+        {
+          src: commerce_rennais4,
+          alt: "chantier3",
+          gridColumn: "span 1",
+          gridRow: "span 2",
+        },
+        {
+          src: commerce_rennais5,
+          alt: "chantier4",
+          gridColumn: "span 1",
+          gridRow: "span 2",
+        },
+        {
+          src: commerce_rennais6,
+          alt: "chantier5",
+          gridColumn: "span 1",
+          gridRow: "span 2",
+        },
+        {
+          src: commerce_rennais7,
+          alt: "chantier6",
           gridColumn: "span 1",
           gridRow: "span 2",
         },
