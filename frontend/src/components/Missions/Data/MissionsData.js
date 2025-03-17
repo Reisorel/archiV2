@@ -1,21 +1,14 @@
-const missions1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741278376/Cassandre_Marion_Architecture/Pages/4.Missions/maquette-01_zdmnif.webp";
+// Mission images
 
-const missions2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741278376/Cassandre_Marion_Architecture/Pages/4.Missions/ordi-01_iccozs.webp";
-
-const missions3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741278376/Cassandre_Marion_Architecture/Pages/4.Missions/plan-01_ux8mto.webp";
-
-const missions4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741278662/Cassandre_Marion_Architecture/Pages/4.Missions/construction-01_wbn7dp.webp";
-
-const missions5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741278663/Cassandre_Marion_Architecture/Pages/4.Missions/chantier-rennes.01_t4fkye.webp";
-
-const missions6 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741278663/Cassandre_Marion_Architecture/Pages/4.Missions/chantier-02_vwuc6u.webp";
-
-const missions7 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741278929/Cassandre_Marion_Architecture/Pages/4.Missions/plans-01_b9f3vy.webp";
-
-const missions8 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741278930/Cassandre_Marion_Architecture/Pages/4.Missions/rendu-01_srur2p.webp";
-
-const missions9 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741278931/Cassandre_Marion_Architecture/Pages/4.Missions/dessin-01_xqabia.webp";
-
+const missions1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742224228/Cassandre_Marion_Architecture/Pages/4.Missions/01-plan_zp4xjp.webp";
+const missions2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742224230/Cassandre_Marion_Architecture/Pages/4.Missions/02-calque_qdmgr0.webp";
+const missions3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742224229/Cassandre_Marion_Architecture/Pages/4.Missions/03-carnet_tdgswu.webp";
+const missions4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741278662/Cassandre_Marion_Architecture/Pages/4.Missions/04-contruction_wbn7dp.webp";
+const missions5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742224220/Cassandre_Marion_Architecture/Pages/4.Missions/05-chantier_qj3rwu.webp";
+const missions6 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742224221/Cassandre_Marion_Architecture/Pages/4.Missions/06-chantier-2JPG_csbgqg.webp";
+const missions7 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742224295/Cassandre_Marion_Architecture/Pages/4.Missions/07-dessin_wufkif.webp";
+const missions8 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742224295/Cassandre_Marion_Architecture/Pages/4.Missions/08-chantier_ngtppb.webp";
+const missions9 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742224295/Cassandre_Marion_Architecture/Pages/4.Missions/09-croquis_xbdr6h.webp";
 
 export const missionsData = [
   {
