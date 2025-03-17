@@ -1,8 +1,8 @@
 // images project gallery
 const project1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-paris-01_hcvtka.webp";
 const project2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279228/Cassandre_Marion_Architecture/Pages/7.Projects/maison-mer-01_ygtot7.webp";
-const project3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279229/Cassandre_Marion_Architecture/Pages/7.Projects/maison-ville-01_vysvh7.webp";
-const project4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279231/Cassandre_Marion_Architecture/Pages/7.Projects/maison-campagne-01_pfq2j8.webp";
+const project3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279231/Cassandre_Marion_Architecture/Pages/7.Projects/maison-campagne-01_pfq2j8.webp";
+const project4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279229/Cassandre_Marion_Architecture/Pages/7.Projects/maison-ville-01_vysvh7.webp";
 const project5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/ferme-01_mgw48v.webp";
 const project6 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-nantes_mazvnp.webp";
 const project7 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/patisserie-rennes_tk4scd.webp";
@@ -235,7 +235,7 @@ export const projectsData = [
     slug: "maison-de-campagne",
     imgSrc: project3,
     title: "MAISON DE CAMPAGNE",
-    location: "Ile-Et-Vilaine",
+    location: "Deux-Sèvres",
     grade: "Agrandissement",
     description1: `Au cœur d’un paysage rural préservé, cet ensemble de bâtiment en friche a fait l’objet d’une rénovation complète visant à respecter son caractère traditionnel tout en l’adaptant aux usages contemporains. Deux maison individuelles remplacent les anciennes granges et étables. Pour ce faire, les volumes intérieurs on été entièrement repensé pour créer de vastes espaces lumineux. Les ouvertures ont été redessinées pour maximiser l’apport de lumière et créer un dialogue constant avec l’extérieur. `,
     description2: `Le choix des matériaux tient une place centrale dans cette conception architecturale. Il s’agit de mettre en œuvre des matériaux de construction biosourcés tels que le bois peuplier pour les charpentes, planchers et menuiseries intérieures, la chaux, le chanvre et la terre pour les enduits intérieurs et les planchers. Pour répondre aux matériaux traditionnels présents dans la région, les toitures sont en tuile canalaverou couleur terre de Charente pour les toitures.`,
