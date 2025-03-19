@@ -28,7 +28,7 @@ export const sliderData = [
   {
     id: 4,
     name: "APPARTEMENT PARISIEN",
-    description: "Chambre",
+    description: "Salon",
     src: slider4,
   },
 ];
