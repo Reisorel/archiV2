@@ -32,8 +32,8 @@ const maison_mer4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h
 const maison_mer5 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/02-maison-mer/maison-mer-05_fvdbio.webp";
 
 // 3. Maison-campagne
-const maison_campagne1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792311/Cassandre_Marion_Architecture/Pages/8.Projects_details/03-maison-campagne/maison-campagne-01_f20va7.webp";
-const maison_campagne2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/03-maison-campagne/maison-campagne-02_vijxev.webp";
+const maison_campagne1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/03-maison-campagne/maison-campagne-02_vijxev.webp";
+const maison_campagne2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792311/Cassandre_Marion_Architecture/Pages/8.Projects_details/03-maison-campagne/maison-campagne-01_f20va7.webp";
 const maison_campagne3 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/03-maison-campagne/maison-campagne-03_rz0hlr.webp";
 const maison_campagne4 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/03-maison-campagne/maison-campagne-04_edlbhx.webp";
 
