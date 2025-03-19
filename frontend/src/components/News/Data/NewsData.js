@@ -17,7 +17,7 @@ export const newsData = [
     title: "APPARTEMENT PARISIEN",
     location: "PARIS 7ème",
     grade: "Rénovation",
-    description: "Rénovation et suivi de chantier",
+    description: "Projet livré",
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ export const newsData = [
     title: "MAISON DE CAMPAGNE",
     location: "SAINT-ROMANS-LES-MELES",
     grade: "Agrandissement",
-    description: "Extension et permis de construire",
+    description: "Restructuration et permis de construire",
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ export const newsData = [
     title: "MAISON DE VILLE",
     location: "ROMILIE",
     grade: "Rénovation",
-    description: "Extension et permis de construire",
+    description: "Etude de faisabilité",
   },
   {
     id: 5,
@@ -53,6 +53,6 @@ export const newsData = [
     title: "CORPS DE FERME NORMAND",
     location: "ESCOVILLE",
     grade: "Extension",
-    description: "Extension et suivi de chantier",
+    description: "Rénovation et suivi de chantier",
   },
 ];
