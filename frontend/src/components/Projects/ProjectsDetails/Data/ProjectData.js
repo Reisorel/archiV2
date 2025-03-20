@@ -1,3 +1,5 @@
+// ProjectsData.js
+
 // images project gallery
 const project1 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-paris-01_hcvtka.webp";
 const project2 = "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279228/Cassandre_Marion_Architecture/Pages/7.Projects/maison-mer-01_ygtot7.webp";
