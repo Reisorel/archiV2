@@ -194,7 +194,7 @@ export default function ProjectsDetails() {
                           <i className="fas fa-tools"></i>{" "}
                           <strong>Type :</strong>{" "}
                         </span>
-                        <span className="project-type">{projet.type}</span>
+                        <span className="project-type">{projet.tech.type}</span>
                       </li>
                       <li>
                         <span className="projectDetails-icon-text">
@@ -202,14 +202,14 @@ export default function ProjectsDetails() {
                           <strong>Localisation :</strong>{" "}
                         </span>
 
-                        <span className="project-type">{projet.loc}</span>
+                        <span className="project-type">{projet.tech.loc}</span>
                       </li>
                       <li>
                         <span className="projectDetails-icon-text">
                           <i className="fas fa-ruler-combined"></i>{" "}
                           <strong>Superficie :</strong>{" "}
                         </span>
-                        <span className="project-type">{projet.sup}</span>
+                        <span className="project-type">{projet.tech.sup}</span>
                       </li>
                     </div>
                     <div className="projectDetails-tech-list-right">
@@ -219,21 +219,21 @@ export default function ProjectsDetails() {
                           <strong>Maîtrise d’ouvrage :</strong>{" "}
                         </span>
 
-                        <span className="project-type">{projet.mo}</span>
+                        <span className="project-type">{projet.tech.mo}</span>
                       </li>
                       <li>
                         <span className="projectDetails-icon-text">
                           <i className="fas fa-lightbulb"></i>{" "}
                           <strong>Intervention :</strong>{" "}
                         </span>
-                        <span className="project-type">{projet.inter}</span>
+                        <span className="project-type">{projet.tech.inter}</span>
                       </li>
                       <li>
                         <span className="projectDetails-icon-text">
                           <i className="fas fa-check-circle"></i>{" "}
                           <strong>Avancement :</strong>{" "}
                         </span>
-                        <span className="project-type">{projet.avance}</span>
+                        <span className="project-type">{projet.tech.avance}</span>
                       </li>
                     </div>
                   </ul>
