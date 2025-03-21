@@ -264,6 +264,7 @@
 
   .projectDetails-nav-arrows-div {
     margin-bottom: 2rem;
+    background-color: #ffffff;
   }
 
   .projectDetails-nav-arrows h2 {
@@ -271,6 +272,7 @@
     color: initial;
     font-size: 1rem;
     contain: layout; /* Empêche l'élément de dépasser son conteneur */
+    background-color: #ffffff;
   }
 
   .projectDetails-nav-arrows:nth-of-type(1) {
