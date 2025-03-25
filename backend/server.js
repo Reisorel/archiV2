@@ -3,6 +3,9 @@ const cors = require("cors"); // Assurez-vous d'importer cors
 const bodyParser = require("body-parser"); // Assurez-vous d'importer body-parser
 const path = require("path"); // Assurez-vous d'importer path
 const app = express();
+require("dotenv").config(); // charge le .env
+const connectDB = require("./config/db");
+connectDB(); // connecte MongoDB
 
 // Middlewares
 app.use(cors());
