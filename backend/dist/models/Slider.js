@@ -36,6 +36,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 // 2️⃣ Schéma avec typage explicite
 const sliderSchema = new mongoose_1.Schema({
+    id: {
+        type: Number,
+        required: true,
+        unique: true,
+    },
     image: {
         type: String,
         required: true,

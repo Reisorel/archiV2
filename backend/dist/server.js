@@ -19,10 +19,10 @@ app.use(body_parser_1.default.json());
 // ⬇️ Route API admin centralisée ici
 app.use('/api/admin', indexRoutes_1.default);
 // ⬇️ Sert le frontend compilé (Vite/React)
-app.use(express_1.default.static(path_1.default.join(__dirname, '../frontend/dist')));
+app.use(express_1.default.static(path_1.default.resolve(__dirname, "../../frontend/dist")));
 // ⬇️ Catch-all route frontend
 app.get('*', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, '../frontend/dist', 'index.html'));
+    res.sendFile(path_1.default.resolve(__dirname, "../../frontend/dist", "index.html"));
 });
 // Lancement du serveur
 const PORT = process.env.PORT || 3000;

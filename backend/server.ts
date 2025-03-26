@@ -19,11 +19,11 @@ app.use(bodyParser.json());
 app.use('/api/admin', adminRoutes);
 
 // ⬇️ Sert le frontend compilé (Vite/React)
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.use(express.static(path.resolve(__dirname, "../../frontend/dist")));
 
 // ⬇️ Catch-all route frontend
 app.get('*', (req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+  res.sendFile(path.resolve(__dirname, "../../frontend/dist", "index.html"));
 });
 
 // Lancement du serveur
