@@ -17,7 +17,10 @@
     "start": "node server.js",
     "heroku-postbuild": "cd frontend && npm install --include=dev && npm run build",
     "postinstall": "cd frontend && npm install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:watch": "tsc --watch",
+    "dev": "tsc && node dist/server.js",
+    "seed": "ts-node seedSlider.ts"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +28,13 @@
   "engines": {
     "node": "22.9.0",
     "npm": "10.8.3"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.13",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
   }
 }
