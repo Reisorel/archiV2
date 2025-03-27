@@ -5,6 +5,7 @@ dotenv.config(); // ← Charge le fichier .env
 import connectDB from '../config/db';
 import seedSlider from './seedSlider';
 import seedNews from './seedNews';
+import seedMissions from './seedMissions';
 
 
 const runSeeds = async () => {
@@ -14,6 +15,7 @@ const runSeeds = async () => {
 
     await seedSlider();
     await seedNews();
+    await seedMissions();
 
     console.log('🌱 All seeds done');
     process.exit();

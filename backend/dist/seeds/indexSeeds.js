@@ -18,12 +18,14 @@ dotenv_1.default.config(); // ← Charge le fichier .env
 const db_1 = __importDefault(require("../config/db"));
 const seedSlider_1 = __importDefault(require("./seedSlider"));
 const seedNews_1 = __importDefault(require("./seedNews"));
+const seedMissions_1 = __importDefault(require("./seedMissions"));
 const runSeeds = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield (0, db_1.default)();
         console.log('📡 Connected to DB');
         yield (0, seedSlider_1.default)();
         yield (0, seedNews_1.default)();
+        yield (0, seedMissions_1.default)();
         console.log('🌱 All seeds done');
         process.exit();
     }

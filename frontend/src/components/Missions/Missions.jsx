@@ -4,16 +4,33 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "./Missions.css";
-import { missionsData } from "./Data/MissionsData";
 import downChevron from "../../assets/icons/down-arrow-black.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Missions() {
+  const [missionsData, setMissionsData] = useState([]);
   const titleRef = useRef(null); // Ref titre
   const gridRef = useRef(null); // Ref menus déroulants
   const textRef = useRef(null); // Ref texte gauche
   const navigate = useNavigate();
+
+  // Fetch des données backend
+  useEffect(() => {
+    const fetchMissions = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/admin/missions"
+        );
+        const data = await response.json();
+        setMissionsData(data);
+      } catch (error) {
+        console.error("Erreur lors du fetch des missions:", error);
+      }
+    };
+
+    fetchMissions();
+  }, []);
 
   // Gestion visibilité section mobile
   const [visibleSections, setVisibleSections] = useState({}); // Initialisation état mobile
@@ -558,28 +575,30 @@ export default function Missions() {
               </div>
             </div>
 
-            <div className="missions-accordion-content-image">
-              <div className="missions-image-large">
-                <img
-                  src={missionsData[0].imgSrc}
-                  alt={missionsData[0].description}
-                />
-              </div>
-              <div className="missions-image-small-container">
-                <div className="missions-image-small">
+            {missionsData.length >= 3 && (
+              <div className="missions-accordion-content-image">
+                <div className="missions-image-large">
                   <img
-                    src={missionsData[1].imgSrc}
-                    alt={missionsData[1].description}
+                    src={missionsData[0].image}
+                    alt={missionsData[0].description}
                   />
                 </div>
-                <div className="missions-image-small">
-                  <img
-                    src={missionsData[2].imgSrc}
-                    alt={missionsData[2].description}
-                  />
+                <div className="missions-image-small-container">
+                  <div className="missions-image-small">
+                    <img
+                      src={missionsData[1].image}
+                      alt={missionsData[1].description}
+                    />
+                  </div>
+                  <div className="missions-image-small">
+                    <img
+                      src={missionsData[2].image}
+                      alt={missionsData[2].description}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
         <div className="missions-row">
@@ -843,28 +862,30 @@ export default function Missions() {
               </div>
             </div>
 
-            <div className="missions-accordion-content-image">
-              <div className="missions-image-large">
-                <img
-                  src={missionsData[3].imgSrc}
-                  alt={missionsData[3].description}
-                />
-              </div>
-              <div className="missions-image-small-container">
-                <div className="missions-image-small">
+            {missionsData.length >= 6 && (
+              <div className="missions-accordion-content-image">
+                <div className="missions-image-large">
                   <img
-                    src={missionsData[4].imgSrc}
-                    alt={missionsData[4].description}
+                    src={missionsData[3].image}
+                    alt={missionsData[3].description}
                   />
                 </div>
-                <div className="missions-image-small">
-                  <img
-                    src={missionsData[5].imgSrc}
-                    alt={missionsData[5].description}
-                  />
+                <div className="missions-image-small-container">
+                  <div className="missions-image-small">
+                    <img
+                      src={missionsData[4].image}
+                      alt={missionsData[4].description}
+                    />
+                  </div>
+                  <div className="missions-image-small">
+                    <img
+                      src={missionsData[5].image}
+                      alt={missionsData[5].description}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
         <div className="missions-row">
@@ -1101,28 +1122,30 @@ export default function Missions() {
               </div>
             </div>
 
-            <div className="missions-accordion-content-image">
-              <div className="missions-image-large">
-                <img
-                  src={missionsData[6].imgSrc}
-                  alt={missionsData[6].description}
-                />
-              </div>
-              <div className="missions-image-small-container">
-                <div className="missions-image-small">
+            {missionsData.length >= 9 && (
+              <div className="missions-accordion-content-image">
+                <div className="missions-image-large">
                   <img
-                    src={missionsData[7].imgSrc}
-                    alt={missionsData[7].description}
+                    src={missionsData[6].image}
+                    alt={missionsData[6].description}
                   />
                 </div>
-                <div className="missions-image-small">
-                  <img
-                    src={missionsData[8].imgSrc}
-                    alt={missionsData[8].description}
-                  />
+                <div className="missions-image-small-container">
+                  <div className="missions-image-small">
+                    <img
+                      src={missionsData[7].image}
+                      alt={missionsData[7].description}
+                    />
+                  </div>
+                  <div className="missions-image-small">
+                    <img
+                      src={missionsData[8].image}
+                      alt={missionsData[8].description}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
