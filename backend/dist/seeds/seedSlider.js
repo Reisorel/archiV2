@@ -43,6 +43,6 @@ const seedSliders = () => __awaiter(void 0, void 0, void 0, function* () {
         },
     ];
     yield Slider_1.default.insertMany(sliders);
-    console.log('✅ Sliders seeded');
+    console.log(`✅ Sliders seeded with ${sliders.length} slides`);
 });
 exports.default = seedSliders;

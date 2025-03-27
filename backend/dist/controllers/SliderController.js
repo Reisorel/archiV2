@@ -50,7 +50,11 @@ const createSlider = (req, res) => __awaiter(void 0, void 0, void 0, function* (
             res.status(400).json({ message: 'Please fill all fields' });
             return;
         }
-        const newSlider = yield Slider_1.default.create({ image, title, description });
+        // Trouve le dernier id utilisé
+        const lastSlider = yield Slider_1.default.findOne().sort({ id: -1 });
+        const newId = lastSlider ? lastSlider.id + 1 : 1;
+        // Crée avec le nouvel ID
+        const newSlider = yield Slider_1.default.create({ id: newId, image, title, description });
         res.status(201).json(newSlider);
     }
     catch (error) {

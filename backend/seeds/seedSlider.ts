@@ -36,7 +36,7 @@ const seedSliders = async (): Promise<void> => {
   ];
 
   await Slider.insertMany(sliders);
-  console.log('✅ Sliders seeded');
+  console.log(`✅ Sliders seeded with ${sliders.length} slides`);
 };
 
 export default seedSliders;

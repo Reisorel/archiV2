@@ -4,7 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const sliderRoutes_1 = __importDefault(require("./sliderRoutes")); // avec un s minuscule si ton fichier s'appelle bien sliderRoutes.ts
+const sliderRoutes_1 = __importDefault(require("./sliderRoutes"));
+const newsRoutes_1 = __importDefault(require("./newsRoutes"));
 const router = (0, express_1.Router)();
-router.use('/sliders', sliderRoutes_1.default); // monte le sous-router
+router.use('/sliders', sliderRoutes_1.default); // monte le sous-router pour /sliders
+router.use('/news', newsRoutes_1.default); // monte le sous-router pour /news
 exports.default = router;

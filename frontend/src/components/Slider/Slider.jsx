@@ -2,10 +2,10 @@ import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 
 import "./Slider.scss";
-import { sliderData } from "./Data/SliderData";
 import downChevron from "../../assets/icons/down-arrow.svg";
 
 const Slider = () => {
+  const [sliderData, setSliderData] = useState([]);
   const slidesRef = useRef([]); // Réf pour les slides
   const currentIndexRef = useRef(0); // Réf mutable pour l'index courant
   const autoplayRef = useRef(null); // Réf pour l'autoplay
@@ -16,17 +16,34 @@ const Slider = () => {
   const imageInfoRefs = useRef([]); // Réf éléments texte slides
   const [activeDotIndex, setActiveDotIndex] = useState(0); // État index actif des dots
 
+  // Fetch des données depuis le backend :
+  useEffect(() => {
+    const fetchSliders = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/admin/sliders");
+        const data = await response.json();
+        setSliderData(data);
+      } catch (error) {
+        console.error("Erreur lors du fetch des sliders:", error);
+      }
+    };
+
+    fetchSliders();
+  }, []);
+
   // Initialisation des positions et démarrage de l'autoplay
   useEffect(() => {
-    // Initialise les positions des slides
+    if (sliderData.length === 0) return; // Ne fait rien si pas encore de data
+
     slidesRef.current.forEach((slide, i) => {
       gsap.set(slide, { xPercent: i * 100 });
     });
-    // Démarre l'autoplay
+
     startAutoplay();
 
-    return () => stopAutoplay(); // Nettoie l'autoplay lors du démontage
-  }, []);
+    return () => stopAutoplay(); // Nettoie si composant démonte
+  }, [sliderData]); // important de mettre sliderData pour charger les bonnes données dans l'animation
+
 
   // Démarre l'autoplay
   const startAutoplay = () => {
@@ -172,7 +189,7 @@ const Slider = () => {
           className="slider-slide"
           ref={(el) => (slidesRef.current[index] = el)}
         >
-          <img src={slide.src}
+          <img src={slide.image}
           alt={slide.name}
           className="slider-img"
           />
@@ -181,7 +198,7 @@ const Slider = () => {
             ref={(el) => (imageInfoRefs.current[index] = el)}
             className="slider-image-info"
           >
-            <span className="slider-image-name">{slide.name}</span>
+            <span className="slider-image-name">{slide.title}</span>
             <br />
             <span className="slider-image-description">
               {slide.description}

@@ -44,12 +44,19 @@ const createSlider = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    const newSlider = await Slider.create({ image, title, description });
+    // Trouve le dernier id utilisé
+    const lastSlider = await Slider.findOne().sort({ id: -1 });
+    const newId = lastSlider ? lastSlider.id + 1 : 1;
+
+    // Crée avec le nouvel ID
+    const newSlider = await Slider.create({ id: newId, image, title, description });
+
     res.status(201).json(newSlider);
   } catch (error: any) {
     res.status(500).json({ message: 'Error during slider creation', error });
   }
 };
+
 
 // PUT /api/sliders/:id
 const updateSlider = async (req: Request, res: Response): Promise<void> => {
