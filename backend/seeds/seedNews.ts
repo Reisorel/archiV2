@@ -43,15 +43,15 @@ const seedNews = async (): Promise<void> => {
       grade: "Rénovation",
       description: "Etude de faisabilité",
       image:
-        "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_auto,q_auto/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-ferme-breville-01_pvodek.jpg",
+        "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_auto,q_auto/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-maison-ville-01_x7fdhb.jpg",
     },
     {
       id: 5,
-      slug: "maison-de-ville",
-      title: "MAISON DE VILLE",
-      location: "Bretagne",
-      grade: "Rénovation",
-      description: "Etude de faisabilité",
+      slug: "corps-de-ferme",
+      title: "CORPS DE FERME NORMAND",
+      location: "Calvados",
+      grade: "Rénovation et suivi de chantier",
+      description: "Rénovation",
       image:
         "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_auto,q_auto/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-ferme-breville-01_pvodek.jpg",
     },

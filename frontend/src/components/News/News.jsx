@@ -1,19 +1,35 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
-
 import "./News.css";
-import { newsData } from "./Data/NewsData";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function News() {
+  const [newsData, setNewsData] = useState([]);
   const navigate = useNavigate();
   const titleRef = useRef(null);
   const gridRef = useRef(null);
 
   useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/admin/news");
+        const data = await response.json();
+        setNewsData(data);
+      } catch (error) {
+        console.error("Erreur lors du fetch des news:", error);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
+
+  useEffect(() => {
+    if (newsData.length === 0) return;
+
     // Animation pour le titre
     gsap.fromTo(
       titleRef.current,
@@ -38,7 +54,7 @@ export default function News() {
     if (gridRef.current) {
       const items = gridRef.current.querySelectorAll(".news-singleNew");
 
-      items.forEach((item, index) => {
+      items.forEach((item) => {
         gsap.fromTo(
           item,
           {
@@ -59,7 +75,7 @@ export default function News() {
         );
       });
     }
-  }, []);
+  }, [newsData]);
 
   const handleNavigate = (slug) => {
     navigate(`/projects/${slug}`); // Navigue vers la route du projet
@@ -79,7 +95,7 @@ export default function News() {
       </div>
 
       <div ref={gridRef} className="news-secContent grid">
-        {newsData.map(({ id, imgSrc, title, slug, description, location }) => {
+        {newsData.map(({ id, image, title, slug, description, location }) => {
           return (
             <div
               key={id}
@@ -87,7 +103,7 @@ export default function News() {
               onClick={() => handleNavigate(slug)} // Navigation au clic
             >
               <div className="news-imageDiv">
-                <img src={imgSrc} alt={title} />
+                <img src={image} alt={title} />
                   <div className="news-hoverContent">
                     <div className="hoverContent-container">
                       <h2 className="sub-2">{title}</h2>
