@@ -6,6 +6,7 @@ import connectDB from '../config/db';
 import seedSlider from './seedSlider';
 import seedNews from './seedNews';
 import seedMissions from './seedMissions';
+import seedProjects from './seedProjects';
 
 
 const runSeeds = async () => {
@@ -16,6 +17,7 @@ const runSeeds = async () => {
     await seedSlider();
     await seedNews();
     await seedMissions();
+    await seedProjects();
 
     console.log('🌱 All seeds done');
     process.exit();
