@@ -47,6 +47,11 @@ const projectSchema = new mongoose_1.Schema({
         unique: true,
         trim: true,
     },
+    mainImage: {
+        type: String,
+        required: true,
+        trim: true,
+    },
     title: {
         type: String,
         required: true,

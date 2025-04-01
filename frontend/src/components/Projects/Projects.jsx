@@ -1,17 +1,34 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import { Helmet } from "react-helmet-async";
 
 import "./Projects.css";
-import { projectsData } from "./ProjectsDetails/Data/ProjectData";
 
 export default function Projects() {
+  const [projectsData, setProjectsData] = useState([]); // État pour stocker les données des projets
   const navigate = useNavigate(); // Hook pour naviguer entre les pages
   const titleRef = useRef(null); // Ref titre
   const gridRef = useRef(null); // Ref items grille
 
   useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/admin/projects"
+        );
+        const data = await response.json();
+        setProjectsData(data);
+      } catch (error) {
+        console.error("Erreur lors du fetch des news:", error);
+      }
+    };
+    fetchNews();
+  }, []);
+
+  useEffect(() => {
+    if (projectsData.length === 0) return;
+
     // Animation titre
     gsap.fromTo(
       titleRef.current,
@@ -36,7 +53,7 @@ export default function Projects() {
     if (gridRef.current) {
       const items = gridRef.current.querySelectorAll(".projects-row");
 
-      items.forEach((item, index) => {
+      items.forEach((item) => {
         gsap.fromTo(
           item,
           {
@@ -57,7 +74,7 @@ export default function Projects() {
         );
       });
     }
-  }, []);
+  }, [projectsData]);
 
   return (
     <>
@@ -90,7 +107,7 @@ export default function Projects() {
                   <h2 className="sub-2">{projet.title}</h2>
                 </div>
                 <div className="projects-imageDiv">
-                  <img src={projet.imgSrc} alt={projet.title} />
+                  <img src={projet.mainImage} alt={projet.title} />
                 </div>
               </div>
             ))}

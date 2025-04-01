@@ -118,7 +118,7 @@ const seedProjects = async (): Promise<void> => {
     },
   ];
   await Projects.insertMany(projects);
-  console.log(`✅ Sliders seeded with ${projects.length} projects`);
+  console.log(`✅ Projects seeded with ${projects.length} projects`);
 };
 
 export default seedProjects;

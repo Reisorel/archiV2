@@ -50,6 +50,11 @@ const projectSchema: Schema<IProject> = new Schema(
       unique: true,
       trim: true,
     },
+    mainImage: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     title: {
       type: String,
       required: true,

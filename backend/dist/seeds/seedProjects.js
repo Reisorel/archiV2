@@ -127,6 +127,6 @@ const seedProjects = () => __awaiter(void 0, void 0, void 0, function* () {
         },
     ];
     yield Projects_1.default.insertMany(projects);
-    console.log(`✅ Sliders seeded with ${projects.length} projects`);
+    console.log(`✅ Projects seeded with ${projects.length} projects`);
 });
 exports.default = seedProjects;
