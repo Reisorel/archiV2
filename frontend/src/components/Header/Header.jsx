@@ -5,7 +5,6 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 
 import "./Header.css";
-import { projectsData } from "../Projects/ProjectsDetails/Data/ProjectData";
 import leftChevronBlack from "../../assets/icons/left-arrow-black.svg";
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -14,6 +13,7 @@ export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const [projectsData, setProjectsData] = useState([]); // On utilisera le fetch
   const [showHeader, setShowHeader] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -23,6 +23,19 @@ export default function Header() {
 
   const logoRef = useRef(null);
   const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/admin/projects");
+        const data = await response.json();
+        setProjectsData(data);
+      } catch (error) {
+        console.error("Erreur lors du fetch des news:", error);
+      }
+    };
+    fetchProjects();
+  }, [])
 
   // Gère l'arrivée du logo
   useEffect(() => {

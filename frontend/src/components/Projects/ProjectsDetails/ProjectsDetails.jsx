@@ -162,7 +162,6 @@ export default function ProjectsDetails() {
   }
 
   const { layout } = projet;
-  console.log(layout);
 
   return (
     <>
