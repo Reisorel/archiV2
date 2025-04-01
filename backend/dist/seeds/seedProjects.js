@@ -125,6 +125,68 @@ const seedProjects = () => __awaiter(void 0, void 0, void 0, function* () {
                 ],
             },
         },
+        {
+            id: 2,
+            slug: "maison-a-la-mer",
+            mainImage: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279228/Cassandre_Marion_Architecture/Pages/7.Projects/maison-mer-01_ygtot7.webp",
+            title: "MAISON A LA MER",
+            loc: "Calvados",
+            grade: "Agrandissement",
+            description1: "Nichée sur la côte Normande, la maison existante est conservée et réhabilitée dans son enveloppe et ses installations techniques. Le projet prévoit de concevoir une extension qui reprend le langage de la maison existante dans son volume. Pour mieux établir la liaison avec la maison existante, un espace en simple rez-de-chaussée connecte les deux volumes. Ce dernier, au caractère plus contemporain, révèle au mieux les formes architecturales plus traditionnelles de la maison existante et du reste de l’extension. L’orientation du bâti et le dessin des façades sont conçus pour répondre à l’environnement paysagé et climatique du site.",
+            description2: "Les façades Sud et Sud-Ouest sont largement ouvertes et prolongées par des terrasses. En été, l’arbre imposant situé devant la façade Sud apporte une protection naturelle en agissant comme pare-soleil. En hiver, les grandes ouvertures permettent de capter un maximum de soleil. Le rythme de ces façades rappelle, dans un esprit contemporain, les maisons à colombages présentes dans la ville. Une grande ouverture sur la façade Sud-Ouest cadre la vue sur le jardin. ",
+            tech: {
+                type: "rénovation et extension",
+                techLoc: "Bernières-Sur-Mer",
+                sup: "130 m²",
+                mo: "privée",
+                inter: "conception",
+                avance: "En cours",
+            },
+            tags: [
+                "bois",
+                "extérieur",
+                "Normandie",
+                "maison",
+                "extension",
+                "terrasse",
+                "Caen",
+            ],
+            meta: "Réhabilitation et extension d’une maison en Normandie, intégrant volumes traditionnels et contemporain, grandes ouvertures, terrasses, et lien paysager optimal.",
+            layout: {
+                images: [
+                    {
+                        src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792304/Cassandre_Marion_Architecture/Pages/8.Projects_details/02-maison-mer/maison-mer-01_id13vw.webp",
+                        alt: "Cuisine-1",
+                        gridColumn: "span 1",
+                        gridRow: "span 1",
+                    },
+                    {
+                        src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792306/Cassandre_Marion_Architecture/Pages/8.Projects_details/02-maison-mer/maison-mer-02_xtfty7.webp",
+                        alt: "Salon-1",
+                        gridColumn: "span 1",
+                        gridRow: "span 1",
+                    },
+                    {
+                        src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/02-maison-mer/maison-mer-03_cqsdhd.webp",
+                        alt: "Salon-2",
+                        gridColumn: "span 1",
+                        gridRow: "span 1",
+                    },
+                    {
+                        src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792304/Cassandre_Marion_Architecture/Pages/8.Projects_details/02-maison-mer/maison-mer-04_upmewf.webp",
+                        alt: "Salon-3",
+                        gridColumn: "span 1",
+                        gridRow: "span 1",
+                    },
+                    {
+                        src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/02-maison-mer/maison-mer-05_fvdbio.webp",
+                        alt: "Axo-1",
+                        gridColumn: "span 2",
+                        gridRow: "span 2",
+                    },
+                ],
+            },
+        },
     ];
     yield Projects_1.default.insertMany(projects);
     console.log(`✅ Projects seeded with ${projects.length} projects`);

@@ -5,19 +5,95 @@ import { gsap } from "gsap";
 
 import "./ProjectsDetails.css";
 import Modal from "./Modal/Modal";
-import { projectsData } from "./Data/ProjectData";
 import { Helmet } from "react-helmet-async";
 
 export default function ProjectsDetails() {
+
+  const [projectsData, setProjectsData] = useState([]); // État pour stocker les données des projets
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(null); // Index de l'image courante
+
   const titleRef = useRef(null); // Ref titre
   const techRef = useRef(null); // Ref tech
   const leftArrowRef = useRef(null); // Ref left arrow
   const rightArrowRef = useRef(null); // Ref right arrow
 
-  // Récupération données projet courant
   const { slug } = useParams();
+
+  useEffect(() => {
+      const fetchProjects = async () => {
+        try {
+          const response = await fetch(
+            "http://localhost:3000/api/admin/projects"
+          );
+          const data = await response.json();
+          setProjectsData(data);
+        } catch (error) {
+          console.error("Erreur lors du fetch des news:", error);
+        }
+      };
+      fetchProjects();
+    }, []);
+
+  // Récupération données projet courant
   const projet = projectsData.find((proj) => proj.slug === slug);
-  const { layout } = projet;
+
+  // Scroll vers le haut
+  useEffect(() => {
+    gsap.to(window, {
+      scrollTo: 100,
+      duration: 1, // Durée en secondes
+      ease: "power3.out",
+    });
+  }, [slug]);
+
+  // Animation titre
+  useEffect(() => {
+    if (!projet) return;
+    if (!titleRef.current) return;
+    gsap.killTweensOf(titleRef.current);
+
+    gsap.fromTo(
+      titleRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 90%",
+          toggleActions: "play reverse play reverse",
+        },
+      }
+    );
+  }, [slug, projet]); // Rejoue l'animation chaque fois que `slug` change
+
+  // Animation items tech
+  useEffect(() => {
+    if (!projet) return;
+    const techItems = gsap.utils.toArray(".projectDetails-tech-list li");
+
+    gsap.killTweensOf(techItems);
+
+    gsap.fromTo(
+      techItems,
+      { x: 50, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 3,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".projectDetails-1-tech",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, [slug, projet]); // 🔥 Rejoue à chaque changement de `slug`
 
   // Animation translation chevron
   const handleArrowClick = (arrowRef, direction) => {
@@ -43,51 +119,6 @@ export default function ProjectsDetails() {
     );
   };
 
-  useEffect(() => {
-    // Réinitialise GSAP avant de rejouer l'animation
-    gsap.killTweensOf(titleRef.current);
-
-    gsap.fromTo(
-      titleRef.current,
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: "top 90%",
-          toggleActions: "play reverse play reverse",
-        },
-      }
-    );
-  }, [slug]); // Rejoue l'animation chaque fois que `slug` change
-
-  // Animation items tech
-  useEffect(() => {
-    const techItems = gsap.utils.toArray(".projectDetails-tech-list li");
-
-    gsap.killTweensOf(techItems);
-
-    gsap.fromTo(
-      techItems,
-      { x: 50, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 3,
-        ease: "power3.out",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: ".projectDetails-1-tech",
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
-  }, [slug]); // 🔥 Rejoue à chaque changement de `slug`
-
   // Récupération données flèches navigation
   const currentIndex = projectsData.findIndex((proj) => proj.slug === slug);
 
@@ -102,18 +133,7 @@ export default function ProjectsDetails() {
   const prevProject = projectsData[prevIndex];
   const nextProject = projectsData[nextIndex];
 
-  useEffect(() => {
-    gsap.to(window, {
-      scrollTo: 100,
-      duration: 1, // Durée en secondes
-      ease: "power3.out",
-    });
-  }, [slug]);
-
-  // États pour la modale
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(null); // Index de l'image courante
-
+  // Fonction pour ouvrir la modale
   const openModal = (index) => {
     if (typeof index !== "number" || isNaN(index)) {
       return;
@@ -133,9 +153,16 @@ export default function ProjectsDetails() {
     );
   };
 
+  if (projectsData.length === 0) {
+    return <h2>Chargement des projets...</h2>;
+  }
+
   if (!projet) {
     return <h2>Projet introuvable</h2>;
   }
+
+  const { layout } = projet;
+  console.log(layout);
 
   return (
     <>
@@ -172,14 +199,14 @@ export default function ProjectsDetails() {
 
           <div className="projectDetails-1">
             <div className="projectDetails-1-imageDiv">
-              <img src={projet.imgSrc} alt={projet.title} />
+              <img src={projet.mainImage} alt={projet.title} />
             </div>
             <div className="projectDetails-1-infos">
               <div className="projecDetails-1-title">
                 <h2 className="title" ref={titleRef}>
                   {projet.title}
                 </h2>
-                <p>{projet.location}</p>
+                <p>{projet.loc}</p>
               </div>
               <div className="projectDetails-1-text">
                 <div className="projectDetails-1-description">
@@ -202,7 +229,7 @@ export default function ProjectsDetails() {
                           <strong>Localisation :</strong>{" "}
                         </span>
 
-                        <span className="project-type">{projet.tech.loc}</span>
+                        <span className="project-type">{projet.tech.techLoc}</span>
                       </li>
                       <li>
                         <span className="projectDetails-icon-text">

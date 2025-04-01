@@ -12,7 +12,7 @@ export default function Projects() {
   const gridRef = useRef(null); // Ref items grille
 
   useEffect(() => {
-    const fetchNews = async () => {
+    const fetchProjects = async () => {
       try {
         const response = await fetch(
           "http://localhost:3000/api/admin/projects"
@@ -23,7 +23,7 @@ export default function Projects() {
         console.error("Erreur lors du fetch des news:", error);
       }
     };
-    fetchNews();
+    fetchProjects();
   }, []);
 
   useEffect(() => {
