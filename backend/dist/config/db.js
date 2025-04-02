@@ -25,7 +25,8 @@ const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
     }
     try {
         yield mongoose_1.default.connect(uri);
-        console.log(`✅ MongoDB connection successful for ${process.env.NODE_ENV}`);
+        console.log(`✅ MongoDB connected in ${process.env.NODE_ENV} mode`);
+        console.log(`📦 Using URI: ${uri.includes('mongodb+srv') ? 'MongoDB Atlas (cloud)' : 'Localhost (127.0.0.1)'}`);
     }
     catch (error) {
         console.error('❌ MongoDB connection failed:', error.message);
