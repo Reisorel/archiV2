@@ -1,0 +1,3 @@
+# Ignore tous les fichiers d'environnement du backend
+backend/.env
+backend/.env.*
