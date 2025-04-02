@@ -56,7 +56,7 @@ const createProject = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             !description2 ||
             !tech ||
             !tech.type ||
-            !tech.loc ||
+            !tech.techLoc ||
             !tech.sup ||
             !tech.mo ||
             !tech.inter ||
@@ -69,7 +69,11 @@ const createProject = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             !layout.images ||
             !Array.isArray(layout.images) ||
             layout.images.length === 0) {
-            res.status(400).json({ message: "PLease fill every form fields and make sure to provide at least one tag and one image" });
+            res
+                .status(400)
+                .json({
+                message: "PLease fill every form fields and make sure to provide at least one tag and one image",
+            });
             return;
         }
         // 🔢 Auto-incrément ID
@@ -100,28 +104,51 @@ const createProject = (req, res) => __awaiter(void 0, void 0, void 0, function* 
 const updateProject = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id } = req.params;
-        const { slug, mainImage, title, loc, grade, description1, description2, tech, tags, meta, layout, } = req.body; // 🧪 Vérification des champs obligatoires
-        const Updatedproject = yield Projects_1.default.findByIdAndUpdate(id, {
-            slug,
-            mainImage,
-            title,
-            loc,
-            grade,
-            description1,
-            description2,
-            tech,
-            tags,
-            meta,
-            layout,
-        }, { new: true, runValidators: true });
-        if (!Updatedproject) {
-            res.status(404).json({ message: "Project not found" });
+        // 🔍 Refus d'un body vide
+        if (Object.keys(req.body).length === 0) {
+            res.status(400).json({ message: "Le body est vide. Fournis au moins un champ à mettre à jour." });
             return;
         }
-        res.status(200).json(Updatedproject);
+        // 🧪 Vérification : tous les champs envoyés doivent être valides
+        for (const [key, value] of Object.entries(req.body)) {
+            const isEmpty = value === undefined ||
+                value === null ||
+                (typeof value === "string" && value.trim() === "") ||
+                (Array.isArray(value) && value.length === 0);
+            if (isEmpty) {
+                res.status(400).json({ message: `Le champ '${key}' ne peut pas être vide.` });
+                return;
+            }
+            // Validation spécifique pour "tech"
+            if (key === "tech" && typeof value === "object" && value !== null) {
+                const { type, techLoc, sup, mo, inter, avance } = value;
+                if (!type || !techLoc || !sup || !mo || !inter || !avance) {
+                    res.status(400).json({ message: "Tous les champs de 'tech' doivent être remplis." });
+                    return;
+                }
+            }
+            // Validation spécifique pour "layout"
+            if (key === "layout" && typeof value === "object" && value !== null) {
+                const layout = value;
+                if (!layout.images || !Array.isArray(layout.images) || layout.images.length === 0) {
+                    res.status(400).json({ message: "Le champ 'layout.images' doit contenir au moins une image." });
+                    return;
+                }
+            }
+        }
+        // ✅ Mise à jour partielle uniquement des champs fournis
+        const updatedProject = yield Projects_1.default.findByIdAndUpdate(id, { $set: req.body }, { new: true, runValidators: true });
+        if (!updatedProject) {
+            res.status(404).json({ message: "Projet introuvable" });
+            return;
+        }
+        res.status(200).json({
+            message: `Projet '${updatedProject.title}' mis à jour avec succès.`,
+            updatedProject
+        });
     }
     catch (error) {
-        res.status(500).json({ message: "Error during project update", error });
+        res.status(500).json({ message: "Erreur lors de la mise à jour du projet", error });
     }
 });
 //DELETE /api/projects/:id
@@ -133,7 +160,11 @@ const deleteProject = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             res.status(404).json({ message: "Project not found" });
             return;
         }
-        res.status(200).json({ message: "Project deleted" });
+        res
+            .status(200)
+            .json({
+            message: `Project "${project.title}" (id: ${project._id}) deleted successfully`,
+        });
     }
     catch (error) {
         res.status(500).json({ message: "Error during project deletion", error });
