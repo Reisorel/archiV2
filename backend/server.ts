@@ -21,6 +21,11 @@ app.use('/api/admin', adminRoutes);
 // ⬇️ Sert le frontend compilé (Vite/React)
 app.use(express.static(path.resolve(__dirname, "../../frontend/dist")));
 
+// ✅ Route de test pour Render
+app.get('/', (req: Request, res: Response) => {
+  res.status(200).json({ status: 'ok', message: 'API is running 🚀' });
+});
+
 // ⬇️ Catch-all route frontend
 app.get('*', (req: Request, res: Response) => {
   res.sendFile(path.resolve(__dirname, "../../frontend/dist", "index.html"));
