@@ -15,4 +15,3 @@ router.use('/debug', debugRoutes); // 👈 accessible à /api/debug/infos
 
 
 export default router;
-

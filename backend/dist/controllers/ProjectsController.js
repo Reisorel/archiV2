@@ -1,22 +1,13 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Projects_1 = __importDefault(require("../models/Projects")); // Import du modèle de données
 // GET /api/projects
-const getAllProjects = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getAllProjects = async (req, res) => {
     try {
-        const projects = yield Projects_1.default.find();
+        const projects = await Projects_1.default.find();
         console.log("📦 Projects fetched:", projects);
         if (projects.length === 0) {
             res.status(200).json({ message: "Project list is actually empty" });
@@ -27,11 +18,11 @@ const getAllProjects = (req, res) => __awaiter(void 0, void 0, void 0, function*
     catch (error) {
         res.status(500).json({ message: "Error during projects research", error });
     }
-});
+};
 // GET /api/projects/:id
-const getProjectById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getProjectById = async (req, res) => {
     try {
-        const project = yield Projects_1.default.findById(req.params.id);
+        const project = await Projects_1.default.findById(req.params.id);
         if (!project) {
             res.status(404).json({ message: "Project not found" });
             return;
@@ -41,9 +32,9 @@ const getProjectById = (req, res) => __awaiter(void 0, void 0, void 0, function*
     catch (error) {
         res.status(500).json({ message: "Error during project research", error });
     }
-});
+};
 // POST /api/projects
-const createProject = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const createProject = async (req, res) => {
     try {
         const { slug, mainImage, title, loc, grade, description1, description2, tech, tags, meta, layout, } = req.body;
         // 🧪 Vérification des champs obligatoires
@@ -77,10 +68,10 @@ const createProject = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             return;
         }
         // 🔢 Auto-incrément ID
-        const lastProject = yield Projects_1.default.findOne().sort({ id: -1 });
+        const lastProject = await Projects_1.default.findOne().sort({ id: -1 });
         const newId = lastProject ? lastProject.id + 1 : 1;
         // ✅ Création du document
-        const newProject = yield Projects_1.default.create({
+        const newProject = await Projects_1.default.create({
             id: newId,
             slug,
             mainImage,
@@ -99,9 +90,9 @@ const createProject = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     catch (error) {
         res.status(500).json({ message: "Error during project creation", error });
     }
-});
+};
 // PUT /api/projects/:id
-const updateProject = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const updateProject = async (req, res) => {
     try {
         const { id } = req.params;
         // 🔍 Refus d'un body vide
@@ -137,7 +128,7 @@ const updateProject = (req, res) => __awaiter(void 0, void 0, void 0, function* 
             }
         }
         // ✅ Mise à jour partielle uniquement des champs fournis
-        const updatedProject = yield Projects_1.default.findByIdAndUpdate(id, { $set: req.body }, { new: true, runValidators: true });
+        const updatedProject = await Projects_1.default.findByIdAndUpdate(id, { $set: req.body }, { new: true, runValidators: true });
         if (!updatedProject) {
             res.status(404).json({ message: "Projet introuvable" });
             return;
@@ -150,12 +141,12 @@ const updateProject = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     catch (error) {
         res.status(500).json({ message: "Erreur lors de la mise à jour du projet", error });
     }
-});
+};
 //DELETE /api/projects/:id
-const deleteProject = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const deleteProject = async (req, res) => {
     try {
         const { id } = req.params;
-        const project = yield Projects_1.default.findByIdAndDelete(req.params.id);
+        const project = await Projects_1.default.findByIdAndDelete(req.params.id);
         if (!project) {
             res.status(404).json({ message: "Project not found" });
             return;
@@ -169,7 +160,7 @@ const deleteProject = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     catch (error) {
         res.status(500).json({ message: "Error during project deletion", error });
     }
-});
+};
 exports.default = {
     getAllProjects,
     getProjectById,

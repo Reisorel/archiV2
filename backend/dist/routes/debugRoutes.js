@@ -14,7 +14,7 @@ router.get('/infos', (req, res) => {
     const isConnected = mongoose_1.default.connection.readyState === 1;
     res.json({
         env: nodeEnv,
-        mongoUri: (uri === null || uri === void 0 ? void 0 : uri.includes('mongodb+srv')) ? 'MongoDB Atlas (cloud)' : 'Localhost',
+        mongoUri: uri?.includes('mongodb+srv') ? 'MongoDB Atlas (cloud)' : 'Localhost',
         dbName,
         mongoConnected: isConnected,
         serverTime: now

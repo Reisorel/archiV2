@@ -11,6 +11,7 @@ dotenv.config(); // Charge .env
 const app: Express = express(); // Crée une application Express
 connectDB(); // Connexion à MongoDB
 
+
 // Middlewares
 app.use(cors());
 app.use(bodyParser.json());
