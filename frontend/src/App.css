@@ -1,5 +1,6 @@
 @import "./assets/styles/main.css";
 @import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+@import "@fortawesome/fontawesome-free/css/all.min.css";
 html, body {
   display: flex;
   flex-direction: column;
