@@ -1,7 +1,7 @@
 // CustomCursor.tsx
 import { useEffect, FC } from 'react';
 import gsap from 'gsap';
-import './Cursor.css';
+import './Cursor.scss';
 
 const CustomCursor: FC = () => {
   useEffect(() => {

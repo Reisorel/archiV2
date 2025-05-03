@@ -1,5 +1,6 @@
 import "./App.scss";
 import { BrowserRouter } from "react-router-dom";
+import Header from "./components/Header/Header";
 import CustomCursor from "./components/Cursor/Cursor";
 
 import Router from "./routes/Router";
@@ -13,6 +14,7 @@ const App: FC = () => {
     <>
       <BrowserRouter>
       <CustomCursor />
+        <Header />
 
         <div className="App">
           <Router />
