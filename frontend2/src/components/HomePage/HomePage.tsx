@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Slider from "../Slider/Slider";
 import News from "../News/News";
 import Missions from "../Missions/Missions";
+import About from "../About/About";
 
 // NOTE :
 // Ce composant sert juste à regrouper les 4 composants de la page principale
@@ -14,6 +15,7 @@ const HomePage: FC = () => {
       <Slider />
       <News />
       <Missions />
+      <About />
     </>
   );
 };
