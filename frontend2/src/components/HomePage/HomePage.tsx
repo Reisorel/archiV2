@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Slider from "../Slider/Slider";
 import News from "../News/News";
 import Missions from "../Missions/Missions";

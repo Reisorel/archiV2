@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, FC } from "react";
+import { useEffect, useRef, FC } from "react";
 import { useLocation } from "react-router-dom";
 
 import gsap from "gsap";

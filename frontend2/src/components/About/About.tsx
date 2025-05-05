@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, FC } from "react";
+import { useEffect, useState, useRef, FC } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import du plugin
 
