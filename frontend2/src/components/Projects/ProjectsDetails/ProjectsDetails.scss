@@ -1,0 +1,670 @@
+.projectDetails-framer {
+  background-color: #ffffff;
+  z-index: 100;
+  position: relative;
+}
+
+.projectDetails-container {
+  z-index: 100;
+  margin: 8rem 8rem 0 8rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.projectDetails-nav-arrows-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 2rem;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  gap: 0;
+}
+
+.projectDetails-nav-arrows {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  flex-direction: row;
+  text-decoration: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.projectDetails-nav-arrows h2 {
+  cursor: pointer;
+  color: initial;
+  font-size: 1.15rem;
+  contain: layout;
+}
+
+.projectDetails-nav-arrows i {
+  margin: 0 1rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: initial;
+  transition: transform 0.6s ease;
+}
+
+.projectDetails-nav-arrows:hover i {
+  transform: rotateX(360deg); /* 2 tours sur l'axe X */
+  cursor: pointer;
+}
+
+.projectDetails-1 {
+  width: 100%;
+  max-width: 1700px;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr; /* Image plus petite, texte plus large */
+  gap: 2rem;
+  margin: auto;
+  background-color: #ffffff;
+}
+
+.projectDetails-1-imageDiv {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.projectDetails-1-imageDiv img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+.projectDetails-1-infos {
+  display: grid;
+  grid-template-rows: 1fr 7fr;
+  gap: 2rem;
+}
+
+.projecDetails-1-title {
+  height: auto;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 0;
+  font-weight: bold;
+}
+
+.projecDetails-1-title h2 {
+  display: inline-block;
+  margin: 0 0 1rem;
+}
+
+.projecDetails-1-title p {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+}
+
+.projectDetails-1-text {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  text-align: left;
+  gap: 2rem;
+}
+
+.projectDetails-1-description p {
+  margin: 0;
+  line-height: 2;
+}
+
+.projectDetails-1-description p:first-child {
+  margin-bottom: 0.5rem;
+}
+
+.projectDetails-1-tech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.projectDetails-tech-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  padding-left: 0;
+  margin: 0 auto;
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+}
+
+.projectDetails-tech-list-left {
+  border-right: 1px solid #333;
+  margin-right: 1rem;
+}
+
+.projectDetails-tech-list-right {
+  margin-left: 2rem;
+}
+
+.projectDetails-tech-list li {
+  margin: 2rem;
+  width: fit-content;
+}
+
+.projectDetails-tech-list li:nth-child(1) {
+  margin-top: 0;
+}
+.projectDetails-tech-list li:nth-child(3) {
+  margin-bottom: 0;
+}
+
+.projectDetails-tech-list i {
+  color: #000000;
+}
+
+.tags-div {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  margin-top: 2rem;
+  padding: 0;
+}
+
+.tags-div-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.keyword-index {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  padding: 0 1rem 0 0;
+  margin: 0;
+}
+
+.tags-div ul {
+  list-style: none;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.tags-div li {
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* ==== GRiD PHOTO DESKTOP ==== */
+
+.projectDetails-2 {
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(
+    2,
+    minmax(10vw, 25vw)
+  ); // Fixe une taille min et max en vw
+  grid-template-rows: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.ProjectDetail-2-col-imgDiv {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: "100%";
+  height: "100%";
+  overflow: "hidden";
+}
+
+.ProjectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ProjectDetail-2-col img {
+  transition: transform 3s ease;
+  cursor: pointer;
+}
+
+.ProjectDetail-2-col:hover img {
+  transform: scale(1.1);
+}
+
+/* >>>>>>>>>>> MEDIA QUERIES <<<<<<<<<< */
+
+// Mobile //
+@media screen and (max-width: 760px) {
+  .projectDetails-container {
+    z-index: 100;
+    margin: 2rem 0 0;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Cache tout ce qui dépasse */
+  }
+
+  .projectDetails-nav-arrows-div {
+    margin-bottom: 2rem;
+    background-color: #ffffff;
+  }
+
+  .projectDetails-nav-arrows h2 {
+    cursor: pointer;
+    color: initial;
+    font-size: 1rem;
+    contain: layout; /* Empêche l'élément de dépasser son conteneur */
+    background-color: #ffffff;
+  }
+
+  .projectDetails-nav-arrows:nth-of-type(1) {
+    text-align: left;
+  }
+  .projectDetails-nav-arrows:nth-of-type(2) {
+    text-align: right;
+  }
+
+  .projectDetails-nav-arrows i {
+    font-size: 1rem;
+  }
+
+  .projectDetails-nav-arrows i:nth-child(1) {
+    margin-left: 0;
+  }
+  .projectDetails-nav-arrows i:nth-child(2) {
+    margin-right: 0;
+  }
+
+  .projectDetails-1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .projecDetails-1-title {
+    align-items: left;
+    text-align: left;
+  }
+
+  .projecDetails-1-title h2 {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  .projectDetails-1-imageDiv {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .projectDetails-1-imageDiv img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .projectDetails-1-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    overflow: hidden;
+  }
+
+  .projectDetails-1-description p:first-child {
+    margin-bottom: 1rem;
+  }
+
+  .projectDetails-1-tech {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; // espace du bas
+  }
+
+  .projectDetails-tech-list {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    align-items: start;
+    text-align: left;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .projectDetails-tech-list-left,
+  .projectDetails-tech-list-right {
+    display: grid;
+    grid-template-rows: repeat(
+      3,
+      1fr
+    ); /* ✅ Même hauteur pour toutes les lignes */
+    gap: 2rem;
+    align-items: stretch; /* ✅ Forcer la même hauteur */
+    margin: 0;
+    padding: 0;
+  }
+
+  .projectDetails-tech-list li {
+    min-height: 5rem; /* Définit une hauteur minimale de 2rem */
+    padding: 0rem;
+    margin: 0rem;
+    width: fit-content;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .projectDetails-tech-list i {
+    color: #000000;
+  }
+
+  .projectDetails-1-text {
+    display: grid;
+    grid-template-rows: auto auto; /* Chaque ligne s'ajuste à la hauteur de son contenu */
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .icon-text {
+    display: inline; /* Affiche l'icône et le texte en gras sur la même ligne */
+  }
+
+  .project-type {
+    display: block; /* Force le contenu à passer à la ligne suivante */
+  }
+
+  .tags-div {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    width: 100%; /* 👈 S'assure que la div prenne toute la largeur disponible */
+    padding: 0;
+    margin: 0; /* 👈 Centre la div elle-même si elle est dans un parent plus large */
+  }
+
+  .tags-div-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 👈 S'assure que le contenu interne est aussi centré */
+    align-items: center;
+  }
+
+  .keyword-index {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    padding: 0 1rem 1rem 0;
+    margin: 0;
+  }
+
+  .tags-div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 8px; /* 🔥 Ajuste l'espace entre chaque mot-clé */
+    align-items: center; /* 🔥 Centre verticalement */
+  }
+
+  .tags-div li {
+    text-decoration: none;
+    background-color: #f5f5f5; /* Juste pour visualiser */
+    border-radius: 5px; /* Ajoute un léger arrondi */
+    font-size: 1rem;
+    white-space: nowrap; /* 🔥 Empêche la coupure des mots */
+  }
+
+  /* ==== GRID PHOTO MOBILE ==== */
+
+  .ProjectDetails-2-framer {
+    overflow: hidden;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .projectDetails-2 {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(
+      2,
+      minmax(40vw, 1fr)
+    ); // Valeur par défaut (mobile)
+    grid-template-rows: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .ProjectDetail-2-col-imgDiv {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: "100%";
+    height: "100%";
+    overflow: "hidden";
+  }
+
+  .ProjectImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ProjectDetail-2-col img {
+    transition: transform 3s ease;
+    cursor: pointer;
+  }
+
+  .ProjectDetail-2-col:hover img {
+    transform: scale(1.1);
+  }
+}
+
+// Tablette //
+@media screen and (min-width: 761px) and (max-width: 1080px) {
+ .projectDetails-container {
+   display: flex;
+   flex-direction: column;
+    z-index: 100;
+    margin: 2rem 0 0;
+    background-color: #ffffff;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .projectDetails-nav-arrows-div {
+    margin-bottom: 2rem;
+  }
+
+  .projectDetails-nav-arrows h2 {
+    cursor: pointer;
+    color: initial;
+    font-size: 1rem;
+    contain: layout;
+  }
+
+  .projectDetails-nav-arrows:nth-of-type(1) {
+    text-align: left;
+  }
+  .projectDetails-nav-arrows:nth-of-type(2) {
+    text-align: right;
+  }
+
+  .projectDetails-nav-arrows i {
+    font-size: 1rem;
+  }
+
+  .projectDetails-nav-arrows i:nth-child(1) {
+    margin-left: 0;
+  }
+  .projectDetails-nav-arrows i:nth-child(2) {
+    margin-right: 0;
+  }
+
+  .projectDetails-1 {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .projecDetails-1-title {
+    align-items: left;
+    text-align: left;
+  }
+
+  .projecDetails-1-title h2 {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  .projectDetails-1-imageDiv {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .projectDetails-1-imageDiv img {
+    height: auto;
+    object-fit: contain;
+    object-position: 50% 50%; /* Centre l’image (facultatif, défaut = center) */
+  }
+
+  .projectDetails-1-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 2rem;
+    overflow: hidden;
+  }
+
+  .projectDetails-1-description p:first-child {
+    margin-bottom: 1rem;
+  }
+
+  .projectDetails-1-tech {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .projectDetails-tech-list {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    align-items: start;
+    text-align: left;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .projectDetails-tech-list-left,
+  .projectDetails-tech-list-right {
+    display: grid;
+    grid-template-rows: repeat(
+      3,
+      1fr
+    );
+    gap: 2rem;
+    align-items: stretch;
+    margin: 0;
+    padding: 0 4rem;
+  }
+
+  .projectDetails-tech-list li {
+    min-height: 5rem;
+    padding: 0rem;
+    margin: 0rem;
+    width: fit-content;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .projectDetails-tech-list i {
+    color: #000000;
+  }
+
+  .projectDetails-1-text {
+    display: grid;
+    grid-template-rows: auto auto;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .icon-text {
+    display: inline;
+  }
+
+  .project-type {
+    display: block;
+  }
+
+  .tags-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tags-div-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .keyword-index {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem 1rem 0;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .tags-div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .tags-div li {
+    text-decoration: none;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+}
