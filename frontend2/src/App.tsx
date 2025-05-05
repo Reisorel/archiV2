@@ -8,24 +8,26 @@ import Router from "./routes/Router";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { FC } from "react";
+import { HeadProvider } from "react-head";
 
 // Utilisation de FC (FunctionComponent) pour typer le composant
 const App: FC = () => {
-
   return (
     <>
-      <div className="App">
-        <BrowserRouter>
-          <CustomCursor />
-          <Header />
-          <Background>
-            <Router />
-          </Background>
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </BrowserRouter>
-      </div>
+      <HeadProvider>
+        <div className="App">
+          <BrowserRouter>
+            <CustomCursor />
+            <Header />
+            <Background>
+              <Router />
+            </Background>
+            <Footer />
+            <Analytics />
+            <SpeedInsights />
+          </BrowserRouter>
+        </div>
+      </HeadProvider>
     </>
   );
 };

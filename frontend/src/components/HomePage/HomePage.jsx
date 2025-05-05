@@ -16,7 +16,7 @@ export default function HomePage() {
         <title>Accueil - Cassandre Marion Architecture</title>
         <meta
           name="description"
-          content="Cassandre Marion, architecte en Bretagne et Normandie. Projets d'architecture à Rennes, Caen et leurs environs, spécialisée dans le bois et la rénovation."
+          content="Cassandre Marion, architecte en Bretagne et Normandie. Projets d'architecture à Rennes, Caen et leurs environs, spécialisée dans le bois et la réation.nov"
         />
       </Helmet>
       <Slider></Slider>

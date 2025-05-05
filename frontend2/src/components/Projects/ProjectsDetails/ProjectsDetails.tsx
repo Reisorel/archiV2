@@ -5,6 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 import "./ProjectsDetails.scss";
 import Modal from "./Modal/Modal";
+import { Title, Meta } from 'react-head';
 
 // Enregistrement des plugins GSAP nécessaires
 gsap.registerPlugin(ScrollTrigger);
@@ -131,12 +132,12 @@ const ProjectsDetails: FC = () => {
   }, [slug, projet]); // 🔥 Rejoue à chaque changement de `slug`
 
   // Animation translation chevron
-  const handleArrowClick = (arrowRef: React.RefObject<HTMLElement>, direction: number) => {
-    if (!arrowRef.current || gsap.isTweening(arrowRef.current)) return; // Empêche les clics pendant l'animation
+  const handleArrowClick = (arrowRef: React.RefObject<HTMLElement | null>, direction: number) => {
+    if (!arrowRef.current || gsap.isTweening(arrowRef.current)) return;
 
-    gsap.killTweensOf(arrowRef.current); // Stoppe toute animation en cours
-    gsap.set(arrowRef.current, { x: 0 }); // Remet à zéro AVANT l'animation
-    gsap.to(arrowRef.current, { clearProps: "all" }); // Supprime toutes les propriétés CSS GSAP
+    gsap.killTweensOf(arrowRef.current);
+    gsap.set(arrowRef.current, { x: 0 });
+    gsap.to(arrowRef.current, { clearProps: "all" });
 
     gsap.fromTo(
       arrowRef.current,
@@ -199,151 +200,156 @@ const ProjectsDetails: FC = () => {
   const { layout } = projet;
 
   return (
-    <div className="projectDetails-framer">
-      <div id="projectDetails" className="projectDetails-container">
-        <div
-          className="projectDetails-nav-arrows-div"
-          data-hover-detect="true"
-        >
-          {/* Projet précédent */}
-          <Link
-            to={`/projects/${prevProject.slug}`}
-            className="projectDetails-nav-arrows"
-            onClick={() => handleArrowClick(leftArrowRef, -50)}
-          >
-            <i ref={leftArrowRef as React.RefObject<HTMLElement>} className="fa-solid fa-chevron-left"></i>
-            <h2 className="sub-2">{prevProject.title}</h2>
-          </Link>
+    <>
+      <Title>{`Découvrez les détails du projet ${projet.title}, situé à ${projet.loc}, réalisé par Cassandre Marion.`}</Title>
+      <Meta name="description" content={projet.meta} />
 
-          {/* Projet suivant */}
-          <Link
-            to={`/projects/${nextProject.slug}`}
-            className="projectDetails-nav-arrows"
-            onClick={() => handleArrowClick(rightArrowRef, 50)}
+      <div className="projectDetails-framer">
+        <div id="projectDetails" className="projectDetails-container">
+          <div
+            className="projectDetails-nav-arrows-div"
+            data-hover-detect="true"
           >
-            <h2 className="sub-2">{nextProject.title}</h2>
-            <i ref={rightArrowRef as React.RefObject<HTMLElement>} className="fa-solid fa-chevron-right"></i>
-          </Link>
-        </div>
+            {/* Projet précédent */}
+            <Link
+              to={`/projects/${prevProject.slug}`}
+              className="projectDetails-nav-arrows"
+              onClick={() => handleArrowClick(leftArrowRef, -50)}
+            >
+              <i ref={leftArrowRef as React.RefObject<HTMLElement>} className="fa-solid fa-chevron-left"></i>
+              <h2 className="sub-2">{prevProject.title}</h2>
+            </Link>
 
-        <div className="projectDetails-1">
-          <div className="projectDetails-1-imageDiv">
-            <img src={projet.mainImage} alt={projet.title} />
+            {/* Projet suivant */}
+            <Link
+              to={`/projects/${nextProject.slug}`}
+              className="projectDetails-nav-arrows"
+              onClick={() => handleArrowClick(rightArrowRef, 50)}
+            >
+              <h2 className="sub-2">{nextProject.title}</h2>
+              <i ref={rightArrowRef as React.RefObject<HTMLElement>} className="fa-solid fa-chevron-right"></i>
+            </Link>
           </div>
-          <div className="projectDetails-1-infos">
-            <div className="projecDetails-1-title">
-              <h2 className="title" ref={titleRef}>
-                {projet.title}
-              </h2>
-              <p>{projet.loc}</p>
+
+          <div className="projectDetails-1">
+            <div className="projectDetails-1-imageDiv">
+              <img src={projet.mainImage} alt={projet.title} />
             </div>
-            <div className="projectDetails-1-text">
-              <div className="projectDetails-1-description">
-                <p>{projet.description1}</p>
-                <p>{projet.description2}</p>
+            <div className="projectDetails-1-infos">
+              <div className="projecDetails-1-title">
+                <h2 className="title" ref={titleRef}>
+                  {projet.title}
+                </h2>
+                <p>{projet.loc}</p>
               </div>
-              <div className="projectDetails-1-tech">
-                <ul ref={techRef} className="projectDetails-tech-list">
-                  <div className="projectDetails-tech-list-left">
-                    <li>
-                      <span className="projectDetails-icon-text">
-                        <i className="fas fa-tools"></i>{" "}
-                        <strong>Type :</strong>{" "}
-                      </span>
-                      <span className="project-type">{projet.tech.type}</span>
-                    </li>
-                    <li>
-                      <span className="projectDetails-icon-text">
-                        <i className="fas fa-map-marker-alt"></i>{" "}
-                        <strong>Localisation :</strong>{" "}
-                      </span>
+              <div className="projectDetails-1-text">
+                <div className="projectDetails-1-description">
+                  <p>{projet.description1}</p>
+                  <p>{projet.description2}</p>
+                </div>
+                <div className="projectDetails-1-tech">
+                  <ul ref={techRef} className="projectDetails-tech-list">
+                    <div className="projectDetails-tech-list-left">
+                      <li>
+                        <span className="projectDetails-icon-text">
+                          <i className="fas fa-tools"></i>{" "}
+                          <strong>Type :</strong>{" "}
+                        </span>
+                        <span className="project-type">{projet.tech.type}</span>
+                      </li>
+                      <li>
+                        <span className="projectDetails-icon-text">
+                          <i className="fas fa-map-marker-alt"></i>{" "}
+                          <strong>Localisation :</strong>{" "}
+                        </span>
 
-                      <span className="project-type">{projet.tech.techLoc}</span>
-                    </li>
-                    <li>
-                      <span className="projectDetails-icon-text">
-                        <i className="fas fa-ruler-combined"></i>{" "}
-                        <strong>Superficie :</strong>{" "}
-                      </span>
-                      <span className="project-type">{projet.tech.sup}</span>
-                    </li>
-                  </div>
-                  <div className="projectDetails-tech-list-right">
-                    <li>
-                      <span className="projectDetails-icon-text">
-                        <i className="fas fa-user-tie"></i>{" "}
-                        <strong>Maîtrise d'ouvrage :</strong>{" "}
-                      </span>
-
-                      <span className="project-type">{projet.tech.mo}</span>
-                    </li>
-                    <li>
-                      <span className="projectDetails-icon-text">
-                        <i className="fas fa-lightbulb"></i>{" "}
-                        <strong>Intervention :</strong>{" "}
-                      </span>
-                      <span className="project-type">{projet.tech.inter}</span>
-                    </li>
-                    <li>
-                      <span className="projectDetails-icon-text">
-                        <i className="fas fa-check-circle"></i>{" "}
-                        <strong>Avancement :</strong>{" "}
-                      </span>
-                      <span className="project-type">{projet.tech.avance}</span>
-                    </li>
-                  </div>
-                </ul>
-
-                <div className="tags-div">
-                  {projet.tags && projet.tags.length > 0 && (
-                    <div className="tags-div-left">
-                      <p className="keyword-index">Mots-clés:</p>
-                      <ul>
-                        {projet.tags.map((tag, index) => (
-                          <li key={index}>{tag}</li>
-                        ))}
-                      </ul>
+                        <span className="project-type">{projet.tech.techLoc}</span>
+                      </li>
+                      <li>
+                        <span className="projectDetails-icon-text">
+                          <i className="fas fa-ruler-combined"></i>{" "}
+                          <strong>Superficie :</strong>{" "}
+                        </span>
+                        <span className="project-type">{projet.tech.sup}</span>
+                      </li>
                     </div>
-                  )}
+                    <div className="projectDetails-tech-list-right">
+                      <li>
+                        <span className="projectDetails-icon-text">
+                          <i className="fas fa-user-tie"></i>{" "}
+                          <strong>Maîtrise d'ouvrage :</strong>{" "}
+                        </span>
+
+                        <span className="project-type">{projet.tech.mo}</span>
+                      </li>
+                      <li>
+                        <span className="projectDetails-icon-text">
+                          <i className="fas fa-lightbulb"></i>{" "}
+                          <strong>Intervention :</strong>{" "}
+                        </span>
+                        <span className="project-type">{projet.tech.inter}</span>
+                      </li>
+                      <li>
+                        <span className="projectDetails-icon-text">
+                          <i className="fas fa-check-circle"></i>{" "}
+                          <strong>Avancement :</strong>{" "}
+                        </span>
+                        <span className="project-type">{projet.tech.avance}</span>
+                      </li>
+                    </div>
+                  </ul>
+
+                  <div className="tags-div">
+                    {projet.tags && projet.tags.length > 0 && (
+                      <div className="tags-div-left">
+                        <p className="keyword-index">Mots-clés:</p>
+                        <ul>
+                          {projet.tags.map((tag, index) => (
+                            <li key={index}>{tag}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="ProjectDetails-2-framer">
-          <div className="projectDetails-2">
-            {layout.images.map((image, index) => (
-              <div
-                key={index}
-                className="ProjectDetail-2-col"
-                style={{
-                  gridColumn: image.gridColumn,
-                  gridRow: image.gridRow,
-                }}
-                onClick={() => openModal(index)}
-              >
-                <div className="ProjectDetail-2-col-imgDiv">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="ProjectImage"
-                  />
+          <div className="ProjectDetails-2-framer">
+            <div className="projectDetails-2">
+              {layout.images.map((image, index) => (
+                <div
+                  key={index}
+                  className="ProjectDetail-2-col"
+                  style={{
+                    gridColumn: image.gridColumn,
+                    gridRow: image.gridRow,
+                  }}
+                  onClick={() => openModal(index)}
+                >
+                  <div className="ProjectDetail-2-col-imgDiv">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="ProjectImage"
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
 
-            {/* Composant Modale */}
-            <Modal
-              isOpen={isModalOpen}
-              images={layout.images} // Passe toutes les images
-              currentImageIndex={currentImageIndex !== null ? currentImageIndex : 0} // Passe l'index courant
-              onClose={closeModal} // Callback pour fermer
-              onNavigate={(newIndex) => setCurrentImageIndex(newIndex)} // Callback pour naviguer
-            />
+              {/* Composant Modale */}
+              <Modal
+                isOpen={isModalOpen}
+                images={layout.images} // Passe toutes les images
+                currentImageIndex={currentImageIndex !== null ? currentImageIndex : 0} // Passe l'index courant
+                onClose={closeModal} // Callback pour fermer
+                onNavigate={(newIndex) => setCurrentImageIndex(newIndex)} // Callback pour naviguer
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
