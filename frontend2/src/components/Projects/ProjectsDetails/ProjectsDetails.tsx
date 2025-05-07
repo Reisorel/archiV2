@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, FC } from "react";
 import { Link, useParams } from "react-router-dom";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { getProjects } from "../../../services/api";
 
 import "./ProjectsDetails.scss";
 import Modal from "./Modal/Modal";
@@ -59,13 +60,10 @@ const ProjectsDetails: FC = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/admin/projects"
-        );
-        const data = await response.json();
+        const data: ProjectData[] = await getProjects();
         setProjectsData(data);
       } catch (error) {
-        console.error("Erreur lors du fetch des news:", error);
+        console.error("Erreur lors du fetch des projets:", error);
       }
     };
     fetchProjects();

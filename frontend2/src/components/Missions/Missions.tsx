@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
+import { getMissions } from '../../services/api';
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "./Missions.scss";
@@ -26,13 +28,7 @@ const Missions: FC = () => {
   useEffect(() => {
     const fetchMissions = async (): Promise<void> => {
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/admin/missions"
-        );
-        if (!response.ok) {
-          throw new Error(`Erreur HTTP: ${response.status}`);
-        }
-        const data: MissionData[] = await response.json();
+        const data: MissionData[] = await getMissions();
         setMissionsData(data);
       } catch (error) {
         console.error("Erreur lors du fetch des missions:", error);

@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef, FC } from "react";
 import { gsap } from "gsap";
+import { getNews } from '../../services/api';
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
 import "./News.scss";
@@ -26,11 +28,7 @@ const News: FC = () => {
   useEffect(() => {
     const fetchNews = async (): Promise<void> => {
       try {
-        const response = await fetch("http://localhost:3000/api/admin/news");
-        if (!response.ok) {
-          throw new Error(`Erreur HTTP: ${response.status}`);
-        }
-        const data: NewsData[] = await response.json();
+        const data: NewsData[] = await getNews();
         setNewsData(data);
       } catch (error) {
         console.error("Erreur lors du fetch des news:", error);
