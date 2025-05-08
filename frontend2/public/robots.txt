@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://www.cassandre-architecture.fr/sitemap.xml

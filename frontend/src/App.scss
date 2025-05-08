@@ -1,9 +1,11 @@
-@import "./assets/styles/main.css";
+@use "./assets/styles/main.scss";
 @import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
 
-html, body {
+
+html,
+body {
   display: flex;
   flex-direction: column;
   margin: 0;
