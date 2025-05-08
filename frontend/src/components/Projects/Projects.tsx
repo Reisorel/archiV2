@@ -1,11 +1,10 @@
-import {useState, useEffect, useRef, FC} from 'react';
-import {useNavigate} from 'react-router-dom';
-import gsap from 'gsap';
-import { getProjects } from '../../services/api';
+import { useState, useEffect, useRef, FC } from "react";
+import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
+import { getProjects } from "../../services/api";
 
-import { Title, Meta } from 'react-head';
-
-import './Projects.scss';
+import { Title, Meta } from "react-head";
+import "./Projects.scss";
 
 interface ProjectData {
   id: string;
@@ -90,35 +89,35 @@ const Projects: FC = () => {
         name="description"
         content="Découvrez les projets d’architecture de Cassandre Marion : maisons, appartements, constructions, extensions, permis de construire  et réhabilitations."
       />
-    <div className="projects-framer">
-      <div className="projects-container">
-        <div id="projects" className="projects-secTitle">
-          <h3 className="title" ref={titleRef}>
-            PROJETS
-          </h3>
-        </div>
+      <div className="projects-framer">
+        <div className="projects-container">
+          <div id="projects" className="projects-secTitle">
+            <h3 className="title" ref={titleRef}>
+              PROJETS
+            </h3>
+          </div>
 
-        <div ref={gridRef} className="projects-secContent-grid">
-          {projectsData.map((projet) => (
-            <div
-              key={projet.id}
-              className="projects-row"
-              onClick={() => {
-                navigate(`/projects/${projet.slug}`);
-                window.scrollTo(0, 0);
-              }}
-            >
-              <div className="project-name">
-                <h2 className="sub-2">{projet.title}</h2>
+          <div ref={gridRef} className="projects-secContent-grid">
+            {projectsData.map((projet) => (
+              <div
+                key={projet.id}
+                className="projects-row"
+                onClick={() => {
+                  navigate(`/projects/${projet.slug}`);
+                  window.scrollTo(0, 0);
+                }}
+              >
+                <div className="project-name">
+                  <h2 className="sub-2">{projet.title}</h2>
+                </div>
+                <div className="projects-imageDiv">
+                  <img src={projet.mainImage} alt={projet.title} />
+                </div>
               </div>
-              <div className="projects-imageDiv">
-                <img src={projet.mainImage} alt={projet.title} />
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 };

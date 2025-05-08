@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef, FC } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
+import { getProjects } from "../../services/api";
+
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 
@@ -8,11 +10,11 @@ import "./Header.scss"; // Renommé en .scss pour la cohérence
 import leftChevronBlack from "../../assets/icons/left-arrow-black.svg";
 
 // Interface pour les données de projet
-interface Project {
+interface ProjectData {
   id: string;
-  title: string;
   slug: string;
-  // Ajoutez d'autres champs si nécessaire
+  title: string;
+  mainImage: string;
 }
 
 // Interface pour l'événement de changement d'état de la modal
@@ -26,7 +28,7 @@ const Header: FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [projectsData, setProjectsData] = useState<Project[]>([]);
+  const [projectsData, setProjectsData] = useState<ProjectData[]>([]);
   const [showHeader, setShowHeader] = useState<boolean>(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
@@ -40,11 +42,7 @@ const Header: FC = () => {
   useEffect(() => {
     const fetchProjects = async (): Promise<void> => {
       try {
-        const response = await fetch("http://localhost:3000/api/admin/projects");
-        if (!response.ok) {
-          throw new Error(`Erreur HTTP: ${response.status}`);
-        }
-        const data: Project[] = await response.json();
+        const data: ProjectData[] = await getProjects();
         setProjectsData(data);
       } catch (error) {
         console.error("Erreur lors du fetch des projets:", error);
@@ -114,14 +112,23 @@ const Header: FC = () => {
       setLockScroll(modalEvent.detail); // Bloque le scroll si la modale est ouverte, et le débloque si fermée
     };
 
-    document.addEventListener("modalStateChange", handleModalStateChange as EventListener); // Détecte l'événmeent modalStateChange sur l'ensemble du doc
+    document.addEventListener(
+      "modalStateChange",
+      handleModalStateChange as EventListener
+    ); // Détecte l'événmeent modalStateChange sur l'ensemble du doc
     return () => {
-      document.removeEventListener("modalStateChange", handleModalStateChange as EventListener); // Supprime écouteur
+      document.removeEventListener(
+        "modalStateChange",
+        handleModalStateChange as EventListener
+      ); // Supprime écouteur
     };
   }, []);
 
   // Navigation depuis menu
-  const handleNavigation = (targetId: string, _isProjectsLink: boolean = false): void => {
+  const handleNavigation = (
+    targetId: string,
+    _isProjectsLink: boolean = false
+  ): void => {
     closeMobileMenu(); // Ferme le menu mobile après un clic
 
     if (targetId === "projects") {
