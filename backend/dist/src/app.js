@@ -18,7 +18,7 @@ app.use((0, cors_1.default)());
 app.use('/api', indexRoutes_1.default);
 // Route racine de l'API
 app.get('/', (req, res) => {
-    res.json({ message: 'Bienvenue sur l\'API' });
+    res.json({ message: 'Bienvenue sur l\'API archi V2 🏄🏻‍♂️' });
 });
 // Sert le frontend compilé (Vite/React)
 app.use(express_1.default.static(path_1.default.resolve(__dirname, "../../frontend/dist")));
