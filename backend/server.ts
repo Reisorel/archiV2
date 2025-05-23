@@ -3,8 +3,8 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import path from 'path';
 import dotenv from 'dotenv';
-import connectDB from './config/db';
-import adminRoutes from './routes/indexRoutes';
+import connectDB from './src/config/db';
+import adminRoutes from './src/routes/indexRoutes';
 
 dotenv.config(); // Charge .env
 
@@ -16,10 +16,10 @@ connectDB(); // Connexion à MongoDB
 app.use(cors());
 app.use(bodyParser.json());
 
-// ⬇️ Route API admin centralisée ici
+// Route API admin centralisée ici
 app.use('/api/admin', adminRoutes);
 
-// ⬇️ Sert le frontend compilé (Vite/React)
+// Sert le frontend compilé (Vite/React)
 app.use(express.static(path.resolve(__dirname, "../../frontend/dist")));
 
 // ✅ Route de test pour Render
@@ -27,7 +27,7 @@ app.get('/', (req: Request, res: Response) => {
   res.status(200).json({ status: 'ok', message: 'API is running 🚀' });
 });
 
-// ⬇️ Catch-all route frontend
+// Catch-all route frontend
 app.get('*', (req: Request, res: Response) => {
   res.sendFile(path.resolve(__dirname, "../../frontend/dist", "index.html"));
 });

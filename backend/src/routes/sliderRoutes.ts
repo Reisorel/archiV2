@@ -10,4 +10,3 @@ router.put('/:id', SliderController.updateSlider);
 router.delete('/:id', SliderController.deleteSlider);
 
 export default router;
-
