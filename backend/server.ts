@@ -1,39 +1,26 @@
-import express, { Express, Request, Response } from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import path from 'path';
-import dotenv from 'dotenv';
-import connectDB from './src/config/db';
-import adminRoutes from './src/routes/indexRoutes';
+// Démarre le serveur Express
+import app from "./src/app";
+import connectDB from "./src/config/db.config";
+import ENV from "./src/config/env.config";
 
-dotenv.config(); // Charge .env
+// Fonction pour démarrer le serveur
+export const startServer = async (): Promise<void> => {
+  try {
+    // Connexion à MongoDB
+    await connectDB();
 
-const app: Express = express(); // Crée une application Express
-connectDB(); // Connexion à MongoDB
+    // Démarrage du serveur Express
+    app.listen(ENV.PORT, () => {
+      // Précise mode dev ou prod / port / adresse de l'API
+      console.log(`✅ Serveur en mode ${ENV.NODE_ENV}`);
+      console.log(`✅ Serveur en écoute sur le port ${ENV.PORT}`);
+      console.log(`🌐 Adresse de l'API: http://localhost:${ENV.PORT}`);
+    });
+  } catch (error) {
+    console.error("❌ Erreur au démarrage du serveur:", error);
+    process.exit(1);
+  }
+};
 
-
-// Middlewares
-app.use(cors());
-app.use(bodyParser.json());
-
-// Route API admin centralisée ici
-app.use('/api/admin', adminRoutes);
-
-// Sert le frontend compilé (Vite/React)
-app.use(express.static(path.resolve(__dirname, "../../frontend/dist")));
-
-// ✅ Route de test pour Render
-app.get('/', (req: Request, res: Response) => {
-  res.status(200).json({ status: 'ok', message: 'API is running 🚀' });
-});
-
-// Catch-all route frontend
-app.get('*', (req: Request, res: Response) => {
-  res.sendFile(path.resolve(__dirname, "../../frontend/dist", "index.html"));
-});
-
-// Lancement du serveur
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`✅ Server is running on http://localhost:${PORT}`);
-});
+// Démarre le serveur
+startServer();
