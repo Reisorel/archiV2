@@ -1,5 +1,5 @@
 import { Request, Response } from "express"; // Fonctionnalité TS qui permet de typer les paramètres de la fonction
-import ProjectModel from "../models/Projects"; // Import du modèle de données
+import ProjectModel from "../models/Projects.model"; // Import du modèle de données
 
 // GET /api/projects
 const getAllProjects = async (req: Request, res: Response): Promise<void> => {

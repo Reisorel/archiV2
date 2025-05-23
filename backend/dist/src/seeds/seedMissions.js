@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 //backend/seeds/seedMissions.ts
-const Missions_1 = __importDefault(require("../models/Missions"));
+const Missions_model_1 = __importDefault(require("../models/Missions.model"));
 const seedMissions = async () => {
-    await Missions_1.default.deleteMany();
+    await Missions_model_1.default.deleteMany();
     const missions = [
         {
             id: 1,
@@ -54,7 +54,7 @@ const seedMissions = async () => {
             description: "illustration9",
         },
     ];
-    await Missions_1.default.insertMany(missions);
+    await Missions_model_1.default.insertMany(missions);
     console.log(`✅ Missions seeded with ${missions.length} missions`);
 };
 exports.default = seedMissions;

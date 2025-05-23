@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // backend/seeds/seedProjects.ts
-const Projects_1 = __importDefault(require("../models/Projects"));
+const Projects_model_1 = __importDefault(require("../models/Projects.model"));
 const seedProjects = async () => {
-    await Projects_1.default.deleteMany();
+    await Projects_model_1.default.deleteMany();
     const projects = [
         {
             id: 1,
@@ -493,7 +493,7 @@ const seedProjects = async () => {
             },
         },
     ];
-    await Projects_1.default.insertMany(projects);
+    await Projects_model_1.default.insertMany(projects);
     console.log(`✅ Projects seeded with ${projects.length} projects`);
 };
 exports.default = seedProjects;

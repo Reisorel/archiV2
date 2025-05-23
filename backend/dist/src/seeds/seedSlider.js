@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // backend/seeds/seedSliders.ts
-const Slider_1 = __importDefault(require("../models/Slider"));
+const Slider_model_1 = __importDefault(require("../models/Slider.model"));
 const seedSliders = async () => {
-    await Slider_1.default.deleteMany();
+    await Slider_model_1.default.deleteMany();
     const sliders = [
         {
             id: 1,
@@ -33,7 +33,7 @@ const seedSliders = async () => {
             image: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742233429/Cassandre_Marion_Architecture/Pages/2.Slider/appartement-paris-04_anxsch.webp",
         },
     ];
-    await Slider_1.default.insertMany(sliders);
+    await Slider_model_1.default.insertMany(sliders);
     console.log(`✅ Sliders seeded with ${sliders.length} slides`);
 };
 exports.default = seedSliders;

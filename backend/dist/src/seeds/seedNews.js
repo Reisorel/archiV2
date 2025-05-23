@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // backend/seeds/seedNews.ts
-const News_1 = __importDefault(require("../models/News"));
+const News_model_1 = __importDefault(require("../models/News.model"));
 const seedNews = async () => {
-    await News_1.default.deleteMany();
+    await News_model_1.default.deleteMany();
     const news = [
         {
             id: 1,
@@ -54,7 +54,7 @@ const seedNews = async () => {
             image: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_auto,q_auto/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-ferme-breville-01_pvodek.jpg",
         },
     ];
-    await News_1.default.insertMany(news);
+    await News_model_1.default.insertMany(news);
     console.log(`✅ News seeded with ${news.length} articles`);
 };
 exports.default = seedNews;

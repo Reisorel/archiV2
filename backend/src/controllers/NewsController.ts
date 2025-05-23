@@ -1,5 +1,5 @@
 import { Request, Response } from "express"; // Fonctionnalité TS qui permet de typer les paramètres de la fonction
-import News from "../models/News";
+import News from "../models/News.model";
 
 // GET /api/news
 const getAllNews = async (req: Request, res: Response): Promise<void> => {

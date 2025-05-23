@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const News_1 = __importDefault(require("../models/News"));
+const News_model_1 = __importDefault(require("../models/News.model"));
 // GET /api/news
 const getAllNews = async (req, res) => {
     try {
-        const news = await News_1.default.find();
+        const news = await News_model_1.default.find();
         console.log("📦 News fetched:", news);
         if (news.length === 0) {
             res.status(200).json({ message: "News list is actually empty" });
@@ -22,7 +22,7 @@ const getAllNews = async (req, res) => {
 // GET /api/news/:id
 const getNewsById = async (req, res) => {
     try {
-        const news = await News_1.default.findById(req.params.id);
+        const news = await News_model_1.default.findById(req.params.id);
         if (!news) {
             res.status(404).json({ message: "News not found" });
             return;
@@ -42,10 +42,10 @@ const createNews = async (req, res) => {
             return;
         }
         // Trouve le dernier id utilisé
-        const lastNews = await News_1.default.findOne().sort({ id: -1 });
+        const lastNews = await News_model_1.default.findOne().sort({ id: -1 });
         const newId = lastNews ? lastNews.id + 1 : 1;
         // Crée avec le nouvel ID
-        const newNews = await News_1.default.create({ id: newId, slug, title, location, grade, description, image });
+        const newNews = await News_model_1.default.create({ id: newId, slug, title, location, grade, description, image });
         res.status(201).json(newNews);
     }
     catch (error) {
@@ -57,7 +57,7 @@ const updateNews = async (req, res) => {
     try {
         const { id } = req.params;
         const { title, slug, location, grade, description, image } = req.body;
-        const updatedNews = await News_1.default.findByIdAndUpdate(id, { title, slug, location, grade, description, image }, { new: true, runValidators: true });
+        const updatedNews = await News_model_1.default.findByIdAndUpdate(id, { title, slug, location, grade, description, image }, { new: true, runValidators: true });
         if (!updatedNews) {
             res.status(404).json({ message: "News not found" });
             return;
@@ -72,7 +72,7 @@ const updateNews = async (req, res) => {
 const deleteNews = async (req, res) => {
     try {
         const { id } = req.params;
-        const deletedNews = await News_1.default.findByIdAndDelete(req.params.id);
+        const deletedNews = await News_model_1.default.findByIdAndDelete(req.params.id);
         if (!deletedNews) {
             res.status(404).json({ message: "News not found" });
             return;

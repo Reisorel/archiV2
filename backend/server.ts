@@ -1,7 +1,7 @@
 // Démarre le serveur Express
 import app from "./src/app";
 import connectDB from "./src/config/db.config";
-import ENV from "./src/config/env.config";
+import { ENV } from './src/config/env.config'; // ✅ Correct
 
 // Fonction pour démarrer le serveur
 export const startServer = async (): Promise<void> => {

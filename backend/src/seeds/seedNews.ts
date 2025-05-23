@@ -1,5 +1,5 @@
 // backend/seeds/seedNews.ts
-import News from "../models/News";
+import News from "../models/News.model";
 
 const seedNews = async (): Promise<void> => {
   await News.deleteMany();

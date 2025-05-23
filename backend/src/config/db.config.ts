@@ -1,6 +1,6 @@
 // Gère la xonneciotn à la base de données MongoDB
 import mongoose from 'mongoose';
-import ENV from './env.config';
+import { ENV } from './env.config'; // ✅ Correct
 
 // Configuration mongoose
 mongoose.set('strictQuery', true);

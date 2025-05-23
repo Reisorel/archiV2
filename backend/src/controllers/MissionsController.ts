@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Missions from "../models/Missions";
+import Missions from "../models/Missions.model";
 
 // GET /api/missions
 const getAllMission = async (req: Request, res: Response): Promise<void> => {

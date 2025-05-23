@@ -5,7 +5,7 @@ console.log("API URL utilisé : ", baseURL);
 
 // fetch des données backend pour le slider
 export async function getSlides() {
-  const response = await fetch(`${baseURL}/api/admin/sliders`);
+  const response = await fetch(`${baseURL}/api/sliders`);
   if (!response.ok) {
     throw new Error('Failed to fetch slides');
   }
@@ -15,7 +15,7 @@ export async function getSlides() {
 
 // fetch des données backend pour les news
 export async function getNews() {
-  const response = await fetch(`${baseURL}/api/admin/news`);
+  const response = await fetch(`${baseURL}/api/news`);
   if (!response.ok) {
     throw new Error('Failed to fetch news');
   }
@@ -25,7 +25,7 @@ export async function getNews() {
 
 // fetch des données backend pour les missions
 export async function getMissions() {
-  const response = await fetch(`${baseURL}/api/admin/missions`);
+  const response = await fetch(`${baseURL}/api/missions`);
   if (!response.ok) {
     throw new Error('Failed to fetch missions');
   }
@@ -34,7 +34,7 @@ export async function getMissions() {
 }
 // fetch des données backend pour les projets
 export async function getProjects() {
-  const response = await fetch(`${baseURL}/api/admin/projects`);
+  const response = await fetch(`${baseURL}/api/projects`);
   if (!response.ok) {
     throw new Error('Failed to fetch projects');
   }

@@ -1,5 +1,5 @@
 // backend/seeds/seedProjects.ts
-import Projects from "../models/Projects";
+import Projects from "../models/Projects.model";
 
 const seedProjects = async (): Promise<void> => {
   await Projects.deleteMany();

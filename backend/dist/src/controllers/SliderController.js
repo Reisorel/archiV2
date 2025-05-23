@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Slider_1 = __importDefault(require("../models/Slider"));
+const Slider_model_1 = __importDefault(require("../models/Slider.model"));
 // GET /api/sliders
 const getAllSliders = async (req, res) => {
     try {
-        const sliders = await Slider_1.default.find();
+        const sliders = await Slider_model_1.default.find();
         console.log("📦 Sliders fetched:", sliders);
         if (sliders.length === 0) {
             res.status(200).json({ message: 'Slider list is actually empty' });
@@ -22,7 +22,7 @@ const getAllSliders = async (req, res) => {
 // GET /api/sliders/:id
 const getSliderById = async (req, res) => {
     try {
-        const slider = await Slider_1.default.findById(req.params.id);
+        const slider = await Slider_model_1.default.findById(req.params.id);
         if (!slider) {
             res.status(404).json({ message: 'Slider not found' });
             return;
@@ -42,10 +42,10 @@ const createSlider = async (req, res) => {
             return;
         }
         // Trouve le dernier id utilisé
-        const lastSlider = await Slider_1.default.findOne().sort({ id: -1 });
+        const lastSlider = await Slider_model_1.default.findOne().sort({ id: -1 });
         const newId = lastSlider ? lastSlider.id + 1 : 1;
         // Crée avec le nouvel ID
-        const newSlider = await Slider_1.default.create({ id: newId, image, title, description });
+        const newSlider = await Slider_model_1.default.create({ id: newId, image, title, description });
         res.status(201).json(newSlider);
     }
     catch (error) {
@@ -57,7 +57,7 @@ const updateSlider = async (req, res) => {
     try {
         const { id } = req.params;
         const { image, title, description } = req.body;
-        const updatedSlider = await Slider_1.default.findByIdAndUpdate(id, { image, title, description }, { new: true, runValidators: true });
+        const updatedSlider = await Slider_model_1.default.findByIdAndUpdate(id, { image, title, description }, { new: true, runValidators: true });
         if (!updatedSlider) {
             res.status(404).json({ message: 'Slider not found' });
             return;
@@ -72,7 +72,7 @@ const updateSlider = async (req, res) => {
 const deleteSlider = async (req, res) => {
     try {
         const { id } = req.params;
-        const deletedSlider = await Slider_1.default.findByIdAndDelete(id);
+        const deletedSlider = await Slider_model_1.default.findByIdAndDelete(id);
         if (!deletedSlider) {
             res.status(404).json({ message: 'Slider not found' });
             return;

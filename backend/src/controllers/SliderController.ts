@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import Slider from '../models/Slider';
+import Slider from '../models/Slider.model';
 
 // GET /api/sliders
 const getAllSliders = async (req: Request, res: Response): Promise<void> => {

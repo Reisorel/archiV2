@@ -1,5 +1,5 @@
 // backend/seeds/seedSliders.ts
-import Slider from '../models/Slider';
+import Slider from '../models/Slider.model';
 
 const seedSliders = async (): Promise<void> => {
   await Slider.deleteMany();

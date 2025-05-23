@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Projects_1 = __importDefault(require("../models/Projects")); // Import du modèle de données
+const Projects_model_1 = __importDefault(require("../models/Projects.model")); // Import du modèle de données
 // GET /api/projects
 const getAllProjects = async (req, res) => {
     try {
-        const projects = await Projects_1.default.find();
+        const projects = await Projects_model_1.default.find();
         console.log("📦 Projects fetched:", projects);
         if (projects.length === 0) {
             res.status(200).json({ message: "Project list is actually empty" });
@@ -22,7 +22,7 @@ const getAllProjects = async (req, res) => {
 // GET /api/projects/:id
 const getProjectById = async (req, res) => {
     try {
-        const project = await Projects_1.default.findById(req.params.id);
+        const project = await Projects_model_1.default.findById(req.params.id);
         if (!project) {
             res.status(404).json({ message: "Project not found" });
             return;
@@ -68,10 +68,10 @@ const createProject = async (req, res) => {
             return;
         }
         // 🔢 Auto-incrément ID
-        const lastProject = await Projects_1.default.findOne().sort({ id: -1 });
+        const lastProject = await Projects_model_1.default.findOne().sort({ id: -1 });
         const newId = lastProject ? lastProject.id + 1 : 1;
         // ✅ Création du document
-        const newProject = await Projects_1.default.create({
+        const newProject = await Projects_model_1.default.create({
             id: newId,
             slug,
             mainImage,
@@ -128,7 +128,7 @@ const updateProject = async (req, res) => {
             }
         }
         // ✅ Mise à jour partielle uniquement des champs fournis
-        const updatedProject = await Projects_1.default.findByIdAndUpdate(id, { $set: req.body }, { new: true, runValidators: true });
+        const updatedProject = await Projects_model_1.default.findByIdAndUpdate(id, { $set: req.body }, { new: true, runValidators: true });
         if (!updatedProject) {
             res.status(404).json({ message: "Projet introuvable" });
             return;
@@ -146,7 +146,7 @@ const updateProject = async (req, res) => {
 const deleteProject = async (req, res) => {
     try {
         const { id } = req.params;
-        const project = await Projects_1.default.findByIdAndDelete(req.params.id);
+        const project = await Projects_model_1.default.findByIdAndDelete(req.params.id);
         if (!project) {
             res.status(404).json({ message: "Project not found" });
             return;
