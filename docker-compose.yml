@@ -16,8 +16,8 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - MONGO_URI_DEV=mongodb://mongodb:27017/archi_db
-      - MONGO_URI_PROD=${MONGO_URI_PROD} # Render injectera cette variable
+      - MONGO_URI_DEV=${MONGO_URI_DEV}
+      - MONGO_URI_PROD=${MONGO_URI_PROD}
     depends_on:
       - mongodb
     command: node dist/server.js

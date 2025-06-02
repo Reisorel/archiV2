@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// Gère la xonneciotn à la base de données MongoDB
+// Gère la connexion à la base de données MongoDB
 const mongoose_1 = __importDefault(require("mongoose"));
 const env_config_1 = require("./env.config"); // ✅ Correct
 // Configuration mongoose

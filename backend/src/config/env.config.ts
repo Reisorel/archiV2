@@ -15,17 +15,18 @@ export const ENV = {
   JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN || '1d'
 };
 
-// Ajoutez des logs pour vérifier les variables
+// Vérifie les variables d'environnement
 console.log('NODE_ENV:', ENV.NODE_ENV);
 console.log('MONGO_URI_PROD:', ENV.MONGO_URI_PROD);
 console.log('MONGO_URI_DEV:', ENV.MONGO_URI_DEV);
 console.log('JWT_SECRET:', ENV.JWT_SECRET);
 
+// Vérifie de l'adresse MongoDB prod
 if (ENV.NODE_ENV === 'production' && !ENV.MONGO_URI_PROD) {
   console.error('❌ Missing required MongoDB URI for production');
   process.exit(1);
 }
-
+// Vérifie des adresses MongoDB dev
 if (ENV.NODE_ENV !== 'production' && (!ENV.MONGO_URI_PROD || !ENV.MONGO_URI_DEV)) {
   console.error('❌ Missing required MongoDB URIs for development');
   process.exit(1);

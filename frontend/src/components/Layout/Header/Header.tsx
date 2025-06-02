@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef, FC } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
-import { getProjects } from "../../services/api";
+import { getProjects } from "../../../services/api";
 
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 
 import "./Header.scss"; // Renommé en .scss pour la cohérence
-import leftChevronBlack from "../../assets/icons/left-arrow-black.svg";
+import leftChevronBlack from "../../../assets/icons/left-arrow-black.svg";
 
 // Interface pour les données de projet
 interface ProjectData {

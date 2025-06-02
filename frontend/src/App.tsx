@@ -1,9 +1,9 @@
 import "./App.scss";
 import { BrowserRouter } from "react-router-dom";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Background from "./components/Background/Background";
-import CustomCursor from "./components/Cursor/Cursor";
+import Header from "./components/Layout/Header/Header";
+import Footer from "./components/Layout/Footer/Footer";
+import Background from "./components/Layout/Background/Background";
+import CustomCursor from "./components/Functional/Cursor/Cursor";
 import Router from "./routes/Router";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";

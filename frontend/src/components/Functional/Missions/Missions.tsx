@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
-import { getMissions } from '../../services/api';
+import { getMissions } from "../../../services/api";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "./Missions.scss";
-import downChevron from "../../assets/icons/down-arrow-black.svg";
+import downChevron from "../../../assets/icons/down-arrow-black.svg";
 
 // Interface pour les données des missions
 interface MissionData {

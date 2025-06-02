@@ -22,13 +22,6 @@ app.get('/', (req, res) => {
   res.json({ message: 'Bienvenue sur l\'API archi V2 🏄🏻‍♂️' });
 });
 
-// // Sert le frontend compilé (Vite/React)
-// app.use(express.static(path.resolve(__dirname, "../../frontend/dist")));
-
-// // Catch-all route frontend
-// app.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "../../frontend/dist", "index.html"));
-// });
 
 // Middleware 404 et gestion d'erreurs
 app.use(notFoundHandler);

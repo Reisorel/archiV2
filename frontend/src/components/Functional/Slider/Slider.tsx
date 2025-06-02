@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState, FC } from 'react';
 import gsap from 'gsap';
-import { getSlides } from '../../services/api';
+import { getSlides } from "../../../services/api";
 import './Slider.scss';
-import downChevron from '../../assets/icons/down-arrow.svg';
+import downChevron from '../../../assets/icons/down-arrow.svg';
 
 // Interface pour les données de slider
 interface SliderData {

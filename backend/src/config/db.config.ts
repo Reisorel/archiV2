@@ -1,4 +1,4 @@
-// Gère la xonneciotn à la base de données MongoDB
+// Gère la connexion à la base de données MongoDB
 import mongoose from 'mongoose';
 import { ENV } from './env.config'; // ✅ Correct
 

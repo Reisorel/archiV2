@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
-import { getProjects } from "../../services/api";
-
-import { Title, Meta } from "react-head";
+import { getProjects } from "../../../services/api";
 import "./Projects.scss";
 
 interface ProjectData {
@@ -84,11 +82,6 @@ const Projects: FC = () => {
 
   return (
     <>
-      <Title>Galerie projets - Cassandre Marion architecture</Title>
-      <Meta
-        name="description"
-        content="Découvrez les projets d’architecture de Cassandre Marion : maisons, appartements, constructions, extensions, permis de construire  et réhabilitations."
-      />
       <div className="projects-framer">
         <div className="projects-container">
           <div id="projects" className="projects-secTitle">

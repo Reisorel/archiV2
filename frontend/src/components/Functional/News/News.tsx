@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, FC } from "react";
 import { gsap } from "gsap";
-import { getNews } from '../../services/api';
+import { getNews } from "../../../services/api";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";

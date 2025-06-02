@@ -6,7 +6,7 @@ import { getProjects } from "../../../services/api";
 
 import "./ProjectsDetails.scss";
 import Modal from "./Modal/Modal";
-import { Title, Meta } from 'react-head';
+import { Title, Meta } from "react-head";
 
 // Enregistrement des plugins GSAP nécessaires
 gsap.registerPlugin(ScrollTrigger);
@@ -48,7 +48,9 @@ interface ProjectData {
 const ProjectsDetails: FC = () => {
   const [projectsData, setProjectsData] = useState<ProjectData[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(
+    null
+  );
 
   const titleRef = useRef<HTMLHeadingElement>(null);
   const techRef = useRef<HTMLUListElement>(null);
@@ -130,7 +132,10 @@ const ProjectsDetails: FC = () => {
   }, [slug, projet]); // 🔥 Rejoue à chaque changement de `slug`
 
   // Animation translation chevron
-  const handleArrowClick = (arrowRef: React.RefObject<HTMLElement | null>, direction: number) => {
+  const handleArrowClick = (
+    arrowRef: React.RefObject<HTMLElement | null>,
+    direction: number
+  ) => {
     if (!arrowRef.current || gsap.isTweening(arrowRef.current)) return;
 
     gsap.killTweensOf(arrowRef.current);
@@ -161,7 +166,8 @@ const ProjectsDetails: FC = () => {
   }
 
   const projectCount = projectsData.length;
-  const prevIndex = projectCount > 0 ? (currentIndex - 1 + projectCount) % projectCount : 0;
+  const prevIndex =
+    projectCount > 0 ? (currentIndex - 1 + projectCount) % projectCount : 0;
   const nextIndex = projectCount > 0 ? (currentIndex + 1) % projectCount : 0;
 
   const prevProject = projectsData[prevIndex];
@@ -201,7 +207,6 @@ const ProjectsDetails: FC = () => {
     <>
       <Title>{`Découvrez les détails du projet ${projet.title}, situé à ${projet.loc}, réalisé par Cassandre Marion.`}</Title>
       <Meta name="description" content={projet.meta} />
-
       <div className="projectDetails-framer">
         <div id="projectDetails" className="projectDetails-container">
           <div
@@ -214,7 +219,10 @@ const ProjectsDetails: FC = () => {
               className="projectDetails-nav-arrows"
               onClick={() => handleArrowClick(leftArrowRef, -50)}
             >
-              <i ref={leftArrowRef as React.RefObject<HTMLElement>} className="fa-solid fa-chevron-left"></i>
+              <i
+                ref={leftArrowRef as React.RefObject<HTMLElement>}
+                className="fa-solid fa-chevron-left"
+              ></i>
               <h2 className="sub-2">{prevProject.title}</h2>
             </Link>
 
@@ -225,7 +233,10 @@ const ProjectsDetails: FC = () => {
               onClick={() => handleArrowClick(rightArrowRef, 50)}
             >
               <h2 className="sub-2">{nextProject.title}</h2>
-              <i ref={rightArrowRef as React.RefObject<HTMLElement>} className="fa-solid fa-chevron-right"></i>
+              <i
+                ref={rightArrowRef as React.RefObject<HTMLElement>}
+                className="fa-solid fa-chevron-right"
+              ></i>
             </Link>
           </div>
 
@@ -261,7 +272,9 @@ const ProjectsDetails: FC = () => {
                           <strong>Localisation :</strong>{" "}
                         </span>
 
-                        <span className="project-type">{projet.tech.techLoc}</span>
+                        <span className="project-type">
+                          {projet.tech.techLoc}
+                        </span>
                       </li>
                       <li>
                         <span className="projectDetails-icon-text">
@@ -285,14 +298,18 @@ const ProjectsDetails: FC = () => {
                           <i className="fas fa-lightbulb"></i>{" "}
                           <strong>Intervention :</strong>{" "}
                         </span>
-                        <span className="project-type">{projet.tech.inter}</span>
+                        <span className="project-type">
+                          {projet.tech.inter}
+                        </span>
                       </li>
                       <li>
                         <span className="projectDetails-icon-text">
                           <i className="fas fa-check-circle"></i>{" "}
                           <strong>Avancement :</strong>{" "}
                         </span>
-                        <span className="project-type">{projet.tech.avance}</span>
+                        <span className="project-type">
+                          {projet.tech.avance}
+                        </span>
                       </li>
                     </div>
                   </ul>
@@ -339,7 +356,9 @@ const ProjectsDetails: FC = () => {
               <Modal
                 isOpen={isModalOpen}
                 images={layout.images} // Passe toutes les images
-                currentImageIndex={currentImageIndex !== null ? currentImageIndex : 0} // Passe l'index courant
+                currentImageIndex={
+                  currentImageIndex !== null ? currentImageIndex : 0
+                } // Passe l'index courant
                 onClose={closeModal} // Callback pour fermer
                 onNavigate={(newIndex) => setCurrentImageIndex(newIndex)} // Callback pour naviguer
               />

@@ -6,8 +6,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 import "./Footer.scss";
-import ordre from "../../assets/logos/ordre.jpg";
-import upChevron from "../../assets/icons/up-arrow.svg";
+import ordre from "../../../assets/logos/ordre.jpg";
+import upChevron from "../../../assets/icons/up-arrow.svg";
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger); // Activation des plugins gsap
 
