@@ -1,6 +1,9 @@
 // Centralise et valide les variables d'environnement
 import dotenv from 'dotenv';
-dotenv.config();
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config();
+}
 
 // Valider les variables d'environnement nécessaires
 export const ENV = {
