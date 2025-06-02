@@ -1,4 +1,13 @@
 services:
+  mongodb:
+    image: mongo:6
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    restart: unless-stopped
+
   backend:
     build:
       context: ./backend
@@ -7,8 +16,11 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - MONGO_URI_PROD=${MONGO_URI_PROD}
-    restart: unless-stopped
+      - MONGO_URI_DEV=mongodb://mongodb:27017/archi_db
+      - MONGO_URI_PROD=${MONGO_URI_PROD} # Render injectera cette variable
+    depends_on:
+      - mongodb
+    command: node dist/server.js
 
 volumes:
   mongodb_data:
