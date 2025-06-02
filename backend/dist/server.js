@@ -13,6 +13,10 @@ const startServer = async () => {
     try {
         // Connexion à MongoDB
         await (0, db_config_1.default)();
+        // Log des variables d'environnement
+        console.log('NODE_ENV:', process.env.NODE_ENV);
+        console.log('MONGO_URI_PROD:', process.env.MONGO_URI_PROD);
+        console.log('MONGO_URI_DEV:', process.env.MONGO_URI_DEV);
         // Démarrage du serveur Express
         app_1.default.listen(env_config_1.ENV.PORT, () => {
             // Précise mode dev ou prod / port / adresse de l'API

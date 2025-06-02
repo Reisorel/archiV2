@@ -9,6 +9,11 @@ export const startServer = async (): Promise<void> => {
     // Connexion à MongoDB
     await connectDB();
 
+    // Log des variables d'environnement
+    console.log('NODE_ENV:', process.env.NODE_ENV);
+    console.log('MONGO_URI_PROD:', process.env.MONGO_URI_PROD);
+    console.log('MONGO_URI_DEV:', process.env.MONGO_URI_DEV);
+
     // Démarrage du serveur Express
     app.listen(ENV.PORT, () => {
       // Précise mode dev ou prod / port / adresse de l'API

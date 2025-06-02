@@ -6,10 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ENV = void 0;
 // Centralise et valide les variables d'environnement
 const dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
+if (process.env.NODE_ENV !== 'production') {
+    dotenv_1.default.config();
+}
 // Valider les variables d'environnement nécessaires
 exports.ENV = {
-    NODE_ENV: process.env.NODE_ENV || 'production',
+    NODE_ENV: process.env.NODE_ENV || 'development',
     PORT: process.env.PORT || 3000,
     MONGO_URI_PROD: process.env.MONGO_URI_PROD || '',
     MONGO_URI_DEV: process.env.MONGO_URI_DEV || '',
