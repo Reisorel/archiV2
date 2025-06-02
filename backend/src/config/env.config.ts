@@ -21,7 +21,12 @@ console.log('MONGO_URI_PROD:', ENV.MONGO_URI_PROD);
 console.log('MONGO_URI_DEV:', ENV.MONGO_URI_DEV);
 console.log('JWT_SECRET:', ENV.JWT_SECRET);
 
-if (!ENV.MONGO_URI_PROD || !ENV.MONGO_URI_DEV) {
-  console.error('❌ Missing required MongoDB URIs in environment variables');
+if (ENV.NODE_ENV === 'production' && !ENV.MONGO_URI_PROD) {
+  console.error('❌ Missing required MongoDB URI for production');
+  process.exit(1);
+}
+
+if (ENV.NODE_ENV !== 'production' && (!ENV.MONGO_URI_PROD || !ENV.MONGO_URI_DEV)) {
+  console.error('❌ Missing required MongoDB URIs for development');
   process.exit(1);
 }
