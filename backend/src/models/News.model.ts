@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-// 1️⃣ Déclaration de l'interface TypeScript
+// Déclaration de l'interface TypeScript
 // convention "I" pour les interfaces
 export interface INews extends Document {
   id: number;
@@ -12,7 +12,7 @@ export interface INews extends Document {
   image: string;
 }
 
-// 2️⃣ Schéma avec typage explicite
+// Schéma avec typage explicite
 const newsSchema: Schema<INews> = new Schema(
   {
     id: {
@@ -57,6 +57,6 @@ const newsSchema: Schema<INews> = new Schema(
   }
 );
 
-// 3️⃣ Export du modèle
+// Export du modèle
 const News = mongoose.model<INews>("News", newsSchema);
 export default News;

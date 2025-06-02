@@ -1,6 +1,6 @@
 import mongoose, {Schema, Document} from 'mongoose';
 
-// 1️⃣ Déclaration de l'interface TypeScript
+// Déclaration de l'interface TypeScript
 // convention "I" pour les interfaces
 // Séparation en 3 interfaces : IImageLayout, ITechInfo et IProject
 export interface IImageLayout {
@@ -36,7 +36,7 @@ export interface IProject extends Document {
   };
 }
 
-// 2️⃣ Schéma avec typage explicite
+// Schéma avec typage explicite
 const projectSchema: Schema<IProject> = new Schema(
   {
     id: {

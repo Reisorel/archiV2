@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // Configure l'application Express
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const path_1 = __importDefault(require("path"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const error_middleware_1 = require("./middlewares/error.middleware");
 const app = (0, express_1.default)(); // Crée une application Express
@@ -20,12 +19,12 @@ app.use('/api', indexRoutes_1.default);
 app.get('/', (req, res) => {
     res.json({ message: 'Bienvenue sur l\'API archi V2 🏄🏻‍♂️' });
 });
-// Sert le frontend compilé (Vite/React)
-app.use(express_1.default.static(path_1.default.resolve(__dirname, "../../frontend/dist")));
-// Catch-all route frontend
-app.get('*', (req, res) => {
-    res.sendFile(path_1.default.resolve(__dirname, "../../frontend/dist", "index.html"));
-});
+// // Sert le frontend compilé (Vite/React)
+// app.use(express.static(path.resolve(__dirname, "../../frontend/dist")));
+// // Catch-all route frontend
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "../../frontend/dist", "index.html"));
+// });
 // Middleware 404 et gestion d'erreurs
 app.use(error_middleware_1.notFoundHandler);
 app.use(error_middleware_1.errorHandler);

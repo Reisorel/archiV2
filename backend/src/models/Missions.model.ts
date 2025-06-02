@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-// 1️⃣ Déclaration de l'interface TypeScript
+// Déclaration de l'interface TypeScript
 // convention "I" pour les interfaces
 export interface IMissions extends Document {
   id: number;
@@ -8,7 +8,7 @@ export interface IMissions extends Document {
   description: string;
 }
 
-// 2️⃣ Schéma avec typage explicite
+// Schéma avec typage explicite
 const missionsSchema: Schema<IMissions> = new Schema(
   {
     id: {
@@ -32,6 +32,6 @@ const missionsSchema: Schema<IMissions> = new Schema(
   }
 );
 
-// 3️⃣ Export du modèle
+// Export du modèle
 const News = mongoose.model<IMissions>("Mission", missionsSchema);
 export default News;

@@ -1,5 +1,8 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
+
+// Déclaration de l'interface TypeScript
+// convention "I" pour les interfaces
 export interface IUser extends Document {
   _id: mongoose.Types.ObjectId;
   name: string;
@@ -10,6 +13,7 @@ export interface IUser extends Document {
   updatedAt: Date;
 }
 
+// Schéma avec typage explicite
 const userSchema = new Schema<IUser>(
   {
     name: {

@@ -1,13 +1,12 @@
-version: '3.8'
-
 services:
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    environment:
-      - NODE_ENV=production
-      - MONGO_URI_PROD=${MONGO_URI_PROD}
+    env_file:
+      - ./backend/.env
     restart: unless-stopped
 
 volumes:

@@ -1,3 +1,5 @@
+// Barrel file pour les exports de modèles
+
 // Export par défaut des modèles
 export { default as Missions } from "./Missions.model";
 export { default as News } from "./News.model";

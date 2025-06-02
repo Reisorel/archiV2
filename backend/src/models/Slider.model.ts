@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
-// 1️⃣ Déclaration de l'interface TypeScript
+// Déclaration de l'interface TypeScript
 export interface ISlider extends Document {
   id: number;
   image: string;
@@ -8,7 +8,7 @@ export interface ISlider extends Document {
   description: string;
 }
 
-// 2️⃣ Schéma avec typage explicite
+// Schéma avec typage explicite
 const sliderSchema: Schema<ISlider> = new Schema(
   {
     id: {
@@ -37,6 +37,6 @@ const sliderSchema: Schema<ISlider> = new Schema(
   }
 );
 
-// 3️⃣ Export du modèle
+// Export du modèle
 const Slider = mongoose.model<ISlider>('Slider', sliderSchema);
 export default Slider;

@@ -34,7 +34,7 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-// 2️⃣ Schéma avec typage explicite
+// Schéma avec typage explicite
 const newsSchema = new mongoose_1.Schema({
     id: {
         type: Number,
@@ -75,6 +75,6 @@ const newsSchema = new mongoose_1.Schema({
 }, {
     timestamps: true, // createdAt et updatedAt
 });
-// 3️⃣ Export du modèle
+// Export du modèle
 const News = mongoose_1.default.model("News", newsSchema);
 exports.default = News;

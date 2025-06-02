@@ -34,7 +34,7 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-// 2️⃣ Schéma avec typage explicite
+// Schéma avec typage explicite
 const projectSchema = new mongoose_1.Schema({
     id: {
         type: Number,
