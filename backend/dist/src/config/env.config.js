@@ -9,7 +9,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 // Valider les variables d'environnement nécessaires
 exports.ENV = {
-    NODE_ENV: process.env.NODE_ENV || 'development',
+    NODE_ENV: process.env.NODE_ENV || 'production',
     PORT: process.env.PORT || 3000,
     MONGO_URI_PROD: process.env.MONGO_URI_PROD || '',
     MONGO_URI_DEV: process.env.MONGO_URI_DEV || '',
