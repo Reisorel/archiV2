@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 // Valider les variables d'environnement nécessaires
 export const ENV = {
-  NODE_ENV: process.env.NODE_ENV || 'development',
+  NODE_ENV: process.env.NODE_ENV || 'production',
   PORT: process.env.PORT || 3000,
   MONGO_URI_PROD: process.env.MONGO_URI_PROD || '',
   MONGO_URI_DEV: process.env.MONGO_URI_DEV || '',
@@ -15,7 +15,13 @@ export const ENV = {
   JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN || '1d'
 };
 
+// Ajoutez des logs pour vérifier les variables
+console.log('NODE_ENV:', ENV.NODE_ENV);
+console.log('MONGO_URI_PROD:', ENV.MONGO_URI_PROD);
+console.log('MONGO_URI_DEV:', ENV.MONGO_URI_DEV);
+console.log('JWT_SECRET:', ENV.JWT_SECRET);
+
 if (!ENV.MONGO_URI_PROD || !ENV.MONGO_URI_DEV) {
-  console.error('❌ Missing required MongoDB URIs in .env file');
+  console.error('❌ Missing required MongoDB URIs in environment variables');
   process.exit(1);
 }
