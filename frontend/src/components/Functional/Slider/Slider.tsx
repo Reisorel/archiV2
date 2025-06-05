@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, FC } from 'react';
 import gsap from 'gsap';
-import { getSlides } from "../../../services/api";
+import { getSlides } from "../../../services/Api";
 import './Slider.scss';
 import downChevron from '../../../assets/icons/down-arrow.svg';
 

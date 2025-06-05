@@ -1,6 +1,7 @@
 # Ignore tous les fichiers d'environnement du backend
 backend/.env
 backend/.env.*
+backend/src/seeds/SeedAdmin.ts
 
 frontend/.env
 frontend/.env.*

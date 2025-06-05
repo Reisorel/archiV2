@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
-import { getProjects } from "../../../services/api";
+import { getProjects } from "../../../services/Api";
 import "./Projects.scss";
 
 interface ProjectData {
