@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, FC } from "react";
 import { Link, useParams } from "react-router-dom";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { getProjects } from "../../../services/api";
+import { projectApi } from "../../../services/api/api.index";
 
 import "./ProjectsDetails.scss";
 import Modal from "./Modal/Modal";
@@ -32,7 +32,7 @@ interface TechData {
 }
 
 interface ProjectData {
-  id: string;
+  id: number; // Changé de string à number
   slug: string;
   title: string;
   loc: string;
@@ -62,7 +62,7 @@ const ProjectsDetails: FC = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const data: ProjectData[] = await getProjects();
+        const data: ProjectData[] = await projectApi.getAll();
         setProjectsData(data);
       } catch (error) {
         console.error("Erreur lors du fetch des projets:", error);
