@@ -20,7 +20,7 @@ export const sliderApi = {
   },
 
   // POST - Créer un nouveau slider
-  create: async (sliderData: Omit<Slider, 'id'>): Promise<Slider> => {
+  create: async (sliderData: Slider): Promise<Slider> => {
     return await fetchClient('/sliders', {
       method: 'POST',
       headers: {

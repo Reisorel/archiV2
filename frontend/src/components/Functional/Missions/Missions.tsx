@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
-import { getMissions } from "../../../services/api";
+import { missionsApi } from "../../../services/api/api.index";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -28,7 +28,7 @@ const Missions: FC = () => {
   useEffect(() => {
     const fetchMissions = async (): Promise<void> => {
       try {
-        const data: MissionData[] = await getMissions();
+        const data: MissionData[] = await missionsApi.getAll();
         setMissionsData(data);
       } catch (error) {
         console.error("Erreur lors du fetch des missions:", error);

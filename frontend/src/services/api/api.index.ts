@@ -1,4 +1,4 @@
-// Importer puis exporter le sliderApi
+// Barrel file pour les exports d'API
 export { sliderApi } from './sliderApi';
-
-
+export { newsApi } from './newsApi';
+export { missionsApi } from './missionsApi';
