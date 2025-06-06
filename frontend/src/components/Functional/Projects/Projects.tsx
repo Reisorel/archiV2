@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
-import { getProjects } from "../../../services/api";
+import { projectApi } from "../../../services/api/api.index";
 import "./Projects.scss";
 
 interface ProjectData {
-  id: string;
+  // Changé de string à number pour correspondre à votre modèle
+  id: number;
   slug: string;
   title: string;
   mainImage: string;
@@ -20,7 +21,8 @@ const Projects: FC = () => {
   useEffect(() => {
     const fetchProjects = async (): Promise<void> => {
       try {
-        const data: ProjectData[] = await getProjects();
+        // Utilisation du nouvel API modulaire
+        const data: ProjectData[] = await projectApi.getAll();
         setProjectsData(data);
       } catch (error) {
         console.error("Erreur lors du fetch des projets:", error);

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, FC } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
-import { getProjects } from "../../../services/api";
+import { projectApi } from "../../../services/api/api.index";
 
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
@@ -11,7 +11,7 @@ import leftChevronBlack from "../../../assets/icons/left-arrow-black.svg";
 
 // Interface pour les données de projet
 interface ProjectData {
-  id: string;
+  id: number; // Changé de string à number pour correspondre au modèle Project
   slug: string;
   title: string;
   mainImage: string;
@@ -42,7 +42,7 @@ const Header: FC = () => {
   useEffect(() => {
     const fetchProjects = async (): Promise<void> => {
       try {
-        const data: ProjectData[] = await getProjects();
+        const data: ProjectData[] = await projectApi.getAll();
         setProjectsData(data);
       } catch (error) {
         console.error("Erreur lors du fetch des projets:", error);
