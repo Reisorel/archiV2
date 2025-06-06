@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, FC } from 'react';
 import gsap from 'gsap';
-import { getSlides } from "../../../services/api";
+import { sliderApi } from "../../../services/api/api.index";
 import './Slider.scss';
 import downChevron from '../../../assets/icons/down-arrow.svg';
 
@@ -29,7 +29,7 @@ const Slider: FC = () => {
   useEffect(() => {
     const fetchSliders = async (): Promise<void> => {
       try {
-        const data: SliderData[] = await getSlides();
+        const data: SliderData[] = await sliderApi.getAll();
         setSliderData(data);
       } catch (error) {
         console.error("Erreur lors du fetch des sliders:", error);
