@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, FC } from "react";
 import { Link, useParams } from "react-router-dom";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { getProjects } from "../../../services/Api";
+import { getProjects } from "../../../services/api";
 
 import "./ProjectsDetails.scss";
 import Modal from "./Modal/Modal";

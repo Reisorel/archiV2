@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, FC } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { gsap } from "gsap";
-import { getProjects } from "../../../services/Api";
+import { getProjects } from "../../../services/api";
 
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
