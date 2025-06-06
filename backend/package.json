@@ -22,7 +22,7 @@
     "build:watch": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc && node dist/server.js",
-    "seed": "ts-node seeds/indexSeeds.ts"
+    "seed": "ts-node src/seeds/indexSeeds.ts"
   },
   "keywords": [],
   "author": "",

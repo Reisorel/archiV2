@@ -2,7 +2,7 @@
 import dotenv from 'dotenv';
 dotenv.config(); // ← Charge le fichier .env
 
-import connectDB from '../config/db.config.js';
+import connectDB from '../config/db.config';
 import seedSlider from './seedSlider';
 import seedNews from './seedNews';
 import seedMissions from './seedMissions';
