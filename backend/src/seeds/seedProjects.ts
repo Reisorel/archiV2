@@ -476,50 +476,106 @@ const seedProjects = async (): Promise<void> => {
         images: [
           {
             src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-1_lromif.webp",
-            alt: "Facade-1",
-            gridColumn: "span 2",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-2_dsq17s.webp",
-            alt: "Chantier-1",
+            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_fill,h_1080,w_auto,f_webp,q_auto/v1750069418/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-01_pifrs2.jpg",
+            alt: "Pâtisserie-01",
             gridColumn: "span 1",
             gridRow: "span 2",
           },
           {
             src:
             "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-3_ibd2ot.webp",
-            alt: "Chantier-2",
+            alt: "Pâtisserie-02",
             gridColumn: "span 1",
             gridRow: "span 2",
           },
           {
             src:
             "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219732/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-4_k3aqpo.webp",
-            alt: "Chantier-3",
+            alt: "Pâtisserie-03",
             gridColumn: "span 1",
             gridRow: "span 2",
           },
           {
             src:
             "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-5_vwhhtj.webp",
-            alt: "Chantier-4",
+            alt: "Pâtisserie-04",
             gridColumn: "span 1",
             gridRow: "span 2",
           },
           {
             src:
             "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-6_xirnhk.webp",
-            alt: "Chantier-5",
+            alt: "Pâtisserie-05",
             gridColumn: "span 1",
             gridRow: "span 2",
           },
           {
             src:
             "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
-            alt: "Chantier-6",
+            alt: "Pâtisserie-06",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src:
+            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
+            alt: "Pâtisserie-07",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src:
+            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
+            alt: "Pâtisserie-08",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src:
+            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
+            alt: "Pâtisserie-09",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src:
+            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
+            alt: "Pâtisserie-10",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src:
+            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
+            alt: "Pâtisserie-11",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src:
+            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
+            alt: "Pâtisserie-12",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src:
+            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
+            alt: "Pâtisserie-13",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src:
+            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
+            alt: "Pâtisserie-14",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src:
+            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
+            alt: "Pâtisserie-15",
             gridColumn: "span 1",
             gridRow: "span 2",
           },
