@@ -7,6 +7,127 @@ const seedProjects = async (): Promise<void> => {
   const projects = [
     {
       id: 1,
+      slug: "commerce-rennais",
+      mainImage:
+        "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/patisserie-rennes_tk4scd.webp",
+      title: "PÂTISSERIE RENNAISE",
+      loc: "Ile-Et-Vilaine",
+      grade: "Rénovation",
+      description1: `Au coeur du centre historique de la ville de Rennes, ce local commercial à été complètement transformé afin d’accueillir une pâtisserie. L’espace intérieur a été optimisé pour conjuguer fonctionnalité et fluidité Chaque détail de cette pâtisserie a été conçu avec précision, de l’agencement du mobilier aux choix des teintes et textures. La devanture en verre, associée à un store sobrement orné, met en valeur l’identité du lieu et assure une ouverture fluide sur la place Saint-Germain.`,
+      description2: `L’intérieur, baigné de lumière, invite à la dégustation. L’espace est pensé pour sublimer les créations gourmandes tout en favorisant l’échange et la proximité avec les clients.`,
+      tech: {
+        type: "rénovation",
+        techLoc: "Rennes",
+        sup: "65 m²",
+        mo: "privée",
+        inter: "Mission complète avec Lieu architecture",
+        avance: "Chantier en cours",
+      },
+      tags: ["commerce", "rénovation", "Rennes", "verre", "intérieur"],
+      meta: "Transformation d’un local à Rennes en pâtisserie lumineuse et fonctionnelle : agencement précis, devanture élégante, lieu chaleureux et ouvert à la convivialité.",
+      layout: {
+        images: [
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_fill,h_1080,w_auto,f_webp,q_auto/v1750069418/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-01_pifrs2.jpg",
+            alt: "Pâtisserie-01",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069422/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-02_jnavby.jpg",
+            alt: "Pâtisserie-02",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069423/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-03_gdaze2.jpg",
+            alt: "Pâtisserie-03",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069418/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-04_ln6upw.jpg",
+            alt: "Pâtisserie-04",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069418/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-05_ktgnjo.jpg",
+            alt: "Pâtisserie-05",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069421/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-06_gs4ezi.jpg",
+            alt: "Pâtisserie-06",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069420/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-07_mwka3q.jpg",
+            alt: "Pâtisserie-07",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069423/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-08_gxvzdg.jpg",
+            alt: "Pâtisserie-08",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069424/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-09_hziqhl.jpg",
+            alt: "Pâtisserie-09",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069425/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-10_vqudeu.jpg",
+            alt: "Pâtisserie-10",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069419/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-11_uknjgw.jpg",
+            alt: "Pâtisserie-11",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069420/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-12_hrud5a.jpg",
+            alt: "Pâtisserie-12",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069425/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-13_zvmg48.jpg",
+            alt: "Pâtisserie-13",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069417/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-14_gtapy9.jpg",
+            alt: "Pâtisserie-14",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069417/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-15_zfmlye.jpg",
+            alt: "Pâtisserie-15",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+          {
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1750069417/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-16_liim5j.jpg",
+            alt: "Pâtisserie-16",
+            gridColumn: "span 1",
+            gridRow: "span 2",
+          },
+        ],
+      },
+    },
+    {
+      id: 2,
       slug: "appartement-parisien",
       mainImage:
         "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-paris-01_hcvtka.webp",
@@ -117,7 +238,7 @@ const seedProjects = async (): Promise<void> => {
       },
     },
     {
-      id: 2,
+      id: 3,
       slug: "maison-a-la-mer",
       mainImage:
         "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279228/Cassandre_Marion_Architecture/Pages/7.Projects/maison-mer-01_ygtot7.webp",
@@ -182,7 +303,7 @@ const seedProjects = async (): Promise<void> => {
       },
     },
     {
-      id: 3,
+      id: 4,
       slug: "maison-de-campagne",
       mainImage:
         "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279231/Cassandre_Marion_Architecture/Pages/7.Projects/maison-campagne-01_pfq2j8.webp",
@@ -231,7 +352,7 @@ const seedProjects = async (): Promise<void> => {
       },
     },
     {
-      id: 4,
+      id: 5,
       slug: "maison-de-ville",
       mainImage:
         "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279229/Cassandre_Marion_Architecture/Pages/7.Projects/maison-ville-01_vysvh7.webp",
@@ -253,29 +374,25 @@ const seedProjects = async (): Promise<void> => {
       layout: {
         images: [
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792306/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville-01_rnmqon.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792306/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville-01_rnmqon.webp",
             alt: "Dessin-1",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792306/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville-02_thixts.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792306/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville-02_thixts.webp",
             alt: "Dessin-2",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville-03_gac1ai.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville-03_gac1ai.webp",
             alt: "Dessin-3",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792300/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville04_cr06na.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792300/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville04_cr06na.webp",
             alt: "Dessin-4",
             gridColumn: "span 1",
             gridRow: "span 1",
@@ -284,10 +401,10 @@ const seedProjects = async (): Promise<void> => {
       },
     },
     {
-      id: 5,
+      id: 6,
       slug: "corps-de-ferme",
       mainImage:
-      "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/ferme-01_mgw48v.webp",
+        "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/ferme-01_mgw48v.webp",
       title: "CORPS DE FERME NORMAND",
       loc: "Calvados",
       grade: "Extension",
@@ -313,71 +430,61 @@ const seedProjects = async (): Promise<void> => {
       layout: {
         images: [
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-01_vp5nwg.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-01_vp5nwg.webp",
             alt: "Dessin-1",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792302/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-02_bifyie.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792302/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-02_bifyie.webp",
             alt: "Dessin-2",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792306/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-03_urd8c4.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792306/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-03_urd8c4.webp",
             alt: "Dessin-3",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792302/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-04_xcdhpd.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792302/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-04_xcdhpd.webp",
             alt: "Dessin-4",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792302/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-05_ujr5ku.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792302/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-05_ujr5ku.webp",
             alt: "Plan-1",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792303/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-06_kfiwvo.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792303/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-06_kfiwvo.webp",
             alt: "Plan-2",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792302/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-07_flnvjm.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792302/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-07_flnvjm.webp",
             alt: "Plan-3",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792303/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-08_v9yhup.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792303/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-08_v9yhup.webp",
             alt: "Plan-4",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-10_phhiaj.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-10_phhiaj.webp",
             alt: "Plan-5",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792300/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville04_cr06na.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792300/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville04_cr06na.webp",
             alt: "Plan-6",
             gridColumn: "span 1",
             gridRow: "span 1",
@@ -386,10 +493,10 @@ const seedProjects = async (): Promise<void> => {
       },
     },
     {
-      id: 6,
+      id: 7,
       slug: "appartement-nantais",
       mainImage:
-      "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-nantes_mazvnp.webp",
+        "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279227/Cassandre_Marion_Architecture/Pages/7.Projects/appartement-nantes_mazvnp.webp",
       title: "APPARTEMENT NANTAIS",
       loc: "Loire-Atlantique",
       grade: "Agrandissement",
@@ -415,169 +522,34 @@ const seedProjects = async (): Promise<void> => {
       layout: {
         images: [
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792304/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-01_ikmtg8.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792304/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-01_ikmtg8.webp",
             alt: "Cuisine-1",
             gridColumn: "span 1",
             gridRow: "span 2",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792307/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-02_ftu9sf.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792307/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-02_ftu9sf.webp",
             alt: "Salon-1",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-03_ikxvc6.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792305/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-03_ikxvc6.webp",
             alt: "Plan-1",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742222131/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-04_qohuv5.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742222131/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-04_qohuv5.webp",
             alt: "Plan-avant-1",
             gridColumn: "span 1",
             gridRow: "span 1",
           },
           {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742222131/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-05_ph6yxm.webp",
+            src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742222131/Cassandre_Marion_Architecture/Pages/8.Projects_details/06-appart-nantais/appartement-nantais-05_ph6yxm.webp",
             alt: "Plan-avant-2",
             gridColumn: "span 1",
             gridRow: "span 1",
-          },
-        ],
-      },
-    },
-    {
-      id: 7,
-      slug: "commerce-rennais",
-      mainImage:
-      "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/patisserie-rennes_tk4scd.webp",
-      title: "PÂTISSERIE RENNAISE",
-      loc: "Ile-Et-Vilaine",
-      grade: "Rénovation",
-      description1: `Au coeur du centre historique de la ville de Rennes, ce local commercial à été complètement transformé afin d’accueillir une pâtisserie. L’espace intérieur a été optimisé pour conjuguer fonctionnalité et fluidité Chaque détail de cette pâtisserie a été conçu avec précision, de l’agencement du mobilier aux choix des teintes et textures. La devanture en verre, associée à un store sobrement orné, met en valeur l’identité du lieu et assure une ouverture fluide sur la place Saint-Germain.`,
-      description2: `L’intérieur, baigné de lumière, invite à la dégustation. L’espace est pensé pour sublimer les créations gourmandes tout en favorisant l’échange et la proximité avec les clients.`,
-      tech: {
-        type: "rénovation",
-        techLoc: "Rennes",
-        sup: "65 m²",
-        mo: "privée",
-        inter: "Mission complète avec Lieu architecture",
-        avance: "Chantier en cours",
-      },
-      tags: ["commerce", "rénovation", "Rennes", "verre", "intérieur"],
-      meta: "Transformation d’un local à Rennes en pâtisserie lumineuse et fonctionnelle : agencement précis, devanture élégante, lieu chaleureux et ouvert à la convivialité.",
-      layout: {
-        images: [
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_fill,h_1080,w_auto,f_webp,q_auto/v1750069418/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-01_pifrs2.jpg",
-            alt: "Pâtisserie-01",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-3_ibd2ot.webp",
-            alt: "Pâtisserie-02",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219732/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-4_k3aqpo.webp",
-            alt: "Pâtisserie-03",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-5_vwhhtj.webp",
-            alt: "Pâtisserie-04",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-6_xirnhk.webp",
-            alt: "Pâtisserie-05",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
-            alt: "Pâtisserie-06",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
-            alt: "Pâtisserie-07",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
-            alt: "Pâtisserie-08",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
-            alt: "Pâtisserie-09",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
-            alt: "Pâtisserie-10",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
-            alt: "Pâtisserie-11",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
-            alt: "Pâtisserie-12",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
-            alt: "Pâtisserie-13",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
-            alt: "Pâtisserie-14",
-            gridColumn: "span 1",
-            gridRow: "span 2",
-          },
-          {
-            src:
-            "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742219731/Cassandre_Marion_Architecture/Pages/8.Projects_details/07-commerce-rennais/commerce-7_w5nwdv.webp",
-            alt: "Pâtisserie-15",
-            gridColumn: "span 1",
-            gridRow: "span 2",
           },
         ],
       },
