@@ -12,7 +12,7 @@ const seedProjects = async (): Promise<void> => {
         "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/patisserie-rennes_tk4scd.webp",
       title: "PÂTISSERIE RENNAISE",
       loc: "Ile-Et-Vilaine",
-      grade: "livré juin 2025",
+      grade: "Rénovation",
       description1: `Au coeur du centre historique de la ville de Rennes, ce local commercial à été complètement transformé afin d’accueillir une pâtisserie. L’espace intérieur a été optimisé pour conjuguer fonctionnalité et fluidité Chaque détail de cette pâtisserie a été conçu avec précision, de l’agencement du mobilier aux choix des teintes et textures. La devanture en verre, associée à un store sobrement orné, met en valeur l’identité du lieu et assure une ouverture fluide sur la place Saint-Germain.`,
       description2: `L’intérieur, baigné de lumière, invite à la dégustation. L’espace est pensé pour sublimer les créations gourmandes tout en favorisant l’échange et la proximité avec les clients.`,
       tech: {
@@ -21,7 +21,7 @@ const seedProjects = async (): Promise<void> => {
         sup: "65 m²",
         mo: "privée",
         inter: "Mission complète avec Lieu architecture",
-        avance: "Chantier en cours",
+        avance: "livré juin 2025",
       },
       tags: ["commerce", "rénovation", "Rennes", "verre", "intérieur"],
       meta: "Transformation d’un local à Rennes en pâtisserie lumineuse et fonctionnelle : agencement précis, devanture élégante, lieu chaleureux et ouvert à la convivialité.",
