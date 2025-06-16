@@ -7,7 +7,7 @@ const seedProjects = async (): Promise<void> => {
   const projects = [
     {
       id: 1,
-      slug: "commerce-rennais",
+      slug: "pâtisserie-rennaise",
       mainImage:
         "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741279226/Cassandre_Marion_Architecture/Pages/7.Projects/patisserie-rennes_tk4scd.webp",
       title: "PÂTISSERIE RENNAISE",
