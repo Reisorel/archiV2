@@ -143,7 +143,7 @@ const seedProjects = async (): Promise<void> => {
         techLoc: "Paris 5ème",
         sup: "90 m²",
         mo: "privée",
-        inter: "mission complète",
+        inter: "mission complète avec Chanelle Fillastre architecte",
         avance: "livré août 2024",
       },
       tags: ["bois", "rénovation", "Paris", "intérieur", "menuiserie"],
