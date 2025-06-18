@@ -473,13 +473,7 @@ const seedProjects = async () => {
                     {
                         src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792301/Cassandre_Marion_Architecture/Pages/8.Projects_details/05-ferme/ferme-10_phhiaj.webp",
                         alt: "Plan-5",
-                        gridColumn: "span 1",
-                        gridRow: "span 1",
-                    },
-                    {
-                        src: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1741792300/Cassandre_Marion_Architecture/Pages/8.Projects_details/04-maison-ville/maison-ville04_cr06na.webp",
-                        alt: "Plan-6",
-                        gridColumn: "span 1",
+                        gridColumn: "span 2",
                         gridRow: "span 1",
                     },
                 ],
