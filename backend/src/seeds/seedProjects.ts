@@ -555,7 +555,7 @@ const seedProjects = async (): Promise<void> => {
       },
     },
   ];
-  await Projects.insertMany(projects);
+  await Projects.insertMany(projects, { ordered: true });
   console.log(`✅ Projects seeded with ${projects.length} projects`);
 };
 

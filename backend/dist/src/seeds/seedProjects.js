@@ -547,7 +547,7 @@ const seedProjects = async () => {
             },
         },
     ];
-    await Projects_model_1.default.insertMany(projects);
+    await Projects_model_1.default.insertMany(projects, { ordered: true });
     console.log(`✅ Projects seeded with ${projects.length} projects`);
 };
 exports.default = seedProjects;

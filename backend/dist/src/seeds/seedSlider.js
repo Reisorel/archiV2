@@ -33,7 +33,7 @@ const seedSliders = async () => {
             image: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_webp,q_auto/v1742233429/Cassandre_Marion_Architecture/Pages/2.Slider/appartement-paris-04_anxsch.webp",
         },
     ];
-    await Slider_model_1.default.insertMany(sliders);
+    await Slider_model_1.default.insertMany(sliders, { ordered: true });
     console.log(`✅ Sliders seeded with ${sliders.length} slides`);
 };
 exports.default = seedSliders;

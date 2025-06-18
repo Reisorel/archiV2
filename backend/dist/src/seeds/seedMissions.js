@@ -54,7 +54,7 @@ const seedMissions = async () => {
             description: "illustration9",
         },
     ];
-    await Missions_model_1.default.insertMany(missions);
+    await Missions_model_1.default.insertMany(missions, { ordered: true });
     console.log(`✅ Missions seeded with ${missions.length} missions`);
 };
 exports.default = seedMissions;

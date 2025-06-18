@@ -57,7 +57,7 @@ const seedNews = async (): Promise<void> => {
     },
   ];
 
-  await News.insertMany(news);
+  await News.insertMany(news, { ordered: true });
   console.log(`✅ News seeded with ${news.length} articles`);
 };
 

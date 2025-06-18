@@ -54,7 +54,7 @@ const seedNews = async () => {
             image: "https://res.cloudinary.com/dqrq4ullu/image/upload/c_scale,h_1080,w_auto,f_auto,q_auto/v1741276470/Cassandre_Marion_Architecture/Pages/3.News/axo-ferme-breville-01_pvodek.jpg",
         },
     ];
-    await News_model_1.default.insertMany(news);
+    await News_model_1.default.insertMany(news, { ordered: true });
     console.log(`✅ News seeded with ${news.length} articles`);
 };
 exports.default = seedNews;

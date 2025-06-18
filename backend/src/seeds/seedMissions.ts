@@ -52,7 +52,7 @@ const seedMissions = async (): Promise<void> => {
     },
   ]
 
-  await Missions.insertMany(missions);
+  await Missions.insertMany(missions, { ordered: true });
   console.log(`✅ Missions seeded with ${missions.length} missions`);
 }
 
